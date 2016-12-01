@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+  timeStamp="<TMPL_var responseTimestamp>"
+  numberMatched="<TMPL_var networksMatched>"
+  numberReturned="<TMPL_var networksReturned>"
+  xmlns:wfs="http://www.opengis.net/wfs/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:inspire="http://inspire.ec.europa.eu/schemas/base/3.3/"
+  xmlns:ef="http://inspire.ec.europa.eu/schemas/ef/4.0"
+  xmlns:ins_base2="http://inspire.ec.europa.eu/schemas/base2/2.0"
+  xmlns:sensorml="http://www.opengis.net/sensorML/1.0.1"
+  xmlns:gco="http://www.isotc211.org/2005/gco"
+  xmlns:swe="http://www.opengis.net/swe/1.0.1"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+  http://inspire.ec.europa.eu/schemas/ef/4.0 http://inspire.ec.europa.eu/schemas/ef/4.0/EnvironmentalMonitoringFacilities.xsd">
+  <TMPL_if (networksMatched > 0)><wfs:boundedBy>
+    <gml:Envelope axisLabels="<TMPL_var bbAxisLabels>" srsName="<TMPL_var bbProjUri>" srsDimension="<TMPL_var bbProjSrsDim>">
+      <gml:lowerCorner><TMPL_var bbLowerCorner></gml:lowerCorner>
+      <gml:upperCorner><TMPL_var bbUpperCorner></gml:upperCorner>
+    </gml:Envelope>
+  </wfs:boundedBy>
+<TMPL_if DEFINED(networks)><TMPL_foreach networks AS network>
+  <wfs:member>
+    <ef:EnvironmentalMonitoringNetwork gml:id="<TMPL_var CONCAT("emn-",network.__index__ + 1,"-networkid-",network.id)>">
+      <ef:inspireId>
+        <inspire:Identifier>
+          <inspire:localId><TMPL_var network.id></inspire:localId>
+          <inspire:namespace><TMPL_if DEFINED(network.inspireNamespace)><TMPL_var network.inspireNamespace><TMPL_else>fi.fmi.network.id</TMPL_if></inspire:namespace>
+        </inspire:Identifier>
+      </ef:inspireId>
+      <ef:name><TMPL_var network.name></ef:name>
+      <ef:additionalDescription><TMPL_var network.description></ef:additionalDescription>
+      <ef:mediaMonitored xlink:href="http://inspire.ec.europa.eu/codeList/MediaValue/value/<TMPL_if network.mediaMonitored><TMPL_var network.mediaMonitored><TMPL_else>air</TMPL_if>" xlink:title="<TMPL_if network.mediaMonitored><TMPL_var network.mediaMonitored><TMPL_else>air</TMPL_if>"/>
+      <ef:responsibleParty>
+        <ins_base2:RelatedParty>
+          <ins_base2:organisationName>
+            <gco:CharacterString><TMPL_if DEFINED(network.responsibleParty)><TMPL_var network.responsibleParty><TMPL_else>Finnish Meteorological Institute</TMPL_if></gco:CharacterString>
+          </ins_base2:organisationName>
+        </ins_base2:RelatedParty>
+      </ef:responsibleParty><TMPL_comment>
+      <ef:onlineResource>http://ilmatieteenlaitos.fi/havaintoverkot/</ef:onlineResource></TMPL_comment>
+      <ef:purpose xlink:href="http://www.eionet.europa.eu/gemet/concept/5197" xlink:title="meteorology"/>
+      <ef:organisationLevel xlink:href="http://inspire.ec.europa.eu/codeList/LegislationLevelValue/value/<TMPL_if network.organisationLevel><TMPL_var network.organisationLevel><TMPL_else>national</TMPL_if>"/>
+      <ef:contains>
+        <ef:NetworkFacility gml:id="nf-<TMPL_var network.id>">
+          <ef:linkingTime>
+            <gml:TimeInstant gml:id="ti-<TMPL_var network.id>">
+              <gml:timePosition indeterminatePosition="now"/>
+            </gml:TimeInstant>
+          </ef:linkingTime>
+          <ef:belongsTo xlink:href="#<TMPL_var CONCAT("emn-",network.__index__ + 1,"-networkid-",network.id)>"/>
+	 <ef:contains xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>?request=getFeature&amp;storedquery_id=fmi::ef::stations&amp;networkid=<TMPL_var network.id>&amp;" xlink:title="stations"/>
+        </ef:NetworkFacility>
+      </ef:contains>
+    </ef:EnvironmentalMonitoringNetwork>
+  </wfs:member></TMPL_foreach></TMPL_if></TMPL_if>
+</wfs:FeatureCollection>

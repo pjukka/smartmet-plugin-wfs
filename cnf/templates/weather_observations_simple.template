@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+  timeStamp="<TMPL_var responseTimestamp>"
+  numberReturned="<TMPL_var (size(groups) * size(groups[0].obsParamList) * size(groups[0].obsReturnArray))>"
+  numberMatched="<TMPL_var (size(groups) * size(groups[0].obsParamList) * size(groups[0].obsReturnArray))>"
+  <TMPL_include "include/refs_for_simple.template">>
+  <TMPL_include "include/results_obs_simple.template">
+</wfs:FeatureCollection>

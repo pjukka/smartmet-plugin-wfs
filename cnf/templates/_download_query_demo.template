@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foo>
+  <TMPL_FOREACH param_sets AS param><a href="<TMPL_var XMLESCAPE(param.URL)>"/>
+  </TMPL_FOREACH>
+</foo>
+
+<!--
+
+<TMPL_var OBJ_DUMP()>
+
+-->

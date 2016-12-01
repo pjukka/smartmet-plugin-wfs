@@ -1,0 +1,199 @@
+/**
+
+@page WFS_SQ_PARAM_TYPES Stored queries parameter data types
+
+There are both scalar and array parameters supported depending of definition
+of the parameters in the configuration. See:
+- @ref WFS_CFG_SCALAR_PARAM_TMPL
+- @ref WFS_CFG_ARRAY_PARAM_TMPL
+for details. Array parameters just consist of zero or more scalar values.
+As result there is no need to discuss array parameters more here
+
+Following data types of scalar values are supported:
+- @subpage WFS_PARAM_TYPE_BOOL
+- @subpage WFS_PARAM_TYPE_INT
+- @subpage WFS_PARAM_TYPE_UINT
+- @subpage WFS_PARAM_TYPE_DOUBLE
+- @subpage WFS_PARAM_TYPE_STRING
+- @subpage WFS_PARAM_TYPE_TIME
+- @subpage WFS_PARAM_TYPE_POINT
+- @subpage WFS_PARAM_TYPE_BBOX
+
+C++ class BrainStorm::Value implements these data types and supported
+conversion between them
+
+Only limited set of implicit conversions between value types are supported:
+- string values to all other types (support is required for example to implement default values
+  for stored query handler parameter mapping)
+- between numeric types (except conversion from double to integer types)
+
+*/
+
+///////////////////////////////////////////////////////////////////////
+
+/**
+
+@page WFS_PARAM_TYPE_BOOL Boolean values
+
+- Conversions from @ref WFS_PARAM_TYPE_INT and @ref WFS_PARAM_TYPE_UINT
+  is supported:
+    - @b 0 is converted to @b false
+    - other integer values to @b true
+- Conversions from @ref WFS_PARAM_TYPE_STRING are also supported:
+    - @b true and @b 1 are converted to @b true
+    - @b false and @b 0 are converted to @b false
+
+  Conversion from string is case insensitive
+
+*/
+
+/**
+
+@page WFS_PARAM_TYPE_INT Integer values
+
+This value type is implemented as @b int64_t
+
+Following conversions are supported:
+- from @ref WFS_PARAM_TYPE_UINT
+- from @ref WFS_PARAM_TYPE_STRING
+
+std::runtime_error is throw if
+- unsigned integer value is too large
+- parsing string value fails
+- unsupported value type detected
+
+*/
+
+/**
+
+@page WFS_PARAM_TYPE_UINT Unsigned integer values
+
+This value type is implemented as @b uint64_t
+
+Following conversions are supported:
+- from @ref WFS_PARAM_TYPE_INT
+- from @ref WFS_PARAM_TYPE_STRING
+
+std::runtime_error is throw if
+- signed integer value is negative
+- parsing string value fails
+- unsupported value type detected
+
+*/
+
+/**
+
+@page WFS_PARAM_TYPE_DOUBLE Double precision values
+
+This value is implemented as @b double
+
+Following conversions are supported:
+- from @ref WFS_PARAM_TYPE_INT
+- from @ref WFS_PARAM_TYPE_UINT
+- from @ref WFS_PARAM_TYPE_STRING
+
+std::runtime_error is throw if
+- parsing string value fails
+- unsupported value type detected
+
+*/
+
+/**
+
+@page WFS_PARAM_TYPE_STRING String values
+
+This value type is implemented as std::string
+
+No implicit conversions from different types to strings
+are supported.
+
+*/
+
+/**
+
+@page WFS_PARAM_TYPE_TIME Time values
+
+This value type is implemented as boost::posix_time::ptime
+
+Conversion from string is supported.
+
+@section WFS_PARAM_TYPE_TIME_REL Relative time specification
+
+Some examples are given below:
+@verbatim
+now
+3 hours ago
+after 2 days
+@endverbatim
+Notes:
+- Number of time units may be omitted if it is @b 1
+- seconds, minutes, hours, days are supported as time units
+- letter @b s at end of time units may be omitted (no check for correct use of plural forms is done)
+
+Additionally an instruction how to round the time can be appended after this relative time
+description:
+@verbatim
+now rounded down 5 min
+12 hours ago rounded 60 minutes
+after 1 day rounded up 60 minutes
+@endverbatim
+- Only minutes are supported as time units in rounding specification
+- the time is rounded down if neither @b up nor @b down is specified
+
+@section WFS_PARAM_TYPE_TIME_XML_DATETIME XML dataTime
+
+After that it is attempted to interpret the string as XML dateTime. Time zone offset
+or @b Z must be specified.
+
+@section WFS_PARAM_TYPE_TIME_MACGYVER Macgyver time parser
+
+Finally it attempted to use Fmi::TimeParser::parse
+
+*/
+
+/**
+
+@page WFS_PARAM_TYPE_POINT Point values
+
+This value is implemented as 2 double precision values followed by coordinate projection name.
+Coordinate projection name can be omited. In that case empty string is assumed. It is user
+responsibility to interpret empty string accordingly
+
+The parameter value must be specified as comma separated values
+@verbatim
+24.56,61.23
+@endverbatim
+or
+@verbatim
+24.56,61.23,EPSG::4326
+@endverbatim
+
+Additionaly for XML query format also @b gml::pos format can be used if specified for parameter
+in stored query configuration
+
+*/
+
+/**
+
+@page WFS_PARAM_TYPE_BBOX Bounding box values
+
+This value is implemented as 4 double precision values followed by coordinate projection name.
+Coordinate projection name can be omited. In that case empty string is assumed. It is user
+responsibility to interpret empty string accordingly
+
+The parameter value must be specified as comma separated values
+@verbatim
+24.56,61.23,26.56,62.56
+@endverbatim
+or
+@verbatim
+24.56,61.23,,26.56,62.56,EPSG::4326
+@endverbatim
+
+Additionaly for XML query format also @b gml::Envelope format can be used if specified for parameter
+in stored query configuration
+
+
+*/
+
+

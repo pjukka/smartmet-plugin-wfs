@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wfs:FeatureCollection xmlns:wfs="http://www.opengis.net/wfs/2.0" numberMatched="6" numberReturned="6" timeStamp="2012-12-12T12:12:12Z" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:om="http://www.opengis.net/om/2.0" xmlns:saf="http://icao.int/saf/1.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:wp="http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/02/18" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd                      http://icao.int/saf/1.0 http://schemas.wmo.int/saf/1.0/saf.xsd         http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd                    http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd                 http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd         http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd         http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/02/18 ../schema/WinterPrecipitation.xsd">
+
+  <wfs:member>
+    <wp:FzraPrecipitation gml:id="Fzra-precipitation-EFHF-1">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="Fzra-precipitation-EFHF-1-phenomenon-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="Fzra-precipitation-EFHF-1-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterprecipitationprobability"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="Fzra-precipitation-EFHF-1-spatial-sampling-feature">
+          <sam:sampledFeature>
+            <saf:Aerodrome gml:id="Fzra-precipitation-EFHF-1-sampled-feature">
+              <saf:designator>FI</saf:designator>
+              <saf:name>Helsinki-Malmi Airport</saf:name>
+              <saf:locationIndicatorICAO>EFHF</saf:locationIndicatorICAO>
+              <saf:fieldElevation uom="m">17.0</saf:fieldElevation>
+              <saf:ARP>
+                <gml:Point axisLabels="Lat Long" gml:id="Fzra-precipitation-EFHF-1-sampled-feature-arp-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:pos>60.254559 25.042830</gml:pos>
+                </gml:Point>
+              </saf:ARP>
+            </saf:Aerodrome>
+          </sam:sampledFeature>
+          <sams:shape>
+            <gml:Point axisLabels="Lat Long" gml:id="Fzra-precipitation-EFHF-1-spatial-sampling-feature-shape-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+              <gml:pos>60.254559 25.042830</gml:pos>
+            </gml:Point>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="14.2"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="14.2"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="14.2"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="13.6"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="13.6"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="13.6"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="13.0"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="13.0"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="13.0"/>
+        </wp:FzraPrecipitationProbability>
+      </om:result>
+    </wp:FzraPrecipitation>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:SnowPrecipitation gml:id="Snow-precipitation-EFHF-2">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="Snow-precipitation-EFHF-2-phenomenon-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="Snow-precipitation-EFHF-2-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterprecipitationprobability"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="Snow-precipitation-EFHF-2-spatial-sampling-feature">
+          <sam:sampledFeature>
+            <saf:Aerodrome gml:id="Snow-precipitation-EFHF-2-sampled-feature">
+              <saf:designator>FI</saf:designator>
+              <saf:name>Helsinki-Malmi Airport</saf:name>
+              <saf:locationIndicatorICAO>EFHF</saf:locationIndicatorICAO>
+              <saf:fieldElevation uom="m">17.0</saf:fieldElevation>
+              <saf:ARP>
+                <gml:Point axisLabels="Lat Long" gml:id="Snow-precipitation-EFHF-2-sampled-feature-arp-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:pos>60.254559 25.042830</gml:pos>
+                </gml:Point>
+              </saf:ARP>
+            </saf:Aerodrome>
+          </sam:sampledFeature>
+          <sams:shape>
+            <gml:Point axisLabels="Lat Long" gml:id="Snow-precipitation-EFHF-2-spatial-sampling-feature-shape-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+              <gml:pos>60.254559 25.042830</gml:pos>
+            </gml:Point>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="5.4"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="5.4"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="5.4"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="6.1"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="6.1"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="6.1"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="7.3"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="7.3"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHF" latitude="60.254559" longitude="25.042830">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="7.3"/>
+        </wp:SnowPrecipitationProbability>
+      </om:result>
+    </wp:SnowPrecipitation>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:FzraPrecipitation gml:id="Fzra-precipitation-EFHK-3">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="Fzra-precipitation-EFHK-3-phenomenon-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="Fzra-precipitation-EFHK-3-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterprecipitationprobability"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="Fzra-precipitation-EFHK-3-spatial-sampling-feature">
+          <sam:sampledFeature>
+            <saf:Aerodrome gml:id="Fzra-precipitation-EFHK-3-sampled-feature">
+              <saf:designator>FI</saf:designator>
+              <saf:name>Helsinki Airport</saf:name>
+              <saf:locationIndicatorICAO>EFHK</saf:locationIndicatorICAO>
+              <saf:fieldElevation uom="m">54.0</saf:fieldElevation>
+              <saf:ARP>
+                <gml:Point axisLabels="Lat Long" gml:id="Fzra-precipitation-EFHK-3-sampled-feature-arp-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:pos>60.317219 24.963329</gml:pos>
+                </gml:Point>
+              </saf:ARP>
+            </saf:Aerodrome>
+          </sam:sampledFeature>
+          <sams:shape>
+            <gml:Point axisLabels="Lat Long" gml:id="Fzra-precipitation-EFHK-3-spatial-sampling-feature-shape-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+              <gml:pos>60.317219 24.963329</gml:pos>
+            </gml:Point>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="13.6"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="13.6"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="13.6"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="12.8"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="12.8"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="12.8"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="12.0"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="12.0"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="12.0"/>
+        </wp:FzraPrecipitationProbability>
+      </om:result>
+    </wp:FzraPrecipitation>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:SnowPrecipitation gml:id="Snow-precipitation-EFHK-4">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="Snow-precipitation-EFHK-4-phenomenon-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="Snow-precipitation-EFHK-4-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterprecipitationprobability"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="Snow-precipitation-EFHK-4-spatial-sampling-feature">
+          <sam:sampledFeature>
+            <saf:Aerodrome gml:id="Snow-precipitation-EFHK-4-sampled-feature">
+              <saf:designator>FI</saf:designator>
+              <saf:name>Helsinki Airport</saf:name>
+              <saf:locationIndicatorICAO>EFHK</saf:locationIndicatorICAO>
+              <saf:fieldElevation uom="m">54.0</saf:fieldElevation>
+              <saf:ARP>
+                <gml:Point axisLabels="Lat Long" gml:id="Snow-precipitation-EFHK-4-sampled-feature-arp-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:pos>60.317219 24.963329</gml:pos>
+                </gml:Point>
+              </saf:ARP>
+            </saf:Aerodrome>
+          </sam:sampledFeature>
+          <sams:shape>
+            <gml:Point axisLabels="Lat Long" gml:id="Snow-precipitation-EFHK-4-spatial-sampling-feature-shape-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+              <gml:pos>60.317219 24.963329</gml:pos>
+            </gml:Point>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="5.0"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="5.0"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="5.0"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="5.4"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="5.4"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="5.4"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="6.4"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="6.4"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFHK" latitude="60.317219" longitude="24.963329">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="6.4"/>
+        </wp:SnowPrecipitationProbability>
+      </om:result>
+    </wp:SnowPrecipitation>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:FzraPrecipitation gml:id="Fzra-precipitation-EFTU-5">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="Fzra-precipitation-EFTU-5-phenomenon-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="Fzra-precipitation-EFTU-5-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterprecipitationprobability"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="Fzra-precipitation-EFTU-5-spatial-sampling-feature">
+          <sam:sampledFeature>
+            <saf:Aerodrome gml:id="Fzra-precipitation-EFTU-5-sampled-feature">
+              <saf:designator>FI</saf:designator>
+              <saf:name>Turku Airport</saf:name>
+              <saf:locationIndicatorICAO>EFTU</saf:locationIndicatorICAO>
+              <saf:fieldElevation uom="m">49.0</saf:fieldElevation>
+              <saf:ARP>
+                <gml:Point axisLabels="Lat Long" gml:id="Fzra-precipitation-EFTU-5-sampled-feature-arp-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:pos>60.514141 22.262810</gml:pos>
+                </gml:Point>
+              </saf:ARP>
+            </saf:Aerodrome>
+          </sam:sampledFeature>
+          <sams:shape>
+            <gml:Point axisLabels="Lat Long" gml:id="Fzra-precipitation-EFTU-5-spatial-sampling-feature-shape-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+              <gml:pos>60.514141 22.262810</gml:pos>
+            </gml:Point>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="14.8"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="14.8"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="14.8"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="12.7"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="12.7"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="12.7"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="8.4"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="8.4"/>
+        </wp:FzraPrecipitationProbability>
+        <wp:FzraPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="8.4"/>
+        </wp:FzraPrecipitationProbability>
+      </om:result>
+    </wp:FzraPrecipitation>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:SnowPrecipitation gml:id="Snow-precipitation-EFTU-6">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="Snow-precipitation-EFTU-6-phenomenon-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="Snow-precipitation-EFTU-6-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterprecipitationprobability"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="Snow-precipitation-EFTU-6-spatial-sampling-feature">
+          <sam:sampledFeature>
+            <saf:Aerodrome gml:id="Snow-precipitation-EFTU-6-sampled-feature">
+              <saf:designator>FI</saf:designator>
+              <saf:name>Turku Airport</saf:name>
+              <saf:locationIndicatorICAO>EFTU</saf:locationIndicatorICAO>
+              <saf:fieldElevation uom="m">49.0</saf:fieldElevation>
+              <saf:ARP>
+                <gml:Point axisLabels="Lat Long" gml:id="Snow-precipitation-EFTU-6-sampled-feature-arp-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:pos>60.514141 22.262810</gml:pos>
+                </gml:Point>
+              </saf:ARP>
+            </saf:Aerodrome>
+          </sam:sampledFeature>
+          <sams:shape>
+            <gml:Point axisLabels="Lat Long" gml:id="Snow-precipitation-EFTU-6-spatial-sampling-feature-shape-point" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+              <gml:pos>60.514141 22.262810</gml:pos>
+            </gml:Point>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="5.9"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="5.9"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T18:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="5.9"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="6.0"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="6.0"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-05T21:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="6.0"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="LIGHT" probabilityUnit="percent" probabilityValue="3.0"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="MODERATE" probabilityUnit="percent" probabilityValue="3.0"/>
+        </wp:SnowPrecipitationProbability>
+        <wp:SnowPrecipitationProbability dateTime="2008-08-06T00:00:00Z" icaoCode="EFTU" latitude="60.514141" longitude="22.262810">
+          <wp:precipitationProbability precipitationType="HEAVY" probabilityUnit="percent" probabilityValue="3.0"/>
+        </wp:SnowPrecipitationProbability>
+      </om:result>
+    </wp:SnowPrecipitation>
+  </wfs:member>
+
+</wfs:FeatureCollection>

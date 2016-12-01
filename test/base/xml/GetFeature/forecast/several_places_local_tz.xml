@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:StoredQuery id="ForecastTest">
+     <wfs:Parameter name="begin">2008-08-05T12:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="end">2008-08-07T00:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="place">Helsinki</wfs:Parameter>
+     <wfs:Parameter name="place">Karlsborg</wfs:Parameter>
+     <wfs:Parameter name="place">Kostomuksha</wfs:Parameter>
+     <wfs:Parameter name="timestep">0</wfs:Parameter>
+     <wfs:Parameter name="locale">fi_FI</wfs:Parameter>
+     <wfs:Parameter name="parameter">Temperature</wfs:Parameter>
+     <wfs:Parameter name="parameter">snowdepth</wfs:Parameter>
+     <wfs:Parameter name="tz">local</wfs:Parameter>
+   </wfs:StoredQuery>
+</wfs:GetFeature>

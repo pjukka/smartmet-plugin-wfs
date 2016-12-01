@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection timeStamp="2012-12-12T12:12:12Z" numberMatched="6" numberReturned="6"
+  xmlns:wfs="http://www.opengis.net/wfs/2.0" 
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:om="http://www.opengis.net/om/2.0"
+  xmlns:omso="http://inspire.ec.europa.eu/schemas/omso/2.0"
+  xmlns:sam="http://www.opengis.net/sampling/2.0"
+  xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+  xmlns:fmicov="http://xml.fmi.fi/namespace/weather/2015/09/18/coverages"
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd 
+                      http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd           
+                      http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd 
+                      http://inspire.ec.europa.eu/schemas/omso/2.0 http://inspire.ec.europa.eu/schemas/omso/2.0/SpecialisedObservations.xsd
+                      http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd 
+                      http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd 
+                      http://xml.fmi.fi/namespace/weather/2015/09/18/coverages metoceancoverages.xsd">
+  <!-- One member per time and parameter type -->
+  
+    <wfs:member>
+      <omso:GridSeriesObservation gml:id="wfs-member-1">
+	<!-- Data time stamp -->
+	<om:phenomenonTime>
+	  <gml:TimeInstant gml:id="phenomenon-time-wfs-member-1">
+	  <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+	</gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+	<gml:TimeInstant gml:id="result-time-wfs-member-1">
+	<gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:resultTime>
+    <om:procedure xlink:href="http://xml.fmi.fi/inspire/process/hirlam_painepinta"/>
+    <om:parameter>
+      <om:NamedValue>
+        <om:name xlink:href="http://inspire.ec.europa.eu/codeList/ProcessParameterValue/value/numericalModel/analysisTime"/>
+        <om:value>
+          <gml:TimeInstant gml:id="analysis-time-wfs-member-1">
+            <gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+          </gml:TimeInstant>
+        </om:value>
+      </om:NamedValue>
+    </om:parameter>
+    <om:observedProperty
+        xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=temperature&amp;language=eng"/>
+    <om:featureOfInterest>
+      <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-1">
+      <sam:sampledFeature/>
+      <!-- Sampling feature is actually a requested bbox -->
+      <sams:shape>
+	<gml:Polygon gml:id="spatial-sampling-feature-requested-bounding-box-wfs-member-1">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>60.000000,22.000000 70.000000,22.000000 70.000000,31.000000 60.000000,31.000000 60.000000,22.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+  <om:result>
+    
+  
+    <fmicov:phenomenonIsoline dateTime="2008-08-05T18:00:00Z" parameter="Temperature" unit="C" low="9" high="9"
+    gml:id="fmicov-phenomenon-isoline-wfs-member-1-Temperature" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+    
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-1-fmicov-isoline-1">
+            <gml:coordinates>70.000000 29.694460,69.946141 29.806192,69.763464 30.408511,69.669232 31.000000</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      </fmicov:phenomenonIsoline>    
+    
+      </om:result>
+    </omso:GridSeriesObservation>
+  </wfs:member>
+
+    <wfs:member>
+      <omso:GridSeriesObservation gml:id="wfs-member-2">
+	<!-- Data time stamp -->
+	<om:phenomenonTime>
+	  <gml:TimeInstant gml:id="phenomenon-time-wfs-member-2">
+	  <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+	</gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+	<gml:TimeInstant gml:id="result-time-wfs-member-2">
+	<gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:resultTime>
+    <om:procedure xlink:href="http://xml.fmi.fi/inspire/process/hirlam_painepinta"/>
+    <om:parameter>
+      <om:NamedValue>
+        <om:name xlink:href="http://inspire.ec.europa.eu/codeList/ProcessParameterValue/value/numericalModel/analysisTime"/>
+        <om:value>
+          <gml:TimeInstant gml:id="analysis-time-wfs-member-2">
+            <gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+          </gml:TimeInstant>
+        </om:value>
+      </om:NamedValue>
+    </om:parameter>
+    <om:observedProperty
+        xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=temperature&amp;language=eng"/>
+    <om:featureOfInterest>
+      <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-2">
+      <sam:sampledFeature/>
+      <!-- Sampling feature is actually a requested bbox -->
+      <sams:shape>
+	<gml:Polygon gml:id="spatial-sampling-feature-requested-bounding-box-wfs-member-2">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>60.000000,22.000000 70.000000,22.000000 70.000000,31.000000 60.000000,31.000000 60.000000,22.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+  <om:result>
+    
+  
+    <fmicov:phenomenonIsoline dateTime="2008-08-05T21:00:00Z" parameter="Temperature" unit="C" low="9" high="9"
+    gml:id="fmicov-phenomenon-isoline-wfs-member-2-Temperature" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+    
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-2-fmicov-isoline-1">
+            <gml:coordinates>68.222163 22.000000,68.360909 22.087794,68.517773 22.595154,68.567956 22.799395,68.775798 23.482065,69.029293 23.627360,69.127943 23.719791,69.275872 23.856957,69.314807 23.848772,69.506993 23.228401,69.600397 23.168487,69.871803 22.709270,69.924547 22.426878,69.931380 22.748436,69.857765 23.467747,69.827821 23.642397,69.611289 24.058989,69.624701 24.831942,69.684449 25.249538,69.685866 25.646846,69.666764 26.402319,69.712485 27.216491,69.609593 27.899637,69.517416 28.588535,69.371974 29.221041,69.203705 29.609412,68.999129 29.617770,68.921963 29.664283,68.660926 29.557961,68.552814 29.183722,68.474513 28.872701,68.312640 28.225853,68.431183 27.599288,68.687052 27.082380,68.729960 26.380325,68.553757 25.812542,68.317370 25.503748,68.041945 25.840791,68.010905 25.872726,67.788197 26.354720,67.877126 27.077315,68.134355 27.186069,68.281923 27.471464,68.274110 28.191439,68.055511 28.721720,67.931614 28.851474,67.713292 29.128490,67.617424 29.171217,67.355930 29.086771,67.115850 28.846419,66.998342 28.495900,66.969322 27.887132,66.971914 27.786751,66.961875 27.095831,66.840395 26.738579,66.574776 26.719007,66.484522 26.728495,66.550769 26.917888,66.567255 27.461210,66.561292 28.129006,66.391075 28.659308,66.323002 28.692377,66.284683 28.569975,66.245577 27.872662,66.302350 27.254013,66.273123 26.994600,66.191034 27.168400,65.933092 27.625499,65.924302 27.633773,65.638487 27.762373,65.410174 27.866507,65.356088 27.868387,65.095321 27.811020,64.839127 27.724110,64.584081 27.632640,64.319623 27.669141,64.310109 27.683907,64.079758 28.101017,63.949914 28.609023,63.852782 29.139075,63.972256 29.843380,63.981521 29.897842,63.988017 30.469263,63.842140 30.752210,63.783440 30.905688,63.612159 31.000000</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-2-fmicov-isoline-2">
+            <gml:coordinates>66.352657 30.393295,66.127443 30.438520,66.070214 30.454066,65.773086 30.777543,65.827022 31.000000</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-2-fmicov-isoline-3">
+            <gml:coordinates>67.216927 31.000000,67.127488 30.720109,66.872390 30.585445,66.601180 30.563393,66.352657 30.393295</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-2-fmicov-isoline-4">
+            <gml:coordinates>69.367899 25.739577,69.191621 26.009317,69.038217 26.633898,69.235774 27.012413,69.312961 26.866689,69.433620 26.207152,69.367899 25.739577</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      </fmicov:phenomenonIsoline>    
+    
+      </om:result>
+    </omso:GridSeriesObservation>
+  </wfs:member>
+
+    <wfs:member>
+      <omso:GridSeriesObservation gml:id="wfs-member-3">
+	<!-- Data time stamp -->
+	<om:phenomenonTime>
+	  <gml:TimeInstant gml:id="phenomenon-time-wfs-member-3">
+	  <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+	</gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+	<gml:TimeInstant gml:id="result-time-wfs-member-3">
+	<gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:resultTime>
+    <om:procedure xlink:href="http://xml.fmi.fi/inspire/process/hirlam_painepinta"/>
+    <om:parameter>
+      <om:NamedValue>
+        <om:name xlink:href="http://inspire.ec.europa.eu/codeList/ProcessParameterValue/value/numericalModel/analysisTime"/>
+        <om:value>
+          <gml:TimeInstant gml:id="analysis-time-wfs-member-3">
+            <gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+          </gml:TimeInstant>
+        </om:value>
+      </om:NamedValue>
+    </om:parameter>
+    <om:observedProperty
+        xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=temperature&amp;language=eng"/>
+    <om:featureOfInterest>
+      <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-3">
+      <sam:sampledFeature/>
+      <!-- Sampling feature is actually a requested bbox -->
+      <sams:shape>
+	<gml:Polygon gml:id="spatial-sampling-feature-requested-bounding-box-wfs-member-3">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>60.000000,22.000000 70.000000,22.000000 70.000000,31.000000 60.000000,31.000000 60.000000,22.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+  <om:result>
+    
+  
+    <fmicov:phenomenonIsoline dateTime="2008-08-06T00:00:00Z" parameter="Temperature" unit="C" low="9" high="9"
+    gml:id="fmicov-phenomenon-isoline-wfs-member-3-Temperature" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+    
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-3-fmicov-isoline-1">
+            <gml:coordinates>65.914684 22.000000,65.990060 22.126191,66.112281 22.560338,66.127028 23.212792,66.085188 23.833488,66.081116 23.955060,66.330891 24.098486,66.447477 24.057362,66.531514 23.451810,66.476319 22.763511,66.748329 22.258239,66.770387 22.208243,67.034903 22.186916,67.272886 22.487467,67.295522 22.566805,67.312003 23.255826,67.268330 23.908961,67.204901 24.548099,67.127006 25.175312,67.012983 25.201295,66.796720 25.618853,66.688648 25.731131,66.451305 26.039289,66.382808 26.075908,66.127390 25.976923,65.990727 25.714481,65.912605 25.529178,65.671332 25.314433,65.544321 25.411572,65.371267 25.617189,65.113658 25.754093,65.082856 25.814722,64.786748 26.069111,64.573078 26.011246,64.542852 26.603838,64.485243 27.177020,64.353699 27.363020,64.205879 26.978688,64.392923 26.500415,64.521618 25.976765,64.388269 25.281959,64.359954 25.218706,64.151533 24.743998,64.095815 24.502031,63.947213 24.228949,63.707030 24.032923,63.516263 24.166522,63.421231 24.248989,63.157986 24.263626,62.916749 24.090076,62.749228 23.744664,62.712739 23.588970,62.668240 23.139994,62.703803 22.596989,62.676891 22.024512,62.665249 22.000000</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-3-fmicov-isoline-2">
+            <gml:coordinates>61.639390 22.000000,61.581281 22.068754,61.531836 22.049423,61.578707 22.093595,61.666257 22.648707,61.497981 22.856890,61.252385 22.745147,61.163020 22.414919,61.294291 22.000000</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-3-fmicov-isoline-3">
+            <gml:coordinates>60.701160 22.000000,60.552081 22.091352,60.518864 22.127220,60.250879 22.510504,60.244116 22.519925,60.244440 22.568216,60.357933 23.086045,60.378335 23.611723,60.378452 23.634220,60.447209 24.164538,60.502192 24.713484,60.584370 25.281600,60.617270 25.791156,60.633577 25.835047,60.768782 26.443938,60.762064 26.606600,60.904879 27.061346,60.936352 27.200074,60.984810 27.111883,61.255810 26.815443,61.313647 26.779798,61.285758 26.607177,61.250186 26.199683,61.237181 25.653137,61.335320 25.171202,61.506981 24.972822,61.760437 25.028685,61.901270 25.497608,61.914807 25.848795,62.081216 26.159769,62.126487 26.225574,62.172841 26.216638,62.429449 25.814479,62.454638 25.731815,62.706429 25.813978,62.932128 26.101741,62.949847 26.139259,63.140319 26.518731,63.382242 26.686453,63.633673 26.786945,63.830455 27.295802,63.831949 27.317552,63.815218 27.405314,63.725501 27.839579,63.485702 28.259649,63.359070 28.757691,63.438503 29.413920,63.486225 29.618290,63.550696 30.103542,63.372414 30.318235,63.163766 30.383094,63.082782 30.434560,62.779140 30.656054,62.773080 30.666852,62.591266 31.000000</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-3-fmicov-isoline-4">
+            <gml:coordinates>66.011927 30.834091,65.859461 30.858088,65.920410 31.000000</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-3-fmicov-isoline-5">
+            <gml:coordinates>66.077614 31.000000,66.011927 30.834091</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-3-fmicov-isoline-6">
+            <gml:coordinates>61.747056 30.370056,61.731859 30.388260,61.739914 30.410807,61.771067 30.419179,61.747056 30.370056</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-3-fmicov-isoline-7">
+            <gml:coordinates>69.107266 28.155069,69.071665 28.169340,69.095159 28.257915,69.111876 28.206162,69.107266 28.155069</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      <gml:geometryMember>
+            <gml:LineString gml:id="fmicov-phenomenon-isoline-wfs-member-3-fmicov-isoline-8">
+            <gml:coordinates>68.938215 27.256854,68.926132 27.286979,68.924446 27.378794,68.949369 27.307187,68.938215 27.256854</gml:coordinates>
+          </gml:LineString>
+        </gml:geometryMember>
+	
+      </fmicov:phenomenonIsoline>    
+    
+      </om:result>
+    </omso:GridSeriesObservation>
+  </wfs:member>
+
+    <wfs:member>
+      <omso:GridSeriesObservation gml:id="wfs-member-4">
+	<!-- Data time stamp -->
+	<om:phenomenonTime>
+	  <gml:TimeInstant gml:id="phenomenon-time-wfs-member-4">
+	  <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+	</gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+	<gml:TimeInstant gml:id="result-time-wfs-member-4">
+	<gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:resultTime>
+    <om:procedure xlink:href="http://xml.fmi.fi/inspire/process/hirlam_painepinta"/>
+    <om:parameter>
+      <om:NamedValue>
+        <om:name xlink:href="http://inspire.ec.europa.eu/codeList/ProcessParameterValue/value/numericalModel/analysisTime"/>
+        <om:value>
+          <gml:TimeInstant gml:id="analysis-time-wfs-member-4">
+            <gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+          </gml:TimeInstant>
+        </om:value>
+      </om:NamedValue>
+    </om:parameter>
+    <om:observedProperty
+        xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=temperature&amp;language=eng"/>
+    <om:featureOfInterest>
+      <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-4">
+      <sam:sampledFeature/>
+      <!-- Sampling feature is actually a requested bbox -->
+      <sams:shape>
+	<gml:Polygon gml:id="spatial-sampling-feature-requested-bounding-box-wfs-member-4">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>60.000000,22.000000 70.000000,22.000000 70.000000,31.000000 60.000000,31.000000 60.000000,22.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+  <om:result>
+    
+      <fmicov:phenomenonArea dateTime="2008-08-05T18:00:00Z" parameter="Temperature" unit="C" low="13" high="16"
+      gml:id="fmicov-phenomenon-area-wfs-member-4-Temperature"  srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-4-surface-member-1">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>60.459563 22.000000,66.022733 22.000000,66.093757 22.265739,66.166959 22.590351,66.178594 22.661270,66.194377 22.776145,66.278909 22.886283,66.340636 22.938480,66.428246 23.092218,66.451686 23.297732,66.452011 23.404079,66.504871 23.746593,66.509650 23.812865,66.538769 24.114661,66.550313 24.541811,66.590410 24.674669,66.744236 24.799900,66.782655 24.862377,66.862974 24.993184,66.821532 25.136411,66.762329 25.478858,66.739286 25.577973,66.714809 25.584985,66.704695 25.588536,66.559926 25.452587,66.474212 25.260381,66.451285 25.341963,66.430044 25.362592,66.251547 25.380174,66.195951 25.372371,66.106031 25.364885,66.037553 25.355121,65.932615 25.350446,65.672088 25.307671,65.621786 25.354986,65.531510 25.403052,65.449198 25.502638,65.381685 25.527723,65.271164 25.625251,65.157992 25.651618,65.099207 25.677242,64.895435 25.609233,64.857195 25.622286,64.840372 25.625698,64.832222 25.595028,64.826384 25.563749,64.703657 25.280887,64.640036 25.077347,64.570363 24.975889,64.436076 24.758812,64.416600 24.728927,64.395801 24.729027,64.204352 24.666575,64.158941 24.679842,64.082170 24.670179,63.986667 24.629464,63.901364 24.633943,63.650315 24.535217,63.555939 24.571944,63.406724 24.621765,63.377197 24.632255,63.360335 24.616404,63.189676 24.443376,63.142335 24.400073,63.072776 24.319214,62.992298 24.242462,62.911500 24.135912,62.823236 24.166758,62.638049 24.247583,62.518898 24.569453,62.417162 24.685490,62.360465 24.745295,62.313391 24.778543,62.211351 24.954418,62.140886 25.084638,62.098026 25.614364,62.034430 25.821746,62.013368 25.895846,61.957697 26.083723,61.959717 26.639393,61.850497 27.123770,61.869047 27.344005,61.927156 27.621336,62.159447 27.837959,62.177020 27.858066,62.229641 27.938698,62.322602 28.127600,62.368411 28.209282,62.418334 28.453094,62.422136 28.643697,62.372160 29.178286,62.355792 29.371294,62.350795 29.597168,62.342340 29.728013,62.213826 29.867562,62.080101 29.996050,62.053028 30.028247,62.021281 30.049470,61.881674 30.141201,61.767056 30.254758,61.701676 30.364761,61.715417 30.422212,61.722257 30.509661,61.739409 30.958426,61.735095 31.000000,60.559699 31.000000,60.559071 30.996978,60.557974 31.000000,60.000000 31.000000,60.000000 29.386636,60.009392 29.633150,60.152882 29.217914,60.181496 29.085438,60.220389 28.905364,60.252072 28.758685,60.314892 28.559907,60.322523 28.522271,60.403556 28.332449,60.404494 28.071728,60.405193 28.064378,60.415452 27.811343,60.412097 27.663494,60.419053 27.345275,60.419004 27.285840,60.419332 27.254298,60.420590 27.142053,60.408329 26.862494,60.409587 26.754151,60.385432 26.482820,60.385381 26.466718,60.375144 26.209429,60.362969 26.101783,60.339217 25.916907,60.302764 25.762318,60.292215 25.640081,60.251632 25.412932,60.224803 25.167120,60.213396 25.077644,60.210607 25.052285,60.202075 25.026890,60.124479 24.743332,60.079612 24.491537,60.073688 24.394075,60.048587 24.218895,60.014883 24.054331,60.010401 23.944260,60.014805 23.768072,60.015602 23.643041,60.022408 23.439667,60.025665 23.218495,60.019565 23.114945,60.016893 22.927565,60.042168 22.430273,60.173440 22.285587,60.285248 22.191998,60.340479 22.152020,60.388028 22.070457,60.459563 22.000000</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+		  <!-- interior ring #1 -->
+		  <gml:interior>
+		    <gml:LinearRing>
+		      <gml:coordinates>61.062534 28.785034,61.104915 28.976264,61.157406 29.133961,61.388434 29.343107,61.476483 29.080274,61.447830 28.986839,61.214661 28.788917,61.062534 28.785034</gml:coordinates>
+		    </gml:LinearRing>
+		  </gml:interior>		
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-4-surface-member-2">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>63.268321 25.530207,63.260243 25.757621,63.253094 25.791931,63.206807 26.013776,63.198331 25.798511,63.200840 25.720545,63.222335 25.671400,63.268321 25.530207</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+    </fmicov:phenomenonArea>
+  
+  
+      </om:result>
+    </omso:GridSeriesObservation>
+  </wfs:member>
+
+    <wfs:member>
+      <omso:GridSeriesObservation gml:id="wfs-member-5">
+	<!-- Data time stamp -->
+	<om:phenomenonTime>
+	  <gml:TimeInstant gml:id="phenomenon-time-wfs-member-5">
+	  <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+	</gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+	<gml:TimeInstant gml:id="result-time-wfs-member-5">
+	<gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:resultTime>
+    <om:procedure xlink:href="http://xml.fmi.fi/inspire/process/hirlam_painepinta"/>
+    <om:parameter>
+      <om:NamedValue>
+        <om:name xlink:href="http://inspire.ec.europa.eu/codeList/ProcessParameterValue/value/numericalModel/analysisTime"/>
+        <om:value>
+          <gml:TimeInstant gml:id="analysis-time-wfs-member-5">
+            <gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+          </gml:TimeInstant>
+        </om:value>
+      </om:NamedValue>
+    </om:parameter>
+    <om:observedProperty
+        xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=temperature&amp;language=eng"/>
+    <om:featureOfInterest>
+      <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-5">
+      <sam:sampledFeature/>
+      <!-- Sampling feature is actually a requested bbox -->
+      <sams:shape>
+	<gml:Polygon gml:id="spatial-sampling-feature-requested-bounding-box-wfs-member-5">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>60.000000,22.000000 70.000000,22.000000 70.000000,31.000000 60.000000,31.000000 60.000000,22.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+  <om:result>
+    
+      <fmicov:phenomenonArea dateTime="2008-08-05T21:00:00Z" parameter="Temperature" unit="C" low="13" high="16"
+      gml:id="fmicov-phenomenon-area-wfs-member-5-Temperature"  srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-5-surface-member-1">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>63.311785 22.000000,65.341245 22.000000,65.428423 22.194467,65.439004 22.241552,65.454230 22.266695,65.636430 22.303636,65.703503 22.320408,65.711033 22.322423,65.716440 22.330895,65.721998 22.348822,65.747062 22.485685,65.794211 22.729962,65.835758 23.046034,65.837498 23.182271,65.863624 23.489937,65.869280 23.651436,65.868646 23.703241,65.791007 24.295210,65.787076 24.307327,65.780363 24.313867,65.638275 24.557453,65.527154 24.765730,65.488473 24.799805,65.462793 24.809869,65.385532 24.849159,65.300098 24.883664,65.180187 24.972853,65.092809 24.888264,65.033686 24.837336,64.941571 24.745011,64.848204 24.600622,64.802016 24.558505,64.711421 24.444343,64.665864 24.362788,64.598176 24.196781,64.555488 24.028709,64.503017 23.942587,64.396788 23.764059,64.384769 23.754553,64.275226 23.618798,64.200728 23.554048,64.091286 23.444325,64.037132 23.395579,64.005955 23.345615,63.982487 23.250947,63.921162 22.985514,63.835951 22.810639,63.767393 22.724610,63.643954 22.593917,63.602323 22.545222,63.578799 22.516041,63.542738 22.439567,63.455435 22.216801,63.385635 22.103051,63.311785 22.000000</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-5-surface-member-2">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>60.078206 22.000000,60.416141 22.000000,60.367485 22.061544,60.334789 22.134290,60.286034 22.184714,60.185595 22.323376,60.103928 22.457691,60.103502 22.706777,60.103482 22.720874,60.103084 22.967303,60.112962 23.110748,60.131123 23.473037,60.132249 23.492178,60.132299 23.501691,60.133672 23.529723,60.168206 23.870873,60.173664 24.025847,60.195871 24.249769,60.202099 24.389997,60.213570 24.561231,60.223483 24.628070,60.243538 24.711448,60.304840 24.943299,60.324096 25.138106,60.342178 25.309873,60.386545 25.578137,60.405598 25.646870,60.410916 25.707317,60.437609 25.921793,60.448851 26.006522,60.475839 26.268847,60.478849 26.380610,60.499301 26.615639,60.516550 26.745981,60.516951 26.819797,60.517549 26.960263,60.518221 27.149288,60.519205 27.349453,60.527418 27.543385,60.559794 27.891220,60.560922 27.906203,60.560901 27.911693,60.561975 27.922041,60.596576 28.276767,60.615700 28.475872,60.554746 28.663870,60.444277 28.828847,60.420342 28.874306,60.362332 29.128920,60.323500 29.328589,60.321661 29.336587,60.309591 29.434139,60.295930 29.761571,60.288422 29.844713,60.222763 29.923507,60.110865 30.078991,60.030820 30.186767,60.000000 30.200289,60.000000 28.183565,60.035685 28.167229,60.068471 28.110181,60.163222 27.648605,60.157548 27.527704,60.187462 27.223030,60.189071 27.142078,60.188873 27.096151,60.203412 26.848469,60.193429 26.690473,60.196180 26.624923,60.184811 26.468267,60.166592 26.317369,60.166379 26.087570,60.140228 25.943147,60.136987 25.570216,60.135717 25.551918,60.134712 25.545265,60.133546 25.531520,60.067439 25.215674,60.058995 24.994540,60.026998 24.856005,60.000000 24.637615,60.000000 22.100604,60.043965 22.057589,60.078206 22.000000</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-5-surface-member-3">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>60.851018 29.908777,60.938188 29.946288,61.019821 29.936799,61.114805 29.915146,61.290459 29.916283,61.322967 29.981442,61.333103 30.080136,61.360652 30.351428,61.432985 30.625114,61.445595 30.677335,61.451952 30.728165,61.451494 30.851661,61.444936 31.000000,60.110793 31.000000,60.150165 30.807088,60.233975 30.612564,60.387884 30.480733,60.395627 30.469906,60.398977 30.460957,60.416256 30.434135,60.530474 30.210811,60.680420 30.134101,60.698641 30.094180,60.729396 30.069553,60.851018 29.908777</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-5-surface-member-4">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>61.378670 27.754251,61.525984 28.011843,61.287418 28.338936,61.251269 28.007844,61.239845 27.818758,61.321185 27.754271,61.378670 27.754251</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+    </fmicov:phenomenonArea>
+  
+  
+      </om:result>
+    </omso:GridSeriesObservation>
+  </wfs:member>
+
+    <wfs:member>
+      <omso:GridSeriesObservation gml:id="wfs-member-6">
+	<!-- Data time stamp -->
+	<om:phenomenonTime>
+	  <gml:TimeInstant gml:id="phenomenon-time-wfs-member-6">
+	  <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+	</gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+	<gml:TimeInstant gml:id="result-time-wfs-member-6">
+	<gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:resultTime>
+    <om:procedure xlink:href="http://xml.fmi.fi/inspire/process/hirlam_painepinta"/>
+    <om:parameter>
+      <om:NamedValue>
+        <om:name xlink:href="http://inspire.ec.europa.eu/codeList/ProcessParameterValue/value/numericalModel/analysisTime"/>
+        <om:value>
+          <gml:TimeInstant gml:id="analysis-time-wfs-member-6">
+            <gml:timePosition>2008-08-04T12:00:00Z</gml:timePosition>
+          </gml:TimeInstant>
+        </om:value>
+      </om:NamedValue>
+    </om:parameter>
+    <om:observedProperty
+        xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=temperature&amp;language=eng"/>
+    <om:featureOfInterest>
+      <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-6">
+      <sam:sampledFeature/>
+      <!-- Sampling feature is actually a requested bbox -->
+      <sams:shape>
+	<gml:Polygon gml:id="spatial-sampling-feature-requested-bounding-box-wfs-member-6">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>60.000000,22.000000 70.000000,22.000000 70.000000,31.000000 60.000000,31.000000 60.000000,22.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+  <om:result>
+    
+      <fmicov:phenomenonArea dateTime="2008-08-06T00:00:00Z" parameter="Temperature" unit="C" low="13" high="16"
+      gml:id="fmicov-phenomenon-area-wfs-member-6-Temperature"  srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-6-surface-member-1">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>63.341099 22.000000,65.262536 22.000000,65.326397 22.141850,65.372030 22.343587,65.437150 22.451875,65.554629 22.567546,65.559445 22.571349,65.676511 22.697145,65.709716 22.858423,65.730865 22.986943,65.731316 23.245038,65.729113 23.344303,65.734033 23.623646,65.689233 23.913852,65.689058 23.915179,65.645488 24.205677,65.585091 24.341225,65.491201 24.547311,65.437211 24.590996,65.390453 24.679316,65.266057 24.744849,65.200220 24.792994,65.125455 24.711545,65.016155 24.579365,64.966242 24.523149,64.935440 24.480935,64.736278 24.278353,64.732316 24.271851,64.730807 24.269492,64.720703 24.237867,64.628453 23.927443,64.523567 23.748797,64.471262 23.659981,64.327389 23.538686,64.288874 23.489893,64.263589 23.466509,64.129819 23.330535,64.081429 23.240079,64.056201 23.211852,63.963020 22.926482,63.940746 22.895608,63.844862 22.722245,63.799357 22.679356,63.622523 22.518119,63.606552 22.503210,63.576757 22.456338,63.463343 22.205499,63.387846 22.079979,63.341099 22.000000</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-6-surface-member-2">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>60.000000 22.000000,60.248324 22.000000,60.244219 22.008478,60.132371 22.158530,60.014561 22.330497,60.000000 22.344489,60.000000 22.000000</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-6-surface-member-3">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>60.000000 23.299710,60.004735 23.431218,60.002804 23.658542,60.003595 23.731391,60.003362 23.940776,60.008021 24.062471,60.038892 24.295530,60.058384 24.412115,60.063836 24.483330,60.113942 24.755600,60.162902 24.952916,60.190136 25.064998,60.190940 25.074936,60.193974 25.087820,60.237920 25.428452,60.272744 25.629112,60.288761 25.777962,60.332706 25.963013,60.356167 26.109328,60.366661 26.204423,60.375809 26.431571,60.376733 26.492257,60.395253 26.745446,60.392408 26.879533,60.402219 27.263591,60.402256 27.272432,60.402246 27.275201,60.402583 27.281742,60.415554 27.659907,60.428161 27.819630,60.429124 28.046542,60.453721 28.256896,60.462617 28.371974,60.434306 28.440639,60.345630 28.615404,60.290951 28.785365,60.242857 28.996895,60.232437 29.036126,60.184599 29.240215,60.020896 29.567750,60.000000 29.325375,60.000000 23.299710</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+	<gml:surfaceMember>
+	  <gml:Surface gml:id="fmicov-phenomenon-area-Temperature-wfs-member-6-surface-member-4">
+	    <gml:patches>
+	      <gml:PolygonPatch>
+		<!-- exterior ring -->
+		<gml:exterior>
+		  <gml:LinearRing>
+		    <gml:coordinates>60.987000 30.121788,61.247820 30.159407,61.271626 30.435435,61.329890 30.632122,61.351785 31.000000,60.387164 31.000000,60.389894 30.991696,60.532382 30.562522,60.585888 30.453736,60.675881 30.365873,60.816606 30.236753,60.902845 30.135055,60.987000 30.121788</gml:coordinates>
+		  </gml:LinearRing>
+		</gml:exterior>
+		
+	      </gml:PolygonPatch>
+	    </gml:patches>
+	  </gml:Surface>
+	</gml:surfaceMember>
+      
+    </fmicov:phenomenonArea>
+  
+  
+      </om:result>
+    </omso:GridSeriesObservation>
+  </wfs:member>
+
+</wfs:FeatureCollection>

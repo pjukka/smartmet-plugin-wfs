@@ -1,0 +1,55 @@
+/**
+
+@mainpage
+
+- @subpage WFS_PLUGIN_INTRO
+- @subpage WFS_PLUGIN_INTERFACE
+- Configuration
+    - @subpage WFS_PLUGIN_CONFIG
+    - @subpage WFS_CFG_STORED_QUERY
+    - @subpage WFS_PLUGIN_CONFIG_FEATURE_DEF
+    - @subpage WFS_PLUGIN_CONFIG_CRS_DEF
+    - @subpage WFS_PLUGIN_CONFIG_DATA_TYPES
+        - @ref WFS_CFG_STORED_QUERY_PARAM
+        - @ref WFS_CFG_MULTI_LANGUAGE_STRING
+        - @ref WFS_CFG_PARAM_TMPL_ITEM
+        - @ref WFS_CFG_SCALAR_PARAM_TMPL "cfgScalarParameterTemplate"
+        - @ref WFS_CFG_ARRAY_PARAM_TMPL "cfgArrayParameterTemplate"
+        - @ref WFS_SQ_NAMED_PARAM_DEF "cfgNamedParamDef"
+        - @ref WFS_CFG_URL_TEMPLATE "cfgUrlTemplate"
+- Stored queries
+    - @subpage WFS_SQ_PARAM_GROUPS
+        - @ref WFS_SQ_TIME_PARAMS
+        - @ref WFS_SQ_TIME_ZONE
+        - @ref WFS_SQ_PARAM_BBOX
+        - @ref WFS_SQ_LOCATION_PARAMS
+        - @ref WFS_SQ_NAMED_PARAMS
+        - @ref WFS_SQ_QUALITY_PARAMS
+    - @subpage WFS_SQ_PARAM_TYPES
+        - @ref WFS_PARAM_TYPE_BOOL
+        - @ref WFS_PARAM_TYPE_INT
+        - @ref WFS_PARAM_TYPE_UINT
+        - @ref WFS_PARAM_TYPE_DOUBLE
+        - @ref WFS_PARAM_TYPE_STRING
+        - @ref WFS_PARAM_TYPE_TIME
+        - @ref WFS_PARAM_TYPE_POINT
+        - @ref WFS_PARAM_TYPE_BBOX
+    - @subpage WFS_SQ_QUERY_HANDLERS
+        - @ref WFS_SQ_GET_FEATURE_BY_ID "GetFeatureByID handler"
+        - @ref WFS_SQ_DATA_SET_BY_ID "GetDataSetByID handler"
+        - @ref WFS_SQ_GENERIC_OBS "Observation data queries handler" (except for lightning observations)
+        - @ref WFS_SQ_FLASH_OBS_HANDLER "Lightning observation data query handler"
+        - @ref WFS_SQ_FORECAST_QUERY_HANDLER "Forecast data query handler"
+        - @ref WFS_SQ_QE_DOWNLOAD_HANDLER "QEngine data download query handler" (redirects download to
+                      <a href="../../dlsplugin/html/index.html">Download plugin</a>)
+        - @ref WFS_SQ_GEOSERVER_DOWNLOAD_HANDLER "GeoServer data download handler" (redirects download
+                      to GeoServer)
+        - @ref WFS_SQ_FILE_QUERY_HANDLER "File download handler"
+        - @ref WFS_SQ_AVIATION_OBSERVATION_QUERY_HANDLER "Aviation observations handler"
+        - @ref WFS_SQ_MAST_QUERY_HANDLER "Mast profile observation handler"
+        - @ref WFS_SQ_AIR_NUCLIDE_QUERY_HANDLER "Air Radionuclide activity concentration data handler"
+- @subpage WFS_PLUGIN_BUILD
+    - @ref WFS_PLUGIN_BUILD_PREFIX
+- @subpage WFS_PLUGIN_XML_VALIDATION
+
+*/

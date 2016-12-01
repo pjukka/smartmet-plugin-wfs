@@ -1,0 +1,6 @@
+/xml-schema-cache
+/s-xml-schema-cache
+/libwfs.a
+*.test
+*.d
+*.o

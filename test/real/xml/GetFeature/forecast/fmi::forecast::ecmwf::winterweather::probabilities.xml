@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:StoredQuery id="fmi::forecast::ecmwf::winterweather::probabilities">
+     <wfs:Parameter name="starttime">2016-08-11T18:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="endtime">2016-08-11T19:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="timestep">180</wfs:Parameter>
+     <wfs:Parameter name="producer">wwi-prob</wfs:Parameter>
+     <wfs:Parameter name="bbox">22.01,60.01,26.01,61.01</wfs:Parameter>
+   </wfs:StoredQuery>
+</wfs:GetFeature>

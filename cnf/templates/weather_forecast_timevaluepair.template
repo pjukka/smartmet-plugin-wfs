@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+    timeStamp="<TMPL_var responseTimestamp>"
+    numberMatched="<TMPL_var (numMatched*numParam)>"
+    numberReturned="<TMPL_var (numReturned*numParam)>"
+<TMPL_include "include/refs_for_timevaluepair.template">
+<TMPL_if (!DEFINED(hits_only))>    <TMPL_FOREACH groups AS group><TMPL_foreach group.paramList as param>
+    <wfs:member>
+        <omso:PointTimeSeriesObservation gml:id="<TMPL_var param.featureId>-<TMPL_var param.name>">
+	    <TMPL_include "include/time_for_timevaluepair.template">
+	    <om:procedure <TMPL_include "include/link_for_process.template">/>
+	    <TMPL_include "include/process_parameter_for.template">
+            <om:observedProperty <TMPL_include "include/link_observable_property.template">/>
+	    <TMPL_include "include/foi_for_timevaluepair.template">
+        <TMPL_include "include/results_for_timevaluepair.template">
+        </omso:PointTimeSeriesObservation>
+    </wfs:member>
+</TMPL_foreach></TMPL_foreach>
+</TMPL_if></wfs:FeatureCollection>

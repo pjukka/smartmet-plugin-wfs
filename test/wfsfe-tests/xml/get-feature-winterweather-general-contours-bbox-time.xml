@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+	 xmlns:wfs="http://www.opengis.net/wfs/2.0"
+	 xmlns:wp="http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/02/18"
+	 xmlns:gml="http://www.opengis.net/gml/3.2" 
+	 xmlns:om="http://www.opengis.net/om/2.0"
+	 xmlns:sam="http://www.opengis.net/sampling/2.0"
+	 xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+	 xmlns:xlink="http://www.w3.org/1999/xlink"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+			     http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd
+			     http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd					   
+			     http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd
+			     http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd
+			     http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/02/18 ../schema/WinterPrecipitation.xsd">
+  <wfs:Query typeNames="wp:WinterWeatherGeneralContours">
+    <fes:Filter
+      xmlns:gml="http://www.opengis.net/gml/3.2"
+      xmlns:fes="http://www.opengis.net/fes/2.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.opengis.net/fes/2.0
+		  http://schemas.opengis.net/filter/2.0/filterAll.xsd
+		  http://www.opengis.net/gml/3.2
+		  http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+      <fes:And>
+	<fes:During>
+	  <fes:ValueReference></fes:ValueReference>
+	    <gml:TimePeriod gml:id="TP1">
+	    <gml:begin>
+	      <gml:TimeInstant gml:id="TI1">
+		<gml:timePosition>2008-08-05T18:00:00Z</gml:timePosition>
+	      </gml:TimeInstant>
+	    </gml:begin>
+	    <gml:end>
+	      <gml:TimeInstant gml:id="TI2">
+		<gml:timePosition>2008-08-06T00:00:00Z</gml:timePosition>
+	      </gml:TimeInstant>
+	    </gml:end>
+	  </gml:TimePeriod>
+	</fes:During>
+	<fes:BBOX>
+	  <fes:ValueReference></fes:ValueReference>
+	  <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+	    <gml:lowerCorner>22.11 59.95</gml:lowerCorner>
+	    <gml:upperCorner>25.98 61.12</gml:upperCorner>
+	  </gml:Envelope>
+	</fes:BBOX>
+      </fes:And>
+    </fes:Filter>
+  </wfs:Query>
+</wfs:GetFeature>

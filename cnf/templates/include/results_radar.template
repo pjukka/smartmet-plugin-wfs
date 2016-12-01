@@ -1,0 +1,42 @@
+<TMPL_block "x_vector"><TMPL_if DEFINED(dataset.params.db_width[0])><TMPL_if DEFINED(dataset.params.origSrsSwapped)><TMPL_var ((dataset.params.origEnvelope[0]-dataset.params.origEnvelope[2])/dataset.params.db_width[0])><TMPL_else><TMPL_var ((dataset.params.origEnvelope[2]-dataset.params.origEnvelope[0])/dataset.params.db_width[0])></TMPL_if><TMPL_else><TMPL_if DEFINED(dataset.params.origSrsSwapped)><TMPL_var ((dataset.params.origEnvelope[0]-dataset.params.origEnvelope[2])/dataset.params.width[0])><TMPL_else><TMPL_var ((dataset.params.origEnvelope[2]-dataset.params.origEnvelope[0])/dataset.params.width[0])></TMPL_if></TMPL_if></TMPL_block><TMPL_block "y_vector"><TMPL_if DEFINED(dataset.params.db_height[0])><TMPL_if DEFINED(dataset.params.origSrsSwapped)><TMPL_var ((dataset.params.origEnvelope[3]-dataset.params.origEnvelope[1])/dataset.params.db_height[0])><TMPL_else><TMPL_var ((dataset.params.origEnvelope[1]-dataset.params.origEnvelope[3])/dataset.params.db_height[0])></TMPL_if><TMPL_else><TMPL_if DEFINED(dataset.params.origSrsSwapped)><TMPL_var ((dataset.params.origEnvelope[3]-dataset.params.origEnvelope[1])/dataset.params.height[0])><TMPL_else><TMPL_var ((dataset.params.origEnvelope[1]-dataset.params.origEnvelope[3])/dataset.params.height[0])></TMPL_if></TMPL_if></TMPL_block><TMPL_block "width"><TMPL_if DEFINED(dataset.params.db_width[0])><TMPL_var dataset.params.db_width[0]><TMPL_else><TMPL_var dataset.params.width[0]></TMPL_if></TMPL_block><TMPL_block "height"><TMPL_if DEFINED(dataset.params.db_height[0])><TMPL_var dataset.params.db_height[0]><TMPL_else><TMPL_var dataset.params.height[0]></TMPL_if></TMPL_block>            <om:result>        
+                <gmlcov:RectifiedGridCoverage gml:id="grid-coverage-<TMPL_var dataset.__index__>">
+                    <gml:domainSet>
+                        <gml:RectifiedGrid gml:id="grid-<TMPL_var dataset.__index__>" srsName="http://www.opengis.net/def/crs/EPSG/0/<TMPL_var dataset.params.origSrs[0]>" dimension="<TMPL_var dataset.params.origSrsDim[0]>">
+                            <gml:limits>
+                                <gml:GridEnvelope>
+                                    <gml:low>0 0</gml:low>
+					    <gml:high><TMPL_call "width"> <TMPL_call "height"></gml:high>
+                                </gml:GridEnvelope>
+                            </gml:limits>                          
+                            <gml:axisLabels><TMPL_var dataset.params.origSrsAxisLabels[0]> <TMPL_var dataset.params.origSrsAxisLabels[1]></gml:axisLabels>
+                            <gml:origin>
+                                <gml:Point gml:id="origin-point-<TMPL_var dataset.__index__>" srsName="http://www.opengis.net/def/crs/EPSG/0/<TMPL_var dataset.params.origSrs[0]>" srsDimension="<TMPL_var dataset.params.origSrsDim[0]>">
+                                   <!-- Upper right corner -->
+                                    <gml:pos><TMPL_var dataset.params.origBoundary[0]> <TMPL_var dataset.params.origBoundary[1]></gml:pos>
+                                </gml:Point>
+                            </gml:origin>
+                            <!-- Vector with dx and dy in the returned grid. -->
+                            <gml:offsetVector><TMPL_call "x_vector"> 0</gml:offsetVector>
+                            <gml:offsetVector>0 <TMPL_call "y_vector"></gml:offsetVector>
+                        </gml:RectifiedGrid>
+                    </gml:domainSet>
+                    <gml:rangeSet>           
+                        <gml:File>
+                            <gml:rangeParameters/>
+                            <gml:fileReference>http://wms.fmi.fi<TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/geoserver/Radar/wms?<TMPL_var HTMLESCAPE(dataset.URL)>&amp;width=<TMPL_call "width">&amp;height=<TMPL_call "height"></gml:fileReference>     
+                            <gml:fileStructure/>
+                            <gml:mimeType>image/geotiff</gml:mimeType>
+                        </gml:File>
+                    </gml:rangeSet>
+                    <gml:coverageFunction>
+                        <gml:CoverageMappingRule>
+                            <gml:ruleDefinition>Linear</gml:ruleDefinition>
+                        </gml:CoverageMappingRule>
+                    </gml:coverageFunction>
+                    <gmlcov:rangeType>
+                        <swe:DataRecord>
+                            <swe:field name="<TMPL_var dataset.params.layerParam[0]>" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=<TMPL_var dataset.params.layerParam[0]>&amp;"/>
+                        </swe:DataRecord>
+                    </gmlcov:rangeType>              
+                </gmlcov:RectifiedGridCoverage>
+            </om:result>

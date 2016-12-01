@@ -1,0 +1,40 @@
+/**
+
+@page WFS_PLUGIN_INTERFACE WFS Plugin interface
+
+There are several ways of performing WFS requests:
+
+- <b>KVP (HTTP GET)</b> - request is provided inside the URL parameters
+- <b>KVP (HTTP POST)</b> - request is provided inside request body (content type application/x-www-form-urlencoded)
+- <b>XML (HTTP POST)</b> - request is provided as XML document (content type text/xml, XML
+                           schema http://www.opengis.net/wfs/2.0)
+- <b>XML (HTTP POST, SOAP request)</b> - not implemented
+
+Language support is implemented in the following way (let us assume the base URL is http://beta.fmi.fi/wfs,
+replace with different URL if required). Some examples as HTTP GET requests are give below:
+
+- <i>http://beta.fmi.fi/wfs?service=WFS&version=2.0.0&request=ListStoredQueries</i>- uses the default
+         language (the first one from language list provided in the WFS plugin configuration)
+- <i>http://beta.fmi.fi/wfs/fin?service=WFS&version=2.0.0&request=ListStoredQueries</i> - uses specified
+         language (@b fin in this case). In case of POST calls the parameters are provided in message body
+          instead but the meaning of directory part of URL is the same
+
+The response content type is <b>text/xml</b>. The only exception is when the actual response body begins
+with <html>: in this case Content-Type header of response contains value text/html. This additional feature
+is for testing and diagnostics purpose only and must not be used in production servers. For example one can
+provide response template:
+@verbatim
+<html><title>CTPP hash content</title>
+<body>
+<pre>
+<TMPL_VAR OBJ_DUMP()>
+</pre>
+</body>
+</html>
+@endverbatim
+
+Addtionally a possibility to dump the response in the internal format (CTPP::CDT) is available
+for @b GetFeature and @b GetPropertyValue requests by providing standard presentation parameter
+@b outputFormat value @b debug
+
+*/

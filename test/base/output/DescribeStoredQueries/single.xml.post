@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeStoredQueriesResponse xmlns="http://www.opengis.net/wfs/2.0"
+  xmlns:omso="http://inspire.ec.europa.eu/schemas/omso/3.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ows_common="http://www.opengis.net/ows/1.1"
+  xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:fe="http://www.opengis.net/fes/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+  http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd
+  http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd
+  http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+
+  <StoredQueryDescription id="ForecastTest">
+    <Title>ForecastTest</Title>
+    <Abstract>
+    ForecastTest
+    </Abstract>
+    
+    <Parameter name="begin" type="xsi:dateTime">
+      <Title>The begin of time interval</Title>
+      <Abstract>
+      The begin of time interval
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="end" type="xsi:dateTime">
+      <Title>The end of time interval</Title>
+      <Abstract>
+      The end of time interval
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="origintime" type="xsi:dateTime">
+      <Title>The origin time of the model</Title>
+      <Abstract>
+      The origin time of the model
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="timestep" type="xsi:unsignedInteger">
+      <Title>The time step in minutes</Title>
+      <Abstract>
+      The time step in minutes
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="hours" type="IntegerArray">
+      <Title>Hours</Title>
+      <Abstract>
+      Hours
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="times" type="IntegerArray">
+      <Title>Hours</Title>
+      <Abstract>
+      Hours
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="place" type="xsi:string">
+      <Title>The list of sites for which to provide forecast</Title>
+      <Abstract>
+      The list of sites for which to provide forecast
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="latlons" type="double">
+      <Title>The list of sites for which to provide forecast</Title>
+      <Abstract>
+      The list of sites for which to provide forecast
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="parameter" type="NameList">
+      <Title>Parameters to return</Title>
+      <Abstract>
+      Comma separated list of parameters to return
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="crs" type="string">
+      <Title>Coordinate projection to use in results</Title>
+      <Abstract>
+      Coordinate projection to use in results
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="missingtext" type="string">
+      <Title>string to show for missing values</Title>
+      <Abstract>
+      string to show for missing values
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="tz" type="string">
+      <Title>Time zone</Title>
+      <Abstract>
+      Time zone
+      </Abstract>
+    </Parameter>
+    
+    <QueryExpressionText xmlns:wfs_001="http://inspire.ec.europa.eu/schemas/omso/3.0"
+                         xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd"
+                         returnFeatureTypes="wfs_001:PointTimeSeriesObservation"
+                         language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression"
+                         isPrivate="true"/>
+  </StoredQueryDescription>
+
+</DescribeStoredQueriesResponse>

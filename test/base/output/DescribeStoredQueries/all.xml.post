@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeStoredQueriesResponse xmlns="http://www.opengis.net/wfs/2.0"
+  xmlns:omso="http://inspire.ec.europa.eu/schemas/omso/3.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ows_common="http://www.opengis.net/ows/1.1"
+  xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:fe="http://www.opengis.net/fes/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+  http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd
+  http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd
+  http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+
+  <StoredQueryDescription id="ForecastTest">
+    <Title>ForecastTest</Title>
+    <Abstract>
+    ForecastTest
+    </Abstract>
+    
+    <Parameter name="begin" type="xsi:dateTime">
+      <Title>The begin of time interval</Title>
+      <Abstract>
+      The begin of time interval
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="end" type="xsi:dateTime">
+      <Title>The end of time interval</Title>
+      <Abstract>
+      The end of time interval
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="origintime" type="xsi:dateTime">
+      <Title>The origin time of the model</Title>
+      <Abstract>
+      The origin time of the model
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="timestep" type="xsi:unsignedInteger">
+      <Title>The time step in minutes</Title>
+      <Abstract>
+      The time step in minutes
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="hours" type="IntegerArray">
+      <Title>Hours</Title>
+      <Abstract>
+      Hours
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="times" type="IntegerArray">
+      <Title>Hours</Title>
+      <Abstract>
+      Hours
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="place" type="xsi:string">
+      <Title>The list of sites for which to provide forecast</Title>
+      <Abstract>
+      The list of sites for which to provide forecast
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="latlons" type="double">
+      <Title>The list of sites for which to provide forecast</Title>
+      <Abstract>
+      The list of sites for which to provide forecast
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="parameter" type="NameList">
+      <Title>Parameters to return</Title>
+      <Abstract>
+      Comma separated list of parameters to return
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="crs" type="string">
+      <Title>Coordinate projection to use in results</Title>
+      <Abstract>
+      Coordinate projection to use in results
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="missingtext" type="string">
+      <Title>string to show for missing values</Title>
+      <Abstract>
+      string to show for missing values
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="tz" type="string">
+      <Title>Time zone</Title>
+      <Abstract>
+      Time zone
+      </Abstract>
+    </Parameter>
+    
+    <QueryExpressionText xmlns:wfs_001="http://inspire.ec.europa.eu/schemas/omso/3.0"
+                         xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd"
+                         returnFeatureTypes="wfs_001:PointTimeSeriesObservation"
+                         language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression"
+                         isPrivate="true"/>
+  </StoredQueryDescription>
+
+  <StoredQueryDescription id="ObsTest">
+    <Title>FMI WFS &lt;test&gt; stored query</Title>
+    <Abstract>
+    More detailed description of FMI WFS test stored query
+    </Abstract>
+    
+    <Parameter name="begin" type="xsi:dateTime">
+      <Title>Begin of the time interval</Title>
+      <Abstract>
+      More detailed description of optional parameter &lt;bar&gt;
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="end" type="xsi:dateTime">
+      <Title>Parameter bar2</Title>
+      <Abstract>
+      More detailed description of optional parameter bar2
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="place" type="string">
+      <Title>Sites for which to find observations</Title>
+      <Abstract>
+      Sites for which to find observations
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="wmo" type="integerList">
+      <Title>Sites for which to find observations</Title>
+      <Abstract>
+      Sites for which to find observations
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="parameter" type="gml:NameList">
+      <Title>Parameter bar4</Title>
+      <Abstract>
+      More detailed description of optional parameter bar4
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="timestep" type="unsignedInteger">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="maxdistance" type="double">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="numofstations" type="unsignedInteger">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="locale" type="string">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="bbox" type="string">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="crs" type="string">
+      <Title>Coordinate projection to use in results</Title>
+      <Abstract>
+      Coordinate projection to use in results
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="missingtext" type="string">
+      <Title>missingText</Title>
+      <Abstract>
+      missingText
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="tz" type="string">
+      <Title>Time zone</Title>
+      <Abstract>
+      Time zone
+      </Abstract>
+    </Parameter>
+    
+    <QueryExpressionText xmlns:wfs_001="http://inspire.ec.europa.eu/schemas/omso/3.0"
+                         xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd"
+                         returnFeatureTypes="wfs_001:PointTimeSeriesObservation"
+                         language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression"
+                         isPrivate="true"/>
+  </StoredQueryDescription>
+
+  <StoredQueryDescription id="RadarHclassTest">
+    <Title>Weather radar - hydro class - lowest angle.</Title>
+    <Abstract>
+    Finnish weather radar hydro class from the lowest scanning angle.
+    </Abstract>
+    
+    <Parameter name="begin" type="xsi:dateTime">
+      <Title>The begin of time interval (ISO format)</Title>
+      <Abstract>
+      The begin of time interval (ISO format)
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="end" type="xsi:dateTime">
+      <Title>The begin of time interval (ISO format)</Title>
+      <Abstract>
+      The begin of time interval (ISO format)
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="layers" type="gml:NameList">
+      <Title>layers</Title>
+      <Abstract>
+      layers
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="bbox" type="string">
+      <Title>Bounding box</Title>
+      <Abstract>
+      Bounding box
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="crs" type="string">
+      <Title>Coordinate projection to use in results</Title>
+      <Abstract>
+      Coordinate projection to use in results
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="width" type="positiveInteger">
+      <Title>The width of generated image</Title>
+      <Abstract>
+      The width of generated image
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="height" type="positiveInteger">
+      <Title>The height of generated image</Title>
+      <Abstract>
+      The height of generated image
+      </Abstract>
+    </Parameter>
+    
+    <QueryExpressionText xmlns:wfs_001="http://inspire.ec.europa.eu/schemas/omso/3.0"
+                         xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd"
+                         returnFeatureTypes="wfs_001:GridSeriesObservation"
+                         language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression"
+                         isPrivate="true"/>
+  </StoredQueryDescription>
+
+  <StoredQueryDescription id="RadarHclassTest2">
+    <Title>Weather radar - hydro class - lowest angle.</Title>
+    <Abstract>
+    Finnish weather radar hydro class from the lowest scanning angle.
+    </Abstract>
+    
+    <Parameter name="begin" type="xsi:dateTime">
+      <Title>The begin of time interval (ISO format)</Title>
+      <Abstract>
+      The begin of time interval (ISO format)
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="end" type="xsi:dateTime">
+      <Title>The begin of time interval (ISO format)</Title>
+      <Abstract>
+      The begin of time interval (ISO format)
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="layers" type="gml:NameList">
+      <Title>layers</Title>
+      <Abstract>
+      layers
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="bbox" type="string">
+      <Title>Bounding box</Title>
+      <Abstract>
+      Bounding box
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="crs" type="string">
+      <Title>Coordinate projection to use in results</Title>
+      <Abstract>
+      Coordinate projection to use in results
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="width" type="positiveInteger">
+      <Title>The width of generated image</Title>
+      <Abstract>
+      The width of generated image
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="height" type="positiveInteger">
+      <Title>The height of generated image</Title>
+      <Abstract>
+      The height of generated image
+      </Abstract>
+    </Parameter>
+    
+    <QueryExpressionText xmlns:wfs_001="http://inspire.ec.europa.eu/schemas/omso/3.0"
+                         xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd"
+                         returnFeatureTypes="wfs_001:GridSeriesObservation"
+                         language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression"
+                         isPrivate="true"/>
+  </StoredQueryDescription>
+
+  <StoredQueryDescription id="urn:ogc:def:query:OGC-WFS::GetFeatureById">
+    <Title>GetFeatureById</Title>
+    <Abstract>
+    The GetFeatureById stored query is mandatory by WFS 2.0 spec.
+    In the FMI case it&apos;s mostly useless however, because most of the
+    features only have temporary IDs that are generated on-the-fly
+    during the response generation, and thus cannot be used as permanent
+    identifiers for those features
+    </Abstract>
+    
+    <Parameter name="id" type="string">
+      <Title>Stored Query ID</Title>
+      <Abstract>
+      [Mandatory] Specifies ID of stored query to invoke
+      </Abstract>
+    </Parameter>
+    
+    <QueryExpressionText xmlns:wfs_001="http://inspire.ec.europa.eu/schemas/omso/3.0"
+                         xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd"
+                         returnFeatureTypes="wfs_001:GridSeriesObservation wfs_001:PointTimeSeriesObservation"
+                         language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression"
+                         isPrivate="true"/>
+  </StoredQueryDescription>
+
+</DescribeStoredQueriesResponse>

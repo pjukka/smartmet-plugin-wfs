@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeStoredQueriesResponse xmlns="http://www.opengis.net/wfs/2.0"
+  xmlns:omso="http://inspire.ec.europa.eu/schemas/omso/3.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ows_common="http://www.opengis.net/ows/1.1"
+  xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:fe="http://www.opengis.net/fes/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+  http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd
+  http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd
+  http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+
+  <StoredQueryDescription id="HiddenObsTest">
+    <Title>FMI WFS test stored query</Title>
+    <Abstract>
+    More detailed description of FMI WFS test stored query
+    </Abstract>
+    
+    <Parameter name="begin" type="xsi:dateTime">
+      <Title>Begin of the time interval</Title>
+      <Abstract>
+      More detailed description of optional parameter bar
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="end" type="xsi:dateTime">
+      <Title>Parameter bar2</Title>
+      <Abstract>
+      More detailed description of optional parameter bar2
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="place" type="string">
+      <Title>Sites for which to find observations</Title>
+      <Abstract>
+      Sites for which to find observations
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="wmo" type="integerList">
+      <Title>Sites for which to find observations</Title>
+      <Abstract>
+      Sites for which to find observations
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="parameter" type="gml:NameList">
+      <Title>Parameter bar4</Title>
+      <Abstract>
+      More detailed description of optional parameter bar4
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="timestep" type="unsignedInteger">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="maxdistance" type="double">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="numofstations" type="unsignedInteger">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="locale" type="string">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="bbox" type="string">
+      <Title>Parameter bar5</Title>
+      <Abstract>
+      More detailed description of optional parameter bar5
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="crs" type="string">
+      <Title>Coordinate projection to use in results</Title>
+      <Abstract>
+      Coordinate projection to use in results
+      </Abstract>
+    </Parameter>
+    
+    <Parameter name="missingtext" type="string">
+      <Title>missingText</Title>
+      <Abstract>
+      missingText
+      </Abstract>
+    </Parameter>
+    
+    <QueryExpressionText xmlns:wfs_001="http://inspire.ec.europa.eu/schemas/omso/3.0"
+                         xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd"
+                         returnFeatureTypes="wfs_001:PointTimeSeriesObservation"
+                         language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression"
+                         isPrivate="true"/>
+  </StoredQueryDescription>
+
+</DescribeStoredQueriesResponse>

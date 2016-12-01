@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products xmlns:xdf="http:/xml.gsfc.nasa.gov/XDF/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="http://knowledge.vtt.fi/schemas/griddedIceData1.1.xsd">
+<Grid LonMin="<TMPL_var metadata.boundingBox.lowerLeft.lon>" LonMax="<TMPL_var metadata.boundingBox.upperRight.lon>" LatMin="<TMPL_var metadata.boundingBox.lowerLeft.lat>" LatMax="<TMPL_var metadata.boundingBox.upperRight.lat>" GridXDim="<TMPL_var metadata.xDim>" GridYDim="<TMPL_var metadata.yDim>"/>
+<Product ProducingModel="<TMPL_var producerName>"  Length="<TMPL_var timeSteps>" StartAt="<TMPL_var firstTime>" Type="forecast">
+<TMPL_FOREACH returnArray AS level>  <TMPL_FOREACH level as parameter>  <TMPL_FOREACH parameter.timeSteps as timestep>    <Time Time="<TMPL_var timestep.time>">
+	<Data Parameter="<TMPL_if IN_SET(timestep.newbasenum,1154)>MeanThickness<TMPL_elsif IN_SET(timestep.newbasenum,384)>IceConcentration<TMPL_elsif IN_SET(timestep.newbasenum,1149)>Ice Velocity u-Component<TMPL_elsif IN_SET(timestep.newbasenum,1150)>Ice Velocity v-Component<TMPL_elsif IN_SET(timestep.newbasenum,388)>RidgedIceThickness<TMPL_elsif IN_SET(timestep.newbasenum,1153)>RidgedIceConcentration</TMPL_if>" Unit="<TMPL_if IN_SET(timestep.newbasenum,1154)>m<TMPL_elsif IN_SET(timestep.newbasenum,384)>none<TMPL_elsif IN_SET(timestep.newbasenum,1149)>m/s<TMPL_elsif IN_SET(timestep.newbasenum,1150)>m/s<TMPL_elsif IN_SET(timestep.newbasenum,388)>m<TMPL_elsif IN_SET(timestep.newbasenum,1153)>none</TMPL_if>" ScalingFactor="<TMPL_var scaleFactor>" NullValue="<TMPL_var missingText>">
+	 <IntegerArray>
+	   <TMPL_if IN_SET(timestep.newbasenum,384,1153)><TMPL_FOREACH timestep.data AS value><TMPL_if (value != missingText)><TMPL_var (value/100)><TMPL_else><TMPL_var value></TMPL_if> </TMPL_FOREACH>
+	   <TMPL_else><TMPL_FOREACH timestep.data AS value><TMPL_var value> </TMPL_FOREACH></TMPL_if>
+	 </IntegerArray>
+	</Data>
+      </Time>
+</TMPL_FOREACH>       </TMPL_FOREACH>     </TMPL_FOREACH>
+</Product>
+</Products>

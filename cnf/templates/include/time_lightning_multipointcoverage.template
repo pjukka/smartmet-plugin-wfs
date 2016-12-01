@@ -1,0 +1,11 @@
+      <om:phenomenonTime>
+        <gml:TimePeriod gml:id="time1-<TMPL_var queryNum>">
+          <gml:beginPosition><TMPL_var phenomenonStartTime></gml:beginPosition>
+          <gml:endPosition><TMPL_var phenomenonEndTime></gml:endPosition>
+        </gml:TimePeriod>
+      </om:phenomenonTime>
+      <om:resultTime>
+        <gml:TimeInstant gml:id="<TMPL_var resultTimeId>-<TMPL_var queryNum>">
+          <gml:timePosition><TMPL_var phenomenonEndTime></gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>

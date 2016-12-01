@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListStoredQueriesResponse xmlns="http://www.opengis.net/wfs/2.0"
+  xmlns:omso="http://inspire.ec.europa.eu/schemas/omso/2.0rc3"
+  xmlns:acmf="http://inspire.jrc.ec.europa.eu/schemas/ac/2.0"
+  xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"
+  xmlns:ef="http://inspire.ec.europa.eu/schemas/ef/3.0rc3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+  http://inspire.ec.europa.eu/schemas/omso/2.0rc3 http://inspire.ec.europa.eu/draft-schemas/omso/2.0rc3/SpecialisedObservations.xsd
+  http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd
+  http://inspire.jrc.ec.europa.eu/schemas/ac/2.0 http://xml.fmi.fi/schema/inspire/2.0.1/AtmosphericConditions.xsd
+  http://inspire.ec.europa.eu/schemas/ef/3.0rc3 http://inspire.ec.europa.eu/draft-schemas/ef/3.0rc3/EnvironmentalMonitoringFacilities.xsd">
+
+  <StoredQuery id="fmi::forecast::hirlam::ground::point::multipointcoverage">
+    <Title>Hirlam Point Weather Forecast</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+  <StoredQuery id="fmi::forecast::hirlam::ground::point::timevaluepair">
+    <Title>Hirlam Point Weather Forecast</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+  <StoredQuery id="fmi::observations::radiation::multipointcoverage">
+    <Title>Sun Radiation Observations</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+  <StoredQuery id="fmi::observations::radiation::timevaluepair">
+    <Title>Sun Radiation Observations</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+  <StoredQuery id="fmi::observations::weather::realtime::area::multipointcoverage">
+    <Title>Real Time Weather Observations</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+  <StoredQuery id="fmi::observations::weather::realtime::area::timevaluepair">
+    <Title>Real Time Weather Observations</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+  <StoredQuery id="fmi::observations::weather::realtime::place::multipointcoverage">
+    <Title>Real Time Weather Observations</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+  <StoredQuery id="fmi::observations::weather::realtime::place::timevaluepair">
+    <Title>Real Time Weather Observations</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+  <StoredQuery id="test">
+    <Title>Real Time Weather Observations</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+  <StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById">
+    <Title>GetFeatureById</Title>
+    <ReturnFeatureType>omso:PointTimeSeriesObservation</ReturnFeatureType>
+  </StoredQuery>
+
+</ListStoredQueriesResponse>

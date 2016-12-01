@@ -1,0 +1,24 @@
+/**
+
+@page WFS_SQ_QUERY_HANDLERS Stored query handlers
+
+
+Stored query handlers are implemented as C++ classes derived from
+base class BrainStorm::Wfs::StoredQueryHandlerBase and optionally also
+from one or more of classes implementing
+@ref WFS_SQ_PARAM_GROUPS "stored query handler parameter groups".
+
+Following stored query handlers are currently available:
+
+- @subpage WFS_SQ_GET_FEATURE_BY_ID "GetFeatureByID handler"
+- @subpage WFS_SQ_DATA_SET_BY_ID "GetDataSetByID handler"
+- @subpage WFS_SQ_GENERIC_OBS "Observation data queries handler"
+- @subpage WFS_SQ_FLASH_OBS_HANDLER "Lightning observation data query handler"
+- @subpage WFS_SQ_FORECAST_QUERY_HANDLER "Forecast data query handler"
+- @subpage WFS_SQ_QE_DOWNLOAD_HANDLER "QEngine data download query handler"
+- @subpage WFS_SQ_GEOSERVER_DOWNLOAD_HANDLER "GeoServer data download handler"
+- @subpage WFS_SQ_FILE_QUERY_HANDLER "File download handler"
+- @subpage WFS_SQ_AVIATION_OBSERVATION_QUERY_HANDLER "Aviation observations handler"
+- @subpage WFS_SQ_MAST_QUERY_HANDLER "Mast profile observation handler"
+
+*/

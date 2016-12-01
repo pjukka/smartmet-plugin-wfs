@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<xsd:schema
+  targetNamespace="<TMPL_var target_namespace>"
+  xmlns:<TMPL_var target_prefix>="<TMPL_var target_namespace>"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  <xsd:include schemaLocation="<TMPL_var target_location>"/>
+  <TMPL_FOREACH ns_list AS ns><xsd:import namespace="<TMPL_var ns.namespace>"<TMPL_if (DEFINED(ns.location))> schemaLocation="<TMPL_var ns.location>"</TMPL_if>/>
+  </TMPL_FOREACH></xsd:schema>

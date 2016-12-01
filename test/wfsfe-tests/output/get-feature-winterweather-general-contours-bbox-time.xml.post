@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wfs:FeatureCollection xmlns:wfs="http://www.opengis.net/wfs/2.0" numberMatched="9" numberReturned="9" timeStamp="2012-12-12T12:12:12Z" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:om="http://www.opengis.net/om/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:wp="http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/02/18" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd                 http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd                                 http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd                 http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd         http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd         http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/02/18 ../schema/WinterPrecipitation.xsd">
+
+  <wfs:member>
+    <wp:GeneralWinterWeather gml:id="observation-1">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="observation-1-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="observation-1-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="observation-1-spatial-sampling-feature">
+          <sam:sampledFeature/>
+          <!-- Sampling feature is actually a requested bbox -->
+          <sams:shape>
+            <gml:Polygon gml:id="observation-1-spatial-sampling-feature-shape">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:coordinates>59.950000,22.110000 61.120000,22.110000 61.120000,25.980000 59.950000,25.980000 59.950000,22.110000</gml:coordinates>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:GeneralWinterWeatherContours axisLabels="Lat Long" dateTime="2008-08-05T18:00:00Z" gml:id="observation-1-winter-weather-contours" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" winterWeatherType="t2m 1.0...7.0"></wp:GeneralWinterWeatherContours>
+      </om:result>
+    </wp:GeneralWinterWeather>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:GeneralWinterWeather gml:id="observation-2">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="observation-2-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="observation-2-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="observation-2-spatial-sampling-feature">
+          <sam:sampledFeature/>
+          <!-- Sampling feature is actually a requested bbox -->
+          <sams:shape>
+            <gml:Polygon gml:id="observation-2-spatial-sampling-feature-shape">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:coordinates>59.950000,22.110000 61.120000,22.110000 61.120000,25.980000 59.950000,25.980000 59.950000,22.110000</gml:coordinates>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:GeneralWinterWeatherContours axisLabels="Lat Long" dateTime="2008-08-05T21:00:00Z" gml:id="observation-2-winter-weather-contours" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" winterWeatherType="t2m 1.0...7.0"></wp:GeneralWinterWeatherContours>
+      </om:result>
+    </wp:GeneralWinterWeather>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:GeneralWinterWeather gml:id="observation-3">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="observation-3-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="observation-3-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="observation-3-spatial-sampling-feature">
+          <sam:sampledFeature/>
+          <!-- Sampling feature is actually a requested bbox -->
+          <sams:shape>
+            <gml:Polygon gml:id="observation-3-spatial-sampling-feature-shape">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:coordinates>59.950000,22.110000 61.120000,22.110000 61.120000,25.980000 59.950000,25.980000 59.950000,22.110000</gml:coordinates>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:GeneralWinterWeatherContours axisLabels="Lat Long" dateTime="2008-08-06T00:00:00Z" gml:id="observation-3-winter-weather-contours" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" winterWeatherType="t2m 1.0...7.0">
+          <!-- surface members of observation-3-winter-weather-contours-1 -->
+          <gml:surfaceMember>
+            <gml:Surface gml:id="observation-3-winter-weather-contours-surface-member-1">
+              <gml:patches>
+                <gml:PolygonPatch>
+                  <!-- exterior ring -->
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:coordinates>61.088267 23.354494,61.120000 23.359274,61.120000 24.166748,61.093352 24.109058,61.058993 24.044251,61.039977 23.941990,61.027524 23.893720,61.024746 23.806138,61.025867 23.703837,61.021621 23.611716,61.033139 23.525363,61.080537 23.357704,61.088267 23.354494</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:PolygonPatch>
+              </gml:patches>
+            </gml:Surface>
+          </gml:surfaceMember>
+        </wp:GeneralWinterWeatherContours>
+      </om:result>
+    </wp:GeneralWinterWeather>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:GeneralWinterWeather gml:id="observation-4">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="observation-4-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="observation-4-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="observation-4-spatial-sampling-feature">
+          <sam:sampledFeature/>
+          <!-- Sampling feature is actually a requested bbox -->
+          <sams:shape>
+            <gml:Polygon gml:id="observation-4-spatial-sampling-feature-shape">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:coordinates>59.950000,22.110000 61.120000,22.110000 61.120000,25.980000 59.950000,25.980000 59.950000,22.110000</gml:coordinates>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:GeneralWinterWeatherContours axisLabels="Lat Long" dateTime="2008-08-05T18:00:00Z" gml:id="observation-4-winter-weather-contours" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" winterWeatherType="t2m 7.1...14.0">
+          <!-- surface members of observation-4-winter-weather-contours-1 -->
+          <gml:surfaceMember>
+            <gml:Surface gml:id="observation-4-winter-weather-contours-surface-member-1">
+              <gml:patches>
+                <gml:PolygonPatch>
+                  <!-- exterior ring -->
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:coordinates>60.274870 23.065757,60.310739 23.168938,60.337047 23.250255,60.367423 23.325960,60.401630 23.375690,60.445064 23.445528,60.498148 23.544699,60.516222 23.577322,60.530528 23.597047,60.590773 23.703348,60.626137 23.767393,60.658877 23.826487,60.663622 23.833038,60.670561 23.844151,60.740001 23.956641,60.787341 24.041171,60.809682 24.092836,60.833707 24.146037,60.876568 24.234366,60.913273 24.319909,60.934245 24.392678,60.949401 24.443949,60.981716 24.569219,61.033793 24.724973,61.036669 24.732958,61.039852 24.740119,61.096062 24.888972,61.120000 24.937535,61.120000 25.980000,60.541726 25.980000,60.522076 25.865676,60.496054 25.754689,60.480824 25.682902,60.451286 25.596846,60.428441 25.518848,60.407078 25.460730,60.371854 25.362052,60.330590 25.275125,60.312951 25.209532,60.306059 25.166544,60.276951 25.030741,60.275279 25.021329,60.230045 24.878868,60.225708 24.853429,60.214806 24.821749,60.163795 24.706698,60.107969 24.585425,60.103562 24.557580,60.092133 24.505055,60.064056 24.372960,60.047309 24.303838,60.044199 24.182667,60.043663 24.155301,60.040255 24.031084,60.051526 23.907157,60.053862 23.883668,60.065071 23.762750,60.076739 23.673898,60.089939 23.564823,60.098859 23.495127,60.104043 23.445966,60.134315 23.258469,60.140795 23.239833,60.146934 23.228564,60.213559 23.115115,60.274870 23.065757</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:PolygonPatch>
+              </gml:patches>
+            </gml:Surface>
+          </gml:surfaceMember>
+        </wp:GeneralWinterWeatherContours>
+      </om:result>
+    </wp:GeneralWinterWeather>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:GeneralWinterWeather gml:id="observation-5">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="observation-5-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="observation-5-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="observation-5-spatial-sampling-feature">
+          <sam:sampledFeature/>
+          <!-- Sampling feature is actually a requested bbox -->
+          <sams:shape>
+            <gml:Polygon gml:id="observation-5-spatial-sampling-feature-shape">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:coordinates>59.950000,22.110000 61.120000,22.110000 61.120000,25.980000 59.950000,25.980000 59.950000,22.110000</gml:coordinates>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:GeneralWinterWeatherContours axisLabels="Lat Long" dateTime="2008-08-05T21:00:00Z" gml:id="observation-5-winter-weather-contours" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" winterWeatherType="t2m 7.1...14.0">
+          <!-- surface members of observation-5-winter-weather-contours-1 -->
+          <gml:surfaceMember>
+            <gml:Surface gml:id="observation-5-winter-weather-contours-surface-member-1">
+              <gml:patches>
+                <gml:PolygonPatch>
+                  <!-- exterior ring -->
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:coordinates>60.412348 22.110000,61.120000 22.110000,61.120000 25.980000,60.361809 25.980000,60.350150 25.899365,60.331084 25.770091,60.323700 25.719604,60.320534 25.698613,60.312610 25.655087,60.283575 25.509758,60.273997 25.435081,60.257815 25.302241,60.256662 25.283128,60.244763 25.155384,60.234077 25.091010,60.208098 24.978671,60.188702 24.916287,60.175398 24.869499,60.146177 24.736793,60.138118 24.698555,60.114162 24.586425,60.109689 24.547046,60.095474 24.418884,60.086828 24.333756,60.084593 24.309452,60.084208 24.275812,60.078690 24.094401,60.078252 24.036447,60.080438 23.973847,60.082567 23.833268,60.084933 23.765365,60.089243 23.702475,60.096838 23.552591,60.100625 23.495343,60.102803 23.443159,60.111564 23.269605,60.113454 23.224778,60.114058 23.179737,60.124954 22.987498,60.125316 22.953942,60.127159 22.921553,60.148460 22.713897,60.151375 22.688924,60.152007 22.684339,60.153744 22.675688,60.189415 22.487605,60.204598 22.416505,60.256018 22.348875,60.292534 22.305917,60.337237 22.241817,60.385914 22.157491,60.409464 22.114570,60.412348 22.110000</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:PolygonPatch>
+              </gml:patches>
+            </gml:Surface>
+          </gml:surfaceMember>
+        </wp:GeneralWinterWeatherContours>
+      </om:result>
+    </wp:GeneralWinterWeather>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:GeneralWinterWeather gml:id="observation-6">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="observation-6-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="observation-6-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="observation-6-spatial-sampling-feature">
+          <sam:sampledFeature/>
+          <!-- Sampling feature is actually a requested bbox -->
+          <sams:shape>
+            <gml:Polygon gml:id="observation-6-spatial-sampling-feature-shape">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:coordinates>59.950000,22.110000 61.120000,22.110000 61.120000,25.980000 59.950000,25.980000 59.950000,22.110000</gml:coordinates>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:GeneralWinterWeatherContours axisLabels="Lat Long" dateTime="2008-08-06T00:00:00Z" gml:id="observation-6-winter-weather-contours" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" winterWeatherType="t2m 7.1...14.0">
+          <!-- surface members of observation-6-winter-weather-contours-1 -->
+          <gml:surfaceMember>
+            <gml:Surface gml:id="observation-6-winter-weather-contours-surface-member-1">
+              <gml:patches>
+                <gml:PolygonPatch>
+                  <!-- exterior ring -->
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:coordinates>59.950000 22.110000,61.120000 22.110000,61.120000 23.266087,61.119826 23.266063,61.083350 23.255319,61.051904 23.270020,61.020033 23.330436,60.997505 23.442078,60.995465 23.494940,60.980601 23.606378,60.985546 23.713663,60.990302 23.768396,60.994128 23.889037,61.017994 23.981547,61.054439 24.177530,61.054836 24.178277,61.055271 24.179219,61.120000 24.265797,61.120000 25.980000,60.282769 25.980000,60.278687 25.946240,60.256924 25.803629,60.248111 25.704369,60.236716 25.587692,60.234587 25.532135,60.226861 25.426047,60.221068 25.363760,60.213207 25.177620,60.211156 25.149265,60.209201 25.133075,60.202836 25.099433,60.166236 24.954332,60.143548 24.864054,60.123318 24.775707,60.087752 24.615966,60.082624 24.593483,60.080391 24.580986,60.075682 24.550775,60.051435 24.394689,60.036968 24.302281,60.025089 24.187495,60.020583 24.127871,60.011334 24.027002,60.005501 23.968240,59.989480 23.764666,59.988389 23.752653,59.987948 23.745098,59.985764 23.696134,59.968946 23.523804,59.966541 23.478984,59.958119 23.404574,59.950000 23.344890,59.950000 22.110000</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:PolygonPatch>
+              </gml:patches>
+            </gml:Surface>
+          </gml:surfaceMember>
+        </wp:GeneralWinterWeatherContours>
+      </om:result>
+    </wp:GeneralWinterWeather>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:GeneralWinterWeather gml:id="observation-7">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="observation-7-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="observation-7-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="observation-7-spatial-sampling-feature">
+          <sam:sampledFeature/>
+          <!-- Sampling feature is actually a requested bbox -->
+          <sams:shape>
+            <gml:Polygon gml:id="observation-7-spatial-sampling-feature-shape">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:coordinates>59.950000,22.110000 61.120000,22.110000 61.120000,25.980000 59.950000,25.980000 59.950000,22.110000</gml:coordinates>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:GeneralWinterWeatherContours axisLabels="Lat Long" dateTime="2008-08-05T18:00:00Z" gml:id="observation-7-winter-weather-contours" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" winterWeatherType="t2m 14.1...21.0">
+          <!-- surface members of observation-7-winter-weather-contours-1 -->
+          <gml:surfaceMember>
+            <gml:Surface gml:id="observation-7-winter-weather-contours-surface-member-1">
+              <gml:patches>
+                <gml:PolygonPatch>
+                  <!-- exterior ring -->
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:coordinates>59.950000 22.110000,61.120000 22.110000,61.120000 24.838155,61.085975 24.748050,61.060567 24.690881,61.037604 24.627142,61.004692 24.528708,60.984269 24.449540,60.956040 24.354043,60.916978 24.218504,60.903370 24.186791,60.887481 24.154045,60.837457 24.043273,60.790941 23.935699,60.771325 23.900674,60.742553 23.854063,60.694640 23.777328,60.661871 23.732100,60.618419 23.653670,60.560939 23.552612,60.547341 23.521318,60.533670 23.493795,60.476522 23.388800,60.431516 23.318486,60.404575 23.275168,60.399601 23.267936,60.395183 23.256926,60.369456 23.177404,60.346183 23.104654,60.300542 22.972201,60.292747 22.941780,60.278864 22.912248,60.254313 22.918109,60.144506 22.955925,60.142945 22.956648,60.142485 22.957408,60.102852 23.154597,60.098748 23.223120,60.087948 23.311888,60.076405 23.383385,60.065057 23.490996,60.049584 23.611903,60.045116 23.644210,60.030153 23.758152,60.022518 23.840511,60.012845 23.955406,60.006397 24.026305,60.008409 24.099665,60.012105 24.209964,60.014387 24.298880,60.041672 24.411497,60.066879 24.530092,60.078053 24.580611,60.082859 24.593083,60.088329 24.601961,60.148489 24.732858,60.211766 24.875716,60.212226 24.876452,60.212533 24.876900,60.266119 25.036828,60.293430 25.164245,60.303295 25.225774,60.328542 25.319662,60.358951 25.383723,60.384910 25.456444,60.415682 25.540161,60.448590 25.652518,60.466958 25.706029,60.476428 25.750669,60.508625 25.887990,60.513829 25.918266,60.525615 25.980000,59.950000 25.980000,59.950000 22.110000</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:PolygonPatch>
+              </gml:patches>
+            </gml:Surface>
+          </gml:surfaceMember>
+        </wp:GeneralWinterWeatherContours>
+      </om:result>
+    </wp:GeneralWinterWeather>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:GeneralWinterWeather gml:id="observation-8">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="observation-8-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="observation-8-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="observation-8-spatial-sampling-feature">
+          <sam:sampledFeature/>
+          <!-- Sampling feature is actually a requested bbox -->
+          <sams:shape>
+            <gml:Polygon gml:id="observation-8-spatial-sampling-feature-shape">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:coordinates>59.950000,22.110000 61.120000,22.110000 61.120000,25.980000 59.950000,25.980000 59.950000,22.110000</gml:coordinates>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:GeneralWinterWeatherContours axisLabels="Lat Long" dateTime="2008-08-05T21:00:00Z" gml:id="observation-8-winter-weather-contours" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" winterWeatherType="t2m 14.1...21.0">
+          <!-- surface members of observation-8-winter-weather-contours-1 -->
+          <gml:surfaceMember>
+            <gml:Surface gml:id="observation-8-winter-weather-contours-surface-member-1">
+              <gml:patches>
+                <gml:PolygonPatch>
+                  <!-- exterior ring -->
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:coordinates>59.950000 22.110000,60.400186 22.110000,60.374602 22.156630,60.332022 22.230393,60.292919 22.286463,60.250376 22.336511,60.190469 22.415303,60.179630 22.466063,60.150634 22.618952,60.141768 22.667727,60.139912 22.683203,60.138645 22.703326,60.118283 22.901827,60.115376 22.952915,60.114805 23.005847,60.105977 23.161608,60.105142 23.223841,60.102530 23.285779,60.095429 23.426462,60.092596 23.494361,60.087668 23.568850,60.081763 23.685380,60.076359 23.764236,60.073392 23.849377,60.071808 23.953941,60.068973 24.035137,60.069541 24.110308,60.073841 24.251677,60.074485 24.307930,60.078223 24.348571,60.092681 24.490924,60.100632 24.562617,60.103135 24.584645,60.116535 24.647369,60.138234 24.750315,60.164050 24.867559,60.181415 24.928628,60.206731 25.010051,60.227878 25.101494,60.236576 25.153893,60.246261 25.257875,60.249752 25.315739,60.264058 25.433176,60.275586 25.523061,60.310534 25.697986,60.312945 25.711229,60.313909 25.717616,60.316155 25.732978,60.342541 25.911888,60.352389 25.980000,59.950000 25.980000,59.950000 22.110000</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:PolygonPatch>
+              </gml:patches>
+            </gml:Surface>
+          </gml:surfaceMember>
+        </wp:GeneralWinterWeatherContours>
+      </om:result>
+    </wp:GeneralWinterWeather>
+  </wfs:member>
+
+  <wfs:member>
+    <wp:GeneralWinterWeather gml:id="observation-9">
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="observation-9-time">
+          <gml:timePosition>2012-12-12T12:12:12Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <!-- Model analysis time -->
+      <om:resultTime>
+        <gml:TimeInstant gml:id="observation-9-result-time">
+          <gml:timePosition>2008-08-05T06:31:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+      <om:observedProperty xlink:href="http://data.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="observation-9-spatial-sampling-feature">
+          <sam:sampledFeature/>
+          <!-- Sampling feature is actually a requested bbox -->
+          <sams:shape>
+            <gml:Polygon gml:id="observation-9-spatial-sampling-feature-shape">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:coordinates>59.950000,22.110000 61.120000,22.110000 61.120000,25.980000 59.950000,25.980000 59.950000,22.110000</gml:coordinates>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:GeneralWinterWeatherContours axisLabels="Lat Long" dateTime="2008-08-06T00:00:00Z" gml:id="observation-9-winter-weather-contours" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" winterWeatherType="t2m 14.1...21.0">
+          <!-- surface members of observation-9-winter-weather-contours-1 -->
+          <gml:surfaceMember>
+            <gml:Surface gml:id="observation-9-winter-weather-contours-surface-member-1">
+              <gml:patches>
+                <gml:PolygonPatch>
+                  <!-- exterior ring -->
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:coordinates>59.950000 23.427941,59.955628 23.477662,59.959043 23.541301,59.978362 23.739260,59.979187 23.751447,59.980140 23.758820,59.983173 23.776254,59.999155 23.979330,60.003781 24.025936,60.011117 24.105938,60.018184 24.199445,60.028698 24.301035,60.045074 24.405640,60.062985 24.520940,60.072138 24.579665,60.076480 24.603958,60.086448 24.647662,60.117254 24.786029,60.134778 24.862555,60.160348 24.964303,60.201599 25.127839,60.204192 25.141546,60.204988 25.148142,60.205824 25.159695,60.214880 25.374120,60.219580 25.424652,60.225847 25.510717,60.229270 25.600033,60.239286 25.702593,60.249363 25.816093,60.263442 25.908352,60.272106 25.980000,59.950000 25.980000,59.950000 23.427941</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:PolygonPatch>
+              </gml:patches>
+            </gml:Surface>
+          </gml:surfaceMember>
+        </wp:GeneralWinterWeatherContours>
+      </om:result>
+    </wp:GeneralWinterWeather>
+  </wfs:member>
+
+</wfs:FeatureCollection>

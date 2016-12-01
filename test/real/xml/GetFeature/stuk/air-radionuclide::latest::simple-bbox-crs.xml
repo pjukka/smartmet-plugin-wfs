@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:gml="http://www.opengis.net/gml/3.2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:StoredQuery id="stuk::observations::air::radionuclide-activity-concentration::latest::simple">
+     <wfs:Parameter name="starttime">2015-09-01T00:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="endtime">2015-11-10T00:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="bbox">25.0,60.0,27.0,61.0,EPSG:4258</wfs:Parameter>
+     <wfs:Parameter name="nuclides">cS-137</wfs:Parameter>
+     <wfs:Parameter name="crs">EPSG:3857</wfs:Parameter>
+   </wfs:StoredQuery>
+</wfs:GetFeature>

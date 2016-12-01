@@ -1,0 +1,38 @@
+            <om:result>        
+                <gmlcov:RectifiedGridCoverage gml:id="rgd-<TMPL_var dataset.__index__>-<TMPL_var queryNum>">
+                    <gml:domainSet>
+                        <gml:RectifiedGrid gml:id="rg-<TMPL_var dataset.__index__>-<TMPL_var queryNum>" dimension="2">
+                            <gml:limits>
+                                <gml:GridEnvelope>                                                                           
+                                    <gml:low>0 0</gml:low>
+                                    <gml:high><TMPL_var dataset.params._xNumber[0]> <TMPL_var dataset.params._yNumber[0]></gml:high>
+                                </gml:GridEnvelope>
+                            </gml:limits>
+                            <gml:axisLabels>Lat Long</gml:axisLabels>
+                            <gml:origin>
+                                <gml:Point gml:id="origin-point-<TMPL_var dataset.__index__>-<TMPL_var queryNum>" srsName="http://www.opengis.net/def/crs/EPSG/0/<TMPL_var SUBSTR(dataset.params.crs[0],5)>" srsDimension="2">
+                                    <gml:pos><TMPL_var dataset.params.calcBBox[0]> <TMPL_var dataset.params.calcBBox[3]></gml:pos>
+                                </gml:Point>
+                            </gml:origin>
+                            <gml:offsetVector><TMPL_var dataset.params._xResolution[0]> 0</gml:offsetVector>
+                            <gml:offsetVector>0 <TMPL_var dataset.params._yResolution[0]></gml:offsetVector>                            
+                        </gml:RectifiedGrid>
+                    </gml:domainSet>
+                    <gml:rangeSet>           
+                        <gml:File>
+                            <gml:rangeParameters/>
+                            <gml:fileReference>http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/download?<TMPL_var HTMLESCAPE(dataset.URL)></gml:fileReference>     
+                            <gml:fileStructure codeSpace=<TMPL_if IN_SET(dataset.params.format[0],"grib", "grib1", "grib2")>"http://www.ecmwf.int/publications/manuals/d/gribapi/param/"<TMPL_else><TMPL_if IN_SET(dataset.params.format[0],"netcdf")>"http://cfconventions.org/Data/cf-standard-names/26/src/cf-standard-name-table.xml"<TMPL_else>""</TMPL_if></TMPL_if>></gml:fileStructure>              
+                            <gml:mimeType>application/<TMPL_if IN_SET(dataset.params.format[0],"grib", "grib1", "grib2")>octet-stream<TMPL_else>octet-stream</TMPL_if></gml:mimeType>
+                        </gml:File>
+                    </gml:rangeSet>
+                    <gml:coverageFunction>
+                        <gml:CoverageMappingRule>
+                            <gml:ruleDefinition>Linear</gml:ruleDefinition>
+                        </gml:CoverageMappingRule>
+                    </gml:coverageFunction>
+                    <gmlcov:rangeType>
+                        <swe:DataRecord><TMPL_foreach dataset.params.param as param><swe:field name="<TMPL_var param>" <TMPL_include "include/link_observable_property_grid.template">/></TMPL_foreach></swe:DataRecord>
+                    </gmlcov:rangeType>              
+                </gmlcov:RectifiedGridCoverage>
+            </om:result>

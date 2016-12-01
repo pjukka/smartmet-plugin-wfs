@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection timeStamp="<TMPL_var response_timestamp>" numberMatched="<TMPL_var number_matched>" numberReturned="<TMPL_var number_returned>"
+  xmlns:wfs="http://www.opengis.net/wfs/2.0"
+  xmlns:wp="http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/02/18"
+  xmlns:saf="http://icao.int/saf/1.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:om="http://www.opengis.net/om/2.0"
+  xmlns:sam="http://www.opengis.net/sampling/2.0"
+  xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                      http://icao.int/saf/1.0 http://schemas.wmo.int/saf/1.0/saf.xsd
+                      http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd
+                      http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd
+                      http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd
+                      http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd
+                      http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/09/29 http://xml.fmi.fi/schema/aviation-weather/special-products/2015/09/29/WinterPrecipitation.xsd">
+  <wfs:boundedBy>
+    <gml:Envelope axisLabels="<TMPL_var axis_labels>" srsName="<TMPL_var proj_uri>" srsDimension="2">
+      <gml:lowerCorner><TMPL_var bbox_lower_corner></gml:lowerCorner>
+      <gml:upperCorner><TMPL_var bbox_upper_corner></gml:upperCorner>
+    </gml:Envelope>
+  </wfs:boundedBy>
+<TMPL_foreach wfs_members as wfs_member>
+<TMPL_foreach wfs_member.result.timesteps as timestep_data>
+  <wfs:member>
+    <wp:<TMPL_var wfs_member.precipitation_form_id>Precipitation gml:id="<TMPL_var wfs_member.precipitation_form_id>-precipitation-<TMPL_var wfs_member.location_indicator_icao><TMPL_var CONCAT("-",wfs_member.__index__ + 1,"-",timestep_data.__index__ + 1)>">
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="<TMPL_var wfs_member.precipitation_form_id>-precipitation-<TMPL_var wfs_member.location_indicator_icao><TMPL_var CONCAT("-",wfs_member.__index__ + 1,"-",timestep_data.__index__ + 1,"-phenomenon-time")>">
+          <gml:timePosition><TMPL_var timestep_data.date_time></gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <om:resultTime>
+        <gml:TimeInstant gml:id="<TMPL_var wfs_member.precipitation_form_id>-precipitation-<TMPL_var wfs_member.location_indicator_icao><TMPL_var CONCAT("-",wfs_member.__index__ + 1,"-",timestep_data.__index__ + 1,"-result-time")>">
+          <gml:timePosition><TMPL_var wfs_member.analysis_time></gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterprecipitationprobability"/>
+      <om:observedProperty
+          xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=<TMPL_var language>"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="<TMPL_var wfs_member.precipitation_form_id>-precipitation-<TMPL_var wfs_member.location_indicator_icao><TMPL_var CONCAT("-",wfs_member.__index__ + 1,"-",timestep_data.__index__ + 1,"-spatial-sampling-feature")>">
+          <sam:sampledFeature>
+            <saf:Aerodrome gml:id="<TMPL_var wfs_member.precipitation_form_id>-precipitation-<TMPL_var wfs_member.location_indicator_icao><TMPL_var CONCAT("-",wfs_member.__index__ + 1,"-",timestep_data.__index__ + 1,"-sampled-feature")>">
+              <saf:designator><TMPL_var wfs_member.designator></saf:designator>
+              <saf:name><TMPL_var wfs_member.name></saf:name>
+              <saf:locationIndicatorICAO><TMPL_var wfs_member.location_indicator_icao></saf:locationIndicatorICAO>
+              <saf:fieldElevation uom="m"><TMPL_var wfs_member.field_elevation></saf:fieldElevation>
+              <saf:ARP>
+                <gml:Point axisLabels="<TMPL_var axis_labels>" srsDimension="2" srsName="<TMPL_var proj_uri>" gml:id="<TMPL_var wfs_member.precipitation_form_id>-precipitation-<TMPL_var wfs_member.location_indicator_icao><TMPL_var CONCAT("-",wfs_member.__index__ + 1,"-",timestep_data.__index__ + 1,"-sampled-feature-arp-point")>">
+                  <gml:pos><TMPL_var wfs_member.position></gml:pos>
+                </gml:Point>
+              </saf:ARP>
+            </saf:Aerodrome>
+          </sam:sampledFeature>
+          <sams:shape>
+            <gml:Point axisLabels="<TMPL_var axis_labels>" srsDimension="2" srsName="<TMPL_var proj_uri>" gml:id="<TMPL_var wfs_member.precipitation_form_id>-precipitation-<TMPL_var wfs_member.location_indicator_icao><TMPL_var CONCAT("-",wfs_member.__index__ + 1,"-",timestep_data.__index__ + 1,"-spatial-sampling-feature-shape-point")>">
+              <gml:pos><TMPL_var wfs_member.position></gml:pos>
+            </gml:Point>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+        <wp:precipitationProbability probabilityValue="<TMPL_var timestep_data.value_light>" probabilityUnit="<TMPL_var timestep_data.unit>" dateTime="<TMPL_var timestep_data.date_time>" icaoCode="<TMPL_var timestep_data.icao_code>" latitude="<TMPL_var timestep_data.latitude>" longitude="<TMPL_var timestep_data.longitude>">
+        </wp:precipitationProbability>
+      </om:result>
+    </wp:<TMPL_var wfs_member.precipitation_form_id>Precipitation>
+  </wfs:member>
+</TMPL_foreach>
+</TMPL_foreach>
+</wfs:FeatureCollection>

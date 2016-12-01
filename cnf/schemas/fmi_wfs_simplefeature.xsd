@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    BsWfsElement contains Location, Time and Elevation property elements that are used in GeoServer layer setup.
+    Also, additional property elements are defined as strings to provide information about the magnitude and direction
+    for the queried parameter. Then, SLD-styles may use property element values when styles are defined in GeoServer.
+    Element strings may be string, integer, decimal, etc. values that GeoServer may parse properly when it uses SLD style.
+    Notice, all property elements are not needed for all the queries and unnecessary properties may be left without content.
+    Also notice, GeoServer Edit Layer page lists all the property elements in Feature Type Details section even if some of
+    them would not be necessary for that layer.
+-->
+<xsd:schema
+    xmlns:BsWfs="http://xml.fmi.fi/schema/wfs/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    targetNamespace="http://xml.fmi.fi/schema/wfs/2.0">
+    <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <xsd:complexType name="BsWfsType">
+        <xsd:complexContent>
+            <xsd:extension base="gml:AbstractFeatureType">
+                <xsd:sequence>
+                    <!-- GeoServer layer setup elements. -->
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Location" nillable="true" type="gml:PointPropertyType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Time" nillable="true" type="xsd:dateTime"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Elevation" nillable="true" type="xsd:int"/>
+                    <!-- Additional GeoServer layer property elements for SLD style. -->
+                    <!-- Location elements. -->
+                    <xsd:element maxOccurs="1" minOccurs="0" name="LocationName" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Region" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Country" nillable="true" type="xsd:string"/>
+                    <!-- Parameter content elements. -->
+                    <xsd:element maxOccurs="1" minOccurs="0" name="ParameterName" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="ParameterValue" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="ParameterComponentX" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="ParameterComponentY" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="ParameterComponentZ" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="BsWfsElement" type="BsWfs:BsWfsType"/>
+</xsd:schema>

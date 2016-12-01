@@ -1,0 +1,31 @@
+            <om:featureOfInterest>
+                <sams:SF_SpatialSamplingFeature gml:id="s-<TMPL_var queryNum>-<TMPL_var dataset.__index__>">
+                <sam:sampledFeature>
+                    <target:SurfaceWeatherTargetArea gml:id="sampledFeatureTarget-<TMPL_var dataset.__index__>-<TMPL_var queryNum>"> 
+                        <target:geometry>
+                            <gml:Polygon gml:id="sampledFeatureTarget-polygon-<TMPL_var dataset.__index__>-<TMPL_var queryNum>" srsName="http://www.opengis.net/def/crs/EPSG/0/<TMPL_var SUBSTR(dataset.params.crs[0],5)>" srsDimension="2">
+                                <gml:exterior>
+                                    <gml:LinearRing>
+                                        <gml:coordinates>
+					    <TMPL_var dataset.params.calcBBox[0]> <TMPL_var dataset.params.calcBBox[1]> <TMPL_var dataset.params.calcBBox[0]> <TMPL_var dataset.params.calcBBox[3]> <TMPL_var dataset.params.calcBBox[2]> <TMPL_var dataset.params.calcBBox[3]> <TMPL_var dataset.params.calcBBox[2]> <TMPL_var dataset.params.calcBBox[1]> <TMPL_var dataset.params.calcBBox[0]> <TMPL_var dataset.params.calcBBox[1]>
+                                        </gml:coordinates>
+                                    </gml:LinearRing>
+                                </gml:exterior>
+                            </gml:Polygon>                
+                        </target:geometry>
+            		<target:observableProperty <TMPL_include "include/link_observable_property_grid.template">/>
+                    </target:SurfaceWeatherTargetArea>
+                </sam:sampledFeature>
+                <sams:shape>
+                    <gml:Polygon gml:id="samplingFeatureTarget-polygon-<TMPL_var dataset.__index__>-<TMPL_var queryNum>">
+                        <gml:exterior>
+                            <gml:LinearRing>
+                                <gml:coordinates>
+					<TMPL_var dataset.params.calcBBox[0]> <TMPL_var dataset.params.calcBBox[1]> <TMPL_var dataset.params.calcBBox[0]> <TMPL_var dataset.params.calcBBox[3]> <TMPL_var dataset.params.calcBBox[2]> <TMPL_var dataset.params.calcBBox[3]> <TMPL_var dataset.params.calcBBox[2]> <TMPL_var dataset.params.calcBBox[1]> <TMPL_var dataset.params.calcBBox[0]> <TMPL_var dataset.params.calcBBox[1]>
+	  	                </gml:coordinates>
+                            </gml:LinearRing>
+                        </gml:exterior>
+                    </gml:Polygon>                    
+                </sams:shape>            
+            </sams:SF_SpatialSamplingFeature>
+            </om:featureOfInterest>           

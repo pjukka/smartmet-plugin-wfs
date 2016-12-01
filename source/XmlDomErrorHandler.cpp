@@ -1,0 +1,48 @@
+#include "XmlDomErrorHandler.h"
+#include <iostream>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <xqilla/xqilla-dom3.hpp>
+#include <macgyver/TypeName.h>
+#include <spine/Exception.h>
+
+using SmartMet::Plugin::WFS::Xml::XmlDomErrorHandler;
+
+XmlDomErrorHandler::XmlDomErrorHandler()
+{
+}
+
+XmlDomErrorHandler::~XmlDomErrorHandler()
+{
+}
+
+bool XmlDomErrorHandler::handleError(const xercesc::DOMError &dom_error)
+{
+  try
+  {
+    std::ostringstream msg;
+    msg << METHOD_NAME << ": " << UTF8(dom_error.getMessage()) << " at "
+        << dom_error.getLocation()->getLineNumber() << ':'
+        << dom_error.getLocation()->getColumnNumber();
+
+    switch (dom_error.getSeverity())
+    {
+      case xercesc::DOMError::DOM_SEVERITY_WARNING:
+        std::cerr << (std::string("WARNING: ") + msg.str() + "\n") << std::flush;
+        break;
+
+      case xercesc::DOMError::DOM_SEVERITY_ERROR:
+        throw SmartMet::Spine::Exception(BCP, "DOM ERROR: " + msg.str(), NULL);
+
+      case xercesc::DOMError::DOM_SEVERITY_FATAL_ERROR:
+        throw SmartMet::Spine::Exception(BCP, "FATAL DOM ERROR: " + msg.str(), NULL);
+    }
+
+    return true;
+  }
+  catch (...)
+  {
+    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+  }
+}

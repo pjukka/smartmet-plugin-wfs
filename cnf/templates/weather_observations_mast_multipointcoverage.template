@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection xmlns:wfs="http://www.opengis.net/wfs/2.0"
+		       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		       xmlns:xlink="http://www.w3.org/1999/xlink"
+		       xmlns:om="http://www.opengis.net/om/2.0"
+		       xmlns:ompr="http://inspire.ec.europa.eu/schemas/ompr/3.0"
+		       xmlns:omso="http://inspire.ec.europa.eu/schemas/omso/3.0"
+		       xmlns:gml="http://www.opengis.net/gml/3.2"
+		       xmlns:gmllr="http://www.opengis.net/gml/3.3/lr"
+		       xmlns:gmd="http://www.isotc211.org/2005/gmd"
+		       xmlns:gco="http://www.isotc211.org/2005/gco"
+		       xmlns:swe="http://www.opengis.net/swe/2.0"
+		       xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+		       xmlns:sam="http://www.opengis.net/sampling/2.0"
+		       xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+		       xmlns:target="http://xml.fmi.fi/namespace/om/atmosphericfeatures/0.95"
+		       timeStamp="<TMPL_var responseTimestamp>"
+		       numberMatched="<TMPL_var numberMatched>"
+		       numberReturned="<TMPL_var numberReturned>"
+		       xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+					   http://www.opengis.net/gmlcov/1.0 http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd
+					   http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd
+					   http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd
+					   http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd
+					   http://inspire.ec.europa.eu/schemas/ompr/3.0 http://inspire.ec.europa.eu/schemas/ompr/3.0/Processes.xsd
+					   http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd
+					   http://xml.fmi.fi/namespace/om/atmosphericfeatures/0.95 http://xml.fmi.fi/schema/om/atmosphericfeatures/0.95/atmosphericfeatures.xsd
+					   http://www.opengis.net/gml/3.3/lr http://schemas.opengis.net/gml/3.3/linearRef.xsd">
+    <TMPL_if (numberReturned > 0)><TMPL_if DEFINED(groups)><TMPL_foreach groups as group><wfs:member>
+        <omso:ProfileObservation gml:id="<TMPL_var group.featureId>">
+            <om:phenomenonTime>
+                <gml:TimeInstant gml:id="<TMPL_var CONCAT("time1-",group.__index__ + 1)>">
+                    <gml:timePosition><TMPL_var group.phenomenonTime></gml:timePosition>
+                </gml:TimeInstant>
+            </om:phenomenonTime>
+            <om:resultTime>
+                <gml:TimeInstant gml:id="<TMPL_var CONCAT("time2-",group.__index__ + 1)>">
+                    <gml:timePosition><TMPL_var group.resultTime></gml:timePosition>
+                </gml:TimeInstant>
+            </om:resultTime>
+            <om:procedure xlink:href="http://xml.fmi.fi/inspire/process/mast"/>
+            <om:parameter>
+                <om:NamedValue>
+                    <om:name xlink:href="http://inspire.ec.europa.eu/codeList/ProcessParameterValue/value/groundObservation/observationIntent"/>
+                    <om:value>atmosphere</om:value>
+                </om:NamedValue>
+            </om:parameter>
+            <om:observedProperty <TMPL_include "include/link_observable_property.template">/>
+            <om:featureOfInterest>
+                <sams:SF_SpatialSamplingFeature gml:id="<TMPL_var CONCAT("ssf-",group.__index__ + 1)>-fmisid-<TMPL_var group.station.fmisid>">
+                    <sam:sampledFeature />
+                    <sam:relatedSamplingFeature>
+                        <sam:SamplingFeatureComplex>
+                            <sam:role xlink:title="Related groud observation station" xlink:href="http://xml.fmi.fi/namespace/relation/groud-observation-station"/>
+                            <sam:relatedSamplingFeature>
+                                <sams:SF_SpatialSamplingFeature gml:id="<TMPL_var CONCAT("obs-station-",group.__index__ + 1)>-fmisid-<TMPL_var group.station.fmisid>">
+                                    <gml:description>Meteorological observation station for <TMPL_if group.station.region><TMPL_var group.station.region> </TMPL_if>mast observations</gml:description>
+                                    <sam:sampledFeature>
+                                        <target:Location gml:id="<TMPL_var CONCAT("obsloc-",group.__index__ + 1)>-fmisid-<TMPL_var group.station.fmisid>-pos">
+                                            <gml:identifier codeSpace="http://xml.fmi.fi/namespace/stationcode/fmisid"><TMPL_var group.station.fmisid></gml:identifier>
+                                            <TMPL_if group.station.name><gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name"><TMPL_var group.station.name></gml:name></TMPL_if>
+                                            <TMPL_if group.station.geoid><gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid"><TMPL_var group.station.geoid></gml:name></TMPL_if>
+                                            <TMPL_if group.station.wmo><gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/wmo"><TMPL_var group.station.wmo></gml:name></TMPL_if>
+                                            <target:representativePoint xlink:href="#point-<TMPL_var group.station.fmisid>"/>
+                                            <TMPL_if group.station.region><target:region codeSpace="http://xml.fmi.fi/namespace/location/region"><TMPL_var group.station.region></target:region></TMPL_if>
+                                        </target:Location>
+                                    </sam:sampledFeature>
+                                    <sams:shape>
+                                        <gml:Point gml:id="<TMPL_var CONCAT("point-",group.__index__ + 1)>-<TMPL_var group.station.fmisid>" <TMPL_if axisLabels>axisLabels="<TMPL_var axisLabels>" </TMPL_if>srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+                                            <gml:name><TMPL_var group.station.name></gml:name>
+                                            <gml:pos><TMPL_var group.station.x> <TMPL_var group.station.y><TMPL_if group.station.elevation> <TMPL_var group.station.elevation></TMPL_if></gml:pos>
+                                        </gml:Point>
+                                    </sams:shape>
+                                </sams:SF_SpatialSamplingFeature>
+                            </sam:relatedSamplingFeature>
+                        </sam:SamplingFeatureComplex>
+                    </sam:relatedSamplingFeature>
+                    <sams:shape>
+                        <gml:Curve gml:id="<TMPL_var CONCAT("shape-",group.__index__ + 1)>-fmisid-<TMPL_var group.station.fmisid>-mast-geom" <TMPL_if axisLabels>axisLabels="<TMPL_var axisLabels>" </TMPL_if>srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+                            <gml:segments>
+                                <gml:LineStringSegment >
+                                    <gml:posList><TMPL_var group.station.x> <TMPL_var group.station.y> <TMPL_var group.station.elevation> <TMPL_var group.station.x> <TMPL_var group.station.y><TMPL_if group.topHeight> <TMPL_var group.topHeight></TMPL_if></gml:posList>
+                                </gml:LineStringSegment>
+                            </gml:segments>
+                        </gml:Curve>
+                    </sams:shape>
+                </sams:SF_SpatialSamplingFeature>
+            </om:featureOfInterest>
+            <om:result>
+                <gmlcov:MultiPointCoverage gml:id="<TMPL_var CONCAT("mpcv1-",group.__index__ + 1)>">
+                    <gml:domainSet>
+                        <gmlcov:SimpleMultiPoint gml:id="<TMPL_var CONCAT("mp1-",group.__index__ + 1)>" srsName="http://xml.fmi.fi/gml/crs/mastSRS.php?id=fmisid-<TMPL_var group.station.fmisid>" srsDimension="1">
+                            <gmlcov:positions>
+                                <TMPL_if DEFINED(group.data)><TMPL_foreach group.data as data><TMPL_if DEFINED(data.level)><TMPL_var data.level> </TMPL_if></TMPL_foreach></TMPL_if>
+                            </gmlcov:positions>
+                        </gmlcov:SimpleMultiPoint>
+                    </gml:domainSet>
+                    <gml:rangeSet>
+                        <gml:DataBlock>
+                            <gml:rangeParameters/>
+                            <gml:doubleOrNilReasonTupleList>
+                                <TMPL_if DEFINED(group.data)><TMPL_foreach group.data as data><TMPL_if DEFINED(data.value)><TMPL_var data.value> </TMPL_if><TMPL_if DEFINED(data.quality)><TMPL_var data.quality> </TMPL_if></TMPL_foreach></TMPL_if>
+                            </gml:doubleOrNilReasonTupleList>
+                        </gml:DataBlock>
+                    </gml:rangeSet>
+                    <gml:coverageFunction>
+                        <gml:CoverageMappingRule>
+                            <gml:ruleDefinition>Linear</gml:ruleDefinition>
+                        </gml:CoverageMappingRule>
+                    </gml:coverageFunction>
+                    <gmlcov:rangeType>
+                        <swe:DataRecord>
+                        <TMPL_foreach group.obsParamList as obsParam><swe:field name="<TMPL_var obsParam.name>" <TMPL_include "include/link_observable_property.template"><TMPL_if DEFINED(obsParam.isQCParameter)>>
+                          <swe:Category><swe:codeSpace xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?qualitycode=&amp;language=<TMPL_var language>&amp;"/></swe:Category>
+                        </swe:field><TMPL_else>/></TMPL_if>
+                        </TMPL_foreach>
+                        </swe:DataRecord>
+                    </gmlcov:rangeType>
+                </gmlcov:MultiPointCoverage>
+            </om:result>
+        </omso:ProfileObservation>
+    </wfs:member>
+    </TMPL_foreach></TMPL_if></TMPL_if>
+</wfs:FeatureCollection>

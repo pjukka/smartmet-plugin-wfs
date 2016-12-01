@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+  timeStamp="<TMPL_var responseTimestamp>"
+  numberMatched="<TMPL_var numberMatched>"
+  numberReturned="<TMPL_var numberMatched>"
+<TMPL_include "include/refs_obs_multipointcoverage.template"><TMPL_if (numberReturned > 0)><TMPL_if DEFINED(groups)><TMPL_foreach groups as group>
+  <wfs:member>
+    <omso:PointObservation gml:id="<TMPL_var group.featureId>">
+      <om:phenomenonTime>
+        <gml:TimePeriod gml:id="time1-<TMPL_var queryNum>-<TMPL_var group.groupNum>">
+          <gml:beginPosition><TMPL_var group.obsPhenomenonStartTime></gml:beginPosition>
+          <gml:endPosition><TMPL_var group.obsPhenomenonEndTime></gml:endPosition>
+        </gml:TimePeriod>
+      </om:phenomenonTime>
+      <om:resultTime>
+        <gml:TimeInstant gml:id="time2-<TMPL_var queryNum>-<TMPL_var group.groupNum>">
+          <gml:timePosition><TMPL_var group.obsResultTime></gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://xml.fmi.fi/inspire/process/stuk/<TMPL_var query_parameters.stationType[0]>"/>
+      <om:parameter>
+        <om:NamedValue>
+          <om:name xlink:href="http://inspire.ec.europa.eu/codeList/ProcessParameterValue/value/analysisNumber"/>
+          <om:value>
+            <gml:integerValue><TMPL_var group.analysisVersion></gml:integerValue>
+          </om:value>
+        </om:NamedValue>
+      </om:parameter>
+     <om:observedProperty <TMPL_include "include/link_observable_property.template">/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="sampling-feature-<TMPL_var queryNum>-<TMPL_var group.groupId>-fmisid-<TMPL_var group.fmisid>">
+          <sam:sampledFeature>
+            <target:Location gml:id="obsloc-<TMPL_var group.groupNum>-fmisid-<TMPL_var group.fmisid>-pos">
+              <gml:identifier codeSpace="http://xml.fmi.fi/namespace/stationcode/fmisid"><TMPL_var group.fmisid></gml:identifier>
+              <TMPL_if group.memberCode><gml:name codeSpace="http://xml.fmi.fi/namespace/stationcode/stuk-air"><TMPL_var group.memberCode></gml:name></TMPL_if>
+              <TMPL_if group.stationFormalName><gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name"><TMPL_var group.stationFormalName></gml:name></TMPL_if>
+              <target:representativePoint xlink:href="#point-<TMPL_var group.groupNum>-fmisid-<TMPL_var group.fmisid>"/>
+              <TMPL_if group.region><target:region codeSpace="http://xml.fmi.fi/namespace/location/region"><TMPL_var group.region></target:region></TMPL_if>
+              <TMPL_if group.country><target:region codeSpace="http://xml.fmi.fi/namespace/location/country"><TMPL_var group.country></target:region></TMPL_if>
+            </target:Location>
+          </sam:sampledFeature>
+          <sams:shape>
+            <gml:Point gml:id="point-<TMPL_var group.groupNum>-fmisid-<TMPL_var group.fmisid>" srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+              <TMPL_if group.stationFormalName><gml:name><TMPL_var group.stationFormalName></gml:name></TMPL_if>
+              <gml:pos><TMPL_var group.x> <TMPL_var group.y><TMPL_if group.elevation> <TMPL_var group.elevation></TMPL_if></gml:pos>
+            </gml:Point>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result>
+          <gmlcov:MultiPointCoverage gml:id="mpcv1-<TMPL_var queryNum>-<TMPL_var group.groupId>">
+            <gml:domainSet>
+              <gmlcov:SimpleMultiPoint gml:id="mp1-<TMPL_var queryNum>-<TMPL_var group.groupId>" srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+                <gmlcov:positions><TMPL_var group.x> <TMPL_var group.y><TMPL_if group.elevation> <TMPL_var group.elevation></TMPL_if></gmlcov:positions>
+              </gmlcov:SimpleMultiPoint>
+            </gml:domainSet>
+            <gml:rangeSet>
+              <gml:DataBlock>
+                <gml:rangeParameters />
+                <gml:doubleOrNilReasonTupleList><TMPL_if DEFINED(group.data)><TMPL_var group.airVolume><TMPL_foreach group.data as data> <TMPL_var data.concentration> <TMPL_var data.uncertainty><TMPL_if DEFINED(data.dataQuality)> <TMPL_var data.dataQuality></TMPL_if></TMPL_foreach></TMPL_if></gml:doubleOrNilReasonTupleList>
+              </gml:DataBlock>
+            </gml:rangeSet>
+            <gml:coverageFunction>
+              <gml:CoverageMappingRule>
+                <gml:ruleDefinition>Linear</gml:ruleDefinition>
+              </gml:CoverageMappingRule>
+            </gml:coverageFunction>
+            <gmlcov:rangeType>
+              <swe:DataRecord>
+                <TMPL_if DEFINED(group.data)><swe:field name="air-volume">
+                  <swe:Quantity><TMPL_if in_set(language, "fin")>
+                    <swe:label>Ilmamäärä</swe:label>
+                    <swe:description>Mittauksen aikana käsitelty ilmamäärä.</swe:description><TMPL_else>
+                    <swe:label>Air volume</swe:label>
+                    <swe:description>Total volume of air sampled during the measurement.</swe:description></TMPL_if>
+                    <swe:uom code="m3"/>
+                  </swe:Quantity>
+                </swe:field><TMPL_foreach group.data as data>
+                <swe:field name="<TMPL_var data.nuclideCode>">
+                  <swe:Quantity><TMPL_if in_set(language, "fin")>
+                    <swe:label><TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> aktiivisuuspitoisuus</swe:label>
+                    <swe:description><TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> radionuklidin aktiivisuuspitoisuus ilmassa.</swe:description><TMPL_else>
+                    <swe:label><TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> activity concentration</swe:label>
+                    <swe:description><TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> radionuclide activity concentration in air.</swe:description></TMPL_if>
+                    <swe:uom code="uBq/m3" />
+                  </swe:Quantity>
+                </swe:field>
+                <swe:field name="<TMPL_var data.nuclideCode>-uncertainty">
+                  <swe:Quantity><TMPL_if in_set(language, "fin")>
+                    <swe:label><TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> tuloksen suhteellinen epävarmuus</swe:label>
+                    <swe:description><TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> nuklidin aktiivisuuspitoisuuden suhteellinen epävarmuus
+                      prosentteina (+/- X%) sigma 1 (~68%) luottamusvälillä. Pienempi prosenttiluku tarkoittaa varmempaa tulosta.</swe:description><TMPL_else>
+                    <swe:label>Relative uncertainty of <TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> result</swe:label>
+                    <swe:description>Uncertainty of <TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> nuclide activity concentration result,
+                      percent (+/- X%) at sigma 1 (~68%) confidence interval. Smaller the percentage means
+                      more certain result.</swe:description></TMPL_if>
+                    <swe:uom code="%"/>
+                  </swe:Quantity>
+                </swe:field><TMPL_if data.dataQuality>
+                <swe:field name="<TMPL_var data.nuclideCode>-quality">
+                  <swe:Quantity><TMPL_if in_set(language, "fin")>
+                    <swe:label><TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> aktiivisuuspitoisuusarvon laatukoodi</swe:label>
+                    <swe:description><TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> aktiivisuuspitoisuusarvon laatukoodi.</swe:description><TMPL_else>
+                    <swe:label>Quality of <TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> activity concentration result</swe:label>
+                    <swe:description>Quality code of <TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> radionuclide activity concentration result</swe:description></TMPL_if>
+                    <swe:uom code="Index" />
+                  </swe:Quantity>
+                  <swe:Category><swe:codeSpace xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?qualitycode=&amp;language=<TMPL_var language>&amp;"/></swe:Category>
+                </swe:field>
+                </TMPL_if></TMPL_foreach></TMPL_if>
+              </swe:DataRecord>
+            </gmlcov:rangeType>
+          </gmlcov:MultiPointCoverage>
+      </om:result>
+    </omso:PointObservation>
+  </wfs:member></TMPL_foreach></TMPL_if></TMPL_if>
+</wfs:FeatureCollection>

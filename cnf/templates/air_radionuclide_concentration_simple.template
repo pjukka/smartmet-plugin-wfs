@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+  timeStamp="<TMPL_var responseTimestamp>"
+  numberReturned="<TMPL_var numberMatched>"
+  numberMatched="<TMPL_var numberMatched>"
+  <TMPL_include "include/refs_for_simple.template">>
+
+        <TMPL_if DEFINED(groups)><TMPL_foreach groups as group><TMPL_if DEFINED(group.data)><TMPL_foreach group.data as data>
+        <wfs:member>
+            <BsWfs:BsWfsElement gml:id="BsWfsElement-<TMPL_var queryNum>-<TMPL_var group.groupId><TMPL_var CONCAT("-",data.__index__ + 1)>">
+                <BsWfs:Location>
+                    <gml:Point gml:id="BsWfsElementP-<TMPL_var queryNum>-<TMPL_var group.groupId><TMPL_var CONCAT("-",data.__index__ + 1)>" srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+                        <gml:pos><TMPL_var group.x> <TMPL_var group.y><TMPL_if group.elevation> <TMPL_var group.elevation></TMPL_if></gml:pos>
+                      </gml:Point>
+                    </BsWfs:Location>
+                <BsWfs:Time><TMPL_var group.obsPhenomenonEndTime></BsWfs:Time>
+                <BsWfs:ParameterName><TMPL_var data.nuclideCode></BsWfs:ParameterName>
+                <BsWfs:ParameterValue><TMPL_var data.concentration></BsWfs:ParameterValue>
+              </BsWfs:BsWfsElement>
+            </wfs:member>
+          </TMPL_foreach></TMPL_if></TMPL_foreach></TMPL_if>
+</wfs:FeatureCollection>

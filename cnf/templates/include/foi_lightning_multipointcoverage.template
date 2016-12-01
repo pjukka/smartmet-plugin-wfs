@@ -1,0 +1,26 @@
+            <om:featureOfInterest>
+                <sams:SF_SpatialSamplingFeature gml:id="enn-s-<TMPL_var queryNum>-<TMPL_var param.name>">
+          <sam:sampledFeature>
+                   <target:SurfaceWeatherTargetArea gml:id="<TMPL_var sampledFeatureTargetId>">
+                        <target:geometry>
+                            <gml:Polygon gml:id="<TMPL_var sampledFeatureTargetPolygonId>" srsName="<TMPL_var metadata.boundingBox.projUri>" srsDimension="2">
+                                <gml:exterior>
+                                    <gml:LinearRing>
+                                        <gml:coordinates>
+                                            <TMPL_var metadata.boundingBox.lowerLeft.x> <TMPL_var metadata.boundingBox.lowerLeft.y>
+                                            <TMPL_var metadata.boundingBox.lowerRight.x> <TMPL_var metadata.boundingBox.lowerRight.y>
+                                            <TMPL_var metadata.boundingBox.upperRight.x> <TMPL_var metadata.boundingBox.upperRight.y>
+                                            <TMPL_var metadata.boundingBox.upperLeft.x> <TMPL_var metadata.boundingBox.upperLeft.y>
+                                            <TMPL_var metadata.boundingBox.lowerLeft.x> <TMPL_var metadata.boundingBox.lowerLeft.y>
+                                        </gml:coordinates>
+                                    </gml:LinearRing>
+                                </gml:exterior>
+                            </gml:Polygon>
+                        </target:geometry>
+                        <target:observableProperty <TMPL_include "link_observable_property.template">/>
+                    </target:SurfaceWeatherTargetArea>
+ 	   	</sam:sampledFeature>
+                <sams:shape />
+            </sams:SF_SpatialSamplingFeature>
+        </om:featureOfInterest>
+

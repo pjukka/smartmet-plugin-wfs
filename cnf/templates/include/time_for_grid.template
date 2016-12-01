@@ -1,0 +1,17 @@
+            <om:phenomenonTime>
+                <gml:TimePeriod gml:id="ph-time-<TMPL_var queryNum>-<TMPL_var dataset.__index__>">
+                    <gml:beginPosition><TMPL_var dataset.params.phenomenonBeginTime[0]></gml:beginPosition>
+                    <gml:endPosition><TMPL_var dataset.params.phenomenonEndTime[0]></gml:endPosition>
+                </gml:TimePeriod>
+            </om:phenomenonTime>
+            <om:resultTime>
+                <gml:TimeInstant gml:id="rs-time-<TMPL_var queryNum>-<TMPL_var dataset.__index__>">
+                <gml:timePosition><TMPL_var dataset.params.originTime[0]></gml:timePosition>
+                </gml:TimeInstant>
+            </om:resultTime>
+            <om:validTime>
+                <gml:TimePeriod gml:id="vt-time-<TMPL_var queryNum>-<TMPL_var dataset.__index__>">
+                    <gml:beginPosition><TMPL_var dataset.params.firstTime[0]></gml:beginPosition>
+                    <gml:endPosition><TMPL_var dataset.params.lastTime[0]></gml:endPosition>
+                </gml:TimePeriod>
+            </om:validTime>

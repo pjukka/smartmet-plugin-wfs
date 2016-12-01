@@ -1,0 +1,17 @@
+/**
+
+@page WFS_SQ_PARAM_GROUPS Stored query parameter groups
+
+There are several common stored query parameter groups that are handled by separate C++ base classes.
+Developer should derive own stored query handler group from the base classes of
+implementing required parameter groups additionally to deriving from
+stored query handler base class BrainStorm::Wfs::StoredQueryHandlerBase
+
+- @subpage WFS_SQ_TIME_PARAMS
+- @subpage WFS_SQ_TIME_ZONE
+- @subpage WFS_SQ_LOCATION_PARAMS
+- @subpage WFS_SQ_PARAM_BBOX
+- @subpage WFS_SQ_NAMED_PARAMS
+- @subpage WFS_SQ_QUALITY_PARAMS
+
+*/

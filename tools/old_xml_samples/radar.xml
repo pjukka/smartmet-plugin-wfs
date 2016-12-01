@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+    timeStamp="2012-04-03T22:56:09"
+    numberMatched="1"
+    numberReturned="1"
+    xmlns:wfs="http://www.opengis.net/wfs/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:om="http://www.opengis.net/om/2.0"
+    xmlns:acmf="http://inspire.jrc.ec.europa.eu/schemas/ac/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:gmd="http://www.isotc211.org/2005/gmd"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+    xmlns:inspire="urn:x-inspire:specification:gmlas:BaseTypes:3.2"
+    xmlns:sam="http://www.opengis.net/sampling/2.0"
+    xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+    xmlns:target="http://xml.fmi.fi/namespace/om/atmosphericfeatures"
+    xsi:schemaLocation="
+    http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+    http://www.opengis.net/gmlcov/1.0 http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd
+    http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd
+    http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd
+    http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd
+    http://inspire.jrc.ec.europa.eu/schemas/ac/2.0 http://xml.fmi.fi/schema/inspire/2.0.1/AtmosphericConditions.xsd
+    http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd
+    http://xml.fmi.fi/namespace/om/atmosphericfeatures http://xml.fmi.fi/schema/om/atmosphericfeatures/atmosphericfeatures.xsd">
+
+    <wfs:member>
+        <acmf:GridSeriesObservation gml:id="obs-1">
+            
+            <!-- reference Edited data forecast metadata record (catalog service)-->
+            <om:metadata xlink:href="http://catalog.fmi.fi/radar?param=dbz&amp;radar=korpo&amp;format=iso"/>
+            
+            <om:phenomenonTime>
+                <gml:TimeInstant gml:id="time-1">
+                    <gml:timePosition>2012-04-27T15:00:00Z</gml:timePosition>
+                </gml:TimeInstant>                   
+            </om:phenomenonTime>
+            
+            <om:resultTime>
+                <gml:TimeInstant gml:id="time-2">
+                    <gml:timePosition>2012-04-27T15:03:00Z</gml:timePosition>
+                </gml:TimeInstant>        
+            </om:resultTime>          
+            
+            <om:procedure>
+                <inspire:Process>
+                    <!-- TODO: find proper namespace URI and name -->
+                    <inspire:Identifier>
+                        <inspire:localId>radar-korpo-dbz</inspire:localId>
+                        <inspire:namespace>http://registry.inspire.ec.europa.eu/id/ac/forecastModel</inspire:namespace>
+                    </inspire:Identifier>
+                    <inspire:name>Weather Radar</inspire:name>
+                    <gmd:CI_ResponsibleParty>  
+                        <gmd:individualName></gmd:individualName>
+                        <gmd:role>           
+                        </gmd:role>            
+                    </gmd:CI_ResponsibleParty>
+                    <inspire:processParameter>
+                        <inspire:description>Weather Radar Description</inspire:description>                        
+                    </inspire:processParameter>
+                </inspire:Process>
+            </om:procedure>
+   
+            <om:observedProperty xlink:href="/create-obs-property-composite?params=dbz"/>
+            
+            <om:featureOfInterest>
+                <!-- Sampling feature is defines the properties of the place(s) where the "sample" was taken -->
+                <sams:SF_SpatialSamplingFeature gml:id="fct-region-1233">                             
+                    <sam:sampledFeature>
+                        <target:SurfaceWeatherTargetArea gml:id="fff">
+                            <target:geometry>
+                                <gml:Polygon gml:id="p-id-1" srsName="http://www.opengis.net/def/crs/EPSG/0/4258" srsDimension="2">
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:coordinates>
+                                                25.0000000118 -19.22 26.2741234885 36.5496554856 57.0000000118 79.7 53.7291724294 -61.7140730064 25.0000000118 -19.22
+                                            </gml:coordinates>
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:Polygon>
+                            </target:geometry>
+                            <target:observableProperty xlink:href="/create-obs-property-composite?params=dbz"/>                            
+                        </target:SurfaceWeatherTargetArea>                        
+                    </sam:sampledFeature>                
+                    
+                    <sams:shape>                        
+                        <!-- The geometry of the sampling feature is a multipolygon, one polygon for each pressure level -->
+                        <gml:Polygon gml:id="p-id-2" srsName="http://www.opengis.net/def/crs/EPSG/0/4258" srsDimension="2">
+                            <gml:exterior>
+                                <gml:LinearRing>
+                                    <!-- Bounding box of the data -->
+                                    <gml:coordinates>
+                                        25.0000000118 -19.22 26.2741234885 36.5496554856 57.0000000118 79.7 53.7291724294 -61.7140730064 25.0000000118 -19.22
+                                    </gml:coordinates>
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:Polygon>        
+                    </sams:shape>            
+                </sams:SF_SpatialSamplingFeature>
+            </om:featureOfInterest>
+            
+            <om:result>        
+                <gmlcov:RectifiedGridCoverage gml:id="rfc1">
+                    <gml:domainSet>
+                        <gml:RectifiedGrid gml:id="grid-1" srsName="http://www.opengis.net/def/crs/EPSG/0/4258" dimension="2">
+                            <gml:limits>
+                                <gml:GridEnvelope>                                                                           
+                                    <gml:low>0 0</gml:low>
+                                    <gml:high>1999 1999</gml:high>
+                                </gml:GridEnvelope>
+                            </gml:limits>                          
+                            <gml:axisLabels>Lat Long</gml:axisLabels>
+                            <gml:origin>
+                                <!-- srs here always in the native projection of the data so that we can encode dx, dy and dz in the vectors -->
+                                <gml:Point srsName="http://www.opengis.net/def/crs/EPSG/0/4258" gml:id="grid-origin-1">
+                                    <!-- Upper right corner and the bottom -->
+                                    <gml:pos>71.375 -9.21 1</gml:pos>
+                                </gml:Point>
+                            </gml:origin>
+                            <!-- Vector with dx and dy in the returned grid. -->
+                            <gml:offsetVector>0.00439 0</gml:offsetVector>
+                            <gml:offsetVector>0 0.00231</gml:offsetVector>                            
+                        </gml:RectifiedGrid>
+                    </gml:domainSet>
+                    <gml:rangeSet>           
+                        <gml:File>
+                            <gml:rangeParameters/>                                                                       
+                            <gml:fileReference>http://map.fmi.fi/geoserver/Radar/wms?service=WMS&amp;version=1.1.0&amp;request=GetMap&amp;layers=Radar:korpo_ppi_ala_eureffin&amp;styles=&amp;bbox=-47401.010835,6427792.977225,452598.987414,6927793.045141&amp;width=1999&amp;height=1999&amp;srs=EPSG:3067&amp;format=image%2Fgeotiff</gml:fileReference>     
+                            <gml:fileStructure/>
+                            <gml:mimeType>image/geotiff</gml:mimeType>
+                        </gml:File>
+                    </gml:rangeSet>
+                    <gml:coverageFunction>
+                        <gml:CoverageMappingRule>
+                            <gml:ruleDefinition>Linear</gml:ruleDefinition>
+                        </gml:CoverageMappingRule>
+                    </gml:coverageFunction>
+                    
+                    <!-- Definition of the value record given in the rangeSet -->
+                    <gmlcov:rangeType>
+                        <swe:DataRecord>                        
+                            <swe:field name="dbz" xlink:href="/observable-property?dbz"/>
+                        </swe:DataRecord>
+                    </gmlcov:rangeType>              
+                </gmlcov:RectifiedGridCoverage>
+            </om:result>
+        </acmf:GridSeriesObservation>
+    </wfs:member>
+</wfs:FeatureCollection>

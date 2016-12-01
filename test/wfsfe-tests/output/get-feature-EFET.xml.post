@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wfs:FeatureCollection xmlns:wfs="http://www.opengis.net/wfs/2.0" numberMatched="45" numberReturned="2" timeStamp="2012-12-12T12:12:12Z" xmlns:avi="http://xml.fmi.fi/namespace/aviation-weather/2014/02/15" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:iwxxm="http://icao.int/iwxxm/1.0" xmlns:metce="http://def.wmo.int/metce/2013" xmlns:om="http://www.opengis.net/om/2.0" xmlns:saf="http://icao.int/saf/1.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd         http://xml.fmi.fi/namespace/aviation-weather/2014/02/15 http://xml.fmi.fi/schema/aviation-weather/2014/02/15/fmiavi.xsd         http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd         http://icao.int/iwxxm/1.0 http://schemas.wmo.int/iwxxm/1.0/iwxxm.xsd         http://def.wmo.int/metce/2013 http://schemas.wmo.int/metce/1.0/metce.xsd         http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd         http://icao.int/saf/1.0 http://schemas.wmo.int/saf/1.0/saf.xsd         http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd         http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd">
+
+  <wfs:member>
+    <avi:VerifiableMessage gml:id="vmsg-2886cae2-d149-47c6-8a9b-5d18ec3966db" xmlns:avi="http://xml.fmi.fi/namespace/aviation-weather/2014/02/15" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:iwxxm="http://icao.int/iwxxm/1.0" xmlns:metce="http://def.wmo.int/metce/2013" xmlns:om="http://www.opengis.net/om/2.0" xmlns:saf="http://icao.int/saf/1.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd http://icao.int/iwxxm/1.0 http://schemas.wmo.int/iwxxm/1.0/iwxxm.xsd http://def.wmo.int/metce/2013 http://schemas.wmo.int/metce/1.0/metce.xsd http://xml.fmi.fi/namespace/aviation-weather/2014/02/15 http://xml.fmi.fi/schema/aviation-weather/2014/02/15/fmiavi.xsd">
+      <avi:message>
+        <iwxxm:METAR automatedStation="true" gml:id="metar-50f027bf-c330-45a8-bf42-33913aa940c9" status="NORMAL">
+          <iwxxm:observation>
+            <om:OM_Observation gml:id="obs-9369e3a6-5e35-4692-a3af-149d80b40fce">
+              <om:type xlink:href="http://codes.wmo.int/49-2/observation-type/IWXXM/1.0/MeteorologicalAerodromeObservation" xlink:title="Aerodrome Weather Observation"/>
+              <om:phenomenonTime>
+                <gml:TimeInstant gml:id="time-39c702b6-df7c-40f0-9839-a513c1d11654">
+                  <gml:timePosition>2014-06-30T14:20:00.000Z</gml:timePosition>
+                </gml:TimeInstant>
+              </om:phenomenonTime>
+              <om:resultTime xlink:href="#time-39c702b6-df7c-40f0-9839-a513c1d11654" xlink:title="Reference to PhenomenonTime"/>
+              <om:procedure>
+                <metce:Process gml:id="process-1880ba9d-998f-499f-ba4a-827377624a3c">
+                  <gml:description>WMO No. 49 Volume 2 Meteorological Service for International Air Navigation APPENDIX 3 TECHNICAL SPECIFICATIONS RELATED TO METEOROLOGICAL OBSERVATIONS AND REPORTS</gml:description>
+                </metce:Process>
+              </om:procedure>
+              <om:observedProperty xlink:href="http://codes.wmo.int/49-2/observable-property/MeteorologicalAerodromeObservation" xlink:title="Observed properties for Meteorological Aerodrome Observation Reports (METAR and SPECI)"/>
+              <om:featureOfInterest>
+                <sams:SF_SpatialSamplingFeature gml:id="foi-ff33737b-a240-4345-a5cc-a07d13d7d04c">
+                  <sam:sampledFeature>
+                    <saf:Aerodrome gml:id="id-6c051333-e796-49c5-a91a-6a8cafacce7c-ad-EFET">
+                      <saf:designator>EFET</saf:designator>
+                      <saf:name>ENONTEKIÖ</saf:name>
+                      <saf:locationIndicatorICAO>EFET</saf:locationIndicatorICAO>
+                      <saf:fieldElevation uom="m">306.3</saf:fieldElevation>
+                      <saf:ARP>
+                        <gml:Point axisLabels="Lat Long" gml:id="point-10b7b030-2c0b-4cf8-a6c6-87d70199b5d2" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                          <gml:pos>68.36444 23.4275</gml:pos>
+                        </gml:Point>
+                      </saf:ARP>
+                    </saf:Aerodrome>
+                  </sam:sampledFeature>
+                  <sams:shape>
+                    <gml:Point axisLabels="Lat Long" gml:id="point-e3940dd9-10a5-4e55-b495-5a6f11494dc5" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                      <gml:pos>68.36444 23.4275</gml:pos>
+                    </gml:Point>
+                  </sams:shape>
+                </sams:SF_SpatialSamplingFeature>
+              </om:featureOfInterest>
+              <om:result>
+                <iwxxm:MeteorologicalAerodromeObservationRecord cloudAndVisibilityOK="true" gml:id="rec-c31b7780-a16e-4c38-aae3-b86aafd42322">
+                  <iwxxm:airTemperature uom="degC">18.0</iwxxm:airTemperature>
+                  <iwxxm:dewpointTemperature uom="degC">2.0</iwxxm:dewpointTemperature>
+                  <iwxxm:qnh uom="hPa">1011.0</iwxxm:qnh>
+                  <iwxxm:surfaceWind>
+                    <iwxxm:AerodromeSurfaceWind variableDirection="false">
+                      <iwxxm:meanWindDirection uom="deg">210.0</iwxxm:meanWindDirection>
+                      <iwxxm:meanWindSpeed uom="kt">7.0</iwxxm:meanWindSpeed>
+                      <iwxxm:extremeClockwiseWindDirection uom="deg">250.0</iwxxm:extremeClockwiseWindDirection>
+                      <iwxxm:extremeCounterClockwiseWindDirection uom="deg">160.0</iwxxm:extremeCounterClockwiseWindDirection>
+                    </iwxxm:AerodromeSurfaceWind>
+                  </iwxxm:surfaceWind>
+                  <iwxxm:visibility>
+                    <iwxxm:AerodromeHorizontalVisibility>
+                      <iwxxm:prevailingVisibility uom="m">9999.0</iwxxm:prevailingVisibility>
+                      <iwxxm:prevailingVisibilityOperator>ABOVE</iwxxm:prevailingVisibilityOperator>
+                    </iwxxm:AerodromeHorizontalVisibility>
+                  </iwxxm:visibility>
+                </iwxxm:MeteorologicalAerodromeObservationRecord>
+              </om:result>
+            </om:OM_Observation>
+          </iwxxm:observation>
+        </iwxxm:METAR>
+      </avi:message>
+      <avi:metadata>
+        <avi:MessageMetadata gml:id="msgmeta-468b6f55-a5ed-4379-b26d-c3c92edf9457">
+          <avi:source>
+            <avi:Process gml:id="prc-d00aef3c-0396-4279-9c05-dfc53b9fbd52">
+              <gml:description>This document has been automatically created based on the original METAR/SPECI code message included in the 'input' element.Note: This is NOT an authoritative aviation weather report. It SHOULD NOT be used as a weather report to be used in flight planning or other aviation related use.</gml:description>
+              <avi:name xlink:href="http://xml.fmi.fi/process/avi/IWXXMConversion/1.0" xlink:title="Automatic METAR/SPECI/IWXXM conversion process"/>
+              <avi:actor xlink:href="http://xml.fmi.fi/actor/avi/IWXXMConverter/1.1" xlink:title="FMI Automatic METAR/SPECI/IWXXM conversion system"/>
+              <avi:processingTime>2014-12-02T10:13:45.332Z</avi:processingTime>
+              <avi:input>EFET 301420Z AUTO 21007KT 160V250 CAVOK 18/02 Q1011=</avi:input>
+            </avi:Process>
+          </avi:source>
+        </avi:MessageMetadata>
+      </avi:metadata>
+    </avi:VerifiableMessage>
+  </wfs:member>
+
+  <wfs:member>
+    <avi:VerifiableMessage gml:id="vmsg-ada13172-b293-48a1-b902-3f78289420c9" xmlns:avi="http://xml.fmi.fi/namespace/aviation-weather/2014/02/15" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:iwxxm="http://icao.int/iwxxm/1.0" xmlns:metce="http://def.wmo.int/metce/2013" xmlns:om="http://www.opengis.net/om/2.0" xmlns:saf="http://icao.int/saf/1.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd http://icao.int/iwxxm/1.0 http://schemas.wmo.int/iwxxm/1.0/iwxxm.xsd http://def.wmo.int/metce/2013 http://schemas.wmo.int/metce/1.0/metce.xsd http://xml.fmi.fi/namespace/aviation-weather/2014/02/15 http://xml.fmi.fi/schema/aviation-weather/2014/02/15/fmiavi.xsd">
+      <avi:message>
+        <iwxxm:METAR automatedStation="true" gml:id="metar-1eb97457-e3b4-40ae-a8d5-99df3c493d9e" status="NORMAL">
+          <iwxxm:observation>
+            <om:OM_Observation gml:id="obs-1173550a-b755-4e78-b234-e551a0824555">
+              <om:type xlink:href="http://codes.wmo.int/49-2/observation-type/IWXXM/1.0/MeteorologicalAerodromeObservation" xlink:title="Aerodrome Weather Observation"/>
+              <om:phenomenonTime>
+                <gml:TimeInstant gml:id="time-aee67482-bf03-42d9-bf95-4fb3ef51ab60">
+                  <gml:timePosition>2014-06-30T14:50:00.000Z</gml:timePosition>
+                </gml:TimeInstant>
+              </om:phenomenonTime>
+              <om:resultTime xlink:href="#time-aee67482-bf03-42d9-bf95-4fb3ef51ab60" xlink:title="Reference to PhenomenonTime"/>
+              <om:procedure>
+                <metce:Process gml:id="process-65e2079e-ef2c-442b-8b8a-f2d3b9e94e56">
+                  <gml:description>WMO No. 49 Volume 2 Meteorological Service for International Air Navigation APPENDIX 3 TECHNICAL SPECIFICATIONS RELATED TO METEOROLOGICAL OBSERVATIONS AND REPORTS</gml:description>
+                </metce:Process>
+              </om:procedure>
+              <om:observedProperty xlink:href="http://codes.wmo.int/49-2/observable-property/MeteorologicalAerodromeObservation" xlink:title="Observed properties for Meteorological Aerodrome Observation Reports (METAR and SPECI)"/>
+              <om:featureOfInterest>
+                <sams:SF_SpatialSamplingFeature gml:id="foi-bfea7e63-e805-4c96-9eeb-85549d06f1bf">
+                  <sam:sampledFeature>
+                    <saf:Aerodrome gml:id="id-76df598c-f72b-40a6-89be-ab4bf7911b62-ad-EFET">
+                      <saf:designator>EFET</saf:designator>
+                      <saf:name>ENONTEKIÖ</saf:name>
+                      <saf:locationIndicatorICAO>EFET</saf:locationIndicatorICAO>
+                      <saf:fieldElevation uom="m">306.3</saf:fieldElevation>
+                      <saf:ARP>
+                        <gml:Point axisLabels="Lat Long" gml:id="point-7f7a4c4a-bf4c-498a-bfec-f3a2c8e8578d" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                          <gml:pos>68.36444 23.4275</gml:pos>
+                        </gml:Point>
+                      </saf:ARP>
+                    </saf:Aerodrome>
+                  </sam:sampledFeature>
+                  <sams:shape>
+                    <gml:Point axisLabels="Lat Long" gml:id="point-b7825a47-f1e3-441a-b2c5-4bcbbb7cc75f" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                      <gml:pos>68.36444 23.4275</gml:pos>
+                    </gml:Point>
+                  </sams:shape>
+                </sams:SF_SpatialSamplingFeature>
+              </om:featureOfInterest>
+              <om:result>
+                <iwxxm:MeteorologicalAerodromeObservationRecord cloudAndVisibilityOK="true" gml:id="rec-71d6d04e-086f-41c8-a534-62dee6931b79">
+                  <iwxxm:airTemperature uom="degC">18.0</iwxxm:airTemperature>
+                  <iwxxm:dewpointTemperature uom="degC">1.0</iwxxm:dewpointTemperature>
+                  <iwxxm:qnh uom="hPa">1011.0</iwxxm:qnh>
+                  <iwxxm:surfaceWind>
+                    <iwxxm:AerodromeSurfaceWind variableDirection="false">
+                      <iwxxm:meanWindDirection uom="deg">210.0</iwxxm:meanWindDirection>
+                      <iwxxm:meanWindSpeed uom="kt">5.0</iwxxm:meanWindSpeed>
+                      <iwxxm:extremeClockwiseWindDirection uom="deg">260.0</iwxxm:extremeClockwiseWindDirection>
+                      <iwxxm:extremeCounterClockwiseWindDirection uom="deg">150.0</iwxxm:extremeCounterClockwiseWindDirection>
+                    </iwxxm:AerodromeSurfaceWind>
+                  </iwxxm:surfaceWind>
+                  <iwxxm:visibility>
+                    <iwxxm:AerodromeHorizontalVisibility>
+                      <iwxxm:prevailingVisibility uom="m">9999.0</iwxxm:prevailingVisibility>
+                      <iwxxm:prevailingVisibilityOperator>ABOVE</iwxxm:prevailingVisibilityOperator>
+                    </iwxxm:AerodromeHorizontalVisibility>
+                  </iwxxm:visibility>
+                </iwxxm:MeteorologicalAerodromeObservationRecord>
+              </om:result>
+            </om:OM_Observation>
+          </iwxxm:observation>
+        </iwxxm:METAR>
+      </avi:message>
+      <avi:metadata>
+        <avi:MessageMetadata gml:id="msgmeta-9b40676b-dd5c-450f-b4d1-df8aadbd9bb5">
+          <avi:source>
+            <avi:Process gml:id="prc-ba0021d5-90ab-4196-b081-a8b511cddf8e">
+              <gml:description>This document has been automatically created based on the original METAR/SPECI code message included in the 'input' element.Note: This is NOT an authoritative aviation weather report. It SHOULD NOT be used as a weather report to be used in flight planning or other aviation related use.</gml:description>
+              <avi:name xlink:href="http://xml.fmi.fi/process/avi/IWXXMConversion/1.0" xlink:title="Automatic METAR/SPECI/IWXXM conversion process"/>
+              <avi:actor xlink:href="http://xml.fmi.fi/actor/avi/IWXXMConverter/1.1" xlink:title="FMI Automatic METAR/SPECI/IWXXM conversion system"/>
+              <avi:processingTime>2014-12-02T10:13:45.326Z</avi:processingTime>
+              <avi:input>EFET 301450Z AUTO 21005KT 150V260 CAVOK 18/01 Q1011=</avi:input>
+            </avi:Process>
+          </avi:source>
+        </avi:MessageMetadata>
+      </avi:metadata>
+    </avi:VerifiableMessage>
+  </wfs:member>
+
+</wfs:FeatureCollection>

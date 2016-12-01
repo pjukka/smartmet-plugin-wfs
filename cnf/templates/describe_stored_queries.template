@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeStoredQueriesResponse xmlns="http://www.opengis.net/wfs/2.0"
+  xmlns:omso="http://inspire.ec.europa.eu/schemas/omso/3.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ows_common="http://www.opengis.net/ows/1.1"
+  xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:fe="http://www.opengis.net/fes/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+  http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd
+  http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd
+  http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+<TMPL_foreach storedQueryList as query>
+  <StoredQueryDescription id="<TMPL_var query.id>">
+    <Title><TMPL_var XMLESCAPE(query.title)></Title>
+    <Abstract>
+    <TMPL_var XMLESCAPE(query.abstract)>
+    </Abstract>
+    <TMPL_foreach query.params as param>
+    <Parameter name="<TMPL_var param.name>" type="<TMPL_var param.type>">
+      <Title><TMPL_var XMLESCAPE(param.title)></Title>
+      <Abstract>
+      <TMPL_var XMLESCAPE(param.abstract)>
+      </Abstract>
+    </Parameter>
+    </TMPL_foreach>
+    <QueryExpressionText<TMPL_FOREACH query.namespaceDef AS ns> xmlns:<TMPL_var ns.prefix>="<TMPL_var ns.namespace>"
+                         </TMPL_FOREACH><TMPL_if (DEFINED(query.haveNamespaceLoc))>xsi:schemaLocation="<TMPL_FOREACH query.namespaceDef AS ns><TMPL_UNLESS ns.__first__>
+                         </TMPL_UNLESS><TMPL_if (DEFINED(ns.nsLoc))><TMPL_var ns.namespace> <TMPL_var ns.nsLoc></TMPL_if></TMPL_FOREACH>"</TMPL_if>
+                         returnFeatureTypes="<TMPL_foreach query.returnTypes as type><TMPL_unless type.__first__> </TMPL_unless><TMPL_var type.name></TMPL_foreach>"
+                         language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression"
+                         isPrivate="true"/>
+  </StoredQueryDescription>
+</TMPL_foreach>
+</DescribeStoredQueriesResponse>

@@ -1,0 +1,138 @@
+#pragma once
+
+#include <list>
+#include <utility>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <spine/TimeSeriesGenerator.h>
+#include <engines/geonames/Engine.h>
+#include <engines/querydata/Engine.h>
+#include <engines/querydata/MetaData.h>
+#include <newbase/NFmiPoint.h>
+#include "StoredQueryHandlerBase.h"
+#include "ArrayParameterTemplate.h"
+#include "ScalarParameterTemplate.h"
+#include "SupportsExtraHandlerParams.h"
+#include "SupportsLocationParameters.h"
+#include "SupportsTimeParameters.h"
+#include "SupportsTimeZone.h"
+
+namespace SmartMet
+{
+namespace Plugin
+{
+namespace WFS
+{
+class StoredForecastQueryHandler : public StoredQueryHandlerBase,
+                                   protected virtual SupportsExtraHandlerParams,
+                                   protected SupportsLocationParameters,
+                                   protected SupportsTimeParameters,
+                                   protected SupportsTimeZone
+{
+  struct Query
+  {
+    std::list<std::string> models;
+    std::set<int> levels;
+    std::string level_type;
+    std::list<std::pair<std::string, SmartMet::Spine::LocationPtr> > locations;
+    std::vector<SmartMet::Spine::Parameter> data_params;
+    std::string keyword;
+    double max_distance;
+    double max_np_distance;
+    std::string missing_text;
+    std::string language;
+    boost::scoped_ptr<std::locale> output_locale;
+    bool find_nearest_valid_point;
+    std::string tz_name;
+
+    boost::scoped_ptr<boost::posix_time::ptime> origin_time;
+
+   public:
+    boost::shared_ptr<SmartMet::Spine::Table> result;
+
+    boost::scoped_ptr<SmartMet::Spine::ValueFormatter> value_formatter;
+    boost::scoped_ptr<Fmi::TimeFormatter> time_formatter;
+    boost::shared_ptr<SmartMet::Spine::TimeSeriesGeneratorOptions> toptions;
+
+    bool have_model_area;
+    NFmiPoint top_left;
+    NFmiPoint top_right;
+    NFmiPoint bottom_left;
+    NFmiPoint bottom_right;
+
+    std::string producer_name;
+    std::string model_path;
+
+    mutable NFmiPoint lastpoint;
+
+    std::size_t first_data_ind;
+    std::size_t last_data_ind;
+
+   public:
+    Query();
+    virtual ~Query();
+    void set_locale(const std::string& locale_name);
+    void set_value_formatter(const SmartMet::Spine::ValueFormatterParam& vf_param);
+  };
+
+ public:
+  StoredForecastQueryHandler(SmartMet::Spine::Reactor* reactor,
+                             boost::shared_ptr<StoredQueryConfig> config,
+                             PluginData& plugin_data,
+                             boost::optional<std::string> template_file_name);
+
+  virtual ~StoredForecastQueryHandler();
+
+  virtual void init_handler();
+
+  virtual void query(const StoredQuery& query,
+                     const std::string& language,
+                     std::ostream& output) const;
+
+ private:
+  boost::shared_ptr<SmartMet::Spine::Table> extract_forecast(Query& query) const;
+
+  SmartMet::Engine::Querydata::Producer select_producer(const SmartMet::Spine::Location& loc,
+                                                        const Query& query) const;
+
+  void parse_models(const RequestParameterMap& params, Query& dest) const;
+  void parse_levels(const RequestParameterMap& param, Query& dest) const;
+  void parse_times(const RequestParameterMap& param, Query& dest) const;
+  void parse_params(const RequestParameterMap& param, Query& dest) const;
+
+  std::map<std::string, SmartMet::Engine::Querydata::ModelParameter> get_model_parameters(
+      const std::string& producer, const boost::posix_time::ptime& origin_time) const;
+
+ private:
+  SmartMet::Engine::Geonames::Engine* geo_engine;
+  SmartMet::Engine::Querydata::Engine* q_engine;
+
+  std::vector<SmartMet::Spine::Parameter> common_params;
+  double max_np_distance;
+  bool separate_groups;
+
+  std::size_t ind_geoid;
+  std::size_t ind_epoch;
+  std::size_t ind_place;
+  std::size_t ind_lat;
+  std::size_t ind_lon;
+  std::size_t ind_elev;
+  std::size_t ind_region;
+  std::size_t ind_country;
+  std::size_t ind_country_iso;
+  std::size_t ind_localtz;
+
+ protected:
+  static const char* P_MODEL;
+  static const char* P_ORIGIN_TIME;
+  static const char* P_LEVEL;
+  static const char* P_LEVEL_TYPE;
+  static const char* P_PARAM;
+  static const char* P_FIND_NEAREST_VALID;
+  static const char* P_LOCALE;
+  static const char* P_MISSING_TEXT;
+  static const char* P_CRS;
+};
+
+}  // namespace WFS
+}  // namespace Plugin
+}  // namespace SmartMet

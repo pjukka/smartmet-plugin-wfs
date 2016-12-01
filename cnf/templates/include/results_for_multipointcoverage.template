@@ -1,0 +1,29 @@
+      <om:result>
+        <gmlcov:MultiPointCoverage gml:id="mpcv-<TMPL_var group.groupId>">
+          <gml:domainSet>
+            <gmlcov:SimpleMultiPoint gml:id="mp-<TMPL_var group.groupId>" srsName="<TMPL_var srsEpochName>" srsDimension="<TMPL_var srsEpochDim>">
+              <gmlcov:positions>
+                <TMPL_foreach returnArray as row><TMPL_var row.x> <TMPL_var row.y> <TMPL_var row.elev> <TMPL_var row.epochTime>
+                </TMPL_foreach></gmlcov:positions>
+            </gmlcov:SimpleMultiPoint>
+          </gml:domainSet>
+          <gml:rangeSet>
+            <gml:DataBlock>
+              <gml:rangeParameters/>
+              <gml:doubleOrNilReasonTupleList>
+                <TMPL_foreach returnArray as row><TMPL_foreach row.data as param><TMPL_var param> </TMPL_foreach>
+                </TMPL_foreach></gml:doubleOrNilReasonTupleList>
+            </gml:DataBlock>
+          </gml:rangeSet>
+          <gml:coverageFunction>
+            <gml:CoverageMappingRule>
+              <gml:ruleDefinition>Linear</gml:ruleDefinition>
+            </gml:CoverageMappingRule>
+          </gml:coverageFunction>
+          <gmlcov:rangeType>
+            <swe:DataRecord>
+              <TMPL_foreach paramList as param><swe:field name="<TMPL_var param.name>" <TMPL_include "link_observable_property.template">/>
+              </TMPL_foreach></swe:DataRecord>
+          </gmlcov:rangeType>
+        </gmlcov:MultiPointCoverage>
+      </om:result>

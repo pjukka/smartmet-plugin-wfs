@@ -1,0 +1,1613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection timeStamp="2012-12-12T12:12:12Z" numberMatched="6" numberReturned="6"
+  xmlns:wfs="http://www.opengis.net/wfs/2.0"
+  xmlns:wp="http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/02/18"
+  xmlns:gml="http://www.opengis.net/gml/3.2" 
+  xmlns:om="http://www.opengis.net/om/2.0"
+  xmlns:sam="http://www.opengis.net/sampling/2.0"
+  xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+					   http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd
+					   http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd					   
+					   http://www.opengis.net/sampling/2.0 http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd
+					   http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd
+					   http://xml.fmi.fi/namespace/aviation-weather/special-products/2015/02/18 http://xml.fmi.fi/schema/aviation-weather/special-products/2015/02/18/WinterPrecipitation.xsd">
+  <!-- Request bbox -->
+  <wfs:boundedBy>
+    <gml:Envelope axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326"
+      srsDimension="2">
+      <gml:lowerCorner>50.000000 5.000000</gml:lowerCorner>
+      <gml:upperCorner>71.000000 90.000000</gml:upperCorner>
+    </gml:Envelope>
+  </wfs:boundedBy>  
+  <!-- One member per time and snow type-->
+  
+    <wfs:member>
+      <wp:WinterWeather gml:id="forecast-1">       
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+	<gml:TimeInstant gml:id="forecast-1-time">
+	<gml:timePosition>2015-09-10T18:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:phenomenonTime>
+    <!-- Model analysis time -->
+    <om:resultTime>
+      <gml:TimeInstant gml:id="forecast-1-result-time">
+      <gml:timePosition>2015-09-10T00:00:00Z</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+  <om:observedProperty
+      xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+  <om:featureOfInterest>
+    <sams:SF_SpatialSamplingFeature gml:id="forecast-1-spatial-sampling-feature">
+    <sam:sampledFeature/>
+    <!-- Sampling feature is actually a requested bbox -->
+    <sams:shape>
+      <gml:Polygon gml:id="forecast-1-spatial-sampling-feature-shape">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>50.000000,5.000000 71.000000,5.000000 71.000000,90.000000 50.000000,90.000000 50.000000,5.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+<om:result>
+  <wp:WinterWeatherContours dateTime="2015-09-10T18:00:00Z"
+  winterWeatherType="LIGHT" gml:id="forecast-1-winter-weather-contours" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2">
+  
+    <!-- surface members of forecast-1-winter-weather-contours-1 -->
+  
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-1">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>53.603544 64.543059,53.778558 64.592788,53.798002 64.598437,53.973183 64.648741,53.992645 64.654455,54.167989 64.705344,54.248593 64.900741,54.328842 65.097079,54.408733 65.294361,54.376416 65.595404,54.372781 65.628723,54.339450 65.929108,54.223467 66.063130,54.219678 66.096246,54.297502 66.295233,54.374956 66.495147,54.338982 66.794641,54.221833 66.925647,54.217753 66.958661,54.293816 67.159617,54.369498 67.361487,54.444796 67.564272,54.519707 67.767974,54.594226 67.972593,54.668351 68.178130,54.742078 68.384586,54.815403 68.591962,54.888324 68.800259,54.960836 69.009478,55.032937 69.219618,55.104622 69.430680,55.123856 69.439426,55.297176 69.517767,55.368332 69.731197,55.439061 69.945558,55.509361 70.160852,55.579227 70.377078,55.648655 70.594236,55.717644 70.812325,55.786188 71.031346,55.854284 71.251298,55.921930 71.472180,55.870506 71.779279,55.746122 71.897767,55.574418 71.805484,55.507621 71.586273,55.488513 71.576319,55.316760 71.486456,55.249371 71.269629,55.181541 71.053698,55.113274 70.838664,55.044573 70.624526,54.975441 70.411285,55.022486 70.110673,55.027676 70.077128,54.957387 69.865161,54.886678 69.654100,54.867456 69.645456,54.694677 69.567299,54.623443 69.358546,54.551800 69.150691,54.532572 69.142425,54.359727 69.067651,54.287582 68.862060,54.215038 68.657355,54.142098 68.453538,54.122857 68.445771,53.949897 68.375472,53.876484 68.173865,53.802685 67.973134,53.728504 67.773279,53.653944 67.574300,53.634689 67.567141,53.461601 67.502295,53.386602 67.305462,53.423916 67.015001,53.428022 66.982602,53.351978 66.787112,53.275572 66.592492,53.198806 66.398739,53.121683 66.205854,53.044208 66.013834,52.966383 65.822678,52.999126 65.534268,53.113578 65.403239,53.227925 65.271335,53.402172 65.324239,53.421530 65.330240,53.535979 65.196896,53.539472 65.164185,53.459721 64.972221,53.489962 64.678856,53.603544 64.543059</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>53.676179 64.715567,53.562308 64.851076,53.642348 65.043337,53.607414 65.370444,53.492678 65.503483,53.299100 65.443477,53.184469 65.575080,53.069735 65.705806,53.147841 65.897273,53.225598 66.089610,53.303001 66.282820,53.380048 66.476902,53.456735 66.671860,53.533058 66.867694,53.491998 67.191690,53.567275 67.388883,53.759819 67.460468,53.834658 67.659820,53.909118 67.860054,53.983195 68.061172,54.056886 68.263173,54.249293 68.340844,54.322511 68.545070,54.395333 68.750190,54.467755 68.956205,54.660038 69.038869,54.731959 69.247163,54.803470 69.456362,54.995683 69.542801,54.924278 69.332193,54.852457 69.122498,54.780226 68.913718,54.707587 68.705850,54.634543 68.498896,54.561099 68.292854,54.487257 68.087723,54.413021 67.883503,54.338394 67.680192,54.263380 67.477790,54.187982 67.276296,54.112204 67.075709,54.153008 66.745572,54.269870 66.614206,54.192705 66.414643,54.115169 66.215999,54.153065 65.884839,54.268757 65.750482,54.305104 65.417291,54.225506 65.220326,54.145551 65.024297,54.065240 64.829202,53.870619 64.772058,53.676179 64.715567</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+		<!-- interior ring #2 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>54.995683 69.542801,55.066671 69.754324,55.137236 69.966762,55.085337 70.302212,55.154743 70.515939,55.223717 70.730571,55.292257 70.946108,55.360359 71.162549,55.428019 71.379895,55.619101 71.479426,55.686168 71.699174,55.810280 71.580140,55.742910 71.359795,55.675088 71.140372,55.606820 70.921872,55.538109 70.704294,55.468958 70.487640,55.399370 70.271909,55.329350 70.057101,55.258900 69.843218,55.188024 69.630258,54.995683 69.542801</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-2">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.497920 70.838962,65.678529 70.963258,65.698570 70.977376,65.879190 71.103805,65.950205 71.421157,65.970219 71.435833,66.150598 71.567319,66.096220 72.012496,66.090121 72.061639,66.159009 72.384763,66.227172 72.709806,66.294605 73.036762,66.361300 73.365627,66.301249 73.810350,66.294523 73.859433,66.232955 74.301553,66.226062 74.350348,66.162992 74.789824,66.155934 74.838326,66.218409 75.170224,66.152812 75.607251,66.145476 75.655481,66.206028 75.989390,66.225520 76.008127,66.401214 76.176616,66.460587 76.515617,66.519167 76.856369,66.448328 77.294059,66.311762 77.436182,66.137715 77.258532,66.118334 77.239124,65.944167 77.064413,65.924773 77.045326,65.750494 76.873486,65.692134 76.543778,65.633009 76.215708,65.573127 75.889286,65.512493 75.564520,65.451114 75.241418,65.388996 74.919989,65.326147 74.600238,65.262571 74.282173,65.198277 73.965800,65.258540 73.542196,65.265185 73.494825,65.323999 73.068879,65.330482 73.021247,65.263271 72.707455,65.319630 72.279671,65.325838 72.231836,65.256831 71.920359,65.310724 71.490901,65.316656 71.442882,65.369058 71.011300,65.497920 70.838962</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>65.562347 71.119104,65.433106 71.290390,65.373781 71.770580,65.443158 72.083154,65.381075 72.561503,65.448648 72.876436,65.383818 73.352758,65.317364 73.826467,65.382009 74.144045,65.445932 74.463338,65.509128 74.784340,65.571589 75.107045,65.633308 75.431446,65.694281 75.757535,65.754499 76.085303,65.813957 76.414744,65.872648 76.745846,66.066582 76.936713,66.260393 77.130792,66.396627 76.987171,66.338385 76.647900,66.279353 76.310355,66.084430 76.122987,66.024221 75.790473,66.097588 75.308173,66.035465 74.977626,66.106047 74.492600,66.174973 74.004649,66.242227 73.513819,66.175904 73.186217,66.108846 72.860497,66.041059 72.536665,65.972549 72.214725,66.033539 71.723298,65.833395 71.576532,65.762763 71.260285,65.562347 71.119104</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-3">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>70.908554 36.563628,71.000000 36.704520,71.000000 37.320465,70.981536 37.140977,70.847768 36.932198,70.779288 37.338767,70.576941 37.532359,70.639553 38.143014,70.771763 38.358014,70.831466 38.977633,70.962696 39.200722,71.000000 39.265150,71.000000 39.742163,70.896337 39.561084,70.765593 39.336278,70.713151 38.779637,70.707181 38.717675,70.575443 38.500912,70.520373 37.952191,70.514112 37.891125,70.457117 37.345967,70.638947 37.170972,70.659181 37.151612,70.727202 36.746954,70.908554 36.563628</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-4">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.912847 64.707992,67.109213 64.794269,67.188325 65.117976,67.208968 65.127708,67.330584 64.907464,67.516782 64.992305,67.601679 65.311730,67.611996 65.316758,67.622339 65.321834,67.808482 65.411386,67.818803 65.416511,67.829149 65.421684,68.015365 65.512966,68.025689 65.518189,68.036039 65.523463,68.222324 65.616524,68.243006 65.627227,68.429356 65.722120,68.393224 66.228393,68.389130 66.284274,68.351181 66.788576,68.165600 66.684259,68.144961 66.673037,67.959431 66.570718,67.870943 66.252120,67.860618 66.246794,67.664669 66.144203,67.654348 66.138978,67.458467 66.038312,67.443985 66.017180,67.258480 65.923585,67.237853 65.913521,67.052417 65.821651,66.968776 65.508120,66.958446 65.503321,66.948142 65.498566,66.762645 65.411276,66.795952 64.940678,66.912847 64.707992</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>67.407166 65.192000,67.285097 65.411438,67.078670 65.314114,67.162758 65.628466,67.369034 65.729104,67.513851 65.940417,67.616946 65.993399,67.720162 66.045647,67.823292 66.099642,67.926544 66.152895,68.071093 66.373219,68.277485 66.485438,68.318428 65.926625,68.111613 65.819596,68.008112 65.766855,67.904868 65.714620,67.801406 65.662883,67.698199 65.611638,67.594776 65.560878,67.491607 65.510596,67.407166 65.192000</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+		<!-- interior ring #2 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>66.951260 64.847321,66.872332 65.218574,66.975377 65.266124,67.078670 65.314114,67.054611 64.892731,66.951260 64.847321</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-5">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>58.279539 82.181276,58.441308 82.340071,58.484385 82.600809,58.526850 82.862291,58.568698 83.124512,58.609928 83.387463,58.650535 83.651136,58.690517 83.915523,58.729871 84.180616,58.605875 84.248057,58.566708 83.983976,58.526916 83.720591,58.486501 83.457911,58.445466 83.195945,58.403814 82.934700,58.361549 82.674185,58.318674 82.414407,58.225097 82.754978,58.267142 83.014426,58.308576 83.274593,58.349397 83.535473,58.389600 83.797057,58.429184 84.059336,58.330457 84.395871,58.206579 84.461478,58.295576 84.160196,58.305449 84.126542,58.266052 83.865250,58.226037 83.604645,58.185409 83.344736,58.144168 83.085530,58.102319 82.827036,58.186709 82.522129,58.196067 82.488072,58.279539 82.181276</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-6">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>64.771300 59.198439,64.958049 59.230640,64.978799 59.234457,65.165690 59.267215,65.261555 59.534011,65.282321 59.538142,65.469352 59.573705,65.490133 59.577908,65.677302 59.614098,65.661438 60.068557,65.548116 60.297291,65.434468 60.523846,65.320500 60.748247,65.324129 60.786605,65.339139 60.802953,65.525837 60.848564,65.618695 61.125724,65.711029 61.405062,65.689319 61.858686,65.502889 61.804441,65.482170 61.798681,65.295862 61.745373,65.204362 61.469551,65.106610 61.206833,65.127197 60.739288,65.133934 60.703421,65.040413 60.433442,64.946394 60.165549,64.851883 59.899729,64.756887 59.635971,64.771300 59.198439</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>64.857615 59.434236,64.953043 59.698300,65.047987 59.964445,65.142440 60.232684,65.236395 60.503029,65.349925 60.278253,65.463132 60.051333,65.576012 59.822247,65.368203 59.780213,65.160547 59.738903,65.065119 59.472409,64.857615 59.434236</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+		<!-- interior ring #2 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>65.169032 60.861704,65.158197 61.107780,65.307969 61.271863,65.399903 61.548126,65.607096 61.605728,65.515203 61.326831,65.422783 61.050090,65.272680 60.886607,65.169032 60.861704</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-7">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>53.503059 60.838130,53.679512 60.868515,53.699122 60.872005,53.875762 60.902743,53.963634 61.086967,54.051200 61.272152,54.138455 61.458303,54.225397 61.645421,54.312023 61.833513,54.290354 62.136528,54.287897 62.170075,54.373542 62.359870,54.350241 62.663082,54.347604 62.696649,54.323270 62.999380,54.146979 62.957024,54.062600 62.766994,53.977894 62.577918,53.892863 62.389791,53.807511 62.202612,53.787928 62.198510,53.611845 62.160964,53.526193 61.975902,53.547270 61.679745,53.549564 61.646723,53.462962 61.463299,53.482457 61.167394,53.484574 61.134402,53.503059 60.838130</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>53.582115 61.001881,53.560942 61.331807,53.647843 61.515425,53.624906 61.845647,53.710856 62.030919,53.906688 62.071935,53.992340 62.259335,54.077670 62.447689,54.162677 62.636999,54.247356 62.827270,54.273728 62.491600,54.188387 62.302033,54.212953 61.966564,54.126631 61.778684,54.039992 61.591770,53.953040 61.405818,53.865777 61.220823,53.778207 61.036784,53.582115 61.001881</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-8">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>52.705342 49.359698,52.812455 49.505253,52.919411 49.651710,52.935434 49.943688,52.937153 49.976056,52.952180 50.268326,52.953788 50.300724,52.967818 50.593268,52.969316 50.625696,52.982347 50.918494,52.891255 51.092328,52.715098 51.112105,52.695541 51.114381,52.519583 51.133936,52.415193 50.984671,52.402425 50.696751,52.400947 50.664684,52.387200 50.377006,52.385613 50.344967,52.280068 50.198636,52.264907 49.912147,52.353492 49.738401,52.351687 49.706424,52.335013 49.419579,52.510333 49.391331,52.529830 49.388263,52.705342 49.359698</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>52.626107 49.518600,52.431136 49.549275,52.449183 49.869041,52.360305 50.042930,52.466143 50.189127,52.482014 50.509514,52.496795 50.830183,52.601480 50.979335,52.797054 50.956579,52.887847 50.782863,52.872864 50.458585,52.856776 50.134598,52.839585 49.810923,52.732925 49.664312,52.626107 49.518600</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-9">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>67.696877 71.627006,67.878185 71.770646,67.898298 71.786981,68.079578 71.933330,68.149211 72.286295,68.092111 72.771339,68.085705 72.824847,68.153281 73.180766,68.220044 73.538934,68.158994 74.022069,68.152153 74.075360,68.089445 74.555387,67.954965 74.725699,67.820360 74.893893,67.642362 74.724495,67.578500 74.372221,67.640483 73.903302,67.647314 73.850825,67.581415 73.501081,67.514722 73.153453,67.447243 72.807948,67.378985 72.464570,67.434948 71.994858,67.565996 71.812033,67.696877 71.627006</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>67.760174 71.937983,67.628885 72.121678,67.497433 72.303172,67.566089 72.647908,67.633964 72.994803,67.701050 73.343853,67.767340 73.695050,67.699032 74.219820,67.763276 74.573606,67.897499 74.403861,68.031591 74.231990,68.100005 73.699085,68.033643 73.342422,67.966470 72.987975,68.030528 72.452899,67.961307 72.101341,67.760174 71.937983</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-10">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>63.083085 65.135424,63.266156 65.208041,63.286487 65.216346,63.469665 65.290119,63.435731 65.699903,63.431897 65.745194,63.513957 66.016373,63.477698 66.425851,63.473607 66.471105,63.435907 66.879269,63.431657 66.924376,63.392525 67.331182,63.269318 67.506606,63.087735 67.417519,63.008801 67.146430,62.929314 66.876988,62.849280 66.609190,62.886012 66.210107,63.007209 66.031185,63.011168 65.986372,62.929222 65.720508,62.963134 65.319018,63.083085 65.135424</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>63.158040 65.374295,63.037705 65.557313,63.120032 65.823774,63.080441 66.271908,62.958866 66.450210,63.039274 66.718650,63.119136 66.988750,63.198444 67.260516,63.321274 67.084400,63.363774 66.633335,63.404684 66.180803,63.323009 65.910251,63.361350 65.457344,63.158040 65.374295</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-11">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>62.966934 69.507671,63.146873 69.610648,63.220484 69.890445,63.293498 70.171836,63.365909 70.454820,63.437712 70.739397,63.386562 71.139485,63.258414 71.296284,63.130143 71.451531,63.001752 71.605247,62.823692 71.488924,62.803885 71.476247,62.625855 71.361669,62.677510 70.973839,62.683199 70.930504,62.733521 70.541000,62.739061 70.497478,62.788041 70.106333,62.793431 70.062629,62.841059 69.669879,62.966934 69.507671</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>63.033393 69.757340,62.907162 69.918755,62.853263 70.355797,62.797861 70.791015,62.740968 71.224371,62.939041 71.351146,63.067087 71.196546,63.195011 71.040415,63.322809 70.882730,63.251361 70.599020,63.179304 70.316885,63.106646 70.036325,63.033393 69.757340</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-12">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>53.091247 59.289895,53.267704 59.311947,53.358245 59.488763,53.448506 59.666517,53.538484 59.845212,53.628175 60.024852,53.717577 60.205441,53.701003 60.504093,53.524429 60.475408,53.435632 60.295134,53.346543 60.115797,53.257168 59.937393,53.237567 59.934649,53.061305 59.909262,53.075986 59.616056,53.077568 59.583370,53.091247 59.289895</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>53.172714 59.448076,53.156903 59.774936,53.352914 59.802376,53.262954 59.624760,53.172714 59.448076</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-13">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>62.602858 63.134541,62.786594 63.191830,62.873749 63.448084,62.960411 63.706049,62.931623 64.109782,62.928359 64.154415,62.898142 64.557133,62.715022 64.489763,62.694667 64.482502,62.511665 64.416166,62.541367 64.019479,62.544603 63.975181,62.572898 63.577525,62.575976 63.533122,62.602858 63.134541</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>62.681388 63.363235,62.650602 63.807271,62.618242 64.250242,62.821788 64.322848,62.854428 63.876514,62.768155 63.619028,62.681388 63.363235</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-14">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>70.211537 39.534665,70.341812 39.754353,70.471851 39.977028,70.520471 40.530300,70.443839 40.916239,70.258663 41.053418,70.238117 41.068801,70.052935 41.203096,69.924685 40.977105,69.877672 40.439963,69.953109 40.063311,70.027708 39.683771,70.211537 39.534665</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>70.144737 39.880257,70.069665 40.261313,69.993752 40.639435,70.122485 40.864004,70.327950 40.710172,70.404093 40.325748,70.274536 40.101508,70.144737 39.880257</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-15">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.744647 64.110807,66.930896 64.186837,66.899980 64.661784,66.778917 64.879155,66.593174 64.797562,66.624477 64.329620,66.744647 64.110807</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-16">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>69.420070 41.706221,69.547127 41.931159,69.589332 42.463200,69.403477 42.580360,69.277378 42.352959,69.234919 41.829824,69.420070 41.706221</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-1-winter-weather-contours-surface-member-17">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>70.133548 42.489725,70.173986 43.039012,69.987390 43.154184,69.947404 42.610419,70.133548 42.489725</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+</wp:WinterWeatherContours>
+</om:result>
+</wp:WinterWeather>    
+</wfs:member>
+
+    <wfs:member>
+      <wp:WinterWeather gml:id="forecast-2">       
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+	<gml:TimeInstant gml:id="forecast-2-time">
+	<gml:timePosition>2015-09-10T21:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:phenomenonTime>
+    <!-- Model analysis time -->
+    <om:resultTime>
+      <gml:TimeInstant gml:id="forecast-2-result-time">
+      <gml:timePosition>2015-09-10T00:00:00Z</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+  <om:observedProperty
+      xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+  <om:featureOfInterest>
+    <sams:SF_SpatialSamplingFeature gml:id="forecast-2-spatial-sampling-feature">
+    <sam:sampledFeature/>
+    <!-- Sampling feature is actually a requested bbox -->
+    <sams:shape>
+      <gml:Polygon gml:id="forecast-2-spatial-sampling-feature-shape">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>50.000000,5.000000 71.000000,5.000000 71.000000,90.000000 50.000000,90.000000 50.000000,5.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+<om:result>
+  <wp:WinterWeatherContours dateTime="2015-09-10T21:00:00Z"
+  winterWeatherType="LIGHT" gml:id="forecast-2-winter-weather-contours" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2">
+  
+    <!-- surface members of forecast-2-winter-weather-contours-1 -->
+  
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-2-winter-weather-contours-surface-member-1">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.917115 64.723473,67.103146 64.805209,67.194417 65.107079,67.204738 65.111945,67.401063 65.202972,67.485478 65.521521,67.495796 65.526648,67.622339 65.321834,67.808482 65.411386,67.824943 65.405410,67.951459 65.196747,68.073485 64.969239,68.260121 65.057592,68.226176 65.560957,68.222324 65.616524,68.243006 65.627227,68.429356 65.722120,68.512934 66.058382,68.475697 66.566068,68.471480 66.622102,68.432422 67.127744,68.247022 67.020065,68.226402 67.008474,68.041047 66.902863,67.953228 66.581690,67.870943 66.252120,67.860618 66.246794,67.664669 66.144203,67.654348 66.138978,67.458467 66.038312,67.448149 66.033185,67.252338 65.934390,67.237853 65.913521,67.052417 65.821651,66.962670 65.518898,66.884493 65.196930,66.917115 64.723473</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>68.150136 65.263921,68.027642 65.490560,67.862802 65.551878,67.698199 65.611638,67.533498 65.671120,67.513851 65.940417,67.616946 65.993399,67.720162 66.045647,67.823292 66.099642,67.926544 66.152895,68.009059 66.482941,68.153168 66.706350,68.359369 66.822258,68.401535 66.261923,68.318428 65.926625,68.111613 65.819596,68.150136 65.263921</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+		<!-- interior ring #2 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>66.993941 65.002132,67.017618 65.421895,67.162758 65.628466,67.307615 65.837149,67.410673 65.889147,67.430320 65.619850,67.346131 65.301719,67.242803 65.253810,67.139590 65.205148,66.993941 65.002132</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-2-winter-weather-contours-surface-member-2">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>64.771300 59.198439,64.958049 59.230640,64.974004 59.221238,65.171277 59.255815,65.261555 59.534011,65.282321 59.538142,65.394267 59.308379,65.581437 59.342293,65.682929 59.602535,65.666184 60.082241,65.468776 60.039879,65.453640 60.024221,65.457472 60.062679,65.439165 60.537491,65.242072 60.491790,65.231697 60.489512,65.034745 60.444595,64.940750 60.176721,64.846263 59.910920,64.756887 59.635971,64.771300 59.198439</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>65.017164 59.340214,64.857615 59.434236,64.896843 59.810205,64.991547 60.076169,65.085758 60.344216,65.189418 60.367857,65.293160 60.390641,65.396893 60.414694,65.406529 60.164793,65.368203 59.780213,65.160547 59.738903,65.120992 59.358413,65.017164 59.340214</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+		<!-- interior ring #2 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>65.480591 59.550759,65.368203 59.780213,65.519572 59.936790,65.623471 59.959086,65.632284 59.706609,65.480591 59.550759</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-2-winter-weather-contours-surface-member-3">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.524392 61.354720,65.711029 61.405062,65.802829 61.686592,65.823557 61.692726,66.010276 61.746424,65.987421 62.205538,65.984802 62.256272,66.005518 62.262961,66.192135 62.321687,66.167384 62.783798,66.049499 63.003981,65.863300 62.939789,65.774024 62.652695,65.753321 62.646122,65.567170 62.585542,65.591217 62.135327,65.593811 62.085032,65.502889 61.804441,65.524392 61.354720</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>65.698455 61.886793,65.672516 62.389750,65.879546 62.455474,65.905735 61.948134,65.698455 61.886793</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+		<!-- interior ring #2 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>65.879546 62.455474,65.969261 62.743114,66.086704 62.522372,65.879546 62.455474</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-2-winter-weather-contours-surface-member-4">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.392458 62.913403,66.579056 62.978460,66.667914 63.277034,66.756178 63.577948,66.727265 64.050055,66.541112 63.975403,66.453744 63.675785,66.365783 63.378454,66.392458 62.913403</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-2-winter-weather-contours-surface-member-5">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>53.664522 59.696373,53.841463 59.720928,53.826373 60.020909,53.649535 59.994631,53.664522 59.696373</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-2-winter-weather-contours-surface-member-6">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>58.043552 30.038221,58.119804 30.350249,57.954584 30.492912,57.878860 30.182364,58.043552 30.038221</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+</wp:WinterWeatherContours>
+</om:result>
+</wp:WinterWeather>    
+</wfs:member>
+
+    <wfs:member>
+      <wp:WinterWeather gml:id="forecast-3">       
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+	<gml:TimeInstant gml:id="forecast-3-time">
+	<gml:timePosition>2015-09-11T00:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:phenomenonTime>
+    <!-- Model analysis time -->
+    <om:resultTime>
+      <gml:TimeInstant gml:id="forecast-3-result-time">
+      <gml:timePosition>2015-09-10T00:00:00Z</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+  <om:observedProperty
+      xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+  <om:featureOfInterest>
+    <sams:SF_SpatialSamplingFeature gml:id="forecast-3-spatial-sampling-feature">
+    <sam:sampledFeature/>
+    <!-- Sampling feature is actually a requested bbox -->
+    <sams:shape>
+      <gml:Polygon gml:id="forecast-3-spatial-sampling-feature-shape">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>50.000000,5.000000 71.000000,5.000000 71.000000,90.000000 50.000000,90.000000 50.000000,5.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+<om:result>
+  <wp:WinterWeatherContours dateTime="2015-09-11T00:00:00Z"
+  winterWeatherType="LIGHT" gml:id="forecast-3-winter-weather-contours" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2">
+  
+    <!-- surface members of forecast-3-winter-weather-contours-1 -->
+  
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-1">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>50.421992 61.416449,50.595023 61.447041,50.614252 61.450538,50.787479 61.481456,50.872684 61.651452,50.957615 61.822250,50.976873 61.825982,51.150357 61.859026,51.235040 62.031639,51.254322 62.035513,51.428025 62.069833,51.447328 62.073750,51.555804 61.937631,51.729863 61.971763,51.814629 62.147475,51.833974 62.151477,52.008246 62.186936,52.092743 62.364556,52.176943 62.543030,52.196312 62.547293,52.370807 62.585094,52.390197 62.589405,52.564876 62.627628,52.584287 62.631986,52.759149 62.670639,52.778579 62.675046,52.888810 62.535570,53.064025 62.574073,53.083495 62.578466,53.193778 62.437439,53.369344 62.475781,53.345835 62.770034,53.343177 62.802613,53.362667 62.807172,53.538252 62.847613,53.622225 63.034913,53.705874 63.223138,53.789195 63.412293,53.872184 63.602379,53.954839 63.793400,54.037156 63.985357,54.119132 64.178255,54.200763 64.372094,54.282046 64.566878,54.362977 64.762609,54.443554 64.959289,54.523772 65.156920,54.543264 65.163029,54.718878 65.217468,54.798698 65.417373,54.878149 65.618245,54.957228 65.820085,54.923193 66.125613,54.747924 66.065846,54.728445 66.059340,54.612031 66.194477,54.495510 66.328669,54.491625 66.362025,54.456031 66.662712,54.452034 66.695989,54.415432 66.995954,54.411324 67.029150,54.373718 67.328373,54.369498 67.361487,54.330893 67.659952,54.326563 67.692981,54.286962 67.990671,54.282522 68.023614,54.356414 68.227346,54.315189 68.524647,54.310570 68.557546,54.268359 68.854024,54.095554 68.781320,54.076345 68.773376,53.956809 68.896419,53.784340 68.824167,53.765168 68.816271,53.592830 68.744833,53.573672 68.737025,53.401465 68.666386,53.328886 68.467382,53.369693 68.178723,53.374190 68.146522,53.300550 67.948790,53.226536 67.751908,53.152150 67.555877,53.077396 67.360694,53.002278 67.166359,52.926797 66.972871,52.850958 66.780230,52.774763 66.588432,52.698216 66.397478,52.678986 66.391165,52.506111 66.333905,52.429175 66.144978,52.351897 65.956883,52.332678 65.950873,52.159897 65.896338,52.082248 65.710227,52.004265 65.524937,51.925952 65.340467,51.847311 65.156814,51.768346 64.973977,51.689059 64.791954,51.609454 64.610743,51.590240 64.605583,51.518338 64.443248,51.710476 64.494849,51.790357 64.676316,51.869920 64.858602,51.949161 65.041707,52.028078 65.225634,52.106666 65.410385,52.184924 65.595961,52.262849 65.782365,52.455041 65.842460,52.532596 66.030859,52.609807 66.220096,52.802107 66.283228,52.878931 66.474503,52.955402 66.666628,53.031518 66.859604,53.107275 67.053433,53.182669 67.248115,53.257699 67.443653,53.332359 67.640045,53.406649 67.837295,53.480563 68.035403,53.435602 68.357411,53.508452 68.556804,53.700024 68.634880,53.891742 68.713842,54.011003 68.590390,54.203097 68.669832,54.249293 68.340844,54.175681 68.137512,54.220080 67.808083,54.263380 67.477790,54.305575 67.146653,54.346661 66.814689,54.386632 66.481919,54.425483 66.148361,54.541713 66.013822,54.657834 65.878338,54.852626 65.943399,54.773843 65.741902,54.694688 65.541366,54.615164 65.341788,54.420248 65.280702,54.340324 65.083385,54.260042 64.887013,54.179406 64.691582,54.098418 64.497091,54.017082 64.303538,53.935402 64.110919,53.853380 63.919233,53.771020 63.728477,53.688325 63.538649,53.605299 63.349745,53.521946 63.161764,53.438267 62.974702,53.243364 62.929111,53.269948 62.603327,53.159371 62.744133,52.964676 62.700208,52.854155 62.839465,52.659851 62.795393,52.465749 62.751811,52.271850 62.708710,52.078156 62.666084,51.994242 62.487816,51.910030 62.310396,51.716580 62.270371,51.632098 62.094850,51.523340 62.230780,51.330310 62.191616,51.137492 62.152872,51.053088 61.980442,50.860511 61.943118,50.775859 61.772494,50.690932 61.602667,50.498638 61.567704,50.583529 61.736552,50.560314 62.039093,50.644351 62.209322,50.619542 62.512049,50.544434 62.358320,50.546915 62.328047,50.463154 62.157999,50.484433 61.886593,50.486755 61.856339,50.402139 61.687660,50.421992 61.416449</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-2">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>64.974004 59.221238,65.171277 59.255815,65.186455 59.271099,65.373486 59.304427,65.474972 59.562232,65.458386 60.037777,65.451812 60.074025,65.546189 60.347271,65.640056 60.622695,65.620904 61.075658,65.618695 61.125724,65.639433 61.131317,65.826230 61.180127,65.805241 61.636189,65.802829 61.686592,65.823557 61.692726,66.010276 61.746424,66.101483 62.032929,66.192135 62.321687,66.212864 62.328497,66.399596 62.388286,66.489615 62.682214,66.584973 62.967292,66.667914 63.277034,66.688629 63.284864,66.875253 63.353859,66.847054 63.828756,66.849833 63.870151,66.930896 64.186837,66.899980 64.661784,66.778917 64.879155,66.593174 64.797562,66.507509 64.494136,66.537821 64.027552,66.539479 64.001496,66.541112 63.975403,66.453744 63.675785,66.443380 63.671923,66.433040 63.668096,66.246893 63.597475,66.158839 63.303096,66.138138 63.295836,65.952014 63.229073,65.941657 63.225491,65.931325 63.221940,65.745309 63.156349,65.656517 62.869869,65.567170 62.585542,65.477273 62.303358,65.386835 62.023305,65.295862 61.745373,65.204362 61.469551,65.106610 61.206833,65.127197 60.739288,65.245740 60.530276,65.247748 60.480552,65.231697 60.489512,65.034745 60.444595,64.946394 60.165549,64.846263 59.910920,64.862387 59.447439,64.974004 59.221238</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>65.349925 60.278253,65.329845 60.775494,65.169032 60.861704,65.158197 61.107780,65.307969 61.271863,65.399903 61.548126,65.491310 61.826520,65.582184 62.107058,65.672516 62.389750,65.762299 62.674608,65.851527 62.961642,65.954848 62.997146,66.058414 63.032966,66.265423 63.105572,66.353920 63.400561,66.457315 63.438832,66.560959 63.477451,66.531721 63.067808,66.383559 62.883838,66.293989 62.590473,66.086704 62.522372,65.996497 62.234138,65.905735 61.948134,65.698455 61.886793,65.722577 61.382766,65.515203 61.326831,65.537287 60.826172,65.443862 60.551135,65.349925 60.278253</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+		<!-- interior ring #2 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>65.017164 59.340214,64.905329 59.566268,64.896843 59.810205,65.047987 59.964445,65.085758 60.344216,65.189418 60.367857,65.349925 60.278253,65.415668 59.915773,65.424397 59.665486,65.272778 59.511245,65.120992 59.358413,65.017164 59.340214</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+		<!-- interior ring #3 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>66.560959 63.477451,66.648773 63.777721,66.632444 64.038652,66.615866 64.299206,66.701974 64.603348,66.822591 64.385241,66.795906 63.969702,66.768112 63.555751,66.560959 63.477451</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-3">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>67.038004 64.503915,67.224236 64.584252,67.244915 64.593504,67.431234 64.675356,67.516782 64.992305,67.601679 65.311730,67.611996 65.316758,67.622339 65.321834,67.744416 65.098479,67.930769 65.186605,67.951459 65.196747,68.073485 64.969239,68.260121 65.057592,68.345082 65.388526,68.435519 65.710758,68.450045 65.733034,68.636458 65.829811,68.657153 65.840943,68.780416 65.609491,68.784309 65.551934,68.818230 65.035466,69.005288 65.127625,69.090294 65.470926,69.054875 65.994010,68.930940 66.226235,68.806721 66.455679,68.682224 66.682384,68.677962 66.738947,68.638491 67.249371,68.512942 67.469528,68.327731 67.358446,68.247022 67.020065,68.236699 67.014242,68.226402 67.008474,68.041047 66.902863,67.959431 66.570718,67.877121 66.241095,67.856470 66.230444,67.670835 66.133252,67.654348 66.138978,67.458467 66.038312,67.448149 66.033185,67.324837 66.248352,67.129255 66.148214,67.166930 65.644302,67.168875 65.617614,67.090854 65.292321,67.070198 65.282916,66.884493 65.196930,66.917115 64.723473,67.038004 64.503915</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>67.115280 64.783329,66.993941 65.002132,67.200509 65.096183,67.223927 65.519952,67.204477 65.786830,67.184648 66.052047,67.287586 66.104751,67.410673 65.889147,67.513851 65.940417,67.616946 65.993399,67.781820 65.936139,67.988324 66.042645,68.071093 66.373219,68.153168 66.706350,68.256140 66.764022,68.359369 66.822258,68.440539 67.161687,68.565624 66.940451,68.608236 66.374817,68.732259 66.147082,68.525311 66.035766,68.380055 65.813011,68.234625 65.593961,68.150136 65.263921,68.027642 65.490560,67.820736 65.389136,67.698199 65.611638,67.594776 65.560878,67.491607 65.510596,67.407166 65.192000,67.322075 64.875849,67.115280 64.783329</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+		<!-- interior ring #2 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>68.894933 65.341042,68.856000 65.916615,68.979453 65.683376,68.894933 65.341042</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-4">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>50.000000 17.189707,50.047248 17.198970,50.153463 17.413235,50.165207 17.437098,50.300615 17.464783,50.436131 17.492673,50.571752 17.520771,50.587137 17.502239,50.725222 17.334555,50.861138 17.362284,50.997160 17.390222,51.133288 17.418371,51.269521 17.446735,51.405860 17.475315,51.512296 17.698611,51.524062 17.723481,51.629969 17.948259,51.610660 18.167928,51.590831 18.387356,51.570483 18.606537,51.429285 18.773165,51.293366 18.739636,51.157547 18.706361,51.021830 18.673336,50.918144 18.450270,50.906563 18.425540,50.770957 18.393794,50.635454 18.362284,50.500054 18.331009,50.484564 18.349185,50.344779 18.511873,50.241142 18.293373,50.229568 18.269149,50.094482 18.238560,50.000000 18.217306,50.000000 18.024437,50.111901 18.049031,50.247066 18.078936,50.362806 18.321176,50.517713 18.139411,50.653193 18.169987,50.788778 18.200793,50.924466 18.231830,51.040274 18.479129,51.176076 18.511436,51.311980 18.543989,51.447986 18.576790,51.468250 18.358345,51.487996 18.139655,51.507224 17.920727,51.389566 17.672026,51.253303 17.642711,51.117144 17.613618,50.981091 17.584745,50.845143 17.556088,50.709300 17.527646,50.555450 17.712965,50.419902 17.684166,50.284461 17.655580,50.149126 17.627204,50.031685 17.388570,50.000000 17.382195,50.000000 17.189707</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-5">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>55.692830 71.721240,55.864756 71.813248,55.883843 71.823624,56.055852 71.916732,56.122122 72.140401,56.187926 72.364996,56.253262 72.590517,56.318124 72.816963,56.382511 73.044331,56.446417 73.272621,56.465408 73.284066,56.636554 73.386865,56.699786 73.617691,56.762525 73.849442,56.824770 74.082118,56.886515 74.315716,56.826301 74.627166,56.819578 74.661607,56.880025 74.896292,56.939964 75.131882,56.877315 75.442249,56.748253 75.549720,56.741231 75.583875,56.677318 75.891369,56.547936 75.996324,56.379660 75.879696,56.321579 75.646860,56.262992 75.414879,56.203904 75.183753,56.144319 74.953487,56.084238 74.724082,56.023667 74.495541,55.962607 74.267867,55.943737 74.256181,55.774133 74.150840,55.712394 73.925582,55.650179 73.701188,55.587491 73.477659,55.524333 73.254996,55.460709 73.033203,55.396623 72.812280,55.450976 72.511481,55.456981 72.477909,55.510353 72.176001,55.634902 72.059446,55.640762 72.025599,55.692830 71.721240</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>55.752783 71.919833,55.694175 72.258306,55.569359 72.374308,55.509304 72.710031,55.573653 72.931521,55.637538 73.153889,55.700956 73.377135,55.763904 73.601256,55.826377 73.826251,55.888373 74.052118,56.077076 74.168981,56.138391 74.397283,56.199218 74.626460,56.259553 74.856510,56.319391 75.087430,56.378730 75.319218,56.437567 75.551872,56.495897 75.785387,56.625030 75.679740,56.695253 75.338188,56.824061 75.230028,56.764379 74.995121,56.704190 74.761107,56.771418 74.416699,56.709935 74.183757,56.647955 73.951728,56.585480 73.720614,56.522515 73.490417,56.332606 73.375963,56.268966 73.148282,56.204848 72.921513,56.140254 72.695658,56.075188 72.470718,56.009655 72.246695,55.943656 72.023591,55.752783 71.919833</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-6">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.971517 74.737012,67.149150 74.901048,67.168848 74.919631,67.346398 75.086604,67.280757 75.546207,67.273413 75.596911,67.206218 76.053458,67.198702 76.103825,67.076558 76.242749,67.151717 75.739083,67.225165 75.232041,67.028184 75.046208,66.893666 75.205568,66.759041 75.363033,66.624312 75.518632,66.489483 75.672398,66.414754 76.161756,66.474165 76.500919,66.532783 76.841836,66.454073 77.328158,66.331130 77.455919,66.402371 77.021270,66.410242 76.972638,66.351963 76.633202,66.292893 76.295495,66.360577 75.858099,66.368050 75.809163,66.434254 75.368926,66.568729 75.213741,66.703101 75.056715,66.837364 74.897815,66.971517 74.737012</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-7">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.461354 43.709276,66.584349 43.916054,66.707099 44.125076,66.829597 44.336373,66.863753 44.808422,66.867435 44.860728,66.988919 45.077542,67.110131 45.296718,67.130827 45.287834,67.316971 45.204945,67.348343 45.688698,67.351715 45.742287,67.381339 46.227529,67.194583 46.301636,67.173854 46.310037,66.987194 46.382772,66.966475 46.391018,66.779913 46.462419,66.660603 46.240249,66.541007 46.020404,66.421130 45.802855,66.300978 45.587573,66.180558 45.374528,66.148372 44.915951,66.232684 44.615067,66.228889 44.563836,66.194079 44.105499,66.276675 43.801095,66.461354 43.709276</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>66.387199 43.985941,66.304173 44.291139,66.342123 44.803448,66.257377 45.105066,66.378234 45.317410,66.498826 45.531999,66.619147 45.748863,66.739190 45.968032,66.858951 46.189535,67.066138 46.107073,67.273430 46.023065,67.239713 45.487173,67.032757 45.576018,66.911996 45.356090,66.790959 45.138516,66.754133 44.615464,66.632074 44.403364,66.509761 44.193534,66.387199 43.985941</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-8">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>52.953193 60.090233,53.129305 60.116302,53.148878 60.119307,53.325183 60.145674,53.414205 60.324977,53.502935 60.505216,53.485462 60.801835,53.377450 60.949297,53.375410 60.982030,53.462883 61.163757,53.443388 61.459662,53.441174 61.492427,53.420671 61.787947,53.418345 61.820668,53.396838 62.115784,53.221120 62.079089,53.135506 61.896331,53.156297 61.603491,53.158559 61.570840,53.072011 61.389687,52.985164 61.209444,52.898022 61.030108,52.810587 60.851676,52.828142 60.561017,52.830044 60.528613,52.846610 60.237636,52.953193 60.090233</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>53.033260 60.249653,52.926380 60.396905,52.907359 60.720943,52.995089 60.899545,53.082527 61.079057,53.169670 61.259481,53.256514 61.440821,53.233889 61.767331,53.319798 61.950292,53.343057 61.623082,53.365202 61.295437,53.278027 61.113891,53.298426 60.786561,53.406139 60.638927,53.317708 60.458851,53.228987 60.279705,53.033260 60.249653</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-9">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>52.592380 50.996513,52.696860 51.146576,52.801164 51.297544,52.905290 51.449423,52.915780 51.741949,52.823231 51.913262,52.730425 52.083661,52.637364 52.253149,52.544051 52.421731,52.368027 52.434631,52.348482 52.436146,52.172660 52.448903,52.070594 52.297252,51.968344 52.146478,51.865915 51.996577,51.856289 51.712784,51.855162 51.681175,51.844572 51.397563,51.935658 51.229650,52.026488 51.060870,52.201908 51.041065,52.221414 51.038940,52.397033 51.018913,52.416562 51.016765,52.592380 50.996513</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>52.510483 51.151114,52.315195 51.172601,52.120129 51.193849,52.029006 51.362733,51.937628 51.530745,51.948897 51.846839,52.051619 51.996659,52.154162 52.147354,52.256523 52.298929,52.451964 52.283784,52.544979 52.115279,52.637742 51.945874,52.730250 51.775563,52.822500 51.604343,52.718672 51.452362,52.614666 51.301287,52.510483 51.151114</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-10">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>62.244591 73.949566,62.419822 74.079464,62.439264 74.094138,62.614488 74.225958,62.677553 74.512028,62.739977 74.799466,62.801753 75.088267,62.862877 75.378427,62.797599 75.759318,62.664541 75.889685,62.531424 76.018740,62.358296 75.875348,62.298457 75.589544,62.279158 75.574098,62.105711 75.434926,62.169774 75.063334,62.176852 75.021806,62.115096 74.739883,62.177047 74.366539,62.183889 74.324817,62.244591 73.949566</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>62.301890 74.202744,62.233471 74.619961,62.295534 74.902860,62.224753 75.318135,62.417745 75.472598,62.477885 75.759426,62.610701 75.629325,62.743456 75.497906,62.682641 75.208786,62.621175 74.921006,62.559063 74.634573,62.496312 74.349492,62.301890 74.202744</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-11">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>64.870550 77.416931,65.043638 77.586143,65.062829 77.605243,65.235808 77.777169,65.291144 78.103504,65.310280 78.123216,65.482758 78.300698,65.359421 78.418411,65.168067 78.221290,65.113039 77.896349,64.921128 77.705345,64.976574 78.027281,64.894408 78.478621,64.948002 78.801928,64.824495 78.914396,64.771197 78.592475,64.845490 78.188933,64.853707 78.143799,64.798566 77.823218,64.870550 77.416931</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-12">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>57.824437 80.478799,57.988245 80.626100,58.035285 80.880420,58.081736 81.135525,58.127595 81.391409,58.172859 81.648064,58.217525 81.905484,58.261590 82.163662,58.178118 82.470458,58.041941 82.551677,57.880859 82.393708,57.837426 82.138417,57.793399 81.883856,57.748781 81.630034,57.703574 81.376956,57.783704 81.072148,57.792586 81.038105,57.745977 80.785559,57.824437 80.478799</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>57.913926 80.959612,57.825106 81.300040,57.870520 81.554014,57.915344 81.808741,57.959575 82.064214,58.003210 82.320427,58.139185 82.238271,58.095325 81.981027,58.050866 81.724532,58.005811 81.468794,57.960164 81.213818,57.913926 80.959612</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-13">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>69.869806 49.513674,69.887116 50.065602,69.888917 50.126661,69.904194 50.679606,69.806285 51.008453,69.616278 51.046229,69.595181 51.050700,69.405291 51.087685,69.292402 50.809937,69.179083 50.535272,69.163414 50.002650,69.259132 49.679435,69.448537 49.628877,69.469598 49.623512,69.659112 49.571885,69.680186 49.566406,69.869806 49.513674</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>69.783841 49.814555,69.573101 49.869345,69.362483 49.922993,69.266247 50.246698,69.380087 50.520928,69.493501 50.798265,69.704470 50.753552,69.801844 50.425144,69.783841 49.814555</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-14">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>58.312658 83.300681,58.472790 83.465667,58.513184 83.728237,58.425225 84.033109,58.415435 84.066804,58.454376 84.329660,58.330457 84.395871,58.206579 84.461478,58.168005 84.200605,58.128813 83.940402,58.216330 83.638381,58.226037 83.604645,58.312658 83.300681</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>58.349397 83.535473,58.252324 83.872827,58.291701 84.134010,58.389600 83.797057,58.349397 83.535473</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-15">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>60.801152 56.717860,60.985214 56.729098,61.084243 56.947146,61.077362 57.328139,61.076525 57.370304,61.068284 57.751067,60.884286 57.732773,60.892459 57.354796,60.893296 57.312631,60.795027 57.094780,60.801152 56.717860</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-16">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>54.256268 69.757578,54.428507 69.835531,54.498656 70.044071,54.568390 70.253489,54.521008 70.549957,54.349291 70.467952,54.280098 70.259457,54.210491 70.051826,54.256268 69.757578</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-17">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>52.438001 60.498796,52.613464 60.526542,52.701409 60.703142,52.789067 60.880638,52.770525 61.170960,52.595111 61.139680,52.508040 60.962521,52.420681 60.786246,52.438001 60.498796</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-18">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>61.077000 58.218314,61.261084 58.239701,61.357406 58.465307,61.345627 58.849542,61.236325 59.047698,61.052435 59.020692,60.957297 58.795643,60.968883 58.417028,61.077000 58.218314</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>61.163691 58.419799,61.055194 58.618346,61.150710 58.843583,61.259630 58.645235,61.163691 58.419799</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-19">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>56.962458 79.932257,57.126289 80.072610,57.174426 80.319045,57.096635 80.619950,56.933616 80.476733,56.885908 80.231950,56.962458 79.932257</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-20">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>67.076558 76.242749,67.007392 76.692972,66.993811 76.708221,66.986079 76.757892,66.863421 76.891947,66.940748 76.395243,67.076558 76.242749</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-21">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>53.633501 61.864175,53.809733 61.900029,53.787928 62.198510,53.677618 62.342787,53.501703 62.304618,53.523787 62.008878,53.633501 61.864175</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-22">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>69.420782 61.689450,69.609826 61.752815,69.702095 62.091562,69.677667 62.635990,69.488972 62.563547,69.397740 62.226223,69.420782 61.689450</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-23">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>69.428517 44.774072,69.461442 45.308171,69.374665 45.654472,69.186951 45.741118,69.155518 45.214030,69.241299 44.869603,69.428517 44.774072</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-24">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>57.018521 81.001753,57.180942 81.147979,57.100797 81.446832,56.938913 81.299299,57.018521 81.001753</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-25">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>69.247783 63.135640,69.436101 63.212024,69.408021 63.747754,69.220010 63.665982,69.247783 63.135640</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-26">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>52.828805 62.031368,53.004156 62.067240,52.981951 62.358657,52.806750 62.321174,52.828805 62.031368</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-27">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.770649 61.707478,66.958009 61.763564,66.934986 62.242084,66.747855 62.181664,66.770649 61.707478</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-3-winter-weather-contours-surface-member-28">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>68.658270 48.376242,68.679319 48.895121,68.490606 48.949903,68.469781 48.436130,68.658270 48.376242</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+</wp:WinterWeatherContours>
+</om:result>
+</wp:WinterWeather>    
+</wfs:member>
+
+    <wfs:member>
+      <wp:WinterWeather gml:id="forecast-4">       
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+	<gml:TimeInstant gml:id="forecast-4-time">
+	<gml:timePosition>2015-09-10T18:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:phenomenonTime>
+    <!-- Model analysis time -->
+    <om:resultTime>
+      <gml:TimeInstant gml:id="forecast-4-result-time">
+      <gml:timePosition>2015-09-10T00:00:00Z</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+  <om:observedProperty
+      xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+  <om:featureOfInterest>
+    <sams:SF_SpatialSamplingFeature gml:id="forecast-4-spatial-sampling-feature">
+    <sam:sampledFeature/>
+    <!-- Sampling feature is actually a requested bbox -->
+    <sams:shape>
+      <gml:Polygon gml:id="forecast-4-spatial-sampling-feature-shape">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>50.000000,5.000000 71.000000,5.000000 71.000000,90.000000 50.000000,90.000000 50.000000,5.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+<om:result>
+  <wp:WinterWeatherContours dateTime="2015-09-10T18:00:00Z"
+  winterWeatherType="MODERATE" gml:id="forecast-4-winter-weather-contours" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2">
+  
+    <!-- surface members of forecast-4-winter-weather-contours-1 -->
+  
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-4-winter-weather-contours-surface-member-1">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>67.499985 65.542701,67.592837 65.587955,67.685918 65.633639,67.706561 65.644089,67.799447 65.690209,67.892564 65.736772,67.913214 65.747423,68.006133 65.794434,68.099284 65.841901,68.062816 66.340162,67.932722 66.141870,67.819145 66.083292,67.726328 66.034696,67.612791 65.977224,67.520005 65.929539,67.499985 65.542701</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-4-winter-weather-contours-surface-member-2">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.955528 64.862802,67.048544 64.903671,67.070198 65.282916,66.977234 65.239725,66.884493 65.196930,66.955528 64.862802</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-4-winter-weather-contours-surface-member-3">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.173680 60.875305,65.266964 60.897719,65.298724 61.244449,65.163928 61.096774,65.173680 60.875305</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+</wp:WinterWeatherContours>
+</om:result>
+</wp:WinterWeather>    
+</wfs:member>
+
+    <wfs:member>
+      <wp:WinterWeather gml:id="forecast-5">       
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+	<gml:TimeInstant gml:id="forecast-5-time">
+	<gml:timePosition>2015-09-10T21:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:phenomenonTime>
+    <!-- Model analysis time -->
+    <om:resultTime>
+      <gml:TimeInstant gml:id="forecast-5-result-time">
+      <gml:timePosition>2015-09-10T00:00:00Z</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+  <om:observedProperty
+      xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+  <om:featureOfInterest>
+    <sams:SF_SpatialSamplingFeature gml:id="forecast-5-spatial-sampling-feature">
+    <sam:sampledFeature/>
+    <!-- Sampling feature is actually a requested bbox -->
+    <sams:shape>
+      <gml:Polygon gml:id="forecast-5-spatial-sampling-feature-shape">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>50.000000,5.000000 71.000000,5.000000 71.000000,90.000000 50.000000,90.000000 50.000000,5.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+<om:result>
+  <wp:WinterWeatherContours dateTime="2015-09-10T21:00:00Z"
+  winterWeatherType="MODERATE" gml:id="forecast-5-winter-weather-contours" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2">
+  
+    <!-- surface members of forecast-5-winter-weather-contours-1 -->
+  
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-5-winter-weather-contours-surface-member-1">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>67.002414 65.033330,67.133498 65.216045,67.247032 65.269573,67.340028 65.312691,67.424192 65.630775,67.537687 65.687172,67.685918 65.633639,67.706561 65.644089,67.867009 65.568152,68.015365 65.512966,68.099284 65.841901,68.182516 66.173420,68.144961 66.673037,68.015262 66.471968,67.932722 66.141870,67.819145 66.083292,67.726328 66.034696,67.612791 65.977224,67.520005 65.929539,67.406509 65.873142,67.313757 65.826345,67.174992 65.606763,67.154349 65.597030,67.023723 65.411117,67.002414 65.033330</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>67.904868 65.714620,67.781820 65.936139,67.988324 66.042645,67.904868 65.714620</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-5-winter-weather-contours-surface-member-2">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.021959 59.353433,65.115404 59.369812,65.151004 59.712254,65.149291 59.761457,65.244180 60.030030,65.264928 60.034587,65.400868 60.176139,65.392196 60.401050,65.298836 60.379402,65.184720 60.354339,65.091427 60.333063,64.997191 60.064997,64.902463 59.799015,64.867158 59.460642,65.021959 59.353433</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>65.065119 59.472409,64.953043 59.698300,65.047987 59.964445,65.065119 59.472409</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-5-winter-weather-contours-surface-member-3">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.490133 59.577908,65.626657 59.718173,65.618725 59.945402,65.525216 59.925336,65.490133 59.577908</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+</wp:WinterWeatherContours>
+</om:result>
+</wp:WinterWeather>    
+</wfs:member>
+
+    <wfs:member>
+      <wp:WinterWeather gml:id="forecast-6">       
+      <!-- Data time stamp -->
+      <om:phenomenonTime>
+	<gml:TimeInstant gml:id="forecast-6-time">
+	<gml:timePosition>2015-09-11T00:00:00Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:phenomenonTime>
+    <!-- Model analysis time -->
+    <om:resultTime>
+      <gml:TimeInstant gml:id="forecast-6-result-time">
+      <gml:timePosition>2015-09-10T00:00:00Z</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
+  <om:observedProperty
+      xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=eng"/>
+  <om:featureOfInterest>
+    <sams:SF_SpatialSamplingFeature gml:id="forecast-6-spatial-sampling-feature">
+    <sam:sampledFeature/>
+    <!-- Sampling feature is actually a requested bbox -->
+    <sams:shape>
+      <gml:Polygon gml:id="forecast-6-spatial-sampling-feature-shape">
+        <gml:exterior>
+          <gml:LinearRing>
+            <gml:coordinates>50.000000,5.000000 71.000000,5.000000 71.000000,90.000000 50.000000,90.000000 50.000000,5.000000</gml:coordinates>
+          </gml:LinearRing>
+        </gml:exterior>
+      </gml:Polygon>
+    </sams:shape>
+  </sams:SF_SpatialSamplingFeature>
+</om:featureOfInterest>
+<om:result>
+  <wp:WinterWeatherContours dateTime="2015-09-11T00:00:00Z"
+  winterWeatherType="MODERATE" gml:id="forecast-6-winter-weather-contours" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2">
+  
+    <!-- surface members of forecast-6-winter-weather-contours-1 -->
+  
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-6-winter-weather-contours-surface-member-1">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>68.036039 65.523463,68.222324 65.616524,68.243006 65.627227,68.373892 65.824372,68.393224 66.228393,68.389130 66.284274,68.351181 66.788576,68.258275 66.736164,68.165600 66.684259,68.203156 66.184641,68.207250 66.128760,68.186568 66.118057,68.000653 66.020340,68.036039 65.523463</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-6-winter-weather-contours-surface-member-2">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>67.208968 65.127708,67.394959 65.213944,67.479350 65.532447,67.499985 65.542701,67.592837 65.587955,67.685918 65.633639,67.612791 65.977224,67.520005 65.929539,67.406509 65.873142,67.283447 66.088795,67.190803 66.041361,67.208649 65.802666,67.230044 65.509101,67.208968 65.127708</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+		<!-- interior ring #1 -->
+                 <gml:interior>
+                    <gml:LinearRing>
+                      <gml:coordinates>67.285097 65.411438,67.246196 65.945194,67.369034 65.729104,67.285097 65.411438</gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:interior>		
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-6-winter-weather-contours-surface-member-3">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.798302 62.198582,65.984802 62.256272,66.074960 62.544446,66.049499 63.003981,65.956290 62.971743,65.863300 62.939789,65.774024 62.652695,65.798302 62.198582</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-6-winter-weather-contours-surface-member-4">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.021959 59.353433,65.115404 59.369812,65.151004 59.712254,65.038493 59.937831,64.902463 59.799015,64.910101 59.579471,65.021959 59.353433</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-6-winter-weather-contours-surface-member-5">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.657495 63.807980,66.789914 63.980763,66.813931 64.354749,66.627878 64.277317,66.642798 64.042819,66.657495 63.807980</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-6-winter-weather-contours-surface-member-6">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>66.392458 62.913403,66.525804 63.078977,66.552118 63.447655,66.458839 63.412898,66.365783 63.378454,66.392458 62.913403</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-6-winter-weather-contours-surface-member-7">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.318412 60.797716,65.298724 61.244449,65.163928 61.096774,65.173680 60.875305,65.318412 60.797716</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-6-winter-weather-contours-surface-member-8">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.057433 59.991269,65.244180 60.030030,65.184720 60.354339,65.091427 60.333063,65.057433 59.991269</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+      <gml:surfaceMember>
+	<gml:Surface gml:id="forecast-6-winter-weather-contours-surface-member-9">
+          <gml:patches>
+            <gml:PolygonPatch>
+              <!-- exterior ring -->
+              <gml:exterior>
+		<gml:LinearRing>
+                  <gml:coordinates>65.282321 59.538142,65.418778 59.676959,65.410921 59.902217,65.266756 59.984783,65.282321 59.538142</gml:coordinates>
+		</gml:LinearRing>
+              </gml:exterior>
+	      
+            </gml:PolygonPatch>
+          </gml:patches>
+	</gml:Surface>
+      </gml:surfaceMember>
+  
+</wp:WinterWeatherContours>
+</om:result>
+</wp:WinterWeather>    
+</wfs:member>
+
+</wfs:FeatureCollection>

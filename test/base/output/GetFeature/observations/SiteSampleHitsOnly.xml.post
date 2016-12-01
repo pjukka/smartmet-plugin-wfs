@@ -1,0 +1,75 @@
+Global data object:
+
+   fmi_apikey = "foobar";
+   hits_only = 1;
+   language = "eng";
+   named_parameters = {
+                        'defaultmeteoparam' : [
+                                                "Temperature",
+                                                "pressure",
+                                                "WindSpeedMS",
+                                                "WindDirection",
+                                                "Precipitation1h"
+                                              ]
+                      };
+   numMatched = 3;
+   numParam = 3;
+   numReturned = 3;
+   projEpochSrsDim = 3;
+   projEpochSrsName = "http:\/\/xml.fmi.fi\/gml\/crs\/wgs84-and-epoch-time.xml";
+   projSrsDim = 2;
+   projSrsName = "http:\/\/www.opengis.net\/def\/crs\/EPSG\/0\/4326";
+   queryNum = 1;
+   query_parameters = {
+                        'beginTime' : [
+                                        "20120729T100000Z"
+                                      ],
+                        'crs' : [
+                                  "EPSG::4326"
+                                ],
+                        'endTime' : [
+                                      "20120729T190000Z"
+                                    ],
+                        'locale' : [
+                                     "fi_FI"
+                                   ],
+                        'maxDistance' : [
+                                          "50000"
+                                        ],
+                        'maxEpochs' : [
+                                        "200"
+                                      ],
+                        'meteoParameters' : [
+                                              "Temperature",
+                                              "pressure",
+                                              "Precipitation1h"
+                                            ],
+                        'missingText' : [
+                                          "nan"
+                                        ],
+                        'numOfStations' : [
+                                            "1"
+                                          ],
+                        'places' : [
+                                     "Kumpula,Helsinki",
+                                     "Kaisaniemi,Helsinki",
+                                     "Sepänkylä,Espoo"
+                                   ],
+                        'separateGroups' : [
+                                             "1"
+                                           ],
+                        'stationType' : [
+                                          "fmi"
+                                        ],
+                        'storedquery_id' : [
+                                             "ObsTest"
+                                           ],
+                        'timeStep' : [
+                                       "0"
+                                     ],
+                        'timeZone' : [
+                                       "UTC"
+                                     ]
+                      };
+   responseTimestamp = "2012-12-12T12:12:12Z"
+ 

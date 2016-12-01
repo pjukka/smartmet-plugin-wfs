@@ -1,0 +1,16 @@
+<html>
+<title>QEngine data download test</title>
+<body>
+
+<ul>
+</ul>
+<TMPL_FOREACH param_sets AS x><li><a href="<TMPL_var x.URL>"><TMPL_var x.params.producer[0]>.<TMPL_var x.params.originTime></a></li>
+</TMPL_FOREACH>
+</body>
+
+<hr>
+<pre>
+<TMPL_var HTMLESCAPE(OBJ_DUMP())>
+</pre>
+
+</html>

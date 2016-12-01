@@ -1,0 +1,83 @@
+/**
+
+@page WFS_PLUGIN_XML_VALIDATION XML validation in XML plugin
+
+@section WFS_PLUGIN_XML_VALIDATION_INTRO Introduction
+
+XML validation allows to ensure that XML documents corresponds to XML schemas (or DTD if DTD description
+are being used, WFS does not however use DTD).
+
+Incoming XML format requests are always validated so ensuring that they corresponds to provided XML schemas.
+Outgoing XML format response validation is optional and can be enabled by @ref WFS_PLUGIN_CONFIG configuration
+entry @b validateXmlOutput . Outgoing XML response validation is intended to be used mostly for testing and it
+is not recommended to enable it for production server to avoid wasting resources.
+
+@section WFS_PLUGIN_XML_VALIDATION_IMPL Implementation
+
+Library <a href="http://xerces.apache.org/xerces-c/">Xerces-C</a> is being used for XML support. It supports
+XML schema download for XML document validation. This download possibility cannot however be used as
+- the default download handler for Linux does not support connections through proxy server
+- download possibility may not be available at all on production server
+- download would be too slow for actual use
+Therefore 2 other ways are being used:
+- <a href="http://xerces.apache.org/xerces-c/">Xerces-C</a> supports dumping XML grammar pool to file
+  and reading it back. Parallel use from several threads is possible when grammar pool is locked
+  against changes. XML grammar pool is primary source for XML grammars (schemas) used in WFS plugin
+- it has been noticed that in some cases using separately saved grammar pool does not however ensure that
+  all required schemas are found. Such problems have not been noticed yet with
+  <a href="http://xerces.apache.org/xerces-c/">Xerces-C</a> version 3.0.0 available in RHEL6, but has
+  been noticed with newer version 3.1.1. Therefore all preloaded XML schemas can be streamed additionally
+  to file and later used when XML entity resolution is however triggered by
+  <a href="http://xerces.apache.org/xerces-c/">Xerces-C</a> library. These difficulties may however
+  be used by actual problems in XML responses (never noticed yet while validating XML format WFS requests)
+  like different versions of the same XML schema used in different places.
+
+@section WFS_PLUGIN_XML_VALIDATION_GEN Regenerating XML validation related files
+
+Tools for regenerating XML validation related files are located in subdirectory @b tools of WFS
+plugin sources. Running
+@verbatim
+make
+@endverbatim
+in that directory performs generation of
+- XML grammar pool dump (generation is retried up to 5 times until no additional schema download is
+  required)
+- streamed to file map of loaded XML schemas (saved in the first run as later some of the XML schemas
+  may already be preloaded)
+
+Proxy may be needed in some servers to run the test. For example
+@verbatim
+http_proxy=http://wwwproxy.fmi.fi:8080 make
+@endverbatim
+
+User can define a target server into a file
+@verbatim
+$HOME/.brainstorm
+@endverbatim
+The defined server or default server (data.fmi.fi) might demand to use a user specific fmi-apikey 
+for downloading the XML documents. Then the key should also be defined into the file. Example 
+of the file is shown below
+@verbatim
+TARGET_SERVER="data.fmi.fi"
+FMI_API_KEY="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+@endverbatim
+
+User must copy generated files
+- XMLGrammarPool.dump
+- XMLSchemas.cache
+to subdirectory @b cnf of WFS plugin sources. The copied files are also added GIT repository to avoid
+need to download and rebuild these generated files each time. So the files must also be updated in
+GIT repository when regenerated.
+
+@subsection WFS_PLUGIN_XML_VALIDATION_GEN_SRC Sources for generating XML validation related files
+
+Sources for generating XML validation related files are located in subdirectories of
+directory <b>tools/xml_samples</b>:
+- @b extra - additional samples to be added (currently only SOAP format request example even SOAP
+    format requests are not supported)
+- @b request - sample requests for generating sample responses
+- @b response - generated sample responses
+
+One may need to edit script <b>tools/xml_samples/PerformQueries.sh</b> to specify server to use
+
+*/

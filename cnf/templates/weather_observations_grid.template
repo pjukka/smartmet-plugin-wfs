@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+  timeStamp="<TMPL_var responseTimestamp>"
+  numberMatched="<TMPL_var numMatched>"
+  numberReturned="<TMPL_var numReturned>"
+<TMPL_include "include/refs_obs_multipointcoverage.template"><TMPL_foreach groups as group><TMPL_if DEFINED(group.obsReturnArray)>
+  <wfs:member>
+    <omso:GridSeriesObservation gml:id="<TMPL_var group.featureId>">
+<TMPL_comment>     <om:metadata <TMPL_include "include/link_ef_station.template">/></TMPL_comment>
+     <TMPL_include "include/time_obs_multipointcoverage.template">
+     <om:procedure <TMPL_include "include/link_obs_process.template">/>
+     <TMPL_include "include/process_parameter_obs.template">
+     <om:observedProperty <TMPL_include "include/link_observable_property.template">/>
+     <TMPL_include "include/foi_obs_multipointcoverage.template">
+     <TMPL_include "include/results_obs_multipointcoverage.template">
+    </omso:GridSeriesObservation>
+  </wfs:member></TMPL_if></TMPL_foreach>
+</wfs:FeatureCollection>

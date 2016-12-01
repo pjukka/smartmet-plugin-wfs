@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById">
+     <wfs:Parameter name="id">urn:ogc:def:query:OGC-WFS::GetFeatureById</wfs:Parameter>
+     <wfs:Parameter name="begin">2012-11-20 00:00:00</wfs:Parameter>
+     <wfs:Parameter name="end">2012-11-20 23:59:59</wfs:Parameter>
+     <wfs:Parameter name="place">Helsinki</wfs:Parameter>
+     <wfs:Parameter name="place">Oulu</wfs:Parameter>
+     <wfs:Parameter name="timestep">60</wfs:Parameter>
+     <wfs:Parameter name="numOfStations">6</wfs:Parameter>
+     <wfs:Parameter name="parameter">temperature</wfs:Parameter>
+   </wfs:StoredQuery>
+</wfs:GetFeature>

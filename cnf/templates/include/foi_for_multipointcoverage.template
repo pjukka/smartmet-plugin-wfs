@@ -1,0 +1,28 @@
+            <om:featureOfInterest>
+                <sams:SF_SpatialSamplingFeature gml:id="enn-s-<TMPL_var group.groupId>-<TMPL_var param.name>">
+          <sam:sampledFeature>
+		<target:LocationCollection gml:id="sampled-target-<TMPL_var group.groupId>"><TMPL_foreach group.stationList as place>
+		    <target:member>
+		    <target:Location gml:id="forloc-geoid-<TMPL_var place.geoid>-pos">
+		        <gml:identifier codeSpace="http://xml.fmi.fi/namespace/stationcode/geoid"><TMPL_var place.geoid></gml:identifier>
+			<TMPL_if DEFINED(place.name)><gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name"><TMPL_var place.name></gml:name></TMPL_if>
+			<TMPL_if DEFINED(place.geoid)><gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid"><TMPL_var place.geoid></gml:name></TMPL_if>
+			<target:representativePoint xlink:href="#point-<TMPL_var place.geoid>"/>
+			<TMPL_if DEFINED(place.country)><target:country codeSpace="http://xml.fmi.fi/namespace/location/country"><TMPL_var place.country></target:country></TMPL_if>
+			<TMPL_if DEFINED(place.localtz)><target:timezone><TMPL_var place.localtz></target:timezone></TMPL_if>
+			<TMPL_if DEFINED(place.region)><target:region codeSpace="http://xml.fmi.fi/namespace/location/region"><TMPL_var place.region></target:region></TMPL_if>	   			
+		    </target:Location></target:member></TMPL_foreach>
+		</target:LocationCollection>
+ 	   </sam:sampledFeature>
+                <sams:shape>
+                    <gml:MultiPoint gml:id="sf-<TMPL_var group.groupId>-<TMPL_var param.name>">
+                        <gml:pointMembers><TMPL_foreach stationList AS place>	<TMPL_if place.name>
+                           <gml:Point gml:id="point-<TMPL_var place.geoid>" srsName="<TMPL_var srsName>" srsDimension="<TMPL_var srsDim>">
+                               <gml:name><TMPL_var place.name></gml:name>
+                               <gml:pos><TMPL_var place.x> <TMPL_var place.y> <TMPL_var place.elev></gml:pos>
+                           </gml:Point></TMPL_if></TMPL_foreach>
+                        </gml:pointMembers>
+                    </gml:MultiPoint>
+                </sams:shape>
+            </sams:SF_SpatialSamplingFeature>
+        </om:featureOfInterest>

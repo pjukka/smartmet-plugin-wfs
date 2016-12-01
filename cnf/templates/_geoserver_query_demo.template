@@ -1,0 +1,13 @@
+<html>
+<title>GeoServerdat query demo</title>
+<body>
+<ul>
+<TMPL_FOREACH param_sets AS set><li><a href="<TMPL_var set.URL>"><TMPL_var set.params.name[0]></a></li>
+</TMPL_FOREACH>
+</ul>
+<hr>
+<pre>
+<TMPL_var OBJ_DUMP()>
+</pre>
+</body>
+</html>

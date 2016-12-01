@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection timeStamp="<TMPL_var responseTimestamp>"
+		       numberMatched="<TMPL_var numMatched>"
+		       numberReturned="<TMPL_var numReturned>"
+<TMPL_include "include/refs_aviation_observations.template">>
+
+  <TMPL_if (numReturned > 0)><TMPL_if (DEFINED(lowerCorner) && DEFINED(upperCorner))><wfs:boundedBy>
+    <gml:Envelope<TMPL_if DEFINED(projSrsAxisLabels)> axisLabels="<TMPL_var projSrsAxisLabels>"</TMPL_if> srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+      <gml:lowerCorner><TMPL_var lowerCorner></gml:lowerCorner>
+      <gml:upperCorner><TMPL_var upperCorner></gml:upperCorner>
+    </gml:Envelope>
+  </wfs:boundedBy></TMPL_if>
+<TMPL_foreach groups AS group><TMPL_if DEFINED(group.contentList)><TMPL_foreach group.contentList as content><TMPL_if DEFINED(content.iwxxm)>
+  <wfs:member>
+    <TMPL_var content.iwxxm>
+  </wfs:member>
+ </TMPL_if></TMPL_foreach></TMPL_if></TMPL_foreach></TMPL_if>
+</wfs:FeatureCollection>

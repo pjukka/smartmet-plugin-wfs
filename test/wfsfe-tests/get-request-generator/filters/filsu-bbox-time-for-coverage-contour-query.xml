@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<fes:Filter
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:fes="http://www.opengis.net/fes/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/fes/2.0
+  http://schemas.opengis.net/filter/2.0.0/filterAll.xsd
+  http://www.opengis.net/gml/3.2
+  http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+ <fes:And>
+   <fes:During>
+     <fes:ValueReference>phenomenonTime</fes:ValueReference>
+	<gml:TimePeriod gml:id="TP1">
+	    <gml:begin>
+	      <gml:TimeInstant gml:id="TI1">
+		<gml:timePosition>2015-09-30T18:00:00Z</gml:timePosition>
+	      </gml:TimeInstant>
+	    </gml:begin>
+	    <gml:end>
+	      <gml:TimeInstant gml:id="TI2">
+		<gml:timePosition>2015-10-01T18:00:00Z</gml:timePosition>
+	      </gml:TimeInstant>
+	    </gml:end>
+	</gml:TimePeriod>
+    </fes:During>
+    <fes:BBOX>
+      <fes:ValueReference>Geometry</fes:ValueReference>
+      <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+	<gml:lowerCorner>22.00 59.00</gml:lowerCorner>
+	<gml:upperCorner>29.00 66.00</gml:upperCorner>
+      </gml:Envelope>
+    </fes:BBOX>
+  </fes:And>
+</fes:Filter>

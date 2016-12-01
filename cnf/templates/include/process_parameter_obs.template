@@ -1,0 +1,8 @@
+<TMPL_if DEFINED(named_parameters.intent)>            <om:parameter>
+                <om:NamedValue>
+                    <om:name xlink:href="<TMPL_var named_parameters.intent[1]>"/>
+                    <om:value>
+			<TMPL_var named_parameters.intent[0]>
+                    </om:value>
+                </om:NamedValue>
+            </om:parameter></TMPL_if>

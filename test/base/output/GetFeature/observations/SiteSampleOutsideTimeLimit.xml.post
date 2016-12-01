@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExceptionReport xmlns="http://www.opengis.net/ows/1.1"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/ows/1.1 http://schemas.opengis.net/ows/1.1.0/owsExceptionReport.xsd"
+  version="2.0.0">
+
+
+  <Exception exceptionCode="OperationParsingFailed">
+    <ExceptionText>Value &apos;2002-Jul-29 10:00:00&apos; is out of the allowed range (lowerLimit=2012-Jan-01 00:00:00)</ExceptionText>
+    <ExceptionText>URI: /wfs</ExceptionText>
+    <ExceptionText>Content-Type: text/xml</ExceptionText>
+    <ExceptionText>Content: &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;wfs:GetFeature
+         service=&quot;WFS&quot;
+         version=&quot;2.0.0&quot;
+         xmlns:wfs=&quot;http://www.opengis.net/wfs/2.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd&quot;&gt;
+   &lt;wfs:StoredQuery id=&quot;HiddenObsTest&quot;&gt;
+     &lt;wfs:Parameter name=&quot;begin&quot;&gt;20020729T100000Z&lt;/wfs:Parameter&gt;
+     &lt;wfs:Parameter name=&quot;end&quot;&gt;20020729T190000Z&lt;/wfs:Parameter&gt;
+     &lt;wfs:Parameter name=&quot;place&quot;&gt;Helsinki&lt;/wfs:Parameter&gt;
+     &lt;wfs:Parameter name=&quot;timestep&quot;&gt;0&lt;/wfs:Parameter&gt;
+     &lt;wfs:Parameter name=&quot;numofstations&quot;&gt;6&lt;/wfs:Parameter&gt;
+     &lt;wfs:Parameter name=&quot;maxDistance&quot;&gt;50000.0&lt;/wfs:Parameter&gt;
+     &lt;wfs:Parameter name=&quot;locale&quot;&gt;fi_FI&lt;/wfs:Parameter&gt;
+     &lt;wfs:Parameter name=&quot;parameter&quot;&gt;Temperature&lt;/wfs:Parameter&gt;
+     &lt;wfs:Parameter name=&quot;parameter&quot;&gt;pressure&lt;/wfs:Parameter&gt;
+     &lt;wfs:Parameter name=&quot;parameter&quot;&gt;Precipitation1h&lt;/wfs:Parameter&gt;
+   &lt;/wfs:StoredQuery&gt;
+&lt;/wfs:GetFeature&gt;
+)</ExceptionText>
+    
+  </Exception>
+
+</ExceptionReport>

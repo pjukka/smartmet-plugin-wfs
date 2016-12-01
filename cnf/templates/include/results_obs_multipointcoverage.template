@@ -1,0 +1,31 @@
+      <om:result>
+        <gmlcov:MultiPointCoverage gml:id="mpcv1-<TMPL_var group.groupId>">
+          <gml:domainSet>
+            <gmlcov:SimpleMultiPoint gml:id="mp1-<TMPL_var group.groupId>" srsName="<TMPL_var projEpochSrsName>" srsDimension="<TMPL_var projEpochSrsDim>">
+              <gmlcov:positions>
+                <TMPL_foreach group.obsReturnArray as row><TMPL_var row.x> <TMPL_var row.y> <TMPL_var row.height> <TMPL_var row.epochTime>
+                </TMPL_foreach></gmlcov:positions>
+            </gmlcov:SimpleMultiPoint>
+          </gml:domainSet>
+          <gml:rangeSet>
+            <gml:DataBlock>
+              <gml:rangeParameters/>
+              <gml:doubleOrNilReasonTupleList>
+                <TMPL_foreach obsReturnArray as row><TMPL_foreach row.data as param><TMPL_var param.value> </TMPL_foreach>
+                </TMPL_foreach></gml:doubleOrNilReasonTupleList>
+            </gml:DataBlock>
+          </gml:rangeSet>
+          <gml:coverageFunction>
+            <gml:CoverageMappingRule>
+              <gml:ruleDefinition>Linear</gml:ruleDefinition>
+            </gml:CoverageMappingRule>
+          </gml:coverageFunction>
+          <gmlcov:rangeType>
+            <swe:DataRecord>
+              <TMPL_foreach group.obsParamList as obsParam><swe:field name="<TMPL_var obsParam.name>" <TMPL_include "link_observable_property.template"><TMPL_if DEFINED(obsParam.isQCParameter)>>
+                <swe:Category><swe:codeSpace xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?qualitycode=&amp;language=<TMPL_var language>&amp;"/></swe:Category>
+              </swe:field><TMPL_else>/></TMPL_if>
+              </TMPL_foreach></swe:DataRecord>
+          </gmlcov:rangeType>
+        </gmlcov:MultiPointCoverage>
+      </om:result>

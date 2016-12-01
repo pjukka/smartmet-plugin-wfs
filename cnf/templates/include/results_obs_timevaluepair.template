@@ -1,0 +1,15 @@
+  <om:result>
+                    <wml2:MeasurementTimeseries gml:id="obs-obs-<TMPL_var group.groupId>-<TMPL_var obsParam.name>">                        <TMPL_foreach group.obsReturnArray as row> <TMPL_foreach row.data as dataIt><TMPL_if (dataIt.__index__ == obsParam.__index__)>
+                        <wml2:point>
+                            <wml2:MeasurementTVP> 
+                                      <wml2:time><TMPL_var row.epochTimeStr></wml2:time>
+				      <wml2:value><TMPL_var dataIt.value></wml2:value><TMPL_if (DEFINED(group.qualityInfo) && DEFINED(dataIt.qcValue))>
+                                      <wml2:metadata>
+                                        <wml2:TVPMeasurementMetadata>
+                                          <wml2:quality xlink:title="qc-<TMPL_var dataIt.qcValue>" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?qualitycode=<TMPL_var dataIt.qcValue>&amp;language=eng&amp;"/>
+                                        </wml2:TVPMeasurementMetadata>
+                                      </wml2:metadata></TMPL_if>
+                            </wml2:MeasurementTVP>
+                        </wml2:point>                        </TMPL_if></TMPL_foreach> </TMPL_foreach>
+                    </wml2:MeasurementTimeseries>
+                </om:result>

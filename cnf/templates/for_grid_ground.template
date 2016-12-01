@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+    timeStamp="<TMPL_var responseTimestamp>"
+    numberMatched="<TMPL_var numMatched>"
+    numberReturned="<TMPL_var numReturned>"
+    <TMPL_include "include/refs_grid.template">
+    <TMPL_foreach param_sets as dataset>
+    <wfs:member>
+        <omso:GridSeriesObservation gml:id="<TMPL_var dataset.params.featureId[0]>">
+<TMPL_comment>            <om:metadata xlink:href="http://catalog.fmi.fi/not-real"/></TMPL_comment>
+            <TMPL_include "include/time_for_grid.template">
+              <om:procedure <TMPL_include "include/link_for_process.template">/>
+	      <TMPL_include "include/process_parameter_for.template">
+            <om:observedProperty <TMPL_include "include/link_observable_property_grid.template">/>
+            <TMPL_include "include/foi_for_grid.template">
+	    <TMPL_include "include/results_for_grid.template">
+        </omso:GridSeriesObservation>
+    </wfs:member>
+    </TMPL_foreach>
+</wfs:FeatureCollection>

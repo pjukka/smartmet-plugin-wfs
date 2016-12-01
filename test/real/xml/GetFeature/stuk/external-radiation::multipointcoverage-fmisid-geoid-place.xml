@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:gml="http://www.opengis.net/gml/3.2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:StoredQuery id="stuk::observations::external-radiation::multipointcoverage">
+     <wfs:Parameter name="starttime">2015-11-10T00:15:00Z</wfs:Parameter>
+     <wfs:Parameter name="endtime">2015-11-10T00:25:00Z</wfs:Parameter>
+     <wfs:Parameter name="fmisid">103191</wfs:Parameter>
+     <wfs:Parameter name="geoid">-103209</wfs:Parameter>
+     <wfs:Parameter name="place">Mouhijärvi</wfs:Parameter>
+   </wfs:StoredQuery>
+</wfs:GetFeature>

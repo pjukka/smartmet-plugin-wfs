@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:gml="http://www.opengis.net/gml/3.2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:StoredQuery id="fmi::observations::weather::mast::multipointcoverage">
+     <wfs:Parameter name="fmisid">101000</wfs:Parameter>
+     <wfs:Parameter name="starttime">2014-11-28T00:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="endtime">2014-11-28T00:05:00Z</wfs:Parameter>
+     <wfs:Parameter name="parameters">TA</wfs:Parameter>
+   </wfs:StoredQuery>
+</wfs:GetFeature>

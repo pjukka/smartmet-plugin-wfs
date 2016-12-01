@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetPropertyValue
+         service="WFS"
+         version="2.0.0"
+         resultType="hits"
+         valueReference="/wfs:FeatureCollection/wfs:member/omso:PointTimeSeriesObservation/om:featureOfInterest"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:gml="http://www.opengis.net/gml/3.2"
+         xmlns:omso="http://inspire.ec.europa.eu/schemas/omso/3.0"
+         xmlns:om="http://www.opengis.net/om/2.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                             http://inspire.ec.europa.eu/schemas/omso/3.0 http://inspire.ec.europa.eu/schemas/omso/3.0/SpecialisedObservations.xsd">
+   <wfs:StoredQuery id="fmi::observations::weather::timevaluepair">
+     <wfs:Parameter name="starttime">2013-05-16T18:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="endtime">2013-05-17T00:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="timestep">60</wfs:Parameter>
+     <wfs:Parameter name="parameters">t2m ws_10min wg_10min wd_10min rh td r_1h ri_10min vis</wfs:Parameter>
+     <wfs:Parameter name="maxlocations">2</wfs:Parameter>
+     <wfs:Parameter name="place">Kumpula,Helsinki</wfs:Parameter>
+   </wfs:StoredQuery>
+</wfs:GetPropertyValue>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:gml="http://www.opengis.net/gml/3.2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xmlns:avi="http://xml.fmi.fi/namespace/aviation-weather/2014/02/15"
+	xmlns:saf="http://icao.int/saf/1.0"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+  <wfs:Query typeNames="avi:VerifiableMessage">
+    <fes:Filter
+      xmlns:gml="http://www.opengis.net/gml/3.2"
+      xmlns:fes="http://www.opengis.net/fes/2.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.opengis.net/fes/2.0
+		  http://schemas.opengis.net/filter/2.0/filterAll.xsd
+		  http://www.opengis.net/gml/3.2
+		  http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+	  <fes:BBOX>
+	    <fes:ValueReference></fes:ValueReference>
+	    <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+	      <gml:lowerCorner>24.00 60.00</gml:lowerCorner>
+	      <gml:upperCorner>25.00 61.00</gml:upperCorner>
+	    </gml:Envelope>
+	  </fes:BBOX>
+    </fes:Filter>
+  </wfs:Query>
+</wfs:GetFeature>

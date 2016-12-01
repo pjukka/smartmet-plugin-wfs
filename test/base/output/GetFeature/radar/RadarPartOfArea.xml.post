@@ -1,0 +1,568 @@
+Global data object:
+
+   fmi_apikey = "foobar";
+   fmi_apikey_prefix = "/fmi-apikey/";
+   hostname = "beta.fmi.fi";
+   language = "eng";
+   named_parameters = {
+                        'defaultboundingbox' : [
+                                                 "20.0, 60.0, 30.0, 70.0, EPSG::4326"
+                                               ],
+                        'defaultlayers' : [
+                                            "wfs_regression_test_anjalankoski",
+                                            "wfs_regression_test_kuopio"
+                                          ],
+                        'hclass' : [
+                                     "hclass"
+                                   ],
+                        'height' : [
+                                     "1999"
+                                   ],
+                        'width' : [
+                                    "1999"
+                                  ]
+                      };
+   numMatched = 5;
+   numReturned = 5;
+   param_sets = [
+                  {
+                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_anjalankoski&styles=&bbox=255987.171,6502209.863,755737.171,7001959.863&width=1999&height=1999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:40:00Z",
+                    'params' : {
+                                 'corner' : [
+                                              "255987.171",
+                                              "6502209.863"
+                                            ],
+                                 'db_fid' : [
+                                              "79672"
+                                            ],
+                                 'db_location' : [
+                                                   "201302211040_ANJ_DBZH_ppi_ala.tif"
+                                                 ],
+                                 'db_the_geom' : [
+                                                   "0103000020FB0B000001000000050000007D3F355E993F0F415A643BF7D9B55A41DF4F8D57321027415A643BF7D9B55A41DF4F8D57321027415A643B77D0CD58417D3F355E993F0F415A643B77D0CD58417D3F355E993F0F415A643BF7D9B55A41"
+                                                 ],
+                                 'db_time' : [
+                                               "2013-02-21 10:40:00"
+                                             ],
+                                 'destBoundary' : [
+                                                    "63.0645404821517",
+                                                    "22.1685749993587",
+                                                    "63.0564509201189",
+                                                    "32.0625068980498",
+                                                    "58.5848154488673",
+                                                    "31.4004385067996",
+                                                    "58.5915533809156",
+                                                    "22.8006617099854",
+                                                    "63.0645404821517",
+                                                    "22.1685749993587"
+                                                  ],
+                                 'destSrs' : [
+                                               "4326"
+                                             ],
+                                 'destSrsAxisLabels' : [
+                                                         "Lat",
+                                                         "Long"
+                                                       ],
+                                 'destSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'destSrsSwapped' : [
+                                                      "true"
+                                                    ],
+                                 'epoch' : [
+                                             "2013-02-21T10:40:00Z"
+                                           ],
+                                 'featureId' : [
+                                                 "WFS-zhMgHbV3EYGjjt_NPFIqtDxz37yJTowr1LDkw8pGPZh586mXn0hZWLLn07rXv0KJqwYSwmti39d2TTuzwt_jGNkDJqBjhAycgVItCnHdOmjNk2Y2PlzrUi0Kcd06aM2TZjZd2S179CiauGs0JmaMunPo6Tv.hMzZh85eXOsELvm53.WXPyy8.enfuv9MvPpfw7tWHZh3a9_PXpr075ud_llz8svPnp37r_TLz6X9fXfw072xzy7MuPplyTsO3LWGEyYMWbBkyYsWDRhfgzpV.JCtSL_Dhpv4dmFd005m5z6b.WXJx65eXm_pyVvUsOTDykQ9mHnzqZefRld9OTponf9CAA--"
+                                               ],
+                                 'height' : [
+                                              "1999"
+                                            ],
+                                 'layer' : [
+                                             "wfs_regression_test_anjalankoski"
+                                           ],
+                                 'layerParam' : [
+                                                  "dbz"
+                                                ],
+                                 'name' : [
+                                            "201302211040_ANJ_DBZH_ppi_ala.tif"
+                                          ],
+                                 'origBoundary' : [
+                                                    "255987.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origEnvelope' : [
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "755737.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origSrs' : [
+                                               "3067"
+                                             ],
+                                 'origSrsAxisLabels' : [
+                                                         "Easting",
+                                                         "Northing",
+                                                         "Height"
+                                                       ],
+                                 'origSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'width' : [
+                                             "1999"
+                                           ],
+                                 'xStep' : [
+                                             "250"
+                                           ],
+                                 'yStep' : [
+                                             "250"
+                                           ]
+                               }
+                  },
+                  {
+                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_anjalankoski&styles=&bbox=255987.171,6502209.863,755737.171,7001959.863&width=1999&height=1999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:45:00Z",
+                    'params' : {
+                                 'corner' : [
+                                              "255987.171",
+                                              "6502209.863"
+                                            ],
+                                 'db_fid' : [
+                                              "79673"
+                                            ],
+                                 'db_location' : [
+                                                   "201302211045_ANJ_DBZH_ppi_ala.tif"
+                                                 ],
+                                 'db_the_geom' : [
+                                                   "0103000020FB0B000001000000050000007D3F355E993F0F415A643BF7D9B55A41DF4F8D57321027415A643BF7D9B55A41DF4F8D57321027415A643B77D0CD58417D3F355E993F0F415A643B77D0CD58417D3F355E993F0F415A643BF7D9B55A41"
+                                                 ],
+                                 'db_time' : [
+                                               "2013-02-21 10:45:00"
+                                             ],
+                                 'destBoundary' : [
+                                                    "63.0645404821517",
+                                                    "22.1685749993587",
+                                                    "63.0564509201189",
+                                                    "32.0625068980498",
+                                                    "58.5848154488673",
+                                                    "31.4004385067996",
+                                                    "58.5915533809156",
+                                                    "22.8006617099854",
+                                                    "63.0645404821517",
+                                                    "22.1685749993587"
+                                                  ],
+                                 'destSrs' : [
+                                               "4326"
+                                             ],
+                                 'destSrsAxisLabels' : [
+                                                         "Lat",
+                                                         "Long"
+                                                       ],
+                                 'destSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'destSrsSwapped' : [
+                                                      "true"
+                                                    ],
+                                 'epoch' : [
+                                             "2013-02-21T10:45:00Z"
+                                           ],
+                                 'featureId' : [
+                                                 "WFS-vJDJgSpZnyu6r2RQF7Zu2DBc_RaJTowr1LDkw8pGPZh586mXn0hZWLLn07rXv0KJqwYSwmti39d2TTuzwt_jGNkDJqBjhAycgVItCnHdOmjNk2Y2PlzrUi0Kcd06aM2TZjZd2S179CiauGs0JmaMunPo6Tv.hMzZh85eXOsELvm53.WXPyy8.enfuv9MvPpfw7tWHZh3a9_PXpr075ud_llz8svPnp37r_TLz6X9fXfw072xzy7MuPplyTsO3LWGEyYMWbBkyYsWDRrfgzpV.JCtSL_Dhpv4dmFd005m5z6b.WXJx65eXm_pyVvUsOTDykQ9mHnzqZefRld9OTponf9CAA--"
+                                               ],
+                                 'height' : [
+                                              "1999"
+                                            ],
+                                 'layer' : [
+                                             "wfs_regression_test_anjalankoski"
+                                           ],
+                                 'layerParam' : [
+                                                  "dbz"
+                                                ],
+                                 'name' : [
+                                            "201302211045_ANJ_DBZH_ppi_ala.tif"
+                                          ],
+                                 'origBoundary' : [
+                                                    "255987.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origEnvelope' : [
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "755737.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origSrs' : [
+                                               "3067"
+                                             ],
+                                 'origSrsAxisLabels' : [
+                                                         "Easting",
+                                                         "Northing",
+                                                         "Height"
+                                                       ],
+                                 'origSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'width' : [
+                                             "1999"
+                                           ],
+                                 'xStep' : [
+                                             "250"
+                                           ],
+                                 'yStep' : [
+                                             "250"
+                                           ]
+                               }
+                  },
+                  {
+                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_anjalankoski&styles=&bbox=255987.171,6502209.863,755737.171,7001959.863&width=1999&height=1999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:50:00Z",
+                    'params' : {
+                                 'corner' : [
+                                              "255987.171",
+                                              "6502209.863"
+                                            ],
+                                 'db_fid' : [
+                                              "79674"
+                                            ],
+                                 'db_location' : [
+                                                   "201302211050_ANJ_DBZH_ppi_ala.tif"
+                                                 ],
+                                 'db_the_geom' : [
+                                                   "0103000020FB0B000001000000050000007D3F355E993F0F415A643BF7D9B55A41DF4F8D57321027415A643BF7D9B55A41DF4F8D57321027415A643B77D0CD58417D3F355E993F0F415A643B77D0CD58417D3F355E993F0F415A643BF7D9B55A41"
+                                                 ],
+                                 'db_time' : [
+                                               "2013-02-21 10:50:00"
+                                             ],
+                                 'destBoundary' : [
+                                                    "63.0645404821517",
+                                                    "22.1685749993587",
+                                                    "63.0564509201189",
+                                                    "32.0625068980498",
+                                                    "58.5848154488673",
+                                                    "31.4004385067996",
+                                                    "58.5915533809156",
+                                                    "22.8006617099854",
+                                                    "63.0645404821517",
+                                                    "22.1685749993587"
+                                                  ],
+                                 'destSrs' : [
+                                               "4326"
+                                             ],
+                                 'destSrsAxisLabels' : [
+                                                         "Lat",
+                                                         "Long"
+                                                       ],
+                                 'destSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'destSrsSwapped' : [
+                                                      "true"
+                                                    ],
+                                 'epoch' : [
+                                             "2013-02-21T10:50:00Z"
+                                           ],
+                                 'featureId' : [
+                                                 "WFS-UyCe_cO8GF2OjCjJuOA7YBoql7KJTowr1LDkw8pGPZh586mXn0hZWLLn07rXv0KJqwYSwmti39d2TTuzwt_jGNkDJqBjhAycgVItCnHdOmjNk2Y2PlzrUi0Kcd06aM2TZjZd2S179CiauGs0JmaMunPo6Tv.hMzZh85eXOsELvm53.WXPyy8.enfuv9MvPpfw7tWHZh3a9_PXpr075ud_llz8svPnp37r_TLz6X9fXfw072xzy7MuPplyTsO3LWGEyYMWbBkyYsWDVhfgzpV.JCtSL_Dhpv4dmFd005m5z6b.WXJx65eXm_pyVvUsOTDykQ9mHnzqZefRld9OTponf9CAA--"
+                                               ],
+                                 'height' : [
+                                              "1999"
+                                            ],
+                                 'layer' : [
+                                             "wfs_regression_test_anjalankoski"
+                                           ],
+                                 'layerParam' : [
+                                                  "dbz"
+                                                ],
+                                 'name' : [
+                                            "201302211050_ANJ_DBZH_ppi_ala.tif"
+                                          ],
+                                 'origBoundary' : [
+                                                    "255987.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origEnvelope' : [
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "755737.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origSrs' : [
+                                               "3067"
+                                             ],
+                                 'origSrsAxisLabels' : [
+                                                         "Easting",
+                                                         "Northing",
+                                                         "Height"
+                                                       ],
+                                 'origSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'width' : [
+                                             "1999"
+                                           ],
+                                 'xStep' : [
+                                             "250"
+                                           ],
+                                 'yStep' : [
+                                             "250"
+                                           ]
+                               }
+                  },
+                  {
+                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_anjalankoski&styles=&bbox=255987.171,6502209.863,755737.171,7001959.863&width=1999&height=1999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:55:00Z",
+                    'params' : {
+                                 'corner' : [
+                                              "255987.171",
+                                              "6502209.863"
+                                            ],
+                                 'db_fid' : [
+                                              "79675"
+                                            ],
+                                 'db_location' : [
+                                                   "201302211055_ANJ_DBZH_ppi_ala.tif"
+                                                 ],
+                                 'db_the_geom' : [
+                                                   "0103000020FB0B000001000000050000007D3F355E993F0F415A643BF7D9B55A41DF4F8D57321027415A643BF7D9B55A41DF4F8D57321027415A643B77D0CD58417D3F355E993F0F415A643B77D0CD58417D3F355E993F0F415A643BF7D9B55A41"
+                                                 ],
+                                 'db_time' : [
+                                               "2013-02-21 10:55:00"
+                                             ],
+                                 'destBoundary' : [
+                                                    "63.0645404821517",
+                                                    "22.1685749993587",
+                                                    "63.0564509201189",
+                                                    "32.0625068980498",
+                                                    "58.5848154488673",
+                                                    "31.4004385067996",
+                                                    "58.5915533809156",
+                                                    "22.8006617099854",
+                                                    "63.0645404821517",
+                                                    "22.1685749993587"
+                                                  ],
+                                 'destSrs' : [
+                                               "4326"
+                                             ],
+                                 'destSrsAxisLabels' : [
+                                                         "Lat",
+                                                         "Long"
+                                                       ],
+                                 'destSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'destSrsSwapped' : [
+                                                      "true"
+                                                    ],
+                                 'epoch' : [
+                                             "2013-02-21T10:55:00Z"
+                                           ],
+                                 'featureId' : [
+                                                 "WFS-sUL388.WaaRfFvA.wIZdv_VEI1KJTowr1LDkw8pGPZh586mXn0hZWLLn07rXv0KJqwYSwmti39d2TTuzwt_jGNkDJqBjhAycgVItCnHdOmjNk2Y2PlzrUi0Kcd06aM2TZjZd2S179CiauGs0JmaMunPo6Tv.hMzZh85eXOsELvm53.WXPyy8.enfuv9MvPpfw7tWHZh3a9_PXpr075ud_llz8svPnp37r_TLz6X9fXfw072xzy7MuPplyTsO3LWGEyYMWbBkyYsWDVrfgzpV.JCtSL_Dhpv4dmFd005m5z6b.WXJx65eXm_pyVvUsOTDykQ9mHnzqZefRld9OTponf9CAA--"
+                                               ],
+                                 'height' : [
+                                              "1999"
+                                            ],
+                                 'layer' : [
+                                             "wfs_regression_test_anjalankoski"
+                                           ],
+                                 'layerParam' : [
+                                                  "dbz"
+                                                ],
+                                 'name' : [
+                                            "201302211055_ANJ_DBZH_ppi_ala.tif"
+                                          ],
+                                 'origBoundary' : [
+                                                    "255987.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origEnvelope' : [
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "755737.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origSrs' : [
+                                               "3067"
+                                             ],
+                                 'origSrsAxisLabels' : [
+                                                         "Easting",
+                                                         "Northing",
+                                                         "Height"
+                                                       ],
+                                 'origSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'width' : [
+                                             "1999"
+                                           ],
+                                 'xStep' : [
+                                             "250"
+                                           ],
+                                 'yStep' : [
+                                             "250"
+                                           ]
+                               }
+                  },
+                  {
+                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_anjalankoski&styles=&bbox=255987.171,6502209.863,755737.171,7001959.863&width=1999&height=1999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T11:00:00Z",
+                    'params' : {
+                                 'corner' : [
+                                              "255987.171",
+                                              "6502209.863"
+                                            ],
+                                 'db_fid' : [
+                                              "79676"
+                                            ],
+                                 'db_location' : [
+                                                   "201302211100_ANJ_DBZH_ppi_ala.tif"
+                                                 ],
+                                 'db_the_geom' : [
+                                                   "0103000020FB0B000001000000050000007D3F355E993F0F415A643BF7D9B55A41DF4F8D57321027415A643BF7D9B55A41DF4F8D57321027415A643B77D0CD58417D3F355E993F0F415A643B77D0CD58417D3F355E993F0F415A643BF7D9B55A41"
+                                                 ],
+                                 'db_time' : [
+                                               "2013-02-21 11:00:00"
+                                             ],
+                                 'destBoundary' : [
+                                                    "63.0645404821517",
+                                                    "22.1685749993587",
+                                                    "63.0564509201189",
+                                                    "32.0625068980498",
+                                                    "58.5848154488673",
+                                                    "31.4004385067996",
+                                                    "58.5915533809156",
+                                                    "22.8006617099854",
+                                                    "63.0645404821517",
+                                                    "22.1685749993587"
+                                                  ],
+                                 'destSrs' : [
+                                               "4326"
+                                             ],
+                                 'destSrsAxisLabels' : [
+                                                         "Lat",
+                                                         "Long"
+                                                       ],
+                                 'destSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'destSrsSwapped' : [
+                                                      "true"
+                                                    ],
+                                 'epoch' : [
+                                             "2013-02-21T11:00:00Z"
+                                           ],
+                                 'featureId' : [
+                                                 "WFS-BlOXdY0K5T0WB0rDTyVpmeoZ11.JTowr1LDkw8pGPZh586mXn0hZWLLn07rXv0KJqwYSwmti39d2TTuzwt_jGNkDJqBjhAycgVItCnHdOmjNk2Y2PlzrUi0Kcd06aM2TZjZd2S179CiauGs0JmaMunPo6Tv.hMzZh85eXOsELvm53.WXPyy8.enfuv9MvPpfw7tWHZh3a9_PXpr075ud_llz8svPnp37r_TLz6X9fXfw072xzy7MuPplyTsO3LWGEyYMWbBkyYsWLBhfgzpV.JCtSL_Dhpv4dmFd005m5z6b.WXJx65eXm_pyVvUsOTDykQ9mHnzqZefRld9OTponf9CAA--"
+                                               ],
+                                 'height' : [
+                                              "1999"
+                                            ],
+                                 'layer' : [
+                                             "wfs_regression_test_anjalankoski"
+                                           ],
+                                 'layerParam' : [
+                                                  "dbz"
+                                                ],
+                                 'name' : [
+                                            "201302211100_ANJ_DBZH_ppi_ala.tif"
+                                          ],
+                                 'origBoundary' : [
+                                                    "255987.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "7001959.863",
+                                                    "755737.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "255987.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origEnvelope' : [
+                                                    "255987.171",
+                                                    "6502209.863",
+                                                    "755737.171",
+                                                    "7001959.863"
+                                                  ],
+                                 'origSrs' : [
+                                               "3067"
+                                             ],
+                                 'origSrsAxisLabels' : [
+                                                         "Easting",
+                                                         "Northing",
+                                                         "Height"
+                                                       ],
+                                 'origSrsDim' : [
+                                                  "2"
+                                                ],
+                                 'width' : [
+                                             "1999"
+                                           ],
+                                 'xStep' : [
+                                             "250"
+                                           ],
+                                 'yStep' : [
+                                             "250"
+                                           ]
+                               }
+                  }
+                ];
+   queryNum = 1;
+   query_parameters = {
+                        'begin' : [
+                                    "20130221T104000Z"
+                                  ],
+                        'boundingBox' : [
+                                          "22 58 24 60 EPSG::4326"
+                                        ],
+                        'crs' : [
+                                  "EPSG::4326"
+                                ],
+                        'end' : [
+                                  "20130221T110000Z"
+                                ],
+                        'height' : [
+                                     "1999"
+                                   ],
+                        'layers' : [
+                                     "wfs_regression_test_anjalankoski",
+                                     "wfs_regression_test_kuopio"
+                                   ],
+                        'storedquery_id' : [
+                                             "RadarHClassTest"
+                                           ],
+                        'width' : [
+                                    "1999"
+                                  ]
+                      };
+   responseTimestamp = "2012-12-12T12:12:12Z"
+ 

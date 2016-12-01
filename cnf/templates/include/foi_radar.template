@@ -1,0 +1,33 @@
+ <om:featureOfInterest>                
+                <sams:SF_SpatialSamplingFeature gml:id="sampling-feature-<TMPL_var dataset.__index__>">
+                    <sam:sampledFeature>
+                        <target:SurfaceWeatherTargetArea gml:id="sampled-feature-surface-<TMPL_var dataset.__index__>">
+                            <target:geometry>
+                                <gml:Polygon  gml:id="sampled-feature-surface-polygon-<TMPL_var dataset.__index__>" srsName="http://www.opengis.net/def/crs/EPSG/0/<TMPL_var dataset.params.destSrs[0]>" srsDimension="<TMPL_var dataset.params.destSrsDim[0]>" axisLabels="<TMPL_var dataset.params.destSrsAxisLabels[0]> <TMPL_var dataset.params.destSrsAxisLabels[1]><TMPL_if (dataset.params.destSrsDim[0] == 3)> <TMPL_var dataset.params.destSrsAxisLabels[2]></TMPL_if>">
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:coordinates>
+                                                <TMPL_var dataset.params.destBoundary[0]> <TMPL_var dataset.params.destBoundary[1]> <TMPL_var dataset.params.destBoundary[2]> <TMPL_var dataset.params.destBoundary[3]> <TMPL_var dataset.params.destBoundary[4]> <TMPL_var dataset.params.destBoundary[5]> <TMPL_var dataset.params.destBoundary[6]> <TMPL_var dataset.params.destBoundary[7]> <TMPL_var dataset.params.destBoundary[8]> <TMPL_var dataset.params.destBoundary[9]> 
+                                            </gml:coordinates>
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:Polygon>
+                            </target:geometry>
+
+                            <target:observableProperty <TMPL_include "include/link_radar_observable_property.template">/>
+                        </target:SurfaceWeatherTargetArea>                        
+                    </sam:sampledFeature>                                    
+                    <sams:shape>                        
+                        <gml:Polygon gml:id="sampling-feature-polygon-<TMPL_var dataset.__index__>" srsName="http://www.opengis.net/def/crs/EPSG/0/<TMPL_var dataset.params.destSrs[0]>" srsDimension="<TMPL_var dataset.params.destSrsDim[0]>" axisLabels="<TMPL_var dataset.params.destSrsAxisLabels[0]> <TMPL_var dataset.params.destSrsAxisLabels[1]><TMPL_if (dataset.params.destSrsDim[0] == 3)> <TMPL_var dataset.params.destSrsAxisLabels[2]></TMPL_if>">
+                            <gml:exterior>
+                                <gml:LinearRing>                                    
+                                    <gml:coordinates>
+                                        <TMPL_var dataset.params.destBoundary[0]> <TMPL_var dataset.params.destBoundary[1]> <TMPL_var dataset.params.destBoundary[2]> <TMPL_var dataset.params.destBoundary[3]> <TMPL_var dataset.params.destBoundary[4]> <TMPL_var dataset.params.destBoundary[5]> <TMPL_var dataset.params.destBoundary[6]> <TMPL_var dataset.params.destBoundary[7]> <TMPL_var dataset.params.destBoundary[8]> <TMPL_var dataset.params.destBoundary[9]> 
+                                    </gml:coordinates>
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:Polygon>        
+                    </sams:shape>            
+                </sams:SF_SpatialSamplingFeature>
+            </om:featureOfInterest>
+           

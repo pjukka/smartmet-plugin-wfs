@@ -1,0 +1,2602 @@
+<html>
+<title>WFS response CTPP hash dump</title>
+<body>
+<pre>
+Global data object:
+
+   fmi_apikey = &quot;foobar&quot;;
+   fmi_apikey_prefix = &quot;/fmi-apikey/&quot;;
+   groups = [
+              {
+                &#39;crs&#39; : &quot;EPSG::4258&quot;,
+                &#39;featureId&#39; : &quot;WFS-9IPPlXc9Eeb7jM35WwYPX6XVCHaJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlMryZ19jNkzq1JlefVqX2M2TOrSjzJ8K.xmyZ1aESTSvsZsmdWlSixpl9jNkzq0qdWdEvsZsmdWlEkxo19jNkzq0J0WpfYzZM6sqrWhX6rW26efPTuz1MvjpWNOwzm1u67Z.an0w9NO_dzma3Hrh2aenmTuzb4mtz6YemnfuqeeGWt7fwy7smHphv7dO7r0ytzn038suTj1y8vN_TkrXCzbdLp1vxc8vLth6ad.7m6dcsOTTh6ad.5066aduXth2dcvDDp5NDpp25afTLwn5CaHTTty2t.7LWNVqQw&quot;,
+                &#39;groupId&#39; : &quot;1-1&quot;,
+                &#39;groupNum&#39; : 1,
+                &#39;obsParamList&#39; : [
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-aUZIHwgbFnOAXMlemlP46Cm5GTyJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlMryZ19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;LWIN_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-o2n8.x83OK0gLAR7B_uUHyb5.SqJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWpMrz6tS.xmyZzW26efPTuz1MvjpWNOwzm1u67Z.an0w9NO_dzma3Hrh2aenmTuzb4mtz6YemnfuqeeGWt7fwy7smHphv7dO7r0ytzn038suTj1y8vN_TkrXCzbdLp1vxc8vLth6ad.7m6dcsOTTh6ad.5066aduXth2dcvDDp5NDpp25afTLwn5CaHTTty2t.7LWNVqQw-&quot;,
+                                     &#39;name&#39; : &quot;LWOUT_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-tOxYIQnc6DyG1_GN.4edXw.nCxCJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlHmT4V9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;GLOB_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-iqMdmdrpSIRJt7nLWemWyCDoVF.JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhEk0r7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;DIR_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-3NC8LvlEByq3fXiu4UMLH2NAfziJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlSixpl9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;REFL_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-Wqq30NiuxrtzZI_D4dYEC6bLHIeJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlTqzol9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;SUND_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-29rUWtvb7TnPVdIySC0wYSTeopGJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlEkxo19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;DIFF_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-aiMrzlxS_0OmhlVoc9I479veTEKJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhOi1L7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;NET_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-YMuA4ZQa2eYk6ykuCgHeOlm.saCJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYOWDh0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                                     &#39;name&#39; : &quot;UVB_U&quot;
+                                   }
+                                 ],
+                &#39;obsPhenomenonEndTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsPhenomenonStartTime&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                &#39;obsResultTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsReturnArray&#39; : [
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;457.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;63.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.9&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363510800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;507.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;66.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.1&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363514400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T10:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;520.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.2&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363518000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T11:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;489.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;64.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363521600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T12:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;418.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;56.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.7&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363525200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T13:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;313.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;49.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.4&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363528800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T14:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;183.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;37.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.2&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363532400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T15:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;56.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;22.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.1&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363536000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T16:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-1.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363539600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T17:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-1.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363543200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     }
+                                   ],
+                &#39;obsStationList&#39; : [
+                                     {
+                                       &#39;bearing&#39; : &quot;NaN&quot;,
+                                       &#39;distance&#39; : &quot;NaN&quot;,
+                                       &#39;fmisid&#39; : &quot;100908&quot;,
+                                       &#39;geoid&#39; : &quot;-16000054&quot;,
+                                       &#39;name&#39; : &quot;Parainen Utö&quot;,
+                                       &#39;region&#39; : &quot;Parainen&quot;,
+                                       &#39;wmo&#39; : &quot;2981&quot;,
+                                       &#39;x&#39; : &quot;59.77909&quot;,
+                                       &#39;y&#39; : &quot;21.37479&quot;
+                                     }
+                                   ],
+                &#39;timestep&#39; : 60
+              },
+              {
+                &#39;crs&#39; : &quot;EPSG::4258&quot;,
+                &#39;featureId&#39; : &quot;WFS-SuJDsc47EzdNBuCcpfBo0CPh8_qJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                &#39;groupId&#39; : &quot;1-2&quot;,
+                &#39;groupNum&#39; : 2,
+                &#39;obsParamList&#39; : [
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-wr80zfyS13fYy5qYIhErgZ8tXvuJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlMryZ19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;LWIN_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-.8MxTsg4ou5TAUE2BENVRuihtMWJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWpMrz6tS.xmyZzW26efPTuz1MvjpWNOwzm1u67Z.an0w9NO_dzma3Hrh2aenmTuzb4mtz6YemnfuqeeGWt7fwy7smHphv7dO7r0ytzn038suTj1y8vN_TkrXCzbdLp1vxc8vLth6ad.7m6dcsOTTh6ad.5066aduXth2dcvDDp5NDpp25afTLwn5CaHTTty2t.7LWNVqQw-&quot;,
+                                     &#39;name&#39; : &quot;LWOUT_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-85C6JyeHDDKs0CGJL8ZjEgltcV.JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlHmT4V9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;GLOB_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-d6mLLGgrlElgcqmaeUMJ1BlKEj.JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhEk0r7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;DIR_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-8PU5f8xA5kNJtjITCP4fE6SatmWJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlSixpl9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;REFL_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-FxL44gRebOCAvn2E9k1rRX.0bB2JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlTqzol9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;SUND_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-u.7kiUbq0onC5yZ4BgaC3yBBNuqJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlEkxo19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;DIFF_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-662kPvBBWfcLFAU9KuDvomUQxHGJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhOi1L7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;NET_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-SuJDsc47EzdNBuCcpfBo0CPh8_qJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYsGDR0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                                     &#39;name&#39; : &quot;UVB_U&quot;
+                                   }
+                                 ],
+                &#39;obsPhenomenonEndTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsPhenomenonStartTime&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                &#39;obsResultTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsReturnArray&#39; : [
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;466.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;66.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.9&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363510800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;511.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;66.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.1&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363514400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T10:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;512.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;65.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.1&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363518000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T11:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;472.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;67.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363521600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T12:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;392.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;63.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.7&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363525200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T13:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;289.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;53.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.4&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363528800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T14:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;158.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;45.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.2&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363532400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T15:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;37.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;26.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.1&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363536000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T16:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-2.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363539600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T17:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-2.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;2.4&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363543200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     }
+                                   ],
+                &#39;obsStationList&#39; : [
+                                     {
+                                       &#39;bearing&#39; : &quot;NaN&quot;,
+                                       &#39;distance&#39; : &quot;NaN&quot;,
+                                       &#39;fmisid&#39; : &quot;101004&quot;,
+                                       &#39;geoid&#39; : &quot;-16000138&quot;,
+                                       &#39;name&#39; : &quot;Helsinki Kumpula&quot;,
+                                       &#39;region&#39; : &quot;Helsinki&quot;,
+                                       &#39;wmo&#39; : &quot;2998&quot;,
+                                       &#39;x&#39; : &quot;60.20307&quot;,
+                                       &#39;y&#39; : &quot;24.96131&quot;
+                                     }
+                                   ],
+                &#39;timestep&#39; : 60
+              },
+              {
+                &#39;crs&#39; : &quot;EPSG::4258&quot;,
+                &#39;featureId&#39; : &quot;WFS-F3SC8S3fF4C0dmqI5scCg4oKb.aJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                &#39;groupId&#39; : &quot;1-3&quot;,
+                &#39;groupNum&#39; : 3,
+                &#39;obsParamList&#39; : [
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-52gORCKY4Jr2XjhiunCIdMWXIIqJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlMryZ19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;LWIN_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-MNhPLs7ynpHPDPGB.2.95LYfyMaJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWpMrz6tS.xmyZzW26efPTuz1MvjpWNOwzm1u67Z.an0w9NO_dzma3Hrh2aenmTuzb4mtz6YemnfuqeeGWt7fwy7smHphv7dO7r0ytzn038suTj1y8vN_TkrXCzbdLp1vxc8vLth6ad.7m6dcsOTTh6ad.5066aduXth2dcvDDp5NDpp25afTLwn5CaHTTty2t.7LWNVqQw-&quot;,
+                                     &#39;name&#39; : &quot;LWOUT_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-EYyRGUSWAMDMEef0H4GWANNt1vGJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlHmT4V9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;GLOB_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-Y_Lk3lKOlXLcXnYcvoUEfgY4NgaJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhEk0r7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;DIR_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-qFiZ314EQBgYi6USjDOvd3Jvr6iJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlSixpl9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;REFL_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-OmKMQrvRdugYFVe6gNyDkblAIleJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlTqzol9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;SUND_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-djbcnUKJ4H8TPj6EAKKbQ_CMUxaJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlEkxo19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;DIFF_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-gnX.uxYfG2Ax9RKSG3jqvLFEGQKJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhOi1L7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;NET_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-F3SC8S3fF4C0dmqI5scCg4oKb.aJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYs2bl0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                                     &#39;name&#39; : &quot;UVB_U&quot;
+                                   }
+                                 ],
+                &#39;obsPhenomenonEndTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsPhenomenonStartTime&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                &#39;obsResultTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsReturnArray&#39; : [
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;439.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;349.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;57.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.9&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363510800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;481.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;380.4&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;57.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363514400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T10:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;482.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;377.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;59.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363518000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T11:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;440.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;343.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;55.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.9&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363521600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T12:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;361.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;280.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;53.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.6&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363525200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T13:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;255.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;197.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;36.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.3&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363528800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T14:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;135.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;49.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;30.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.1&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363532400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T15:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;12.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;9.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;7.4&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363536000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T16:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-2.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-4.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363539600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T17:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-2.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-3.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363543200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     }
+                                   ],
+                &#39;obsStationList&#39; : [
+                                     {
+                                       &#39;bearing&#39; : &quot;NaN&quot;,
+                                       &#39;distance&#39; : &quot;NaN&quot;,
+                                       &#39;fmisid&#39; : &quot;101339&quot;,
+                                       &#39;geoid&#39; : &quot;-16000167&quot;,
+                                       &#39;name&#39; : &quot;Jyväskylä lentoasema&quot;,
+                                       &#39;region&#39; : &quot;Jyväskylä&quot;,
+                                       &#39;wmo&#39; : &quot;2935&quot;,
+                                       &#39;x&#39; : &quot;62.39758&quot;,
+                                       &#39;y&#39; : &quot;25.67087&quot;
+                                     }
+                                   ],
+                &#39;timestep&#39; : 60
+              },
+              {
+                &#39;crs&#39; : &quot;EPSG::4258&quot;,
+                &#39;featureId&#39; : &quot;WFS-vEfAtaCeVnjowuY6IXtEse4TCdKJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                &#39;groupId&#39; : &quot;1-4&quot;,
+                &#39;groupNum&#39; : 4,
+                &#39;obsParamList&#39; : [
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-In1sohXOeZxLHc1GTgesqyz7wRmJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlMryZ19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;LWIN_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-4zKv6GW7gZL0l3_FNAsmuU9SRxqJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWpMrz6tS.xmyZzW26efPTuz1MvjpWNOwzm1u67Z.an0w9NO_dzma3Hrh2aenmTuzb4mtz6YemnfuqeeGWt7fwy7smHphv7dO7r0ytzn038suTj1y8vN_TkrXCzbdLp1vxc8vLth6ad.7m6dcsOTTh6ad.5066aduXth2dcvDDp5NDpp25afTLwn5CaHTTty2t.7LWNVqQw-&quot;,
+                                     &#39;name&#39; : &quot;LWOUT_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-DBBCtTfyqcEYhGshA.sLtRd3nX2JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlHmT4V9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;GLOB_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-UGYvFOGWuBf.tMoczEzBqghmbfaJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhEk0r7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;DIR_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-Sri6W.GHn3WmELYa8yzgBJmFns.JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlSixpl9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;REFL_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-yEObfPCv_p8DdSvGhdebfQxqjamJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlTqzol9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;SUND_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-l3eSIW_N7TBBlrAMoVEpicSddw.JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlEkxo19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;DIFF_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-7M_PfclXFK.QH88vMFaDmz_V9KSJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhOi1L7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;NET_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-vEfAtaCeVnjowuY6IXtEse4TCdKJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYt2rZ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                                     &#39;name&#39; : &quot;UVB_U&quot;
+                                   }
+                                 ],
+                &#39;obsPhenomenonEndTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsPhenomenonStartTime&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                &#39;obsResultTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsReturnArray&#39; : [
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;427.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;54.4&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.8&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363510800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;458.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;54.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363514400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T10:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;450.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;59.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.9&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363518000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T11:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;404.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;52.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.7&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363521600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T12:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;326.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;45.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.5&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363525200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T13:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;223.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;35.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.3&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363528800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T14:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;107.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;27.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.1&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363532400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T15:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;9.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;6.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363536000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T16:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-1.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-0.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363539600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T17:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-1.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-0.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363543200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     }
+                                   ],
+                &#39;obsStationList&#39; : [
+                                     {
+                                       &#39;bearing&#39; : &quot;NaN&quot;,
+                                       &#39;distance&#39; : &quot;NaN&quot;,
+                                       &#39;fmisid&#39; : &quot;101756&quot;,
+                                       &#39;geoid&#39; : &quot;-16000036&quot;,
+                                       &#39;name&#39; : &quot;Sotkamo Kuolaniemi&quot;,
+                                       &#39;region&#39; : &quot;Sotkamo&quot;,
+                                       &#39;wmo&#39; : &quot;2739&quot;,
+                                       &#39;x&#39; : &quot;64.11197&quot;,
+                                       &#39;y&#39; : &quot;28.33639&quot;
+                                     }
+                                   ],
+                &#39;timestep&#39; : 60
+              },
+              {
+                &#39;crs&#39; : &quot;EPSG::4258&quot;,
+                &#39;featureId&#39; : &quot;WFS-fLbDXDtIIRTLqSV3fy06cxuSZRKJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                &#39;groupId&#39; : &quot;1-5&quot;,
+                &#39;groupNum&#39; : 5,
+                &#39;obsParamList&#39; : [
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-n4jAanlUK3Sp1YDJSzhbArVezg2JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlMryZ19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;LWIN_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-ftp6PjvHjKhYHMYLv7rbr3mmpn2JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWpMrz6tS.xmyZzW26efPTuz1MvjpWNOwzm1u67Z.an0w9NO_dzma3Hrh2aenmTuzb4mtz6YemnfuqeeGWt7fwy7smHphv7dO7r0ytzn038suTj1y8vN_TkrXCzbdLp1vxc8vLth6ad.7m6dcsOTTh6ad.5066aduXth2dcvDDp5NDpp25afTLwn5CaHTTty2t.7LWNVqQw-&quot;,
+                                     &#39;name&#39; : &quot;LWOUT_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-JL_WiWKkqows1rhwyPlBl2i5GsSJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlHmT4V9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;GLOB_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-ZBHa7Rp6Al0q1M_ktE4e823QgyqJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhEk0r7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;DIR_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-6Y7FMGvZdk8zHGPRPy4hH2k7qsqJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlSixpl9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;REFL_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-FcNJ0hcDjMMnnvFNKfAME4bCOe2JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlTqzol9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;SUND_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-NnQ7kjallXoG7zZ1waimNsBExjGJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlEkxo19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;DIFF_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-VHeimzJFjPLdj_G6u3Hqwa5vMg6JTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhOi1L7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;NET_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-fLbDXDtIIRTLqSV3fy06cxuSZRKJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwYuWbJ0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                                     &#39;name&#39; : &quot;UVB_U&quot;
+                                   }
+                                 ],
+                &#39;obsPhenomenonEndTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsPhenomenonStartTime&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                &#39;obsResultTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsReturnArray&#39; : [
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;260.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;390.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;798.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;279.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;110.4&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-8.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.5&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363510800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;268.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;392.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;815.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;292.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;86.4&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-8.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.6&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363514400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T10:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;271.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;392.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;768.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;288.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;105.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.6&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363518000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T11:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;270.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;301.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;501.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;229.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;126.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-9.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.5&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363521600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T12:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;267.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;259.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;538.4&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;182.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;102.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-10.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.3&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363525200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T13:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;262.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;144.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;318.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;101.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;75.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-32.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.2&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363528800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T14:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;258.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;84.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;225.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;43.4&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;60.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;54.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-51.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.1&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363532400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T15:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;253.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;10.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-0.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;8.9&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;9.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-52.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363536000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T16:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;251.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-1.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;1.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-2.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-41.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363539600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T17:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;255.3&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-1.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-0.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-2.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-38.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363543200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     }
+                                   ],
+                &#39;obsStationList&#39; : [
+                                     {
+                                       &#39;bearing&#39; : &quot;NaN&quot;,
+                                       &#39;distance&#39; : &quot;NaN&quot;,
+                                       &#39;fmisid&#39; : &quot;101932&quot;,
+                                       &#39;geoid&#39; : &quot;-16000014&quot;,
+                                       &#39;name&#39; : &quot;Sodankylä Lapin ilmatieteellinen tutkimuskeskus&quot;,
+                                       &#39;region&#39; : &quot;Sodankylä&quot;,
+                                       &#39;wmo&#39; : &quot;2836&quot;,
+                                       &#39;x&#39; : &quot;67.36663&quot;,
+                                       &#39;y&#39; : &quot;26.62901&quot;
+                                     }
+                                   ],
+                &#39;timestep&#39; : 60
+              },
+              {
+                &#39;crs&#39; : &quot;EPSG::4258&quot;,
+                &#39;featureId&#39; : &quot;WFS-IoH5Fu6L6GYQVg_OizZbi7.ss7eJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                &#39;groupId&#39; : &quot;1-6&quot;,
+                &#39;groupNum&#39; : 6,
+                &#39;obsParamList&#39; : [
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-IWVSPuTCXa_Cn_hsKMavOdd.SgKJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlMryZ19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;LWIN_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-WLulNo3.8N7PA3fMX3sRQjvNH8aJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWpMrz6tS.xmyZzW26efPTuz1MvjpWNOwzm1u67Z.an0w9NO_dzma3Hrh2aenmTuzb4mtz6YemnfuqeeGWt7fwy7smHphv7dO7r0ytzn038suTj1y8vN_TkrXCzbdLp1vxc8vLth6ad.7m6dcsOTTh6ad.5066aduXth2dcvDDp5NDpp25afTLwn5CaHTTty2t.7LWNVqQw-&quot;,
+                                     &#39;name&#39; : &quot;LWOUT_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-bXBJpGPuwwAuvPOFUbdWmestvzqJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlHmT4V9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;GLOB_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-xfw22znp5OoZWG0IjoWo4kUa6paJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhEk0r7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;DIR_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-iDh5FpvQD28nGmBFXtBw8ggJHYGJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlSixpl9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;REFL_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-1.8RKc.a2K34RV9mKgyWhDwD3VCJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlTqzol9jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;SUND_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-AdYi1AppOUQ9PSfmndLPKGl3EMCJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWlEkxo19jNkzmtt08.endnqZfHSsadhnNrd12z81Pph6ad.7nM1uPXDs09PMndm3xNbn0w9NO_dU88Mtb2_hl3ZMPTDf26d3XplbnPpv5ZcnHrl5eb.nJWuFm26XTrfi55eXbD00793N065YcmnD0079zp1007cvbDs65eGHTyaHTTty0.mXhPyE0Omnbltb92WsarUhgA-&quot;,
+                                     &#39;name&#39; : &quot;DIFF_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-zwVd2Ocuw0kZ.qpDBKqrFzZg7YSJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWhOi1L7GbJnNbbp589O7PUy.OlY07DObW7rtn5qfTD00793OZrceuHZp6eZO7Nvia3Pph6ad.6p54Za3t_DLuyYemG_t07uvTK3OfTfyy5OPXLy839OStcLNt0unW_Fzy8u2Hpp37ubp1yw5NOHpp37nTrpp25e2HZ1y8MOnk0Omnblp9MvCfkJodNO3La37stY1WpDAA--&quot;,
+                                     &#39;name&#39; : &quot;NET_1MIN&quot;
+                                   },
+                                   {
+                                     &#39;featureId&#39; : &quot;WFS-IoH5Fu6L6GYQVg_OizZbi7.ss7eJTowq4WbbpdOt.Lnl5dsPTTv3c3TrlhyacPTTv3OnXTTty9sOzrl4YdPKFpYsufTuqaduW179CjYuGn5jY.XOtSLQpx3TpoyauGdl3ZKmnblte_Qo2LBT_CZ2bbp56cnOsxiwZMGbV0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtambTfjSV3XpmcNbbh8RNPPph3Y8tK1dCA0tuHxF4b8ejnPD6E3tuXpl30MPLDty9MvLnWVVrQr9VrbdPPnp3Z6mXx0rGnYZza3dds_NT6Yemnfu5zNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLW9v4Zd2TD0w39und16ZW5z6b.WXJx65eXm_pyVrhZtul0634ueXl2w9NO_dzdOuWHJpw9NO_c6ddNO3L2w7OuXhh08mh007ctPpl4T8hNDpp25bW_dlrGq1IYA--&quot;,
+                                     &#39;name&#39; : &quot;UVB_U&quot;
+                                   }
+                                 ],
+                &#39;obsPhenomenonEndTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsPhenomenonStartTime&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                &#39;obsResultTime&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                &#39;obsReturnArray&#39; : [
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;245.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;207.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363510800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T09:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;275.6&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;250.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363514400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T10:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;211.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;205.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363518000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T11:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;149.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;139.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363521600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T12:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;118.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;111.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363525200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T13:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;80.8&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;82.1&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363528800,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T14:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;38.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;44.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363532400,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T15:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;8.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;18.7&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363536000,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T16:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;10.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363539600,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T17:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     },
+                                     {
+                                       &#39;data&#39; : [
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;-0.2&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;0.0&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;9.5&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  },
+                                                  {
+                                                    &#39;value&#39; : &quot;NaN&quot;
+                                                  }
+                                                ],
+                                       &#39;epochTime&#39; : 1363543200,
+                                       &#39;epochTimeStr&#39; : &quot;2013-03-17T18:00:00Z&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     }
+                                   ],
+                &#39;obsStationList&#39; : [
+                                     {
+                                       &#39;bearing&#39; : &quot;NaN&quot;,
+                                       &#39;distance&#39; : &quot;NaN&quot;,
+                                       &#39;fmisid&#39; : &quot;102035&quot;,
+                                       &#39;geoid&#39; : &quot;-16000193&quot;,
+                                       &#39;name&#39; : &quot;Utsjoki Kevo&quot;,
+                                       &#39;region&#39; : &quot;Utsjoki&quot;,
+                                       &#39;wmo&#39; : &quot;2805&quot;,
+                                       &#39;x&#39; : &quot;69.75637&quot;,
+                                       &#39;y&#39; : &quot;27.00678&quot;
+                                     }
+                                   ],
+                &#39;timestep&#39; : 60
+              }
+            ];
+   hostname = &quot;beta.fmi.fi&quot;;
+   language = &quot;eng&quot;;
+   named_parameters = {
+                        &#39;defaultmeteoparam&#39; : [
+                                                &quot;LWIN_1MIN&quot;,
+                                                &quot;LWOUT_1MIN&quot;,
+                                                &quot;GLOB_1MIN&quot;,
+                                                &quot;DIR_1MIN&quot;,
+                                                &quot;REFL_1MIN&quot;,
+                                                &quot;SUND_1MIN&quot;,
+                                                &quot;DIFF_1MIN&quot;,
+                                                &quot;NET_1MIN&quot;,
+                                                &quot;UVB_U&quot;
+                                              ],
+                        &#39;defaultsids&#39; : [
+                                          &quot;101932&quot;,
+                                          &quot;101104&quot;,
+                                          &quot;101004&quot;,
+                                          &quot;100908&quot;,
+                                          &quot;100968&quot;,
+                                          &quot;101339&quot;,
+                                          &quot;101756&quot;,
+                                          &quot;102035&quot;
+                                        ],
+                        &#39;intent&#39; : [
+                                     &quot;radiation&quot;,
+                                     &quot;http:\/\/inspire.ec.europa.eu\/codeList\/ProcessParameterValue\/value\/groundObservation\/observationIntent&quot;
+                                   ]
+                      };
+   numMatched = 6;
+   numParam = 9;
+   numReturned = 6;
+   projEpochSrsDim = 3;
+   projEpochSrsName = &quot;http:\/\/xml.fmi.fi\/gml\/crs\/compoundCRS.php?crs=4258&amp;amp;time=unixtime&quot;;
+   projSrsDim = 2;
+   projSrsName = &quot;http:\/\/www.opengis.net\/def\/crs\/EPSG\/0\/4258&quot;;
+   queryName = &quot;fmi::observations::radiation::timevaluepair&quot;;
+   queryNum = 1;
+   query_parameters = {
+                        &#39;beginTime&#39; : [
+                                        &quot;20130317T090000Z&quot;
+                                      ],
+                        &#39;crs&#39; : [
+                                  &quot;EPSG::4258&quot;
+                                ],
+                        &#39;endTime&#39; : [
+                                      &quot;20130317T180000Z&quot;
+                                    ],
+                        &#39;fmisids&#39; : [
+                                      &quot;101932&quot;,
+                                      &quot;101104&quot;,
+                                      &quot;101004&quot;,
+                                      &quot;100908&quot;,
+                                      &quot;100968&quot;,
+                                      &quot;101339&quot;,
+                                      &quot;101756&quot;,
+                                      &quot;102035&quot;
+                                    ],
+                        &#39;keyword&#39; : [
+                                      &quot;&quot;
+                                    ],
+                        &#39;keyword_overwritable&#39; : [
+                                                   &quot;false&quot;
+                                                 ],
+                        &#39;latest&#39; : [
+                                     &quot;false&quot;
+                                   ],
+                        &#39;locale&#39; : [
+                                     &quot;fi_FI.utf8&quot;
+                                   ],
+                        &#39;maxDistance&#39; : [
+                                          &quot;50000&quot;
+                                        ],
+                        &#39;maxEpochs&#39; : [
+                                        &quot;2000&quot;
+                                      ],
+                        &#39;meteoParameters&#39; : [
+                                              &quot;LWIN_1MIN&quot;,
+                                              &quot;LWOUT_1MIN&quot;,
+                                              &quot;GLOB_1MIN&quot;,
+                                              &quot;DIR_1MIN&quot;,
+                                              &quot;REFL_1MIN&quot;,
+                                              &quot;SUND_1MIN&quot;,
+                                              &quot;DIFF_1MIN&quot;,
+                                              &quot;NET_1MIN&quot;,
+                                              &quot;UVB_U&quot;
+                                            ],
+                        &#39;missingText&#39; : [
+                                          &quot;NaN&quot;
+                                        ],
+                        &#39;numOfStations&#39; : [
+                                            &quot;0&quot;
+                                          ],
+                        &#39;qualityInfo&#39; : [
+                                          &quot;false&quot;
+                                        ],
+                        &#39;stationType&#39; : [
+                                          &quot;opendata_minute&quot;
+                                        ],
+                        &#39;storedquery_id&#39; : [
+                                             &quot;fmi::observations::radiation::timevaluepair&quot;
+                                           ],
+                        &#39;timeStep&#39; : [
+                                       &quot;60&quot;
+                                     ],
+                        &#39;timeZone&#39; : [
+                                       &quot;UTC&quot;
+                                     ]
+                      };
+   responseTimestamp = &quot;2012-12-12T12:12:12Z&quot;
+ 
+</pre>
+</body>
+</html>

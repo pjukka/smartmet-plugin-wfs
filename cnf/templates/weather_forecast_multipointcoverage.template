@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+    timeStamp="<TMPL_var responseTimestamp>"
+    numberMatched="<TMPL_var numMatched>"
+    numberReturned="<TMPL_var numReturned>"
+<TMPL_include "include/refs_for_multipointcoverage.template">
+<TMPL_if (!DEFINED(hits_only))>    <TMPL_FOREACH groups AS group><wfs:member>
+        <omso:PointTimeSeriesObservation gml:id="<TMPL_var group.featureId>">
+	    <TMPL_include "include/time_for_multipointcoverage.template">
+	    <om:procedure <TMPL_include "include/link_for_process.template">/>
+	    <TMPL_include "include/process_parameter_for.template">
+            <om:observedProperty <TMPL_include "include/link_observable_property.template">/>
+	    <TMPL_include "include/foi_for_multipointcoverage.template">
+        <TMPL_include "include/results_for_multipointcoverage.template">
+        </omso:PointTimeSeriesObservation>
+    </wfs:member>
+  </TMPL_FOREACH>
+</TMPL_if></wfs:FeatureCollection>

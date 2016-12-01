@@ -1,0 +1,15 @@
+/**
+
+@page WFS_PLUGIN_INTRO Introduction
+
+The purpose of WFS module is to provide WFS access to observations, predictions and other data.
+
+Following WFS requests are available:
+- @b GetCapabilities
+- @b ListStoredQueries
+- @b DescribeStoredQueries
+- @b DescribeFeatureType
+- @b GetFeature (stored queries only, AdHoc queries are not supported)
+- @b GetPropertyValue (stored queries only, AdHoc queries are not supported)
+
+*/

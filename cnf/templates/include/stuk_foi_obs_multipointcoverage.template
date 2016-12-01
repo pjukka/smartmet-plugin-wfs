@@ -1,0 +1,40 @@
+	<om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="sampling-feature-<TMPL_var group.groupId>-fmisid">
+<TMPL_comment>          <gml:metaDataProperty xlink:href="http://<TMPL_var hostname>/wfs/<TMPL_var language>?request=GetFeature&amp;storedquery_id=fmi::ef::observationstations&amp;fmisid=<TMPL_foreach group.obsStationList as obsStation><TMPL_unless obsStation.__first__>,</TMPL_unless><TMPL_var obsStation.fmisid></TMPL_foreach>"/></TMPL_comment>
+          <sam:sampledFeature>
+		<target:LocationCollection gml:id="sampled-target-<TMPL_var group.groupId>"><TMPL_foreach group.obsStationList as obsStation>
+		    <target:member>
+		    <target:Location gml:id="obsloc-fmisid-<TMPL_var obsStation.fmisid>-pos">
+		        <gml:identifier codeSpace="http://xml.fmi.fi/namespace/stationcode/fmisid"><TMPL_var obsStation.fmisid></gml:identifier>
+			<TMPL_if DEFINED(obsStation.name)><gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name"><TMPL_var obsStation.name></gml:name></TMPL_if>
+			<TMPL_if DEFINED(obsStation.geoid)><gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid"><TMPL_var obsStation.geoid></gml:name></TMPL_if>
+			<target:representativePoint xlink:href="#point-<TMPL_var obsStation.fmisid>"/>
+			<TMPL_if DEFINED(obsStation.country)><target:country codeSpace="http://xml.fmi.fi/namespace/location/country"><TMPL_var obsStation.country></target:country></TMPL_if>
+			<TMPL_if DEFINED(obsStation.timezone)><target:timezone><TMPL_var obsStation.timezone></target:timezone></TMPL_if>
+			<TMPL_if DEFINED(obsStation.region)><target:region codeSpace="http://xml.fmi.fi/namespace/location/region"><TMPL_var obsStation.region></target:region></TMPL_if>
+			<TMPL_if DEFINED(obsStation.queriedLocation)><target:referenceLocation>
+			    <target:ReferenceLocation gml:id="ref-loc-<TMPL_var group.groupId>-<TMPL_var obsStation.fmisid>">
+			        <gml:name><TMPL_var obsStation.queriedLocation.Name></gml:name>					   <target:representativePoint>
+				    <gml:point gml:id="ref-loc-rep-<TMPL_var group.groupId>-<TMPL_var obsStation.fmisid>" srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+				        <gml:pos><TMPL_var obsStation.queriedLocation.x> <TMPL_var obsStation.queriedLocation.y> <TMPL_var obsStation.queriedLocation.z></gml:pos>
+				    </gml:point>
+				</target:representativePoint>
+			    </target:ReferenceLocation>
+			    <target:distanceToReferencingLocation uom="m"><TMPL_var obsStation.distance></target:distanceToReferencingLocation>
+			    <target:distanceToReferencingLocation uom="deg"><TMPL_var obsStation.bearing></target:distanceToReferencingLocation>
+			</target:referenceLocation></TMPL_if>
+		    </target:Location></target:member></TMPL_foreach>
+		</target:LocationCollection>
+ 	   </sam:sampledFeature>
+          <sams:shape>
+            <gml:MultiPoint gml:id="mp-<TMPL_var group.groupId>-fmisid"><TMPL_foreach group.obsStationList as obsStation>
+              <gml:pointMember>
+              <gml:Point gml:id="point-<TMPL_var obsStation.fmisid>" srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+                <gml:name><TMPL_var obsStation.name></gml:name>
+                <gml:pos><TMPL_var obsStation.x> <TMPL_var obsStation.y> <TMPL_var obsStation.height></gml:pos>
+            </gml:Point>
+	    </gml:pointMember></TMPL_foreach>
+	    </gml:MultiPoint>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>

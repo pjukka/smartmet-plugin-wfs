@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:gml="http://www.opengis.net/gml/3.2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:StoredQuery id="fmi::observations::weather::mast::multipointcoverage">
+     <wfs:Parameter name="starttime">2014-12-01T00:01:00Z</wfs:Parameter>
+     <wfs:Parameter name="endtime">2014-12-01T01:01:00Z</wfs:Parameter>
+     <wfs:Parameter name="timestep">30</wfs:Parameter>
+     <wfs:Parameter name="bbox">25.5,66.5,25.6,66.6,EPsG:4258</wfs:Parameter>
+     <wfs:Parameter name="place">Kuopio</wfs:Parameter>
+     <wfs:Parameter name="fmisid">101000</wfs:Parameter>
+     <wfs:Parameter name="parameters">Ta wd</wfs:Parameter>
+     <wfs:Parameter name="maxlocations">1</wfs:Parameter>
+   </wfs:StoredQuery>
+</wfs:GetFeature>

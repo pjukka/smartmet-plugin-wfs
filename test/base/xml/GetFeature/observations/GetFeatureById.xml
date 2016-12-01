@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature
+         service="WFS"
+         version="2.0.0"
+         xmlns:wfs="http://www.opengis.net/wfs/2.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById">
+     <wfs:Parameter name="id"><![CDATA[WFS-CI2J52xi6oSTRdbGwzYqYtXJQamJTowp0_FzqZefSFpYsufTuqaduW159CnesEscJjY.XOtSLQpx3TpozZNmdl3ZKmnbltefQp3rhzFEZ2bbp56cnOsxiwYOW7F0a8vnvv5ZL._tl5d.WnphxbMsTM2YemXn0iZmzfjw7MtZWbTfjSWttw.Imnn0w7seWlauhAaW3D4i8N.PRznRMb23L0y76GHlh25emXlzrWqZdvDLyw9OvLLWhw5ZefPryy1vUOWXHp4aemHpp37mOhrbdPPnp3Z6mXx0rG3Ydza3dds_NT6Yemnfu5zhNbj1w7NPTzJ3Zt8TW59MPTTv3VPPDLWhv4Zd2TD0wtzn038suTj1y8vN_TkrOn4udTLz6NDpp25afTLwmaHTTty2t.7LWNVqQwA-]]></wfs:Parameter>
+   </wfs:StoredQuery>
+</wfs:GetFeature>

@@ -1,0 +1,13 @@
+/**
+
+@page WFS_PLUGIN_CONFIG_DATA_TYPES Data types used in WFS plugin configuration
+
+- @subpage WFS_CFG_MULTI_LANGUAGE_STRING
+- @subpage WFS_CFG_STORED_QUERY_PARAM
+- @subpage WFS_CFG_PARAM_TMPL_ITEM
+- @subpage WFS_CFG_SCALAR_PARAM_TMPL "cfgScalarParameterTemplate"
+- @subpage WFS_CFG_ARRAY_PARAM_TMPL "cfgArrayParameterTemplate"
+- @subpage WFS_SQ_NAMED_PARAM_DEF "cfgNamedParamDef"
+- @subpage WFS_CFG_URL_TEMPLATE "cfgUrlTemplate"
+
+*/

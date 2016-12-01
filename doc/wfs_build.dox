@@ -1,0 +1,73 @@
+/**
+
+@page WFS_PLUGIN_BUILD Building WFS plugin
+
+Building WFS plugin from sources is similar as building other Brainstorm components. Usual build targets like
+
+- <b>make clean</b>
+- <b>make debug</b>
+- <b>make release</b>
+- <b>make rpm</b>
+
+Some notes:
+- C++ file dependencies are updated automatically at build process. Therefore running make depend is
+  not required (empty target is kept for compatibility reasons). The C++ file dependency tracking
+  differs from one used for other Brainstorm components
+- One may want to run <b>make check</b> to perform provided unit tests
+- One may want to run <b>make test</b> to perform plugin tests
+
+@section WFS_PLUGIN_BUILD_PREFIX Using different installation prefix
+
+It is possible to use different installation prefix by providing parameter @b PREFIX . It is assumed
+in the examples below that the provided installation prefix is <b>~/smartmet</b>.
+
+- it is necessary to install additional stuff inside the same prefix
+    - links to external files must be set-ip inside <b>~/smartmet</b>
+      @verbatim
+      pavenis@pavenis12k:~/smartmet$ ls -l ~/smartmet/include
+      total 4
+      lrwxrwxrwx 1 pavenis sat-pak   18 Jan  9 13:23 mysql -> /usr/include/mysql
+      lrwxrwxrwx 1 pavenis sat-pak   20 Jan  9 13:23 mysql++ -> /usr/include/mysql++
+      lrwxrwxrwx 1 pavenis sat-pak   19 Jan  9 13:26 oracle -> /usr/include/oracle
+      drwxr-xr-x 3 pavenis sat-pak 4096 May 31 14:14 smartmet
+
+      pavenis@pavenis12k:~/smartmet$ ls -l ~/smartmet/include/smartmet
+      total 4
+      drwxr-xr-x 4 pavenis sat-pak 4096 Jan  9 13:26 brainstorm
+      lrwxrwxrwx 1 pavenis sat-pak   30 Jan  9 13:14 fminames -> /usr/include/smartmet/fminames
+      lrwxrwxrwx 1 pavenis sat-pak   30 Jan  9 13:14 macgyver -> /usr/include/smartmet/macgyver
+      lrwxrwxrwx 1 pavenis sat-pak   29 Jan  9 13:14 newbase -> /usr/include/smartmet/newbase
+      lrwxrwxrwx 1 pavenis sat-pak   29 May 31 14:14 textgen -> /usr/include/smartmet/textgen
+
+      pavenis@pavenis12k:~/smartmet$ ls -l ~/smartmet/lib64
+      total 104188
+      lrwxrwxrwx 1 pavenis sat-pak       36 Jan  9 13:25 libmysqlclient_r.so -> /usr/lib64/mysql/libmysqlclient_r.so
+      lrwxrwxrwx 1 pavenis sat-pak       15 Jan  9 13:27 oracle -> /usr/lib/oracle
+      @endverbatim
+      Only external origin sources are listed above
+    - other FMI packages (@b macgyver, @b newbase, @b fminames etc). For these packages parameter prefix must be
+      used in the same way as for Brainstorm components. For example:
+      @verbatim
+      cd macgyver
+      make clean
+      make -j5 release PREFIX=~/smartmet
+      make install PREFIX=~/smartmet
+      @endverbatim
+      One can also use symbolic links to installed files there instead of building these packages
+- all required Brainstorm components must be built and installed using the same prefix. For example:
+  @verbatim
+  cd brainstorm/spine
+  make clean
+  make depend
+  make -j5 release PREFIX=~/smartmet
+  make install PREFIX=~/smartmet
+  @endverbatim
+- @b ObsEngine uses file for streaming station information for faster access. One may need to set-up
+  a different location as the default one is generally not user writable
+- One must specify environment variable @b LD_LIBRARY_PATH when running Brainstorm and also when
+  executing brainstorm tests. For example
+  @verbatim
+  LD_LIBRARY_PATH=~/smartmet/lib64 make -C brainstorm/plugins/wfs check PREFIX=~/smartmet
+  LD_LIBRARY_PATH=~/smartmet/lib64 make -C brainstorm/plugins/wfs test PREFIX=~/smartmet
+  @endverbatim
+*/
