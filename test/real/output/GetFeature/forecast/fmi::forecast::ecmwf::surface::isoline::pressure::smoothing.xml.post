@@ -44,7 +44,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-1">
       <sam:sampledFeature/>
@@ -103,7 +103,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-2">
       <sam:sampledFeature/>
@@ -162,7 +162,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-3">
       <sam:sampledFeature/>
@@ -221,7 +221,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-4">
       <sam:sampledFeature/>
@@ -286,7 +286,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-5">
       <sam:sampledFeature/>
@@ -351,7 +351,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-6">
       <sam:sampledFeature/>
@@ -416,7 +416,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-7">
       <sam:sampledFeature/>
@@ -481,7 +481,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-8">
       <sam:sampledFeature/>
@@ -546,7 +546,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-9">
       <sam:sampledFeature/>
@@ -611,7 +611,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-10">
       <sam:sampledFeature/>
@@ -676,7 +676,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-11">
       <sam:sampledFeature/>
@@ -741,7 +741,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-12">
       <sam:sampledFeature/>
@@ -806,7 +806,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-13">
       <sam:sampledFeature/>
@@ -871,7 +871,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-14">
       <sam:sampledFeature/>
@@ -936,7 +936,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-15">
       <sam:sampledFeature/>
@@ -1001,7 +1001,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-16">
       <sam:sampledFeature/>
@@ -1078,7 +1078,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-17">
       <sam:sampledFeature/>
@@ -1149,7 +1149,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-18">
       <sam:sampledFeature/>
@@ -1220,7 +1220,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-19">
       <sam:sampledFeature/>
@@ -1279,7 +1279,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-20">
       <sam:sampledFeature/>
@@ -1338,7 +1338,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=pressure&amp;language=eng"/>
+        xlink:href="http://beta.fmi.fi/fmi-apikey/foobar/meta?observableProperty=forecast&amp;param=Pressure&amp;language=eng"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="spatial-sampling-feature-wfs-member-21">
       <sam:sampledFeature/>
