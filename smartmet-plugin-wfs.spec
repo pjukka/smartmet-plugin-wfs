@@ -2,7 +2,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 16.11.30
+Version: 17.1.4
 Release: 1%{?dist}.fmi
 License: FMI
 Group: SmartMet/Plugins
@@ -16,30 +16,30 @@ BuildRequires: libcurl-devel
 BuildRequires: xerces-c-devel
 BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
-BuildRequires: smartmet-library-spine-devel >= 16.11.29
-BuildRequires: libsmartmet-gis-devel >= 16.5.25
-BuildRequires: libsmartmet-locus-devel >= 16.6.7
-BuildRequires: libsmartmet-macgyver-devel >= 16.9.30
-BuildRequires: smartmet-engine-contour-devel >= 16.11.30
-BuildRequires: smartmet-engine-geonames-devel >= 16.11.30
-BuildRequires: smartmet-engine-gis-devel >= 16.11.30
-BuildRequires: smartmet-engine-observation-devel >= 16.11.30
-BuildRequires: smartmet-engine-querydata-devel >= 16.11.30
+BuildRequires: smartmet-library-spine-devel >= 17.1.4
+BuildRequires: smartmet-library-gis-devel >= 16.12.20
+BuildRequires: smartmet-library-locus-devel >= 16.12.20
+BuildRequires: smartmet-library-macgyver-devel >= 16.12.20
+BuildRequires: smartmet-engine-contour-devel >= 17.1.4
+BuildRequires: smartmet-engine-geonames-devel >= 17.1.4
+BuildRequires: smartmet-engine-gis-devel >= 17.1.4
+BuildRequires: smartmet-engine-observation-devel >= 17.1.4
+BuildRequires: smartmet-engine-querydata-devel >= 17.1.4
 BuildRequires: postgresql93-libs
 Requires: ctpp2
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
-Requires: libsmartmet-locus >= 16.6.7
-Requires: libsmartmet-macgyver >= 16.9.30
-Requires: smartmet-library-spine >= 16.11.29
-Requires: libsmartmet-gis >= 16.5.25
-Requires: smartmet-engine-contour >= 16.11.30
-Requires: smartmet-engine-geonames >= 16.11.30
-Requires: smartmet-engine-gis >= 16.11.30
-Requires: smartmet-engine-observation >= 16.11.30
-Requires: smartmet-engine-querydata >= 16.11.30
-Requires: smartmet-server >= 16.11.30
+Requires: smartmet-library-locus >= 16.12.20
+Requires: smartmet-library-macgyver >= 16.12.20
+Requires: smartmet-library-spine >= 17.1.4
+Requires: smartmet-library-gis >= 16.12.20
+Requires: smartmet-engine-contour >= 17.1.4
+Requires: smartmet-engine-geonames >= 17.1.4
+Requires: smartmet-engine-gis >= 17.1.4
+Requires: smartmet-engine-observation >= 17.1.4
+Requires: smartmet-engine-querydata >= 17.1.4
+Requires: smartmet-server >= 17.1.4
 Requires: xerces-c
 Requires: xqilla
 %if 0%{rhel} >= 7
@@ -90,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Wed Jan  4 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.1.4-1.fmi
+- Changed to use renamed SmartMet base libraries
+
 * Wed Nov 30 2016 Mika Heiskanen <mika.heiskanen@fmi.fi> - 16.11.30-1.fmi
 - Using test databases in test configuration
 - No installation for configuration
@@ -536,7 +539,7 @@ rm -rf $RPM_BUILD_ROOT
 - Logging verbosity decreased when plugin is loaded into brainstorm.
 - Requested parameter names are now checked before the actual obsengine query.
 - Activated stored queries of 30year normal periods.
-- Increased BuildRequires version of libsmartmet-macgyver.
+- Increased BuildRequires version of smartmet-library-macgyver.
 - SQ observations: lowerLimit value of starttime parameter changed to 1829-01-01T00:00:00.
 - Avoid 'no data found' and 'no data available' exceptions in SQ results.
 
