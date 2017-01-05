@@ -168,9 +168,11 @@ profile: all
 
 configtest:
 	@ok=true; \
-	for file in $(CONFIG_FILES); do \
-		echo Validating $$file; cfgvalidate $$file || ok=false; \
-	done; \
+	if [  -x "$$(command -v cfgvalidate)" ]; then \
+	  for file in $(CONFIG_FILES); do \
+	     echo Validating $$file; cfgvalidate $$file || ok=false; \
+	  done; \
+	fi; \
 	$$ok
 
 $(LIBFILE): $(OBJS)
