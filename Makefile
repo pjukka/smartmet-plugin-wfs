@@ -214,7 +214,6 @@ objdir:
 rpm: clean file-list
 	@if [ -e $(SPEC).spec ]; \
 	then \
-	  smartspecupdate $(SPEC).spec ; \
 	  mkdir -p $(rpmsourcedir); \
 	  tar -C ../../ -cf $(rpmsourcedir)/$(SPEC).tar \
 		$(shell printf " plugins/$(SUBNAME)/%s" $(shell cat files.list)) ; \
