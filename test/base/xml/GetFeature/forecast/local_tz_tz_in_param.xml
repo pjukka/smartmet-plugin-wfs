@@ -9,8 +9,8 @@
      <wfs:Parameter name="begin">2008-08-05T15:00:00+03:00</wfs:Parameter>
      <wfs:Parameter name="end">2008-08-07T02:00:00+02:00</wfs:Parameter>
      <wfs:Parameter name="place">Helsinki</wfs:Parameter>
-     <wfs:Parameter name="place">Karlsborg</wfs:Parameter>
-     <wfs:Parameter name="place">Kostomuksha</wfs:Parameter>
+     <wfs:Parameter name="place">Uppsala</wfs:Parameter>
+     <wfs:Parameter name="place">Roskilde</wfs:Parameter>
      <wfs:Parameter name="timestep">0</wfs:Parameter>
      <wfs:Parameter name="locale">fi_FI</wfs:Parameter>
      <wfs:Parameter name="parameter">Temperature</wfs:Parameter>
