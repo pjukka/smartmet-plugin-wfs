@@ -2,7 +2,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.1.5
+Version: 17.2.2
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -16,30 +16,30 @@ BuildRequires: libcurl-devel
 BuildRequires: xerces-c-devel
 BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
-BuildRequires: smartmet-library-spine-devel >= 17.1.4
-BuildRequires: smartmet-library-gis-devel >= 16.12.20
+BuildRequires: smartmet-library-spine-devel >= 17.2.1
+BuildRequires: smartmet-library-gis-devel >= 17.1.18
 BuildRequires: smartmet-library-locus-devel >= 16.12.20
-BuildRequires: smartmet-library-macgyver-devel >= 16.12.20
-BuildRequires: smartmet-engine-contour-devel >= 17.1.4
-BuildRequires: smartmet-engine-geonames-devel >= 17.1.4
+BuildRequires: smartmet-library-macgyver-devel >= 17.1.18
+BuildRequires: smartmet-engine-contour-devel >= 17.1.31
+BuildRequires: smartmet-engine-geonames-devel >= 17.1.27
 BuildRequires: smartmet-engine-gis-devel >= 17.1.4
-BuildRequires: smartmet-engine-observation-devel >= 17.1.4
-BuildRequires: smartmet-engine-querydata-devel >= 17.1.4
+BuildRequires: smartmet-engine-observation-devel >= 17.1.27
+BuildRequires: smartmet-engine-querydata-devel >= 17.1.26
 BuildRequires: postgresql93-libs
 Requires: ctpp2
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 16.12.20
-Requires: smartmet-library-macgyver >= 16.12.20
-Requires: smartmet-library-spine >= 17.1.4
-Requires: smartmet-library-gis >= 16.12.20
-Requires: smartmet-engine-contour >= 17.1.4
-Requires: smartmet-engine-geonames >= 17.1.4
+Requires: smartmet-library-macgyver >= 17.1.18
+Requires: smartmet-library-spine >= 17.2.1
+Requires: smartmet-library-gis >= 17.1.18
+Requires: smartmet-engine-contour >= 17.1.31
+Requires: smartmet-engine-geonames >= 17.1.27
 Requires: smartmet-engine-gis >= 17.1.4
-Requires: smartmet-engine-observation >= 17.1.4
-Requires: smartmet-engine-querydata >= 17.1.4
-Requires: smartmet-server >= 17.1.4
+Requires: smartmet-engine-observation >= 17.1.27
+Requires: smartmet-engine-querydata >= 17.1.26
+Requires: smartmet-server >= 17.1.25
 Requires: xerces-c
 Requires: xqilla
 %if 0%{rhel} >= 7
@@ -90,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Thu Feb  2 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.2.2-1.fmi
+- Unified handling of apikeys
+
 * Thu Jan  5 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.1.5-1.fmi
 - Fixed typos in configuration files
 
