@@ -143,7 +143,7 @@ void bw::StoredMastQueryHandler::query(const StoredQuery& query,
       bool have_bbox = get_bounding_box(params, crs, &requested_bbox);
       if (have_bbox)
       {
-        boost::scoped_ptr<SmartMet::Spine::BoundingBox> query_bbox;
+        std::unique_ptr<SmartMet::Spine::BoundingBox> query_bbox;
         query_bbox.reset(new SmartMet::Spine::BoundingBox);
         *query_bbox =
             bw::SupportsBoundingBox::transform_bounding_box(requested_bbox, DATA_CRS_NAME);

@@ -816,7 +816,7 @@ void StoredSoundingQueryHandler::getStationSearchSettings(
   bool haveBBox = get_bounding_box(params, solveCrs(params), &requestedBBox);
   if (haveBBox)
   {
-    boost::scoped_ptr<SmartMet::Spine::BoundingBox> queryBBox;
+    std::unique_ptr<SmartMet::Spine::BoundingBox> queryBBox;
     queryBBox.reset(new SmartMet::Spine::BoundingBox);
     *queryBBox = SupportsBoundingBox::transform_bounding_box(requestedBBox, DATA_CRS_NAME);
     settings.boundingBox["minx"] = queryBBox->xMin;

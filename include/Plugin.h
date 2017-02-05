@@ -25,7 +25,6 @@
 #include <macgyver/TemplateFormatterMT.h>
 
 #include <boost/shared_ptr.hpp>
-#include <boost/scoped_ptr.hpp>
 #include <boost/thread.hpp>
 #include <boost/utility.hpp>
 
@@ -129,14 +128,14 @@ class Plugin : public SmartMetPlugin, virtual private boost::noncopyable, privat
  private:
   const std::string itsModuleName;
 
-  boost::scoped_ptr<PluginData> plugin_data;
+  std::unique_ptr<PluginData> plugin_data;
 
-  boost::scoped_ptr<QueryResponseCache> query_cache;
+  std::unique_ptr<QueryResponseCache> query_cache;
 
   /**
    *   @brief An object that reads actual requests and creates request objects
    */
-  boost::scoped_ptr<RequestFactory> request_factory;
+  std::unique_ptr<RequestFactory> request_factory;
 
   SmartMet::Spine::Reactor* itsReactor;
 

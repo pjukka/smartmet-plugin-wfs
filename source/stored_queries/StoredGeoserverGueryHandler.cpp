@@ -221,7 +221,7 @@ void bw::StoredGeoserverQueryHandler::update_parameters(
         requested_bbox.xMin, requested_bbox.yMin, requested_bbox.xMax, requested_bbox.yMax};
 
     auto& db = *get_plugin_data().get_geo_server_database();
-    boost::scoped_ptr<bw::GeoServerDataIndex> gs_index;
+    std::unique_ptr<bw::GeoServerDataIndex> gs_index;
     if (layer_db_table_name_format)
     {
       gs_index.reset(new bw::GeoServerDataIndex(db, *layer_db_table_name_format));

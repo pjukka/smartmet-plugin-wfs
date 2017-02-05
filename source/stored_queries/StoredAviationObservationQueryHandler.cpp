@@ -143,7 +143,7 @@ void bw::StoredAviationObservationQueryHandler::query(const StoredQuery& query,
 
       if (haveBBox)
       {
-        boost::scoped_ptr<SmartMet::Spine::BoundingBox> queryBBox;
+        std::unique_ptr<SmartMet::Spine::BoundingBox> queryBBox;
         queryBBox.reset(new SmartMet::Spine::BoundingBox);
         *queryBBox = transform_bounding_box(requestedBBox, DATA_CRS_NAME);
 

@@ -64,7 +64,7 @@ class StoredQueryMap
   mutable SmartMet::Spine::MutexType mutex;
   std::vector<std::string> handler_names;
   std::map<std::string, boost::shared_ptr<StoredQueryHandlerBase> > handler_map;
-  boost::scoped_ptr<Init> init;
+  std::unique_ptr<Init> init;
 };
 
 }  // namespace WFS

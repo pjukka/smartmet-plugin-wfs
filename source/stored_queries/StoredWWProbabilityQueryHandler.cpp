@@ -86,7 +86,7 @@ SmartMet::Engine::Querydata::ParameterOptions get_qengine_parameter(
 {
   try
   {
-    boost::scoped_ptr<Fmi::TimeFormatter> timeFormatter(Fmi::TimeFormatter::create("iso"));
+    std::unique_ptr<Fmi::TimeFormatter> timeFormatter(Fmi::TimeFormatter::create("iso"));
 
     NFmiPoint nearestpoint(kFloatMissing, kFloatMissing);
     bool nearestFlag(false);
@@ -474,7 +474,7 @@ void StoredWWProbabilityQueryHandler::query(const StoredQuery& query,
     if (requestedCRS.compare(bbox.crs) != 0)
       bbox = transform_bounding_box(bbox, requestedCRS);
 
-    boost::scoped_ptr<OGRGeometry> geom;
+    std::unique_ptr<OGRGeometry> geom;
     Fmi::OGR::CoordinatePoints geoCoordinates;
     geoCoordinates.push_back(std::pair<double, double>(bbox.xMin, bbox.yMin));
     geoCoordinates.push_back(std::pair<double, double>(bbox.xMin, bbox.yMax));

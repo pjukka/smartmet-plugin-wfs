@@ -110,9 +110,9 @@ class PluginData : public boost::noncopyable
   boost::shared_ptr<Fmi::TemplateFormatterMT> ctppDumpFormatter;
   boost::shared_ptr<Xml::ParserMT> xml_parser;
   boost::shared_ptr<GeoServerDB> geo_server_db;
-  boost::scoped_ptr<StoredQueryMap> stored_query_map;
-  boost::scoped_ptr<TypeNameStoredQueryMap> type_name_stored_query_map;
-  boost::scoped_ptr<WfsCapabilities> wfs_capabilities;
+  std::unique_ptr<StoredQueryMap> stored_query_map;
+  std::unique_ptr<TypeNameStoredQueryMap> type_name_stored_query_map;
+  std::unique_ptr<WfsCapabilities> wfs_capabilities;
   int debug_level;
   std::string fallback_hostname;
 

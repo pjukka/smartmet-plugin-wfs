@@ -9,7 +9,6 @@
 #include <engines/gis/CRSRegistry.h>
 #include <spine/ConfigBase.h>
 #include <libconfig.h++>
-#include <boost/scoped_ptr.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/utility.hpp>
 #include <string>
@@ -70,7 +69,7 @@ class Config : private boost::noncopyable, public SmartMet::Spine::ConfigBase
   int cache_time_constant;
   int default_expires_seconds;
   std::vector<std::string> languages;
-  boost::scoped_ptr<Fmi::TemplateDirectory> template_directory;
+  std::unique_ptr<Fmi::TemplateDirectory> template_directory;
   std::string xml_grammar_pool_dump;
   bool validate_output;
   bool enable_demo_queries;

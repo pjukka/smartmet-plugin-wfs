@@ -346,7 +346,7 @@ void SmartMet::Plugin::WFS::Xml::ParserMT::load_schema_cache(const std::string &
     input.exceptions(std::ios::failbit | std::ios::badbit);
     input.open(file_name.c_str());
     boost::archive::text_iarchive ia(input);
-    boost::scoped_ptr<EntityResolver> tmp(new EntityResolver);
+    std::unique_ptr<EntityResolver> tmp(new EntityResolver);
     ia >> *tmp;
     this->entity_resolver.swap(tmp);
   }

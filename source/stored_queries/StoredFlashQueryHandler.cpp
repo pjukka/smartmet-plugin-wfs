@@ -199,7 +199,7 @@ void bw::StoredFlashQueryHandler::query(const StoredQuery& query,
       boost::shared_ptr<SmartMet::Engine::Gis::CRSRegistry::Transformation> to_bbox_transform;
 
       // boost::optional<> aiheuttaa täällä strict aliasing varoituksen jos gcc-4.4.X
-      // on käytössä. Sen vuoksi boost::scoped_ptr on käytetty boost::optionla tilalle.
+      // on käytössä. Sen vuoksi std::unique_ptr on käytetty boost::optionla tilalle.
 
       SmartMet::Spine::BoundingBox requested_bbox;
       SmartMet::Spine::BoundingBox query_bbox;

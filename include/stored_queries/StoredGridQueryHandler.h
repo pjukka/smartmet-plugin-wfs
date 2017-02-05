@@ -76,14 +76,14 @@ class StoredGridQueryHandler : public StoredQueryHandlerBase,
     std::vector<SmartMet::Spine::Parameter> data_params;
     std::string missing_text;
     std::string language;
-    boost::scoped_ptr<std::locale> output_locale;
+    std::unique_ptr<std::locale> output_locale;
 
     Result result;
 
-    boost::scoped_ptr<boost::posix_time::ptime> origin_time;
+    std::unique_ptr<boost::posix_time::ptime> origin_time;
 
-    boost::scoped_ptr<SmartMet::Spine::ValueFormatter> value_formatter;
-    boost::scoped_ptr<Fmi::TimeFormatter> time_formatter;
+    std::unique_ptr<SmartMet::Spine::ValueFormatter> value_formatter;
+    std::unique_ptr<Fmi::TimeFormatter> time_formatter;
     boost::shared_ptr<SmartMet::Spine::TimeSeriesGeneratorOptions> toptions;
 
     SmartMet::Spine::BoundingBox requested_bbox;

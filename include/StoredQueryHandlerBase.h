@@ -39,7 +39,7 @@ class StoredQueryHandlerBase : virtual protected SupportsExtraHandlerParams,
 {
   SmartMet::Spine::Reactor* reactor;
   boost::shared_ptr<StoredQueryConfig> config;
-  boost::scoped_ptr<Fmi::TemplateFormatterMT> tp_formatter;
+  std::unique_ptr<Fmi::TemplateFormatterMT> tp_formatter;
   bool hidden;
 
  protected:

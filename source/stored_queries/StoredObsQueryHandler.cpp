@@ -327,7 +327,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
       using SmartMet::Spine::BoundingBox;
       BoundingBox requested_bbox;
       bool have_bbox = get_bounding_box(params, crs, &requested_bbox);
-      boost::scoped_ptr<BoundingBox> query_bbox;
+      std::unique_ptr<BoundingBox> query_bbox;
       if (have_bbox)
       {
         query_bbox.reset(new BoundingBox);
