@@ -22,7 +22,7 @@
                         <gml:File>
                             <gml:rangeParameters/>
                             <gml:fileReference>http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/download?<TMPL_var HTMLESCAPE(dataset.URL)></gml:fileReference>     
-                            <gml:fileStructure codeSpace=<TMPL_if IN_SET(dataset.params.format[0],"grib", "grib1", "grib2")>"http://www.ecmwf.int/publications/manuals/d/gribapi/param/"<TMPL_else><TMPL_if IN_SET(dataset.params.format[0],"netcdf")>"http://cfconventions.org/Data/cf-standard-names/26/src/cf-standard-name-table.xml"<TMPL_else>""</TMPL_if></TMPL_if>></gml:fileStructure>              
+                            <gml:fileStructure codeSpace=<TMPL_if IN_SET(dataset.params.format[0],"grib", "grib1", "grib2")>"http://apps.ecmwf.int/codes/grib/param-db"<TMPL_else><TMPL_if IN_SET(dataset.params.format[0],"netcdf")>"http://cfconventions.org/Data/cf-standard-names/26/src/cf-standard-name-table.xml"<TMPL_else>""</TMPL_if></TMPL_if>></gml:fileStructure>              
                             <gml:mimeType>application/<TMPL_if IN_SET(dataset.params.format[0],"grib", "grib1", "grib2")>octet-stream<TMPL_else>octet-stream</TMPL_if></gml:mimeType>
                         </gml:File>
                     </gml:rangeSet>
