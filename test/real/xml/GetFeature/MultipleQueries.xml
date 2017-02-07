@@ -6,23 +6,19 @@
          xmlns:gml="http://www.opengis.net/gml/3.2"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
-   <wfs:StoredQuery id="fmi::observations::weather::timevaluepair">
-     <wfs:Parameter name="starttime">2013-05-14T18:00:00Z</wfs:Parameter>
-     <wfs:Parameter name="endtime">2013-05-15T00:00:00Z</wfs:Parameter>
+   <wfs:StoredQuery id="fmi::forecast::hirlam::surface::point::multipointcoverage">
+     <wfs:Parameter name="starttime">2013-03-19T12:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="endtime">2013-03-19T13:00:00Z</wfs:Parameter>
      <wfs:Parameter name="timestep">60</wfs:Parameter>
-     <wfs:Parameter name="parameter">temperature pressure</wfs:Parameter>
-     <wfs:Parameter name="maxlocations">2</wfs:Parameter>
+     <wfs:Parameter name="parameter">GeopHeight Temperature</wfs:Parameter>
      <wfs:Parameter name="place">Pesiö,Suomussalmi</wfs:Parameter>
    </wfs:StoredQuery>
-   <wfs:StoredQuery id="fmi::observations::lightning::multipointcoverage">
-     <wfs:Parameter name="starttime">2013-05-10T00:00Z</wfs:Parameter>
-     <wfs:Parameter name="endtime">2013-05-13T00:00Z</wfs:Parameter>
-     <wfs:Parameter name="bbox">20.0,60.00,26.0,62.00</wfs:Parameter>
-   </wfs:StoredQuery>
-   <wfs:StoredQuery id="fmi::observations::radiation::multipointcoverage">
-     <wfs:Parameter name="starttime">2013-05-15T00:00:00Z</wfs:Parameter>
-     <wfs:Parameter name="endtime">2013-05-17T06:00:00Z</wfs:Parameter>
+   <wfs:StoredQuery id="fmi::forecast::hirlam::surface::point::timevaluepair">
+     <wfs:Parameter name="starttime">2013-03-19T24:00:00Z</wfs:Parameter>
+     <wfs:Parameter name="endtime">2013-03-20T00:00:00Z</wfs:Parameter>
      <wfs:Parameter name="timestep">60</wfs:Parameter>
-     <wfs:Parameter name="maxlocations">1</wfs:Parameter>
+     <wfs:Parameter name="parameter">Pressure Humidity</wfs:Parameter>
+     <wfs:Parameter name="maxlocations">2</wfs:Parameter>
+     <wfs:Parameter name="place">Pesiö,Suomussalmi</wfs:Parameter>
    </wfs:StoredQuery>
 </wfs:GetFeature>
