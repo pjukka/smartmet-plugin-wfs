@@ -3,7 +3,6 @@ TEST_TOP = $(shell pwd)
 TOP = $(TEST_TOP)/..
 
 TEST_DIRECTORIES = base real real_open
-TEST_DEPENDENCIES = #Geonames Querydata Observation Gis Contour
 
 # Compiler options
 
@@ -139,30 +138,9 @@ test: $(TEST_TARGETS)
 	done; \
 	$$ok;
 
-$(TEST_TARGETS) : $(TEST_DEPENDENCIES)
-
 PluginTest : obj/PluginTest.o ; @echo "Building $@"
 	@$(CC) -o $@ $(TEST_CFLAGS) $(INCLUDES) $< -Ltestsuite -Wl,-rpath=$(libdir) $(LIBS)
 
-
-Geonames:
-	$(MAKE) -C $(TOP)/../../engines/geonames debug
-
-Querydata:
-	$(MAKE) -C $(TOP)/../../engines/querydata debug
-
-Observation:	stations.xml
-	$(MAKE) -C $(TOP)/../../engines/observation debug
-
-Gis:
-	$(MAKE) -C $(TOP)/../../engines/gis debug
-
-Contour:
-	$(MAKE) -C $(TOP)/../../engines/contour debug
-
-
-stations.xml: ../../../engines/observation/cnf/stations.xml
-	cp -fv $< $@
 
 ifneq ($(wildcard obj/*.d),)
 -include $(wildcard obj/*.d)
