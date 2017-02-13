@@ -7,7 +7,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:gml="http://www.opengis.net/gml/3.2"
-  xmlns:inspire="http://inspire.ec.europa.eu/schemas/base/3.3/"
+  xmlns:inspire="http://inspire.ec.europa.eu/schemas/base/3.3"
   xmlns:ef="http://inspire.ec.europa.eu/schemas/ef/4.0"
   xmlns:ins_base2="http://inspire.ec.europa.eu/schemas/base2/2.0"
   xmlns:sensorml="http://www.opengis.net/sensorML/1.0.1"
