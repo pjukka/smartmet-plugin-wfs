@@ -3,7 +3,7 @@
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
 Version: 17.2.13
-Release: 1%{?dist}.fmi
+Release: 2%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
 URL: https://github.com/fmidev/smartmet-plugin-wfs
@@ -90,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Mon Feb 13 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.2.13-2.fmi
+- Use correct INSPIRE code list register references in EMF and EMN template. 
+
 * Mon Feb 13 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.2.13-1.fmi
 - Use INSPIRE code list register category for MeasurementRegime
 - Remove extra slash punctuation character from a namespace of EMF template
