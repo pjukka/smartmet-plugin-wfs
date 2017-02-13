@@ -16,6 +16,7 @@ const char* P_NETWORK_NAME = "networkName";
 const char* P_STATION_ID = "stationId";
 const char* P_STATION_NAME = "stationName";
 const char* P_MISSING_TEXT = "missingText";
+const char *P_INSPIRE_NAMESPACE = "inspireNamespace";
 }
 
 bw::StoredEnvMonitoringNetworkQueryHandler::StoredEnvMonitoringNetworkQueryHandler(
@@ -34,6 +35,7 @@ bw::StoredEnvMonitoringNetworkQueryHandler::StoredEnvMonitoringNetworkQueryHandl
     register_array_param<std::string>(P_NETWORK_NAME, *config, false);
     register_array_param<int64_t>(P_STATION_ID, *config);
     register_array_param<std::string>(P_STATION_NAME, *config, false);
+    register_scalar_param<std::string>(P_INSPIRE_NAMESPACE, *config);
     m_missingText = config->get_optional_config_param<std::string>(P_MISSING_TEXT, "NaN");
     m_debugLevel = config->get_debug_level();
   }
@@ -85,6 +87,7 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
   try
   {
     const auto& params = query.get_param_map();
+    auto inspireNamespace = params.get_single<std::string>(P_INSPIRE_NAMESPACE);
 
     try
     {
@@ -256,7 +259,7 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
               hash["networks"][networkCounter - 1]["name"] = bo::QueryResult::toString(netNameIt);
               hash["networks"][networkCounter - 1]["description"] =
                   bo::QueryResult::toString(netDescIt);
-              hash["networks"][networkCounter - 1]["inspireNamespace"] = "fi.fmi.network.id";
+              hash["networks"][networkCounter - 1]["inspireNamespace"] = inspireNamespace;
             }
             networkId = netId;
           }

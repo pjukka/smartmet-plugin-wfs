@@ -28,6 +28,7 @@ const char *P_AGGREGATE_FUNCTION = "aggregateFunction";
 const char *P_AGGREGATE_PERIOD = "aggregatePeriod";
 const char *P_MEASURAND_CODE = "measurandCode";
 const char *P_STORAGE_ID = "storageId";
+const char *P_INSPIRE_NAMESPACE = "inspireNamespace";
 }
 
 bw::StoredEnvMonitoringFacilityQueryHandler::StoredEnvMonitoringFacilityQueryHandler(
@@ -52,6 +53,7 @@ bw::StoredEnvMonitoringFacilityQueryHandler::StoredEnvMonitoringFacilityQueryHan
     register_array_param<std::string>(P_BASE_PHENOMENON, *config);
     register_array_param<std::string>(P_MEASURAND_CODE, *config);
     register_array_param<int64_t>(P_STORAGE_ID, *config);
+    register_scalar_param<std::string>(P_INSPIRE_NAMESPACE, *config);
     m_missingText = config->get_optional_config_param<std::string>(P_MISSING_TEXT, "NaN");
     m_debugLevel = config->get_debug_level();
   }
@@ -96,6 +98,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
   try
   {
     const RequestParameterMap &params = query.get_param_map();
+    auto inspireNamespace = params.get_single<std::string>(P_INSPIRE_NAMESPACE);
 
     try
     {
@@ -218,7 +221,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
               bo::QueryResult::toString((*vsIt).second.station_start);
           hash["stations"][stationCounter]["opActivityPeriods"][0]["endPosition"] =
               bo::QueryResult::toString((*vsIt).second.station_end);
-          hash["stations"][stationCounter]["inspireNamespace"] = "fi.fmi.station.id";
+          hash["stations"][stationCounter]["inspireNamespace"] = inspireNamespace;
           hash["stations"][stationCounter]["country-ISO-3166-Numeric"] =
               bo::QueryResult::toString((*vsIt).second.country_id, 0);
 
