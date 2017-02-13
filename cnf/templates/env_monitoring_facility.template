@@ -85,7 +85,7 @@
           <gml:pos><TMPL_var station.position></gml:pos>
         </gml:Point>
       </ef:representativePoint></TMPL_if>
-      <ef:measurementRegime xlink:href="continuousDataCollection"/>
+      <ef:measurementRegime xlink:href="http://inspire.ec.europa.eu/codelist/MeasurementRegimeValue/<TMPL_if DEFINED(station.measurementRegimeValue)><TMPL_var station.measurementRegimeValue><TMPL_else>continuousDataCollection</TMPL_if>"/>
       <ef:mobile><TMPL_var station.mobile></ef:mobile><TMPL_if station.opActivityPeriods><TMPL_foreach station.opActivityPeriods AS period>
       <ef:operationalActivityPeriod>
         <ef:OperationalActivityPeriod gml:id="<TMPL_var CONCAT("oap-",station.__index__ + 1,"-",period.__index__ +1)>">
