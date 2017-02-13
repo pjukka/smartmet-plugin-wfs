@@ -32,7 +32,7 @@
       </ef:inspireId>
       <ef:name><TMPL_var network.name></ef:name>
       <ef:additionalDescription><TMPL_var network.description></ef:additionalDescription>
-      <ef:mediaMonitored xlink:href="http://inspire.ec.europa.eu/codeList/MediaValue/value/<TMPL_if network.mediaMonitored><TMPL_var network.mediaMonitored><TMPL_else>air</TMPL_if>" xlink:title="<TMPL_if network.mediaMonitored><TMPL_var network.mediaMonitored><TMPL_else>air</TMPL_if>"/>
+      <ef:mediaMonitored xlink:href="http://inspire.ec.europa.eu/codeList/MediaValue/<TMPL_if network.mediaMonitored><TMPL_var network.mediaMonitored><TMPL_else>air</TMPL_if>" xlink:title="<TMPL_if network.mediaMonitored><TMPL_var network.mediaMonitored><TMPL_else>air</TMPL_if>"/>
       <ef:responsibleParty>
         <ins_base2:RelatedParty>
           <ins_base2:organisationName>
@@ -42,7 +42,7 @@
       </ef:responsibleParty><TMPL_comment>
       <ef:onlineResource>http://ilmatieteenlaitos.fi/havaintoverkot/</ef:onlineResource></TMPL_comment>
       <ef:purpose xlink:href="http://www.eionet.europa.eu/gemet/concept/5197" xlink:title="meteorology"/>
-      <ef:organisationLevel xlink:href="http://inspire.ec.europa.eu/codeList/LegislationLevelValue/value/<TMPL_if network.organisationLevel><TMPL_var network.organisationLevel><TMPL_else>national</TMPL_if>"/>
+      <ef:organisationLevel xlink:href="http://inspire.ec.europa.eu/codeList/LegislationLevelValue/<TMPL_if network.organisationLevel><TMPL_var network.organisationLevel><TMPL_else>national</TMPL_if>"/>
       <ef:contains>
         <ef:NetworkFacility gml:id="nf-<TMPL_var network.id>">
           <ef:linkingTime>

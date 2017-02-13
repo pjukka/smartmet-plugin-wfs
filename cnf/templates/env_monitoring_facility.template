@@ -39,7 +39,7 @@
           <ins_base:namespace><TMPL_if DEFINED(station.inspireNamespace)><TMPL_var station.inspireNamespace><TMPL_else>fi.fmi.station.id</TMPL_if></ins_base:namespace>
         </ins_base:Identifier>
       </ef:inspireId><TMPL_if DEFINED(station.mediaMonitored)><TMPL_foreach station.mediaMonitored AS media>
-      <ef:mediaMonitored xlink:href="http://inspire.ec.europa.eu/codeList/MediaValue/value/<TMPL_var media>" xlink:title="<TMPL_var media>"/></TMPL_foreach><TMPL_else><ef:mediaMonitored/></TMPL_if><TMPL_comment>
+      <ef:mediaMonitored xlink:href="http://inspire.ec.europa.eu/codeList/MediaValue/<TMPL_var media>" xlink:title="<TMPL_var media>"/></TMPL_foreach><TMPL_else><ef:mediaMonitored/></TMPL_if><TMPL_comment>
       <ef:onlineResource><TMPL_if station.onlineResource><TMPL_var station.onlineResource><TMPL_else>http://ilmatieteenlaitos.fi/havaintoasemat/</TMPL_if></ef:onlineResource></TMPL_comment><TMPL_if station.observingCapabilities><TMPL_foreach station.observingCapabilities AS capability>
       <ef:observingCapability>
         <ef:ObservingCapability gml:id="<TMPL_var CONCAT("oc-",station.fmisid,"-",capability.__index__ + 1)>">
@@ -49,8 +49,8 @@
               <gml:endPosition<TMPL_if IN_SET(capability.endPosition,"9999-12-31T00:00:00Z")> indeterminatePosition="now"/><TMPL_else>><TMPL_var capability.endPosition></gml:endPosition></TMPL_if>
             </gml:TimePeriod>
           </ef:observingTime>
-          <ef:processType<TMPL_if capability.processType> xlink:href="http://inspire.ec.europa.eu/codeList/ProcessTypeValue/value/<TMPL_var capability.processType>"</TMPL_if>/>
-          <ef:resultNature<TMPL_if DEFINED(capability.resultNature)> xlink:href="http://inspire.ec.europa.eu/codeList/ResultNatureValue/value/<TMPL_var capability.resultNature>"</TMPL_if>/>
+          <ef:processType<TMPL_if capability.processType> xlink:href="http://inspire.ec.europa.eu/codeList/ProcessTypeValue/<TMPL_var capability.processType>"</TMPL_if>/>
+          <ef:resultNature<TMPL_if DEFINED(capability.resultNature)> xlink:href="http://inspire.ec.europa.eu/codeList/ResultNatureValue/<TMPL_var capability.resultNature>"</TMPL_if>/>
           <ef:procedure<TMPL_comment>xlink:href="/sensor-assembly?stationId=fmisid-<TMPL_var station.fmisid>&amp;since=1844-07-01"</TMPL_comment>/>
           <ef:observedProperty xlink:title="<TMPL_var capability.measurandName>" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=observation&amp;param=<TMPL_var capability.measurandCode><TMPL_if DEFINED(capability.measurandAggregatePeriod)>_<TMPL_var capability.measurandAggregatePeriod><TMPL_if DEFINED(capability.measurandAggregateFunction)>_<TMPL_var capability.measurandAggregateFunction></TMPL_if></TMPL_if>&amp;language=<TMPL_var language>&amp;"/>
         </ef:ObservingCapability>
