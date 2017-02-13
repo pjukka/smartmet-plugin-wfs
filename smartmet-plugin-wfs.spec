@@ -90,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Upcoming
+- Make Inspire namespace identifier configurable in EMF and EMN stored queries.
+
 * Mon Feb 13 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.2.13-3.fmi
 - Remove extra slash punctuation character from a namespace of EMN template.
 
