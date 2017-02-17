@@ -91,6 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Upcoming
+- Add nillReason attribute for empty elements of EMF response
 - Make Inspire namespace identifier configurable in EMF and EMN stored queries.
 
 * Mon Feb 13 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.2.13-3.fmi
