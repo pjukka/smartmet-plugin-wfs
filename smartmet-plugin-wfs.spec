@@ -91,6 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Upcoming
+- Add parameter name for observing capability of EMF
 - Add nillReason attribute for empty elements of EMF response
 - Make Inspire namespace identifier configurable in EMF and EMN stored queries.
 

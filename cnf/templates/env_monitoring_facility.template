@@ -43,6 +43,7 @@
       <ef:onlineResource><TMPL_if station.onlineResource><TMPL_var station.onlineResource><TMPL_else>http://ilmatieteenlaitos.fi/havaintoasemat/</TMPL_if></ef:onlineResource></TMPL_comment><TMPL_if station.observingCapabilities><TMPL_foreach station.observingCapabilities AS capability>
       <ef:observingCapability>
         <ef:ObservingCapability gml:id="<TMPL_var CONCAT("oc-",station.fmisid,"-",capability.__index__ + 1)>">
+          <gml:name codeSpace="http://xml.fmi.fi/namespace/parameter/name"><TMPL_var capability.measurandCode><TMPL_if DEFINED(capability.measurandAggregatePeriod)>_<TMPL_var capability.measurandAggregatePeriod><TMPL_if DEFINED(capability.measurandAggregateFunction)>_<TMPL_var capability.measurandAggregateFunction></TMPL_if></TMPL_if></gml:name>
           <ef:observingTime>
             <gml:TimePeriod gml:id="<TMPL_var CONCAT("oc-tp-",station.__index__ + 1,"-",capability.__index__ + 1)>">
               <gml:beginPosition><TMPL_var capability.beginPosition></gml:beginPosition>
