@@ -50,8 +50,8 @@
               <gml:endPosition<TMPL_if IN_SET(capability.endPosition,"9999-12-31T00:00:00Z")> indeterminatePosition="now"/><TMPL_else>><TMPL_var capability.endPosition></gml:endPosition></TMPL_if>
             </gml:TimePeriod>
           </ef:observingTime>
-          <ef:processType <TMPL_if DEFINED(capability.processType)>xlink:href="http://inspire.ec.europa.eu/codeList/ProcessTypeValue/<TMPL_var capability.processType>"<TMPL_else>nilReason="missing"</TMPL_if> />
-          <ef:resultNature <TMPL_if DEFINED(capability.resultNature)> xlink:href="http://inspire.ec.europa.eu/codeList/ResultNatureValue/<TMPL_var capability.resultNature>"<TMPL_else>nilReason="missing"</TMPL_if> />
+          <ef:processType <TMPL_if DEFINED(capability.processType)>xlink:href="http://inspire.ec.europa.eu/codeList/ProcessTypeValue/<TMPL_var capability.processType>"<TMPL_else>xsi:nil="true" nilReason="missing"</TMPL_if> />
+          <ef:resultNature <TMPL_if DEFINED(capability.resultNature)> xlink:href="http://inspire.ec.europa.eu/codeList/ResultNatureValue/<TMPL_var capability.resultNature>"<TMPL_else>xsi:nil="true" nilReason="missing"</TMPL_if> />
           <ef:procedure <TMPL_if DEFINED(capability.processType)>xlink:href="http://xml.fmi.fi/inspire/process/sensor-assembly?stationId=fmisid-<TMPL_var station.fmisid>&amp;since=<TMPL_var capability.beginPosition>&amp;"<TMPL_else>nilReason="missing"</TMPL_if> />
           <ef:observedProperty xlink:title="<TMPL_var capability.measurandName>" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=observation&amp;param=<TMPL_var capability.measurandCode><TMPL_if DEFINED(capability.measurandAggregatePeriod)>_<TMPL_var capability.measurandAggregatePeriod><TMPL_if DEFINED(capability.measurandAggregateFunction)>_<TMPL_var capability.measurandAggregateFunction></TMPL_if></TMPL_if>&amp;language=<TMPL_var language>&amp;"/>
         </ef:ObservingCapability>
