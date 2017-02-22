@@ -29,6 +29,7 @@ const char *P_AGGREGATE_PERIOD = "aggregatePeriod";
 const char *P_MEASURAND_CODE = "measurandCode";
 const char *P_STORAGE_ID = "storageId";
 const char *P_INSPIRE_NAMESPACE = "inspireNamespace";
+const char *P_SHOW_OBSERVING_CAPABILITY = "showObservingCapability";
 }
 
 bw::StoredEnvMonitoringFacilityQueryHandler::StoredEnvMonitoringFacilityQueryHandler(
@@ -99,6 +100,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
   {
     const RequestParameterMap &params = query.get_param_map();
     auto inspireNamespace = params.get_single<std::string>(P_INSPIRE_NAMESPACE);
+    auto showObservingCapability = params.get_optional<bool>(P_SHOW_OBSERVING_CAPABILITY, false);
 
     try
     {
@@ -123,15 +125,18 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
 
       // Get capability data from obsengine.
       StationCapabilityMap stationCapabilityMap;
-      bo::MastQuery scQuery;
-      boost::thread thread1(
-          boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationCapabilities,
-                      this,
-                      boost::ref(scQuery),
-                      boost::ref(stationCapabilityMap),
-                      boost::ref(params),
-                      boost::ref(validStations)));
-
+      boost::thread thread1;
+      if (showObservingCapability)
+      {
+        bo::MastQuery scQuery;
+        thread1 = boost::thread(
+            boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationCapabilities,
+                        this,
+                        boost::ref(scQuery),
+                        boost::ref(stationCapabilityMap),
+                        boost::ref(params),
+                        boost::ref(validStations)));
+      }
       // Get station group data from Observation
       StationGroupMap stationGroupMap;
       bo::MastQuery sgQuery;
@@ -155,6 +160,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
                       boost::ref(networkMemberShipMap),
                       boost::ref(params),
                       boost::ref(validStations)));
+
       thread1.join();
       thread2.join();
       thread3.join();
@@ -198,10 +204,6 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
         {
           StationCapabilityMap::const_iterator scmIt = stationCapabilityMap.find((*vsIt).first);
           StationGroupMap::const_iterator stationGroupMapIt = stationGroupMap.find((*vsIt).first);
-
-          // Show only the stations with some capability.
-          if (scmIt == stationCapabilityMap.end())
-            continue;
 
           // A station must be part of a station group
           if (stationGroupMapIt == stationGroupMap.end())
