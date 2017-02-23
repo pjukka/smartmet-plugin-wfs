@@ -91,6 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Upcoming
+- Remove bounding box calculation from EMN handler
 - Make observing capabilities as optional in EMF handler.
 - Add parameter name for observing capability of EMF
 - Add nillReason attribute for empty elements of EMF response

@@ -15,12 +15,12 @@
   xmlns:swe="http://www.opengis.net/swe/1.0.1"
   xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
   http://inspire.ec.europa.eu/schemas/ef/4.0 http://inspire.ec.europa.eu/schemas/ef/4.0/EnvironmentalMonitoringFacilities.xsd">
-  <TMPL_if (networksMatched > 0)><wfs:boundedBy>
-    <gml:Envelope axisLabels="<TMPL_var bbAxisLabels>" srsName="<TMPL_var bbProjUri>" srsDimension="<TMPL_var bbProjSrsDim>">
+  <TMPL_if (networksMatched > 0)><TMPL_if (DEFINED(bbLowerCorner) && DEFINED(bbUpperCorner))><wfs:boundedBy>
+    <gml:Envelope<TMPL_if DEFINED(bbAxisLabels)> axisLabels="<TMPL_var bbAxisLabels>"</TMPL_if><TMPL_if DEFINED(bbProjUri)> srsName="<TMPL_var bbProjUri>"</TMPL_if><TMPL_if DEFINED(bbProjSrsDim)> srsDimension="<TMPL_var bbProjSrsDim>"</TMPL_if>>
       <gml:lowerCorner><TMPL_var bbLowerCorner></gml:lowerCorner>
       <gml:upperCorner><TMPL_var bbUpperCorner></gml:upperCorner>
     </gml:Envelope>
-  </wfs:boundedBy>
+  </wfs:boundedBy></TMPL_if>
 <TMPL_if DEFINED(networks)><TMPL_foreach networks AS network>
   <wfs:member>
     <ef:EnvironmentalMonitoringNetwork gml:id="<TMPL_var CONCAT("emn-",network.__index__ + 1,"-networkid-",network.id)>">

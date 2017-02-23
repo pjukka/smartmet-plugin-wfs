@@ -16,7 +16,7 @@ const char* P_NETWORK_NAME = "networkName";
 const char* P_STATION_ID = "stationId";
 const char* P_STATION_NAME = "stationName";
 const char* P_MISSING_TEXT = "missingText";
-const char *P_INSPIRE_NAMESPACE = "inspireNamespace";
+const char* P_INSPIRE_NAMESPACE = "inspireNamespace";
 }
 
 bw::StoredEnvMonitoringNetworkQueryHandler::StoredEnvMonitoringNetworkQueryHandler(
@@ -119,14 +119,14 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
       emnQueryParams.addField("GROUP_NAME");
       emnQueryParams.addField("GROUP_DESC");
 
-      // Join on STATIONS_V1 view
-      emnQueryParams.addJoinOnConfig(dbRegistryConfig("STATIONS_V1"), "STATION_ID");
-      emnQueryParams.addField("STATION_ID");
-      emnQueryParams.addField("STATION_GEOMETRY.sdo_point.x", "LONGITUDE");
-      emnQueryParams.addField("STATION_GEOMETRY.sdo_point.y", "LATITUDE");
+      if (not stationNameVector.empty())
+      {
+        // Join on STATION_NAMES_V1 view. Needed for search of netwprk by STATION_NAME
+        emnQueryParams.addJoinOnConfig(dbRegistryConfig("STATION_NAMES_V1"), "STATION_ID");
+      }
 
       emnQueryParams.addOrderBy("GROUP_ID", "ASC");
-      emnQueryParams.addOrderBy("STATION_ID", "ASC");
+      emnQueryParams.useDistinct();
 
       int class_id = 81;
       emnQueryParams.addOperation("OR_GROUP_class_id", "CLASS_ID", "PropertyIsEqualTo", class_id);
@@ -146,10 +146,13 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
            ++it)
         emnQueryParams.addOperation("OR_GROUP_network", "STATION_ID", "PropertyIsEqualTo", *it);
 
-      for (std::vector<std::string>::const_iterator it = stationNameVector.begin();
-           it != stationNameVector.end();
-           ++it)
-        emnQueryParams.addOperation("OR_GROUP_network", "STATION_NAME", "PropertyIsLike", *it);
+      if (not stationNameVector.empty())
+      {
+        for (std::vector<std::string>::const_iterator it = stationNameVector.begin();
+             it != stationNameVector.end();
+             ++it)
+          emnQueryParams.addOperation("OR_GROUP_network", "STATION_NAME", "PropertyIsLike", *it);
+      }
 
       emnQueryParams.addOperation(
           "OR_GROUP_language_code", "LANGUAGE_CODE", "PropertyIsEqualTo", lang);
@@ -179,73 +182,13 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
             resultContainer->begin("GROUP_NAME");
         bo::QueryResult::ValueVectorType::const_iterator netDescIt =
             resultContainer->begin("GROUP_DESC");
-        bo::QueryResult::ValueVectorType::const_iterator longitudeIt =
-            resultContainer->begin("LONGITUDE");
-        bo::QueryResult::ValueVectorType::const_iterator longitudeItEnd =
-            resultContainer->end("LONGITUDE");
-        bo::QueryResult::ValueVectorType::const_iterator latitudeIt =
-            resultContainer->begin("LATITUDE");
-        bo::QueryResult::ValueVectorType::const_iterator latitudeItEnd =
-            resultContainer->end("LATITUDE");
 
         size_t netNameVectorSize = resultContainer->size("GROUP_NAME");
         size_t netIdVectorSize = netIdItEnd - netIdIt;
-        size_t stationLongitudeVectorSize = longitudeItEnd - longitudeIt;
-        size_t stationLatitudeVectorSize = latitudeItEnd - latitudeIt;
-
         std::string networkId;
 
-        if (netIdVectorSize == netNameVectorSize and
-            netIdVectorSize == stationLongitudeVectorSize and
-            netIdVectorSize == stationLatitudeVectorSize)
+        if (netIdVectorSize == netNameVectorSize)
         {
-          SmartMet::Engine::Gis::CRSRegistry& crs_registry = get_plugin_data().get_crs_registry();
-
-          // Networks are bounded by..
-          const std::string boundenByCRS = "EPSG:4258";
-          bool bbShowHeight = false;
-          std::string bbProjUri;
-          std::string bbProjEpochUri;
-          std::string bbAxisLabels;
-          crs_registry.get_attribute(boundenByCRS, "showHeight", &bbShowHeight);
-          crs_registry.get_attribute(boundenByCRS, "projUri", &bbProjUri);
-          crs_registry.get_attribute(boundenByCRS, "projEpochUri", &bbProjEpochUri);
-          crs_registry.get_attribute(boundenByCRS, "axisLabels", &bbAxisLabels);
-
-          // Calculating bounding box of the station coordinates.
-          std::pair<double, double> longitudeMinMax =
-              bo::QueryResult::minMax(longitudeIt, longitudeItEnd);
-          std::pair<double, double> latitudeMinMax =
-              bo::QueryResult::minMax(latitudeIt, latitudeItEnd);
-
-          // Bounding box values
-          std::string bbLowerCorner = (m_missingText + " " + m_missingText);
-          std::string bbUpperCorner = (m_missingText + " " + m_missingText);
-          if (longitudeMinMax.first <= longitudeMinMax.second and
-              latitudeMinMax.first <= latitudeMinMax.second)
-          {
-            std::ostringstream lower;
-            lower << std::setprecision(6) << std::fixed << latitudeMinMax.first << " "
-                  << longitudeMinMax.first;
-            bbLowerCorner = lower.str();
-            std::ostringstream upper;
-            upper << std::setprecision(6) << std::fixed << latitudeMinMax.second << " "
-                  << longitudeMinMax.second;
-            bbUpperCorner = upper.str();
-          }
-
-          hash["bbLowerCorner"] = bbLowerCorner;
-          hash["bbUpperCorner"] = bbUpperCorner;
-          hash["bbProjUri"] = bbProjUri;
-          hash["bbProjEpoch_uri"] = bbProjEpochUri;
-          hash["bbAxisLabels"] = bbAxisLabels;
-          hash["bbProjSrsDim"] = (bbShowHeight ? 3 : 2);
-
-          // FIXME!! Use output CRS requested
-          hash["axisLabels"] = bbAxisLabels;
-          hash["projUri"] = bbProjUri;
-          hash["projSrsDim"] = (bbShowHeight ? 3 : 2);
-
           // Filling the network and station data
           int networkCounter = 0;
           for (; netIdIt != netIdItEnd; ++netIdIt, ++netNameIt, ++netDescIt)
