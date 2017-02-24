@@ -11,6 +11,7 @@ namespace bo = SmartMet::Engine::Observation;
 
 namespace
 {
+const char* P_CLASS_ID = "networkClassId";
 const char* P_NETWORK_ID = "networkId";
 const char* P_NETWORK_NAME = "networkName";
 const char* P_STATION_ID = "stationId";
@@ -31,6 +32,7 @@ bw::StoredEnvMonitoringNetworkQueryHandler::StoredEnvMonitoringNetworkQueryHandl
 {
   try
   {
+    register_array_param<int64_t>(P_CLASS_ID, *config);
     register_array_param<int64_t>(P_NETWORK_ID, *config);
     register_array_param<std::string>(P_NETWORK_NAME, *config, false);
     register_array_param<int64_t>(P_STATION_ID, *config);
@@ -98,6 +100,9 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
       bw::SupportsLocationParameters::engOrFinToEnOrFi(lang);
 
       // Get request parameters.
+      std::vector<int64_t> classIdVector;
+      params.get<int64_t>(P_CLASS_ID, std::back_inserter(classIdVector));
+
       std::vector<int64_t> networkIdVector;
       params.get<int64_t>(P_NETWORK_ID, std::back_inserter(networkIdVector));
 
@@ -128,8 +133,8 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
       emnQueryParams.addOrderBy("GROUP_ID", "ASC");
       emnQueryParams.useDistinct();
 
-      int class_id = 81;
-      emnQueryParams.addOperation("OR_GROUP_class_id", "CLASS_ID", "PropertyIsEqualTo", class_id);
+      for (auto& classId : classIdVector)
+        emnQueryParams.addOperation("OR_GROUP_class_id", "CLASS_ID", "PropertyIsEqualTo", classId);
 
       for (std::vector<int64_t>::const_iterator it = networkIdVector.begin();
            it != networkIdVector.end();
