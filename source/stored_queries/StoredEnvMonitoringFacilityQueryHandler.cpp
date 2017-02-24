@@ -464,16 +464,6 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::getValidStations(
     pt::ptime startTime = params.get_single<pt::ptime>(P_BEGIN_TIME);
     pt::ptime endTime = params.get_single<pt::ptime>(P_END_TIME);
 
-    // Some must be defined
-    if (stationIdVector.empty() and stationNameVector.empty() and groupIdVector.empty())
-    {
-      std::ostringstream msg;
-      msg << "Location or network has to be given!";
-      SmartMet::Spine::Exception exception(BCP, msg.str());
-      exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
-      throw exception;
-    }
-
     bo::MastQueryParams stationQueryParams(dbRegistryConfig("OBSERVATIONS_V2"));
     stationQueryParams.addJoinOnConfig(dbRegistryConfig("STATIONS_V1"), "STATION_ID");
     stationQueryParams.addJoinOnConfig(dbRegistryConfig("GROUP_MEMBERS_V1"), "STATION_ID");
