@@ -17,6 +17,7 @@ namespace pt = boost::posix_time;
 
 namespace
 {
+const char* P_CLASS_ID = "networkClassId";
 const char *P_GROUP_ID = "networkId";
 const char *P_STATION_ID = "stationId";
 const char *P_STATION_NAME = "stationName";
@@ -46,6 +47,7 @@ bw::StoredEnvMonitoringFacilityQueryHandler::StoredEnvMonitoringFacilityQueryHan
   {
     register_scalar_param<pt::ptime>(P_BEGIN_TIME, *config);
     register_scalar_param<pt::ptime>(P_END_TIME, *config);
+    register_array_param<int64_t>(P_CLASS_ID, *config);
     register_array_param<int64_t>(P_GROUP_ID, *config);
     register_array_param<int64_t>(P_STATION_ID, *config);
     register_array_param<std::string>(P_STATION_NAME, *config, false);
@@ -758,6 +760,10 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::getStationGroupData(
     pt::ptime startTime = params.get_single<pt::ptime>(P_BEGIN_TIME);
     pt::ptime endTime = params.get_single<pt::ptime>(P_END_TIME);
 
+    std::vector<int64_t> classIdVector;
+    params.get<int64_t>(P_CLASS_ID, std::back_inserter(classIdVector));
+
+
     bo::MastQueryParams sgQueryParams(dbRegistryConfig("GROUP_MEMBERS_V1"));
     sgQueryParams.addJoinOnConfig(dbRegistryConfig("STATION_GROUPS_V2"), "GROUP_ID");
 
@@ -776,8 +782,9 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::getStationGroupData(
       sgQueryParams.addOperation(
           "OR_GROUP_station", "STATION_ID", "PropertyIsEqualTo", (*it).second.station_id);
 
-    int class_id = 81;
-    sgQueryParams.addOperation("OR_GROUP_class_id", "CLASS_ID", "PropertyIsEqualTo", class_id);
+
+    for (auto& classId : classIdVector)
+      sgQueryParams.addOperation("OR_GROUP_class_id", "CLASS_ID", "PropertyIsEqualTo", classId);
 
     // Select stations that match with the given time interval.
     sgQueryParams.addOperation(
