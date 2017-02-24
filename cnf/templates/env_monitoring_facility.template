@@ -38,7 +38,9 @@
           <ins_base:localId><TMPL_var station.fmisid></ins_base:localId>
           <ins_base:namespace><TMPL_if DEFINED(station.inspireNamespace)><TMPL_var station.inspireNamespace><TMPL_else>fi.fmi.station.id</TMPL_if></ins_base:namespace>
         </ins_base:Identifier>
-      </ef:inspireId><TMPL_if DEFINED(station.mediaMonitored)><TMPL_foreach station.mediaMonitored AS media>
+      </ef:inspireId>
+      <ef:name<TMPL_if DEFINED(station.name)>><TMPL_var station.name></ef:name><TMPL_else> xsi:nil="true" nilReason="missing" /></TMPL_if>
+      <TMPL_if DEFINED(station.mediaMonitored)><TMPL_foreach station.mediaMonitored AS media>
       <ef:mediaMonitored xlink:href="http://inspire.ec.europa.eu/codeList/MediaValue/<TMPL_var media>" xlink:title="<TMPL_var media>"/></TMPL_foreach><TMPL_else><ef:mediaMonitored/></TMPL_if><TMPL_comment>
       <ef:onlineResource><TMPL_if station.onlineResource><TMPL_var station.onlineResource><TMPL_else>http://ilmatieteenlaitos.fi/havaintoasemat/</TMPL_if></ef:onlineResource></TMPL_comment><TMPL_if station.observingCapabilities><TMPL_foreach station.observingCapabilities AS capability>
       <ef:observingCapability>
