@@ -91,6 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Upcoming
+- Add station network class configuration capability to EMF and EMN handlers
 - Remove bounding box calculation from EMN handler
 - Make observing capabilities as optional in EMF handler.
 - Add parameter name for observing capability of EMF
