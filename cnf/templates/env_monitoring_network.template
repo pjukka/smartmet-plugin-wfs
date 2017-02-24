@@ -32,7 +32,7 @@
       </ef:inspireId>
       <ef:name><TMPL_var network.name></ef:name>
       <ef:additionalDescription><TMPL_var network.description></ef:additionalDescription>
-      <ef:mediaMonitored xlink:href="http://inspire.ec.europa.eu/codeList/MediaValue/<TMPL_if network.mediaMonitored><TMPL_var network.mediaMonitored><TMPL_else>air</TMPL_if>" xlink:title="<TMPL_if network.mediaMonitored><TMPL_var network.mediaMonitored><TMPL_else>air</TMPL_if>"/>
+      <ef:mediaMonitored xlink:href="<TMPL_if network.mediaMonitored>http://inspire.ec.europa.eu/codeList/MediaValue/<TMPL_var network.mediaMonitored>" xlink:title="<TMPL_var network.mediaMonitored>"<TMPL_else>" nilReason="missing"</TMPL_if> />
       <ef:responsibleParty>
         <ins_base2:RelatedParty>
           <ins_base2:organisationName>
