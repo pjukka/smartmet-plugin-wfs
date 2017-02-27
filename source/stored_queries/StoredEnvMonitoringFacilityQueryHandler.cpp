@@ -17,7 +17,7 @@ namespace pt = boost::posix_time;
 
 namespace
 {
-const char* P_CLASS_ID = "networkClassId";
+const char *P_CLASS_ID = "networkClassId";
 const char *P_GROUP_ID = "networkId";
 const char *P_STATION_ID = "stationId";
 const char *P_STATION_NAME = "stationName";
@@ -104,289 +104,280 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
     auto inspireNamespace = params.get_single<std::string>(P_INSPIRE_NAMESPACE);
     auto showObservingCapability = params.get_optional<bool>(P_SHOW_OBSERVING_CAPABILITY, false);
 
-    try
+    if (m_debugLevel > 0)
+      query.dump_query_info(std::cout);
+
+    bool LPNN_active = false;
+    bool WMO_active = true;
+    bool LIVI_active = false;
+    bool ICAO_active = true;
+    bool AWSMETAR_active = false;
+    bool SYKE_active = false;
+    bool NORDLIST_active = false;
+    bool AIRQUALITY_active = false;
+    bool RADAR_active = true;
+    bool IMAGE_active = false;
+
+    // Get valid stations
+    bo::MastQuery validStationsQuery;
+    StationDataMap validStations;
+    getValidStations(validStationsQuery, validStations, params);
+
+    // Get capability data from obsengine.
+    StationCapabilityMap stationCapabilityMap;
+    boost::thread thread1;
+    if (showObservingCapability)
     {
-      if (m_debugLevel > 0)
-        query.dump_query_info(std::cout);
-
-      bool LPNN_active = false;
-      bool WMO_active = true;
-      bool LIVI_active = false;
-      bool ICAO_active = true;
-      bool AWSMETAR_active = false;
-      bool SYKE_active = false;
-      bool NORDLIST_active = false;
-      bool AIRQUALITY_active = false;
-      bool RADAR_active = true;
-      bool IMAGE_active = false;
-
-      // Get valid stations
-      bo::MastQuery validStationsQuery;
-      StationDataMap validStations;
-      getValidStations(validStationsQuery, validStations, params);
-
-      // Get capability data from obsengine.
-      StationCapabilityMap stationCapabilityMap;
-      boost::thread thread1;
-      if (showObservingCapability)
-      {
-        bo::MastQuery scQuery;
-        thread1 = boost::thread(
-            boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationCapabilities,
-                        this,
-                        boost::ref(scQuery),
-                        boost::ref(stationCapabilityMap),
-                        boost::ref(params),
-                        boost::ref(validStations)));
-      }
-      // Get station group data from Observation
-      StationGroupMap stationGroupMap;
-      bo::MastQuery sgQuery;
-      boost::thread thread2(
-          boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationGroupData,
+      bo::MastQuery scQuery;
+      thread1 = boost::thread(
+          boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationCapabilities,
                       this,
-                      language,
-                      boost::ref(sgQuery),
-                      boost::ref(stationGroupMap),
+                      boost::ref(scQuery),
+                      boost::ref(stationCapabilityMap),
                       boost::ref(params),
                       boost::ref(validStations)));
-
-      // Get network membership data from Observation
-      NetworkMembershipMap networkMemberShipMap;
-      bo::MastQuery emfQuery;
-      boost::thread thread3(
-          boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationNetworkMembershipData,
-                      this,
-                      language,
-                      boost::ref(emfQuery),
-                      boost::ref(networkMemberShipMap),
-                      boost::ref(params),
-                      boost::ref(validStations)));
-
-      thread1.join();
-      thread2.join();
-      thread3.join();
-
-      CTPP::CDT hash;
-      int stationCounter = 0;
-
-      if (not validStations.empty())
-      {
-        SmartMet::Engine::Gis::CRSRegistry &crs_registry = get_plugin_data().get_crs_registry();
-
-        // Stations are bounded by..
-        const std::string boundedByCRS = "EPSG:4258";
-        bool bbShowHeight = false;
-        std::string bbProjUri;
-        std::string bbProjEpochUri;
-        std::string bbAxisLabels;
-        crs_registry.get_attribute(boundedByCRS, "showHeight", &bbShowHeight);
-        crs_registry.get_attribute(boundedByCRS, "projUri", &bbProjUri);
-        crs_registry.get_attribute(boundedByCRS, "projEpochUri", &bbProjEpochUri);
-        crs_registry.get_attribute(boundedByCRS, "axisLabels", &bbAxisLabels);
-
-        hash["bbProjUri"] = bbProjUri;
-        hash["bbProjEpoch_uri"] = bbProjEpochUri;
-        hash["bbAxisLabels"] = bbAxisLabels;
-        hash["bbProjSrsDim"] = (bbShowHeight ? 3 : 2);
-
-        // FIXME!! Use output CRS requested
-        hash["axisLabels"] = bbAxisLabels;
-        hash["projUri"] = bbProjUri;
-        hash["projSrsDim"] = (bbShowHeight ? 3 : 2);
-
-        // Filling the network and station data
-        std::string lang = language;
-        SupportsLocationParameters::engOrFinToEnOrFi(lang);
-
-        for (bw::StoredEnvMonitoringFacilityQueryHandler::StationDataMap::iterator vsIt =
-                 validStations.begin();
-             vsIt != validStations.end();
-             ++vsIt)
-        {
-          StationCapabilityMap::const_iterator scmIt = stationCapabilityMap.find((*vsIt).first);
-          StationGroupMap::const_iterator stationGroupMapIt = stationGroupMap.find((*vsIt).first);
-
-          // A station must be part of a station group
-          if (stationGroupMapIt == stationGroupMap.end())
-            continue;
-
-          // Station data
-          hash["stations"][stationCounter]["fmisid"] = (*vsIt).first;
-          hash["stations"][stationCounter]["mobile"] =
-              (bo::QueryResult::toString((*vsIt).second.stationary) == "N" ? "true" : "false");
-          hash["stations"][stationCounter]["beginPosition"] =
-              bo::QueryResult::toString((*vsIt).second.station_start);
-          hash["stations"][stationCounter]["endPosition"] =
-              bo::QueryResult::toString((*vsIt).second.station_end);
-          hash["stations"][stationCounter]["name"] =
-              bo::QueryResult::toString((*vsIt).second.station_name);
-          hash["stations"][stationCounter]["opActivityPeriods"][0]["beginPosition"] =
-              bo::QueryResult::toString((*vsIt).second.station_start);
-          hash["stations"][stationCounter]["opActivityPeriods"][0]["endPosition"] =
-              bo::QueryResult::toString((*vsIt).second.station_end);
-          hash["stations"][stationCounter]["inspireNamespace"] = inspireNamespace;
-          hash["stations"][stationCounter]["country-ISO-3166-Numeric"] =
-              bo::QueryResult::toString((*vsIt).second.country_id, 0);
-
-          std::string countryName;
-
-          // Data from Geonames
-          SmartMet::Spine::LocationList locList = m_geoEngine->suggest((*vsIt).first, "fmisid");
-          if (not locList.empty())
-          {
-            SmartMet::Spine::LocationPtr stationLocPtr = locList.front();
-            if (stationLocPtr->geoid != 0)
-              hash["stations"][stationCounter]["geoid"] =
-                  boost::lexical_cast<std::string>(stationLocPtr->geoid);
-            if (not stationLocPtr->area.empty())
-              hash["stations"][stationCounter]["region"] = stationLocPtr->area;
-            if (not stationLocPtr->country.empty())
-              hash["stations"][stationCounter]["country"] = stationLocPtr->country;
-          }
-
-          // Geonames does not support country name search by using ISO-3166 Numeric value.
-          // So here we do special handling for the stations in Finland and Sweden.
-          std::string tmpCountryName;
-          const std::string countryId = bo::QueryResult::toString((*vsIt).second.country_id);
-          if (countryId == "246")
-            tmpCountryName = m_geoEngine->countryName("FI", lang);
-          else if (countryId == "752")
-            tmpCountryName = m_geoEngine->countryName("SE", lang);
-
-          if (not tmpCountryName.empty())
-            hash["stations"][stationCounter]["country"] = tmpCountryName;
-
-          std::string pos = bo::QueryResult::toString((*vsIt).second.latitude, 6) + " " +
-                            bo::QueryResult::toString((*vsIt).second.longitude, 6);
-          hash["stations"][stationCounter]["position"] = pos;
-          if (bbShowHeight)
-            hash["stations"][stationCounter]["elevation"] =
-                bo::QueryResult::toString((*vsIt).second.elevation, 0);
-
-          // Capability data from Observation
-          if (scmIt != stationCapabilityMap.end())
-          {
-            CTPP::CDT &capabilityCDT = hash["stations"][stationCounter]["observingCapabilities"];
-            StationCapabilityData::const_iterator scmDataIt = scmIt->second.begin();
-            int ocId = 0;
-            MediaMonitored mediaMonitored;
-
-            for (; scmDataIt != scmIt->second.end(); ++scmDataIt)
-            {
-              capabilityCDT[ocId]["measurandId"] =
-                  bo::QueryResult::toString(scmDataIt->measurand_id);
-              capabilityCDT[ocId]["measurandCode"] =
-                  bo::QueryResult::toString(scmDataIt->measurand_code);
-              capabilityCDT[ocId]["measurandName"] =
-                  bo::QueryResult::toString(scmDataIt->measurand_name);
-              capabilityCDT[ocId]["measurandAggregatePeriod"] =
-                  bo::QueryResult::toString(scmDataIt->aggregate_period);
-              std::string aggregate_function =
-                  bo::QueryResult::toString(scmDataIt->aggregate_function);
-              if (not aggregate_function.empty())
-                capabilityCDT[ocId]["measurandAggregateFunction"] = aggregate_function;
-              capabilityCDT[ocId]["beginPosition"] =
-                  bo::QueryResult::toString(scmDataIt->earliest_data);
-              capabilityCDT[ocId]["endPosition"] =
-                  bo::QueryResult::toString(scmDataIt->latest_data);
-              ++ocId;
-
-              // mediaMonitored object discards the invalid values.
-              mediaMonitored.add(bo::QueryResult::toString(scmDataIt->measurand_layer));
-            }
-
-            int mediaValueIndex = 0;
-            for (MediaMonitored::MediaValueSetType::const_iterator it = mediaMonitored.begin();
-                 it != mediaMonitored.end();
-                 ++it)
-              hash["stations"][stationCounter]["mediaMonitored"][mediaValueIndex++] = *it;
-          }
-
-          // Some of the stations are in member groups.
-          NetworkMembershipMap::const_iterator networkMemberShipMapIt =
-              networkMemberShipMap.find((*vsIt).first);
-          if (networkMemberShipMapIt != networkMemberShipMap.end())
-          {
-            for (NetworkMembershipVector::const_iterator it =
-                     (*networkMemberShipMapIt).second.begin();
-                 it != (*networkMemberShipMapIt).second.end();
-                 ++it)
-            {
-              const std::string networkMemberCodeStr = bo::QueryResult::toString((*it).member_code);
-              const std::string networkIdStr = bo::QueryResult::toString((*it).network_id, 0);
-              if (LPNN_active and networkIdStr == "10")
-                hash["stations"][stationCounter]["lpnn"] = networkMemberCodeStr;
-              else if (WMO_active and networkIdStr == "20")
-                hash["stations"][stationCounter]["wmo"] = networkMemberCodeStr;
-              else if (LIVI_active and networkIdStr == "30")
-                hash["stations"][stationCounter]["livi"] = networkMemberCodeStr;
-              else if (ICAO_active and networkIdStr == "40")
-                hash["stations"][stationCounter]["icao"] = networkMemberCodeStr;
-              else if (AWSMETAR_active and networkIdStr == "45")
-                hash["stations"][stationCounter]["awsmetar"] = networkMemberCodeStr;
-              else if (SYKE_active and networkIdStr == "51")
-                hash["stations"][stationCounter]["syke"] = networkMemberCodeStr;
-              else if (NORDLIST_active and networkIdStr == "60")
-                hash["stations"][stationCounter]["nordlist"] = networkMemberCodeStr;
-              else if (AIRQUALITY_active and networkIdStr == "62")
-                hash["stations"][stationCounter]["airquality"] = networkMemberCodeStr;
-              else if (RADAR_active and networkIdStr == "70")
-                hash["stations"][stationCounter]["radar"] = networkMemberCodeStr;
-              else if (IMAGE_active and networkIdStr == "90")
-                hash["stations"][stationCounter]["image"] = networkMemberCodeStr;
-            }
-          }
-
-          // Every station is part of a station group.
-          if (stationGroupMapIt != stationGroupMap.end())
-          {
-            int64_t groupCounter = 0;
-            for (StationGroupVector::const_iterator it = (*stationGroupMapIt).second.begin();
-                 it != (*stationGroupMapIt).second.end();
-                 ++it)
-            {
-              hash["stations"][stationCounter]["networks"][groupCounter]["id"] =
-                  bo::QueryResult::toString((*it).group_id, 0);
-              hash["stations"][stationCounter]["networks"][groupCounter]["name"] =
-                  bo::QueryResult::toString((*it).group_name);
-              groupCounter++;
-            }
-          }
-
-          // Count of the stations
-          stationCounter++;
-        }
-      }
-
-      const std::string stationsMatched = boost::to_string(stationCounter);
-      hash["stationsMatched"] = stationsMatched;
-      hash["stationsReturned"] = stationsMatched;
-      hash["responseTimestamp"] =
-          boost::posix_time::to_iso_extended_string(get_plugin_data().get_time_stamp()) + "Z";
-      hash["queryId"] = query.get_query_id();
-      hash["fmi_apikey"] = QueryBase::FMI_APIKEY_SUBST;
-      hash["fmi_apikey_prefix"] = bw::QueryBase::FMI_APIKEY_PREFIX_SUBST;
-      hash["hostname"] = QueryBase::HOSTNAME_SUBST;
-      hash["language"] = language;
-
-      // Format output
-      format_output(hash, output, query.get_use_debug_format());
-
-    }  // In case of some other failures
-    catch (...)
-    {
-      // Set language for exception and re-throw it
-      SmartMet::Spine::Exception exception(BCP, "Operation processing failed!", NULL);
-      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
-        exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
-      exception.addParameter(WFS_LANGUAGE, language);
-      throw exception;
     }
-  }
+    // Get station group data from Observation
+    StationGroupMap stationGroupMap;
+    bo::MastQuery sgQuery;
+    boost::thread thread2(
+        boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationGroupData,
+                    this,
+                    language,
+                    boost::ref(sgQuery),
+                    boost::ref(stationGroupMap),
+                    boost::ref(params),
+                    boost::ref(validStations)));
+
+    // Get network membership data from Observation
+    NetworkMembershipMap networkMemberShipMap;
+    bo::MastQuery emfQuery;
+    boost::thread thread3(
+        boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationNetworkMembershipData,
+                    this,
+                    language,
+                    boost::ref(emfQuery),
+                    boost::ref(networkMemberShipMap),
+                    boost::ref(params),
+                    boost::ref(validStations)));
+
+    thread1.join();
+    thread2.join();
+    thread3.join();
+
+    CTPP::CDT hash;
+    int stationCounter = 0;
+
+    if (not validStations.empty())
+    {
+      SmartMet::Engine::Gis::CRSRegistry &crs_registry = get_plugin_data().get_crs_registry();
+
+      // Stations are bounded by..
+      const std::string boundedByCRS = "EPSG:4258";
+      bool bbShowHeight = false;
+      std::string bbProjUri;
+      std::string bbProjEpochUri;
+      std::string bbAxisLabels;
+      crs_registry.get_attribute(boundedByCRS, "showHeight", &bbShowHeight);
+      crs_registry.get_attribute(boundedByCRS, "projUri", &bbProjUri);
+      crs_registry.get_attribute(boundedByCRS, "projEpochUri", &bbProjEpochUri);
+      crs_registry.get_attribute(boundedByCRS, "axisLabels", &bbAxisLabels);
+
+      hash["bbProjUri"] = bbProjUri;
+      hash["bbProjEpoch_uri"] = bbProjEpochUri;
+      hash["bbAxisLabels"] = bbAxisLabels;
+      hash["bbProjSrsDim"] = (bbShowHeight ? 3 : 2);
+
+      // FIXME!! Use output CRS requested
+      hash["axisLabels"] = bbAxisLabels;
+      hash["projUri"] = bbProjUri;
+      hash["projSrsDim"] = (bbShowHeight ? 3 : 2);
+
+      // Filling the network and station data
+      std::string lang = language;
+      SupportsLocationParameters::engOrFinToEnOrFi(lang);
+
+      for (bw::StoredEnvMonitoringFacilityQueryHandler::StationDataMap::iterator vsIt =
+               validStations.begin();
+           vsIt != validStations.end();
+           ++vsIt)
+      {
+        StationCapabilityMap::const_iterator scmIt = stationCapabilityMap.find((*vsIt).first);
+        StationGroupMap::const_iterator stationGroupMapIt = stationGroupMap.find((*vsIt).first);
+
+        // A station must be part of a station group
+        if (stationGroupMapIt == stationGroupMap.end())
+          continue;
+
+        // Station data
+        hash["stations"][stationCounter]["fmisid"] = (*vsIt).first;
+        hash["stations"][stationCounter]["mobile"] =
+            (bo::QueryResult::toString((*vsIt).second.stationary) == "N" ? "true" : "false");
+        hash["stations"][stationCounter]["beginPosition"] =
+            bo::QueryResult::toString((*vsIt).second.station_start);
+        hash["stations"][stationCounter]["endPosition"] =
+            bo::QueryResult::toString((*vsIt).second.station_end);
+        hash["stations"][stationCounter]["name"] =
+            bo::QueryResult::toString((*vsIt).second.station_name);
+        hash["stations"][stationCounter]["opActivityPeriods"][0]["beginPosition"] =
+            bo::QueryResult::toString((*vsIt).second.station_start);
+        hash["stations"][stationCounter]["opActivityPeriods"][0]["endPosition"] =
+            bo::QueryResult::toString((*vsIt).second.station_end);
+        hash["stations"][stationCounter]["inspireNamespace"] = inspireNamespace;
+        hash["stations"][stationCounter]["country-ISO-3166-Numeric"] =
+            bo::QueryResult::toString((*vsIt).second.country_id, 0);
+
+        std::string countryName;
+
+        // Data from Geonames
+        SmartMet::Spine::LocationList locList = m_geoEngine->suggest((*vsIt).first, "fmisid");
+        if (not locList.empty())
+        {
+          SmartMet::Spine::LocationPtr stationLocPtr = locList.front();
+          if (stationLocPtr->geoid != 0)
+            hash["stations"][stationCounter]["geoid"] =
+                boost::lexical_cast<std::string>(stationLocPtr->geoid);
+          if (not stationLocPtr->area.empty())
+            hash["stations"][stationCounter]["region"] = stationLocPtr->area;
+          if (not stationLocPtr->country.empty())
+            hash["stations"][stationCounter]["country"] = stationLocPtr->country;
+        }
+
+        // Geonames does not support country name search by using ISO-3166 Numeric value.
+        // So here we do special handling for the stations in Finland and Sweden.
+        std::string tmpCountryName;
+        const std::string countryId = bo::QueryResult::toString((*vsIt).second.country_id);
+        if (countryId == "246")
+          tmpCountryName = m_geoEngine->countryName("FI", lang);
+        else if (countryId == "752")
+          tmpCountryName = m_geoEngine->countryName("SE", lang);
+
+        if (not tmpCountryName.empty())
+          hash["stations"][stationCounter]["country"] = tmpCountryName;
+
+        std::string pos = bo::QueryResult::toString((*vsIt).second.latitude, 6) + " " +
+                          bo::QueryResult::toString((*vsIt).second.longitude, 6);
+        hash["stations"][stationCounter]["position"] = pos;
+        if (bbShowHeight)
+          hash["stations"][stationCounter]["elevation"] =
+              bo::QueryResult::toString((*vsIt).second.elevation, 0);
+
+        // Capability data from Observation
+        if (scmIt != stationCapabilityMap.end())
+        {
+          CTPP::CDT &capabilityCDT = hash["stations"][stationCounter]["observingCapabilities"];
+          StationCapabilityData::const_iterator scmDataIt = scmIt->second.begin();
+          int ocId = 0;
+          MediaMonitored mediaMonitored;
+
+          for (; scmDataIt != scmIt->second.end(); ++scmDataIt)
+          {
+            capabilityCDT[ocId]["measurandId"] = bo::QueryResult::toString(scmDataIt->measurand_id);
+            capabilityCDT[ocId]["measurandCode"] =
+                bo::QueryResult::toString(scmDataIt->measurand_code);
+            capabilityCDT[ocId]["measurandName"] =
+                bo::QueryResult::toString(scmDataIt->measurand_name);
+            capabilityCDT[ocId]["measurandAggregatePeriod"] =
+                bo::QueryResult::toString(scmDataIt->aggregate_period);
+            std::string aggregate_function =
+                bo::QueryResult::toString(scmDataIt->aggregate_function);
+            if (not aggregate_function.empty())
+              capabilityCDT[ocId]["measurandAggregateFunction"] = aggregate_function;
+            capabilityCDT[ocId]["beginPosition"] =
+                bo::QueryResult::toString(scmDataIt->earliest_data);
+            capabilityCDT[ocId]["endPosition"] = bo::QueryResult::toString(scmDataIt->latest_data);
+            ++ocId;
+
+            // mediaMonitored object discards the invalid values.
+            mediaMonitored.add(bo::QueryResult::toString(scmDataIt->measurand_layer));
+          }
+
+          int mediaValueIndex = 0;
+          for (MediaMonitored::MediaValueSetType::const_iterator it = mediaMonitored.begin();
+               it != mediaMonitored.end();
+               ++it)
+            hash["stations"][stationCounter]["mediaMonitored"][mediaValueIndex++] = *it;
+        }
+
+        // Some of the stations are in member groups.
+        NetworkMembershipMap::const_iterator networkMemberShipMapIt =
+            networkMemberShipMap.find((*vsIt).first);
+        if (networkMemberShipMapIt != networkMemberShipMap.end())
+        {
+          for (NetworkMembershipVector::const_iterator it =
+                   (*networkMemberShipMapIt).second.begin();
+               it != (*networkMemberShipMapIt).second.end();
+               ++it)
+          {
+            const std::string networkMemberCodeStr = bo::QueryResult::toString((*it).member_code);
+            const std::string networkIdStr = bo::QueryResult::toString((*it).network_id, 0);
+            if (LPNN_active and networkIdStr == "10")
+              hash["stations"][stationCounter]["lpnn"] = networkMemberCodeStr;
+            else if (WMO_active and networkIdStr == "20")
+              hash["stations"][stationCounter]["wmo"] = networkMemberCodeStr;
+            else if (LIVI_active and networkIdStr == "30")
+              hash["stations"][stationCounter]["livi"] = networkMemberCodeStr;
+            else if (ICAO_active and networkIdStr == "40")
+              hash["stations"][stationCounter]["icao"] = networkMemberCodeStr;
+            else if (AWSMETAR_active and networkIdStr == "45")
+              hash["stations"][stationCounter]["awsmetar"] = networkMemberCodeStr;
+            else if (SYKE_active and networkIdStr == "51")
+              hash["stations"][stationCounter]["syke"] = networkMemberCodeStr;
+            else if (NORDLIST_active and networkIdStr == "60")
+              hash["stations"][stationCounter]["nordlist"] = networkMemberCodeStr;
+            else if (AIRQUALITY_active and networkIdStr == "62")
+              hash["stations"][stationCounter]["airquality"] = networkMemberCodeStr;
+            else if (RADAR_active and networkIdStr == "70")
+              hash["stations"][stationCounter]["radar"] = networkMemberCodeStr;
+            else if (IMAGE_active and networkIdStr == "90")
+              hash["stations"][stationCounter]["image"] = networkMemberCodeStr;
+          }
+        }
+
+        // Every station is part of a station group.
+        if (stationGroupMapIt != stationGroupMap.end())
+        {
+          int64_t groupCounter = 0;
+          for (StationGroupVector::const_iterator it = (*stationGroupMapIt).second.begin();
+               it != (*stationGroupMapIt).second.end();
+               ++it)
+          {
+            hash["stations"][stationCounter]["networks"][groupCounter]["id"] =
+                bo::QueryResult::toString((*it).group_id, 0);
+            hash["stations"][stationCounter]["networks"][groupCounter]["name"] =
+                bo::QueryResult::toString((*it).group_name);
+            groupCounter++;
+          }
+        }
+
+        // Count of the stations
+        stationCounter++;
+      }
+    }
+
+    const std::string stationsMatched = boost::to_string(stationCounter);
+    hash["stationsMatched"] = stationsMatched;
+    hash["stationsReturned"] = stationsMatched;
+    hash["responseTimestamp"] =
+        boost::posix_time::to_iso_extended_string(get_plugin_data().get_time_stamp()) + "Z";
+    hash["queryId"] = query.get_query_id();
+    hash["fmi_apikey"] = QueryBase::FMI_APIKEY_SUBST;
+    hash["fmi_apikey_prefix"] = bw::QueryBase::FMI_APIKEY_PREFIX_SUBST;
+    hash["hostname"] = QueryBase::HOSTNAME_SUBST;
+    hash["language"] = language;
+
+    // Format output
+    format_output(hash, output, query.get_use_debug_format());
+
+  }  // In case of some other failures
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    // Set language for exception and re-throw it
+    SmartMet::Spine::Exception exception(BCP, "Operation processing failed!", NULL);
+    if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+      exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
+    exception.addParameter(WFS_LANGUAGE, language);
+    throw exception;
   }
 }
 
@@ -753,7 +744,6 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::getStationGroupData(
     std::vector<int64_t> classIdVector;
     params.get<int64_t>(P_CLASS_ID, std::back_inserter(classIdVector));
 
-
     bo::MastQueryParams sgQueryParams(dbRegistryConfig("GROUP_MEMBERS_V1"));
     sgQueryParams.addJoinOnConfig(dbRegistryConfig("STATION_GROUPS_V2"), "GROUP_ID");
 
@@ -772,8 +762,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::getStationGroupData(
       sgQueryParams.addOperation(
           "OR_GROUP_station", "STATION_ID", "PropertyIsEqualTo", (*it).second.station_id);
 
-
-    for (auto& classId : classIdVector)
+    for (auto &classId : classIdVector)
       sgQueryParams.addOperation("OR_GROUP_class_id", "CLASS_ID", "PropertyIsEqualTo", classId);
 
     // Select stations that match with the given time interval.

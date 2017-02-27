@@ -91,161 +91,153 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
     const auto& params = query.get_param_map();
     auto inspireNamespace = params.get_single<std::string>(P_INSPIRE_NAMESPACE);
 
-    try
+    if (m_debugLevel > 0)
+      query.dump_query_info(std::cout);
+
+    std::string lang = language;
+    bw::SupportsLocationParameters::engOrFinToEnOrFi(lang);
+
+    // Get request parameters.
+    std::vector<int64_t> classIdVector;
+    params.get<int64_t>(P_CLASS_ID, std::back_inserter(classIdVector));
+
+    std::vector<int64_t> networkIdVector;
+    params.get<int64_t>(P_NETWORK_ID, std::back_inserter(networkIdVector));
+
+    std::vector<std::string> networkNameVector;
+    params.get<std::string>(P_NETWORK_NAME, std::back_inserter(networkNameVector));
+
+    std::vector<int64_t> stationIdVector;
+    params.get<int64_t>(P_STATION_ID, std::back_inserter(stationIdVector));
+
+    std::vector<std::string> stationNameVector;
+    params.get<std::string>(P_STATION_NAME, std::back_inserter(stationNameVector));
+
+    // Using GROUP_MEMBERS_V1 as a base configuration
+    bo::MastQueryParams emnQueryParams(dbRegistryConfig("GROUP_MEMBERS_V1"));
+    emnQueryParams.addField("GROUP_ID");
+
+    // Join on NETWORKS_V1 view
+    emnQueryParams.addJoinOnConfig(dbRegistryConfig("STATION_GROUPS_V2"), "GROUP_ID");
+    emnQueryParams.addField("GROUP_NAME");
+    emnQueryParams.addField("GROUP_DESC");
+
+    if (not stationNameVector.empty())
     {
-      if (m_debugLevel > 0)
-        query.dump_query_info(std::cout);
-
-      std::string lang = language;
-      bw::SupportsLocationParameters::engOrFinToEnOrFi(lang);
-
-      // Get request parameters.
-      std::vector<int64_t> classIdVector;
-      params.get<int64_t>(P_CLASS_ID, std::back_inserter(classIdVector));
-
-      std::vector<int64_t> networkIdVector;
-      params.get<int64_t>(P_NETWORK_ID, std::back_inserter(networkIdVector));
-
-      std::vector<std::string> networkNameVector;
-      params.get<std::string>(P_NETWORK_NAME, std::back_inserter(networkNameVector));
-
-      std::vector<int64_t> stationIdVector;
-      params.get<int64_t>(P_STATION_ID, std::back_inserter(stationIdVector));
-
-      std::vector<std::string> stationNameVector;
-      params.get<std::string>(P_STATION_NAME, std::back_inserter(stationNameVector));
-
-      // Using GROUP_MEMBERS_V1 as a base configuration
-      bo::MastQueryParams emnQueryParams(dbRegistryConfig("GROUP_MEMBERS_V1"));
-      emnQueryParams.addField("GROUP_ID");
-
-      // Join on NETWORKS_V1 view
-      emnQueryParams.addJoinOnConfig(dbRegistryConfig("STATION_GROUPS_V2"), "GROUP_ID");
-      emnQueryParams.addField("GROUP_NAME");
-      emnQueryParams.addField("GROUP_DESC");
-
-      if (not stationNameVector.empty())
-      {
-        // Join on STATION_NAMES_V1 view. Needed for search of netwprk by STATION_NAME
-        emnQueryParams.addJoinOnConfig(dbRegistryConfig("STATION_NAMES_V1"), "STATION_ID");
-      }
-
-      emnQueryParams.addOrderBy("GROUP_ID", "ASC");
-      emnQueryParams.useDistinct();
-
-      for (auto& classId : classIdVector)
-        emnQueryParams.addOperation("OR_GROUP_class_id", "CLASS_ID", "PropertyIsEqualTo", classId);
-
-      for (std::vector<int64_t>::const_iterator it = networkIdVector.begin();
-           it != networkIdVector.end();
-           ++it)
-        emnQueryParams.addOperation("OR_GROUP_network", "GROUP_ID", "PropertyIsEqualTo", *it);
-
-      for (std::vector<std::string>::const_iterator it = networkNameVector.begin();
-           it != networkNameVector.end();
-           ++it)
-        emnQueryParams.addOperation("OR_GROUP_network", "GROUP_NAME", "PropertyIsLike", *it);
-
-      for (std::vector<int64_t>::const_iterator it = stationIdVector.begin();
-           it != stationIdVector.end();
-           ++it)
-        emnQueryParams.addOperation("OR_GROUP_network", "STATION_ID", "PropertyIsEqualTo", *it);
-
-      if (not stationNameVector.empty())
-      {
-        for (std::vector<std::string>::const_iterator it = stationNameVector.begin();
-             it != stationNameVector.end();
-             ++it)
-          emnQueryParams.addOperation("OR_GROUP_network", "STATION_NAME", "PropertyIsLike", *it);
-      }
-
-      emnQueryParams.addOperation(
-          "OR_GROUP_language_code", "LANGUAGE_CODE", "PropertyIsEqualTo", lang);
-
-      // bo::EnvironmentalMonitoringFacilityQuery emnQuery;
-      bo::MastQuery emnQuery;
-      emnQuery.setQueryParams(&emnQueryParams);
-      m_obsEngine->makeQuery(&emnQuery);
-
-      CTPP::CDT hash;
-      hash["responseTimestamp"] =
-          boost::posix_time::to_iso_extended_string(get_plugin_data().get_time_stamp()) + "Z";
-      hash["queryId"] = query.get_query_id();
-
-      // Container with the data fetched from obsengine.
-      std::shared_ptr<bo::QueryResult> resultContainer = emnQuery.getQueryResultContainer();
-
-      int networkCount = 0;
-
-      if (resultContainer)
-      {
-        bo::QueryResult::ValueVectorType::const_iterator netIdIt =
-            resultContainer->begin("GROUP_ID");
-        bo::QueryResult::ValueVectorType::const_iterator netIdItEnd =
-            resultContainer->end("GROUP_ID");
-        bo::QueryResult::ValueVectorType::const_iterator netNameIt =
-            resultContainer->begin("GROUP_NAME");
-        bo::QueryResult::ValueVectorType::const_iterator netDescIt =
-            resultContainer->begin("GROUP_DESC");
-
-        size_t netNameVectorSize = resultContainer->size("GROUP_NAME");
-        size_t netIdVectorSize = netIdItEnd - netIdIt;
-        std::string networkId;
-
-        if (netIdVectorSize == netNameVectorSize)
-        {
-          // Filling the network and station data
-          int networkCounter = 0;
-          for (; netIdIt != netIdItEnd; ++netIdIt, ++netNameIt, ++netDescIt)
-          {
-            const std::string netId = bo::QueryResult::toString(netIdIt);
-            if (networkId != netId)
-            {
-              networkCount++;
-              networkCounter++;
-              hash["networks"][networkCounter - 1]["id"] = netId;
-              hash["networks"][networkCounter - 1]["name"] = bo::QueryResult::toString(netNameIt);
-              hash["networks"][networkCounter - 1]["description"] =
-                  bo::QueryResult::toString(netDescIt);
-              hash["networks"][networkCounter - 1]["inspireNamespace"] = inspireNamespace;
-            }
-            networkId = netId;
-          }
-        }
-        else
-        {
-          std::ostringstream msg;
-          msg << "warning: bw::StoredEnvMonitoringNetworkQueryHandler::query - varying size data "
-                 "vectors!\n";
-          std::cerr << msg.str();
-        }
-      }
-
-      const std::string networksMatched = boost::to_string(networkCount);
-      hash["networksMatched"] = networksMatched;
-      hash["networksReturned"] = networksMatched;
-
-      hash["fmi_apikey"] = QueryBase::FMI_APIKEY_SUBST;
-      hash["fmi_apikey_prefix"] = bw::QueryBase::FMI_APIKEY_PREFIX_SUBST;
-      hash["hostname"] = QueryBase::HOSTNAME_SUBST;
-      hash["language"] = language;
-
-      // Format output
-      format_output(hash, output, query.get_use_debug_format());
-
-    }  // In case of some other failures
-    catch (...)
-    {
-      SmartMet::Spine::Exception exception(BCP, "Operation processing failed!", NULL);
-      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
-        exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
-      exception.addParameter(WFS_LANGUAGE, language);
-      throw exception;
+      // Join on STATION_NAMES_V1 view. Needed for search of netwprk by STATION_NAME
+      emnQueryParams.addJoinOnConfig(dbRegistryConfig("STATION_NAMES_V1"), "STATION_ID");
     }
-  }
+
+    emnQueryParams.addOrderBy("GROUP_ID", "ASC");
+    emnQueryParams.useDistinct();
+
+    for (auto& classId : classIdVector)
+      emnQueryParams.addOperation("OR_GROUP_class_id", "CLASS_ID", "PropertyIsEqualTo", classId);
+
+    for (std::vector<int64_t>::const_iterator it = networkIdVector.begin();
+         it != networkIdVector.end();
+         ++it)
+      emnQueryParams.addOperation("OR_GROUP_network", "GROUP_ID", "PropertyIsEqualTo", *it);
+
+    for (std::vector<std::string>::const_iterator it = networkNameVector.begin();
+         it != networkNameVector.end();
+         ++it)
+      emnQueryParams.addOperation("OR_GROUP_network", "GROUP_NAME", "PropertyIsLike", *it);
+
+    for (std::vector<int64_t>::const_iterator it = stationIdVector.begin();
+         it != stationIdVector.end();
+         ++it)
+      emnQueryParams.addOperation("OR_GROUP_network", "STATION_ID", "PropertyIsEqualTo", *it);
+
+    if (not stationNameVector.empty())
+    {
+      for (std::vector<std::string>::const_iterator it = stationNameVector.begin();
+           it != stationNameVector.end();
+           ++it)
+        emnQueryParams.addOperation("OR_GROUP_network", "STATION_NAME", "PropertyIsLike", *it);
+    }
+
+    emnQueryParams.addOperation(
+        "OR_GROUP_language_code", "LANGUAGE_CODE", "PropertyIsEqualTo", lang);
+
+    // bo::EnvironmentalMonitoringFacilityQuery emnQuery;
+    bo::MastQuery emnQuery;
+    emnQuery.setQueryParams(&emnQueryParams);
+    m_obsEngine->makeQuery(&emnQuery);
+
+    CTPP::CDT hash;
+    hash["responseTimestamp"] =
+        boost::posix_time::to_iso_extended_string(get_plugin_data().get_time_stamp()) + "Z";
+    hash["queryId"] = query.get_query_id();
+
+    // Container with the data fetched from obsengine.
+    std::shared_ptr<bo::QueryResult> resultContainer = emnQuery.getQueryResultContainer();
+
+    int networkCount = 0;
+
+    if (resultContainer)
+    {
+      bo::QueryResult::ValueVectorType::const_iterator netIdIt = resultContainer->begin("GROUP_ID");
+      bo::QueryResult::ValueVectorType::const_iterator netIdItEnd =
+          resultContainer->end("GROUP_ID");
+      bo::QueryResult::ValueVectorType::const_iterator netNameIt =
+          resultContainer->begin("GROUP_NAME");
+      bo::QueryResult::ValueVectorType::const_iterator netDescIt =
+          resultContainer->begin("GROUP_DESC");
+
+      size_t netNameVectorSize = resultContainer->size("GROUP_NAME");
+      size_t netIdVectorSize = netIdItEnd - netIdIt;
+      std::string networkId;
+
+      if (netIdVectorSize == netNameVectorSize)
+      {
+        // Filling the network and station data
+        int networkCounter = 0;
+        for (; netIdIt != netIdItEnd; ++netIdIt, ++netNameIt, ++netDescIt)
+        {
+          const std::string netId = bo::QueryResult::toString(netIdIt);
+          if (networkId != netId)
+          {
+            networkCount++;
+            networkCounter++;
+            hash["networks"][networkCounter - 1]["id"] = netId;
+            hash["networks"][networkCounter - 1]["name"] = bo::QueryResult::toString(netNameIt);
+            hash["networks"][networkCounter - 1]["description"] =
+                bo::QueryResult::toString(netDescIt);
+            hash["networks"][networkCounter - 1]["inspireNamespace"] = inspireNamespace;
+          }
+          networkId = netId;
+        }
+      }
+      else
+      {
+        std::ostringstream msg;
+        msg << "warning: bw::StoredEnvMonitoringNetworkQueryHandler::query - varying size data "
+               "vectors!\n";
+        std::cerr << msg.str();
+      }
+    }
+
+    const std::string networksMatched = boost::to_string(networkCount);
+    hash["networksMatched"] = networksMatched;
+    hash["networksReturned"] = networksMatched;
+
+    hash["fmi_apikey"] = QueryBase::FMI_APIKEY_SUBST;
+    hash["fmi_apikey_prefix"] = bw::QueryBase::FMI_APIKEY_PREFIX_SUBST;
+    hash["hostname"] = QueryBase::HOSTNAME_SUBST;
+    hash["language"] = language;
+
+    // Format output
+    format_output(hash, output, query.get_use_debug_format());
+
+  }  // In case of some other failures
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    SmartMet::Spine::Exception exception(BCP, "Operation processing failed!", NULL);
+    if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+      exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
+    exception.addParameter(WFS_LANGUAGE, language);
+    throw exception;
   }
 }
 
