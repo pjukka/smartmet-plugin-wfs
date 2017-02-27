@@ -31,11 +31,6 @@ class StoredEnvMonitoringNetworkQueryHandler : protected virtual SupportsExtraHa
                      std::ostream& output) const;
 
  private:
-  virtual void update_parameters(
-      const RequestParameterMap& request_params,
-      int seq_id,
-      std::vector<boost::shared_ptr<RequestParameterMap> >& result) const;
-
   const std::shared_ptr<SmartMet::Engine::Observation::DBRegistryConfig> dbRegistryConfig(
       const std::string& configName) const;
 

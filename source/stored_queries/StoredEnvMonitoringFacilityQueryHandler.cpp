@@ -381,13 +381,6 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
   }
 }
 
-void bw::StoredEnvMonitoringFacilityQueryHandler::update_parameters(
-    const RequestParameterMap &params,
-    int seq_id,
-    std::vector<boost::shared_ptr<RequestParameterMap> > &result) const
-{
-}
-
 const std::shared_ptr<SmartMet::Engine::Observation::DBRegistryConfig>
 bw::StoredEnvMonitoringFacilityQueryHandler::dbRegistryConfig(const std::string &configName) const
 {

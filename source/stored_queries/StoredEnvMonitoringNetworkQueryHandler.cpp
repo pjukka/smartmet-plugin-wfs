@@ -241,22 +241,6 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
   }
 }
 
-void bw::StoredEnvMonitoringNetworkQueryHandler::update_parameters(
-    const RequestParameterMap& params,
-    int seq_id,
-    std::vector<boost::shared_ptr<RequestParameterMap> >& result) const
-{
-  try
-  {
-    std::cerr << "bw::StoredEnvMonitoringNetworkQueryHandler::update_parameters(params, seq_id, "
-                 "result)\n";
-  }
-  catch (...)
-  {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
-  }
-}
-
 const std::shared_ptr<SmartMet::Engine::Observation::DBRegistryConfig>
 bw::StoredEnvMonitoringNetworkQueryHandler::dbRegistryConfig(const std::string& configName) const
 {
