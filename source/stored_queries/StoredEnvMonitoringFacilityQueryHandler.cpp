@@ -2,6 +2,7 @@
 #include "StoredQueryHandlerFactoryDef.h"
 #include "SupportsLocationParameters.h"
 #include "MediaMonitored.h"
+#include "FeatureID.h"
 #include <smartmet/spine/Exception.h>
 #include <smartmet/engines/observation/DBRegistry.h>
 
@@ -106,6 +107,17 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
     auto inspireNamespace = params.get_single<std::string>(P_INSPIRE_NAMESPACE);
     auto showObservingCapability = params.get_optional<bool>(P_SHOW_OBSERVING_CAPABILITY, false);
     auto authorityDomain = params.get_single<std::string>(P_AUTHORITY_DOMAIN);
+
+    // Get the sequence number of query in the request
+    auto sqId = query.get_query_id();
+    FeatureID featureId(get_config()->get_query_id(), params.get_map(), sqId);
+
+    // Removing some feature id parameters
+    const char *removeParams[] = {P_STATION_ID, P_STATION_NAME};
+    for (unsigned i = 0; i < sizeof(removeParams) / sizeof(*removeParams); i++)
+    {
+      featureId.erase_param(removeParams[i]);
+    }
 
     if (m_debugLevel > 0)
       query.dump_query_info(std::cout);
@@ -212,6 +224,10 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
         // A station must be part of a station group
         if (stationGroupMapIt == stationGroupMap.end())
           continue;
+
+        featureId.add_param(P_STATION_ID, (*vsIt).first);
+        hash["stations"][stationCounter]["featureId"] = featureId.get_id();
+        featureId.erase_param(P_STATION_ID);
 
         // Station data
         hash["stations"][stationCounter]["fmisid"] = (*vsIt).first;

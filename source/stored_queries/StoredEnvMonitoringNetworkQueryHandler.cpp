@@ -1,6 +1,7 @@
 #include "stored_queries/StoredEnvMonitoringNetworkQueryHandler.h"
 #include "StoredQueryHandlerFactoryDef.h"
 #include "SupportsLocationParameters.h"
+#include "FeatureID.h"
 #include <smartmet/spine/Exception.h>
 #include <smartmet/engines/observation/DBRegistry.h>
 #include <boost/icl/type_traits/to_string.hpp>
@@ -93,6 +94,17 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
     const auto& params = query.get_param_map();
     auto inspireNamespace = params.get_single<std::string>(P_INSPIRE_NAMESPACE);
     auto authorityDomain = params.get_single<std::string>(P_AUTHORITY_DOMAIN);
+
+    // Get the sequence number of query in the request
+    auto sqId = query.get_query_id();
+    FeatureID featureId(get_config()->get_query_id(), params.get_map(), sqId);
+
+    // Removing some feature id parameters
+    const char* removeParams[] = {P_NETWORK_ID, P_NETWORK_NAME, P_STATION_ID, P_STATION_NAME};
+    for (unsigned i = 0; i < sizeof(removeParams) / sizeof(*removeParams); i++)
+    {
+      featureId.erase_param(removeParams[i]);
+    }
 
     if (m_debugLevel > 0)
       query.dump_query_info(std::cout);
@@ -215,6 +227,10 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
             hash["networks"][networkCounter - 1]["description"] =
                 bo::QueryResult::toString(netDescIt);
             hash["networks"][networkCounter - 1]["inspireNamespace"] = inspireNamespace;
+
+            featureId.add_param(P_NETWORK_ID, netId);
+            hash["networks"][networkCounter - 1]["featureId"] = featureId.get_id();
+            featureId.erase_param(P_NETWORK_ID);
           }
           networkId = netId;
         }

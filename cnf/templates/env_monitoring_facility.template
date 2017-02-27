@@ -15,7 +15,7 @@
   http://inspire.ec.europa.eu/schemas/ef/4.0 http://inspire.ec.europa.eu/schemas/ef/4.0/EnvironmentalMonitoringFacilities.xsd">
   <TMPL_if (stationsMatched > 0) ><TMPL_if DEFINED(stations)><TMPL_foreach stations AS station>
   <wfs:member>
-    <ef:EnvironmentalMonitoringFacility gml:id="<TMPL_var CONCAT("emf-",station.__index__ + 1,"-fmisid-",station.fmisid)>">
+    <ef:EnvironmentalMonitoringFacility gml:id="<TMPL_var station.featureId>">
       <gml:identifier codeSpace="<TMPL_var authorityDomain>/namespace/stationcode/fmisid"><TMPL_var station.fmisid></gml:identifier><TMPL_if DEFINED(station.name)>
       <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/name"><TMPL_var station.name></gml:name></TMPL_if><TMPL_if DEFINED(station.lpnn)>
       <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/lpnn"><TMPL_var station.lpnn></gml:name></TMPL_if><TMPL_if DEFINED(station.geoid)>
