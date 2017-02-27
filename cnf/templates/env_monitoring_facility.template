@@ -16,21 +16,21 @@
   <TMPL_if (stationsMatched > 0) ><TMPL_if DEFINED(stations)><TMPL_foreach stations AS station>
   <wfs:member>
     <ef:EnvironmentalMonitoringFacility gml:id="<TMPL_var CONCAT("emf-",station.__index__ + 1,"-fmisid-",station.fmisid)>">
-      <gml:identifier codeSpace="http://xml.fmi.fi/namespace/stationcode/fmisid"><TMPL_var station.fmisid></gml:identifier><TMPL_if DEFINED(station.name)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name"><TMPL_var station.name></gml:name></TMPL_if><TMPL_if DEFINED(station.lpnn)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/lpnn"><TMPL_var station.lpnn></gml:name></TMPL_if><TMPL_if DEFINED(station.geoid)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid"><TMPL_var station.geoid></gml:name></TMPL_if><TMPL_if DEFINED(station.wmo)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/wmo"><TMPL_var station.wmo></gml:name></TMPL_if><TMPL_if DEFINED(station.livi)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/livi"><TMPL_var station.livi></gml:name></TMPL_if><TMPL_if DEFINED(station.icao)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/icao"><TMPL_var station.icao></gml:name></TMPL_if><TMPL_if DEFINED(station.awsmetar)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/awsmetar"><TMPL_var station.awsmetar></gml:name></TMPL_if><TMPL_if DEFINED(station.syke)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/syke"><TMPL_var station.syke></gml:name></TMPL_if><TMPL_if DEFINED(station.nordlist)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/nordlist"><TMPL_var station.nordlist></gml:name></TMPL_if><TMPL_if DEFINED(station.airquality)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/airquality"><TMPL_var station.airquality></gml:name></TMPL_if><TMPL_if DEFINED(station.radar)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/radar"><TMPL_var station.radar></gml:name></TMPL_if><TMPL_if DEFINED(station.image)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/image"><TMPL_var station.image></gml:name></TMPL_if><TMPL_if DEFINED(station.region)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/location/region"><TMPL_var station.region></gml:name></TMPL_if><TMPL_if DEFINED(station.country)>
-      <gml:name codeSpace="http://xml.fmi.fi/namespace/location/country"><TMPL_var station.country></gml:name></TMPL_if><TMPL_if DEFINED(station.description)>
+      <gml:identifier codeSpace="<TMPL_var authorityDomain>/namespace/stationcode/fmisid"><TMPL_var station.fmisid></gml:identifier><TMPL_if DEFINED(station.name)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/name"><TMPL_var station.name></gml:name></TMPL_if><TMPL_if DEFINED(station.lpnn)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/lpnn"><TMPL_var station.lpnn></gml:name></TMPL_if><TMPL_if DEFINED(station.geoid)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/geoid"><TMPL_var station.geoid></gml:name></TMPL_if><TMPL_if DEFINED(station.wmo)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/wmo"><TMPL_var station.wmo></gml:name></TMPL_if><TMPL_if DEFINED(station.livi)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/livi"><TMPL_var station.livi></gml:name></TMPL_if><TMPL_if DEFINED(station.icao)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/icao"><TMPL_var station.icao></gml:name></TMPL_if><TMPL_if DEFINED(station.awsmetar)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/awsmetar"><TMPL_var station.awsmetar></gml:name></TMPL_if><TMPL_if DEFINED(station.syke)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/syke"><TMPL_var station.syke></gml:name></TMPL_if><TMPL_if DEFINED(station.nordlist)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/nordlist"><TMPL_var station.nordlist></gml:name></TMPL_if><TMPL_if DEFINED(station.airquality)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/airquality"><TMPL_var station.airquality></gml:name></TMPL_if><TMPL_if DEFINED(station.radar)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/radar"><TMPL_var station.radar></gml:name></TMPL_if><TMPL_if DEFINED(station.image)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/locationcode/image"><TMPL_var station.image></gml:name></TMPL_if><TMPL_if DEFINED(station.region)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/location/region"><TMPL_var station.region></gml:name></TMPL_if><TMPL_if DEFINED(station.country)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/location/country"><TMPL_var station.country></gml:name></TMPL_if><TMPL_if DEFINED(station.description)>
       <gml:description><TMPL_var station.description></gml:description></TMPL_if><TMPL_if DEFINED(station.additionalDescription)>
       <gml:additionalDescription><TMPL_var station.additionalDescription></gml:additionalDescription></TMPL_if>
       <ef:inspireId>
@@ -45,7 +45,7 @@
       <ef:onlineResource><TMPL_if station.onlineResource><TMPL_var station.onlineResource><TMPL_else>http://ilmatieteenlaitos.fi/havaintoasemat/</TMPL_if></ef:onlineResource></TMPL_comment><TMPL_if station.observingCapabilities><TMPL_foreach station.observingCapabilities AS capability>
       <ef:observingCapability>
         <ef:ObservingCapability gml:id="<TMPL_var CONCAT("oc-",station.fmisid,"-",capability.__index__ + 1)>">
-          <gml:name codeSpace="http://xml.fmi.fi/namespace/parameter/name"><TMPL_var capability.measurandCode><TMPL_if DEFINED(capability.measurandAggregatePeriod)>_<TMPL_var capability.measurandAggregatePeriod><TMPL_if DEFINED(capability.measurandAggregateFunction)>_<TMPL_var capability.measurandAggregateFunction></TMPL_if></TMPL_if></gml:name>
+          <gml:name codeSpace="<TMPL_var authorityDomain>/parameter/name"><TMPL_var capability.measurandCode><TMPL_if DEFINED(capability.measurandAggregatePeriod)>_<TMPL_var capability.measurandAggregatePeriod><TMPL_if DEFINED(capability.measurandAggregateFunction)>_<TMPL_var capability.measurandAggregateFunction></TMPL_if></TMPL_if></gml:name>
           <ef:observingTime>
             <gml:TimePeriod gml:id="<TMPL_var CONCAT("oc-tp-",station.__index__ + 1,"-",capability.__index__ + 1)>">
               <gml:beginPosition><TMPL_var capability.beginPosition></gml:beginPosition>
@@ -54,7 +54,7 @@
           </ef:observingTime>
           <ef:processType <TMPL_if DEFINED(capability.processType)>xlink:href="http://inspire.ec.europa.eu/codeList/ProcessTypeValue/<TMPL_var capability.processType>"<TMPL_else>xsi:nil="true" nilReason="missing"</TMPL_if> />
           <ef:resultNature <TMPL_if DEFINED(capability.resultNature)> xlink:href="http://inspire.ec.europa.eu/codeList/ResultNatureValue/<TMPL_var capability.resultNature>"<TMPL_else>xsi:nil="true" nilReason="missing"</TMPL_if> />
-          <ef:procedure xlink:href="<TMPL_if DEFINED(capability.processType)>http://xml.fmi.fi/inspire/process/sensor-assembly?processType=<TMPL_var capability.processType>&amp;stationId=<TMPL_var station.fmisid>&amp;since=<TMPL_var capability.beginPosition>&amp;"<TMPL_else>" nilReason="missing"</TMPL_if> />
+          <ef:procedure xlink:href="<TMPL_if DEFINED(capability.processType)><TMPL_var authorityDomain>/inspire/process/sensor-assembly?processType=<TMPL_var capability.processType>&amp;stationId=<TMPL_var station.fmisid>&amp;since=<TMPL_var capability.beginPosition>&amp;"<TMPL_else>" nilReason="missing"</TMPL_if> />
           <ef:observedProperty xlink:title="<TMPL_var capability.measurandName>" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=observation&amp;param=<TMPL_var capability.measurandCode><TMPL_if DEFINED(capability.measurandAggregatePeriod)>_<TMPL_var capability.measurandAggregatePeriod><TMPL_if DEFINED(capability.measurandAggregateFunction)>_<TMPL_var capability.measurandAggregateFunction></TMPL_if></TMPL_if>&amp;language=<TMPL_var language>&amp;"/>
         </ef:ObservingCapability>
       </ef:observingCapability></TMPL_foreach></TMPL_if><TMPL_if station.involvedInList><TMPL_foreach station.involvedInList AS involvedIn>

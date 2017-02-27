@@ -30,6 +30,7 @@ const char *P_AGGREGATE_PERIOD = "aggregatePeriod";
 const char *P_MEASURAND_CODE = "measurandCode";
 const char *P_STORAGE_ID = "storageId";
 const char *P_INSPIRE_NAMESPACE = "inspireNamespace";
+const char* P_AUTHORITY_DOMAIN = "authorityDomain";
 const char *P_SHOW_OBSERVING_CAPABILITY = "showObservingCapability";
 }
 
@@ -57,6 +58,7 @@ bw::StoredEnvMonitoringFacilityQueryHandler::StoredEnvMonitoringFacilityQueryHan
     register_array_param<std::string>(P_MEASURAND_CODE, *config);
     register_array_param<int64_t>(P_STORAGE_ID, *config);
     register_scalar_param<std::string>(P_INSPIRE_NAMESPACE, *config);
+    register_scalar_param<std::string>(P_AUTHORITY_DOMAIN, *config);
     m_missingText = config->get_optional_config_param<std::string>(P_MISSING_TEXT, "NaN");
     m_debugLevel = config->get_debug_level();
   }
@@ -103,6 +105,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
     const RequestParameterMap &params = query.get_param_map();
     auto inspireNamespace = params.get_single<std::string>(P_INSPIRE_NAMESPACE);
     auto showObservingCapability = params.get_optional<bool>(P_SHOW_OBSERVING_CAPABILITY, false);
+    auto authorityDomain = params.get_single<std::string>(P_AUTHORITY_DOMAIN);
 
     if (m_debugLevel > 0)
       query.dump_query_info(std::cout);
@@ -166,6 +169,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
     thread3.join();
 
     CTPP::CDT hash;
+    hash["authorityDomain"] = authorityDomain;
     int stationCounter = 0;
 
     if (not validStations.empty())

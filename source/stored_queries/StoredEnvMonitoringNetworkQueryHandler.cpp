@@ -18,6 +18,7 @@ const char* P_STATION_ID = "stationId";
 const char* P_STATION_NAME = "stationName";
 const char* P_MISSING_TEXT = "missingText";
 const char* P_INSPIRE_NAMESPACE = "inspireNamespace";
+const char* P_AUTHORITY_DOMAIN = "authorityDomain";
 }
 
 bw::StoredEnvMonitoringNetworkQueryHandler::StoredEnvMonitoringNetworkQueryHandler(
@@ -38,6 +39,7 @@ bw::StoredEnvMonitoringNetworkQueryHandler::StoredEnvMonitoringNetworkQueryHandl
     register_array_param<int64_t>(P_STATION_ID, *config);
     register_array_param<std::string>(P_STATION_NAME, *config, false);
     register_scalar_param<std::string>(P_INSPIRE_NAMESPACE, *config);
+    register_scalar_param<std::string>(P_AUTHORITY_DOMAIN, *config);
     m_missingText = config->get_optional_config_param<std::string>(P_MISSING_TEXT, "NaN");
     m_debugLevel = config->get_debug_level();
   }
@@ -90,6 +92,7 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
   {
     const auto& params = query.get_param_map();
     auto inspireNamespace = params.get_single<std::string>(P_INSPIRE_NAMESPACE);
+    auto authorityDomain = params.get_single<std::string>(P_AUTHORITY_DOMAIN);
 
     if (m_debugLevel > 0)
       query.dump_query_info(std::cout);
@@ -166,6 +169,7 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
     m_obsEngine->makeQuery(&emnQuery);
 
     CTPP::CDT hash;
+    hash["authorityDomain"] = authorityDomain;
     hash["responseTimestamp"] =
         boost::posix_time::to_iso_extended_string(get_plugin_data().get_time_stamp()) + "Z";
     hash["queryId"] = query.get_query_id();
