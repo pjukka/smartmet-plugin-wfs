@@ -23,7 +23,8 @@
   </wfs:boundedBy></TMPL_if>
 <TMPL_if DEFINED(networks)><TMPL_foreach networks AS network>
   <wfs:member>
-    <ef:EnvironmentalMonitoringNetwork gml:id="<TMPL_var CONCAT("emn-",network.__index__ + 1,"-networkid-",network.id)>">
+    <ef:EnvironmentalMonitoringNetwork gml:id="<TMPL_var CONCAT("emn-",network.__index__ + 1,"-networkid-",network.id)>"><TMPL_if DEFINED(network.code)>
+      <gml:name codeSpace="<TMPL_var authorityDomain>/namespace/networkcode/abbreviation"><TMPL_var network.code></gml:name></TMPL_if>
       <ef:inspireId>
         <inspire:Identifier>
           <inspire:localId><TMPL_var network.id></inspire:localId>

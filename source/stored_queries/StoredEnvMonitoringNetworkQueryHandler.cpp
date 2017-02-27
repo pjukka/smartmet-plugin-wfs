@@ -122,6 +122,7 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
 
     // Join on NETWORKS_V1 view
     emnQueryParams.addJoinOnConfig(dbRegistryConfig("STATION_GROUPS_V2"), "GROUP_ID");
+    emnQueryParams.addField("GROUP_CODE");
     emnQueryParams.addField("GROUP_NAME");
     emnQueryParams.addField("GROUP_DESC");
 
@@ -184,6 +185,8 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
       bo::QueryResult::ValueVectorType::const_iterator netIdIt = resultContainer->begin("GROUP_ID");
       bo::QueryResult::ValueVectorType::const_iterator netIdItEnd =
           resultContainer->end("GROUP_ID");
+      bo::QueryResult::ValueVectorType::const_iterator netCodeIt =
+          resultContainer->begin("GROUP_CODE");
       bo::QueryResult::ValueVectorType::const_iterator netNameIt =
           resultContainer->begin("GROUP_NAME");
       bo::QueryResult::ValueVectorType::const_iterator netDescIt =
@@ -205,6 +208,9 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
             networkCount++;
             networkCounter++;
             hash["networks"][networkCounter - 1]["id"] = netId;
+            const std::string netCode = bo::QueryResult::toString(netCodeIt);
+            if (not netCode.empty())
+              hash["networks"][networkCounter - 1]["code"] = netCode;
             hash["networks"][networkCounter - 1]["name"] = bo::QueryResult::toString(netNameIt);
             hash["networks"][networkCounter - 1]["description"] =
                 bo::QueryResult::toString(netDescIt);
