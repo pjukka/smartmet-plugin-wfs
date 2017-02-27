@@ -91,6 +91,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Upcoming
+- Implement feature id to EMF and EMN handler.
+- Authority domain is now configurable on EMF and EMN stored queries.
 - Add station network class configuration capability to EMF and EMN handlers
 - Remove bounding box calculation from EMN handler
 - Make observing capabilities as optional in EMF handler.
