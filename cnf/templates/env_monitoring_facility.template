@@ -80,7 +80,7 @@
               <ins_base:namespace>fmi.station.activity.id</ins_base:namespace>
             </ins_base:Identifier>
           </ef:inspireId>
-          <ef:uses xlink:title="monitoring network" xlink:href="http://wfs.fmi.fi?SERVICE=WFS&amp;VERSION=2.0&amp;REQUEST=getFeature&amp;STOREDQUERY_ID=getObservationNetworks&amp;NETWORK_ID=fi:fmi:obsnetwork:aws" />
+          <ef:uses xlink:title="monitoring network" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs<TMPL_if language>/<TMPL_var language></TMPL_if>?SERVICE=WFS&amp;VERSION=2.0&amp;REQUEST=getFeature&amp;STOREDQUERY_ID=getObservationNetworks&amp;NETWORK_ID=fi:fmi:obsnetwork:aws" />
         </ef:EnvironmentalMonitoringActivity>
       </ef:involvedIn></TMPL_foreach></TMPL_if><TMPL_if station.position>
       <ef:representativePoint>
