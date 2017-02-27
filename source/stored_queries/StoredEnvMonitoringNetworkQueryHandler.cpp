@@ -200,7 +200,7 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
       {
         // Filling the network and station data
         int networkCounter = 0;
-        for (; netIdIt != netIdItEnd; ++netIdIt, ++netNameIt, ++netDescIt)
+        for (; netIdIt != netIdItEnd; ++netIdIt, ++netCodeIt, ++netNameIt, ++netDescIt)
         {
           const std::string netId = bo::QueryResult::toString(netIdIt);
           if (networkId != netId)

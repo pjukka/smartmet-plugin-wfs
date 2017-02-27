@@ -30,7 +30,7 @@ const char *P_AGGREGATE_PERIOD = "aggregatePeriod";
 const char *P_MEASURAND_CODE = "measurandCode";
 const char *P_STORAGE_ID = "storageId";
 const char *P_INSPIRE_NAMESPACE = "inspireNamespace";
-const char* P_AUTHORITY_DOMAIN = "authorityDomain";
+const char *P_AUTHORITY_DOMAIN = "authorityDomain";
 const char *P_SHOW_OBSERVING_CAPABILITY = "showObservingCapability";
 }
 
