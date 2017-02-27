@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_XML_ENV_INIT_H__
-#define SMARTMET_WFS_XML_ENV_INIT_H__
+#pragma once
 
 #include <boost/noncopyable.hpp>
 
@@ -26,5 +25,3 @@ class EnvInit : virtual private boost::noncopyable
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_XML_ENV_INIT_H__ */

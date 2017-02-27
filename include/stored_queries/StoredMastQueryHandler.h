@@ -1,5 +1,4 @@
-#ifndef STORED_MAST_QUERY_HANDLER_H
-#define STORED_MAST_QUERY_HANDLER_H
+#pragma once
 
 #include "StoredQueryHandlerBase.h"
 #include "SupportsExtraHandlerParams.h"
@@ -83,5 +82,3 @@ class StoredMastQueryHandler : protected virtual SupportsExtraHandlerParams,
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif  // STORED_MAST_QUERY_HANDLER_H

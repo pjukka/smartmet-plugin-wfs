@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_STORED_QUERY_CONFIG_H__
-#define SMARTMET_WFS_STORED_QUERY_CONFIG_H__
+#pragma once
 
 #include <map>
 #include <ostream>
@@ -186,5 +185,3 @@ class StoredQueryConfig : public SmartMet::Spine::ConfigBase
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_STORED_QUERY_CONFIG_H__ */

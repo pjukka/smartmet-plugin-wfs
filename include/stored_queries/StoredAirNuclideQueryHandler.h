@@ -1,5 +1,4 @@
-#ifndef STORED_AIR_NUCLIDE_QUERY_HANDLER_H
-#define STORED_AIR_NUCLIDE_QUERY_HANDLER_H
+#pragma once
 
 #include "StoredQueryHandlerBase.h"
 #include "SupportsExtraHandlerParams.h"
@@ -73,5 +72,3 @@ class StoredAirNuclideQueryHandler : protected virtual SupportsExtraHandlerParam
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif  // STORED_AIR_NUCLIDE_QUERY_HANDLER_H

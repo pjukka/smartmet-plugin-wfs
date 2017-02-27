@@ -1,10 +1,10 @@
+#pragma once
+
 // ======================================================================
 /*!
  * \brief SmartMet WFS plugin interface
  */
 // ======================================================================
-
-#pragma once
 
 #include "Config.h"
 #include "GeoServerDB.h"

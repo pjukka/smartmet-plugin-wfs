@@ -1,12 +1,11 @@
+#pragma once
+
 /*
  * TypeNameStoredQueryMap.h
  *
  *  Created on: Nov 10, 2014
  *      Author: niemitu
  */
-
-#ifndef PLUGINS_WFS_INCLUDE_TYPENAMESTOREDQUERYMAP_H_
-#define PLUGINS_WFS_INCLUDE_TYPENAMESTOREDQUERYMAP_H_
 
 #include <string>
 #include <vector>
@@ -41,5 +40,3 @@ class TypeNameStoredQueryMap
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* PLUGINS_WFS_INCLUDE_TYPENAMESTOREDQUERYMAP_H_ */

@@ -1,5 +1,4 @@
-#ifndef SUPPORTS_QUALITY_PARAMETERS_H
-#define SUPPORTS_QUALITY_PARAMETERS_H
+#pragma once
 
 #include "StoredQueryConfig.h"
 #include "StoredQueryParamRegistry.h"
@@ -56,5 +55,3 @@ class SupportsQualityParameters : protected virtual SupportsExtraHandlerParams,
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif  // SUPPORTS_QUALITY_PARAMETERS_H

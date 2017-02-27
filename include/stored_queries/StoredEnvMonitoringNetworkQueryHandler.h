@@ -1,5 +1,4 @@
-#ifndef STORED_ENV_MONITORING_NETWORK_QUERY_HANDLER_H
-#define STORED_ENV_MONITORING_NETWORK_QUERY_HANDLER_H
+#pragma once
 
 #include <engines/geonames/Engine.h>
 #include <engines/observation/Interface.h>
@@ -44,5 +43,3 @@ class StoredEnvMonitoringNetworkQueryHandler : protected virtual SupportsExtraHa
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif  // STORED_ENV_MONITORING_NETWORK_QUERY_HANDLER_H

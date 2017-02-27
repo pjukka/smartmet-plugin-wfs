@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_XML_PARAMETER_EXTRACTOR_H__
-#define SMARTMET_WFS_XML_PARAMETER_EXTRACTOR_H__
+#pragma once
 
 #include <cassert>
 #include <limits>
@@ -100,5 +99,3 @@ void ParameterExtractor::add_int_type(const std::string& name)
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_XML_PARAMETER_EXTRACTOR_H__ */

@@ -1,10 +1,10 @@
+#pragma once
+
 // ======================================================================
 /*!
  * \brief Configuration file API
  */
 // ======================================================================
-
-#pragma once
 
 #include <engines/gis/CRSRegistry.h>
 #include <spine/ConfigBase.h>

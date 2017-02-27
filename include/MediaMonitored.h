@@ -1,5 +1,5 @@
-#ifndef MEDIA_MONITORED_H
-#define MEDIA_MONITORED_H
+#pragma once
+
 #include <macgyver/String.h>
 #include <string>
 #include <memory>
@@ -56,5 +56,3 @@ class MediaMonitored
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif  // MEDIA_MONITORED_H

@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_STORED_QUERY_HANDLER_FACTORY_DEF_H__
-#define SMARTMET_WFS_STORED_QUERY_HANDLER_FACTORY_DEF_H__
+#pragma once
 
 #include <boost/optional.hpp>
 #include <boost/shared_ptr.hpp>
@@ -47,5 +46,3 @@ class StoredQueryHandlerFactoryDef
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_STORED_QUERY_HANDLER_FACTORY_DEF_H__ */

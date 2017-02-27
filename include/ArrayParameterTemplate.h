@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_ARRAY_PARAMETER_TEMPLATE_H_
-#define SMARTMET_WFS_ARRAY_PARAMETER_TEMPLATE_H_
+#pragma once
 
 #include <map>
 #include <vector>
@@ -82,5 +81,3 @@ class ArrayParameterTemplate : public ParameterTemplateBase
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_ARRAY_PARAMETER_TEMPLATE_H_ */

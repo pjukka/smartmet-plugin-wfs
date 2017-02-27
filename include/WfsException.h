@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_WFS_EXCEPTION_H__
-#define SMARTMET_WFS_WFS_EXCEPTION_H__
+#pragma once
 
 #include <exception>
 #include <ostream>
@@ -88,7 +87,5 @@ inline std::ostream& operator<<(std::ostream& output, const WfsException& err)
 } // namespace WFS
 } // namespace Plugin
 } // namespace SmartMet
-
-#endif /* SMARTMET_WFS_WFS_EXCEPTION_H__ */
 
 #endif

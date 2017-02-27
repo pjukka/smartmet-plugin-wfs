@@ -1,5 +1,4 @@
-#ifndef STORED_ENV_MONITORING_FACILITY_QUERY_HANDLER_H
-#define STORED_ENV_MONITORING_FACILIT_QUERY_HANDLER_H
+#pragma once
 
 #include <engines/geonames/Engine.h>
 #include <engines/observation/Interface.h>
@@ -111,5 +110,3 @@ class StoredEnvMonitoringFacilityQueryHandler : public StoredQueryHandlerBase,
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif  // STORED_ENV_MONITORING_FACILITY_QUERY_HANDLER_H

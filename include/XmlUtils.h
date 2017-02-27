@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_XML_UTILS_H__
-#define SMARTMET_WFS_XML_UTILS_H__
+#pragma once
 
 #include <set>
 #include <string>
@@ -104,5 +103,3 @@ void set_attr(xercesc::DOMElement& element, const std::string& name, const std::
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_XML_UTILS_H__ */

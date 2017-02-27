@@ -1,5 +1,4 @@
-#ifndef STORED_AVIATION_OBSERVATION_QUERY_HANDLER_H
-#define STORED_AVIATION_OBSERVATION_QUERY_HANDLER_H
+#pragma once
 
 #include "StoredQueryHandlerBase.h"
 #include "SupportsExtraHandlerParams.h"
@@ -53,5 +52,3 @@ class StoredAviationObservationQueryHandler : protected virtual SupportsExtraHan
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif  // STORED_AVIATION_OBSERVATION_QUERY_HANDLER_H

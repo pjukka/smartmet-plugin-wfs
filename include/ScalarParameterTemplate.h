@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_SCALAR_PARAMETER_TEMPLATE_H__
-#define SMARTMET_WFS_SCALAR_PARAMETER_TEMPLATE_H__
+#pragma once
 
 #include <map>
 #include <vector>
@@ -109,5 +108,3 @@ class ScalarParameterTemplate : public ParameterTemplateBase
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_SCALAR_PARAMETER_TEMPLATE_H__ */

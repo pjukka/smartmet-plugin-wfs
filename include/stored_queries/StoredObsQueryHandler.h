@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_STORED_OBS_QUERY_HANLDER_H_
-#define SMARTMET_WFS_STORED_OBS_QUERY_HANLDER_H_
+#pragma once
 
 #include <engines/observation/Interface.h>
 #include <engines/geonames/Engine.h>
@@ -110,5 +109,3 @@ class StoredObsQueryHandler : public StoredQueryHandlerBase,
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_STORED_OBS_QUERY_HANLDER_H_ */

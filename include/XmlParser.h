@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_XML_PARSER_H__
-#define SMARTMET_WFS_XML_PARSER_H__
+#pragma once
 
 #include <list>
 #include <stdexcept>
@@ -118,5 +117,3 @@ boost::shared_ptr<xercesc::DOMDocument> str2xmldom(const std::string& src,
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_XML_PARSER_H__ */

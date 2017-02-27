@@ -1,5 +1,4 @@
-#ifndef SMARTMET_WFS_STORED_QUERY_PARAM_DEF_H__
-#define SMARTMET_WFS_STORED_QUERY_PARAM_DEF_H__
+#pragma once
 
 #include <algorithm>
 #include <ostream>
@@ -86,5 +85,3 @@ class StoredQueryParamDef
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
-
-#endif /* SMARTMET_WFS_STORED_QUERY_PARAM_DEF_H__ */
