@@ -181,6 +181,8 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
     thread3.join();
 
     CTPP::CDT hash;
+    params.dump_params(hash["query_parameters"]);
+    dump_named_params(params, hash["named_parameters"]);
     hash["authorityDomain"] = authorityDomain;
     int stationCounter = 0;
 

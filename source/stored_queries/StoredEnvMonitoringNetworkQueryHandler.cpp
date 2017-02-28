@@ -182,6 +182,8 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
     m_obsEngine->makeQuery(&emnQuery);
 
     CTPP::CDT hash;
+    params.dump_params(hash["query_parameters"]);
+    dump_named_params(params, hash["named_parameters"]);
     hash["authorityDomain"] = authorityDomain;
     hash["responseTimestamp"] =
         boost::posix_time::to_iso_extended_string(get_plugin_data().get_time_stamp()) + "Z";
