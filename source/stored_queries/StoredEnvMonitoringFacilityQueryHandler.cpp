@@ -60,6 +60,7 @@ bw::StoredEnvMonitoringFacilityQueryHandler::StoredEnvMonitoringFacilityQueryHan
     register_array_param<int64_t>(P_STORAGE_ID, *config);
     register_scalar_param<std::string>(P_INSPIRE_NAMESPACE, *config);
     register_scalar_param<std::string>(P_AUTHORITY_DOMAIN, *config);
+    register_scalar_param<bool>(P_SHOW_OBSERVING_CAPABILITY, *config, false);
     m_missingText = config->get_optional_config_param<std::string>(P_MISSING_TEXT, "NaN");
     m_debugLevel = config->get_debug_level();
   }
