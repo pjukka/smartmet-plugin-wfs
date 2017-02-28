@@ -7,7 +7,7 @@
 #include <smartmet/engines/observation/DBRegistry.h>
 
 #include <boost/icl/type_traits/to_string.hpp>
-#include <boost/thread.hpp>
+#include <thread>
 #include <functional>
 #include <memory>
 #include <unordered_map>
@@ -141,11 +141,11 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
 
     // Get capability data from obsengine.
     StationCapabilityMap stationCapabilityMap;
-    boost::thread thread1;
+    bo::MastQuery scQuery;
+    std::thread thread1;
     if (showObservingCapability)
     {
-      bo::MastQuery scQuery;
-      thread1 = boost::thread(
+      thread1 = std::thread(
           boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationCapabilities,
                       this,
                       boost::ref(scQuery),
@@ -156,7 +156,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
     // Get station group data from Observation
     StationGroupMap stationGroupMap;
     bo::MastQuery sgQuery;
-    boost::thread thread2(
+    std::thread thread2(
         boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationGroupData,
                     this,
                     language,
@@ -168,7 +168,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
     // Get network membership data from Observation
     NetworkMembershipMap networkMemberShipMap;
     bo::MastQuery emfQuery;
-    boost::thread thread3(
+    std::thread thread3(
         boost::bind(&bw::StoredEnvMonitoringFacilityQueryHandler::getStationNetworkMembershipData,
                     this,
                     language,
