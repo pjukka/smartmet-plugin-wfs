@@ -113,7 +113,7 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::query(const StoredQuery &query
     FeatureID featureId(get_config()->get_query_id(), params.get_map(), sqId);
 
     // Removing some feature id parameters
-    const char *removeParams[] = {P_STATION_ID, P_STATION_NAME};
+    const char *removeParams[] = {P_STATION_ID, P_STATION_NAME, P_GROUP_ID};
     for (unsigned i = 0; i < sizeof(removeParams) / sizeof(*removeParams); i++)
     {
       featureId.erase_param(removeParams[i]);
