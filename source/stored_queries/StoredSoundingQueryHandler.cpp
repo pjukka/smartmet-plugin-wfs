@@ -420,9 +420,15 @@ void StoredSoundingQueryHandler::query(const StoredQuery& query,
 
           CTPP::CDT& rowData = row["data"][paramcount - 1];
           if (showValue)
-            rowData["value"] = dataContainer->castTo<double>(dataValueIt, 1);
+          {
+            auto value = dataContainer->castTo<std::string>(dataValueIt, 1);
+            rowData["value"] = (value.empty() ? missingValue : value);
+          }
           if (showDataQuality)
-            rowData["quality"] = dataContainer->castTo<int32_t>(dataQualityIt, 0);
+          {
+            auto quality = dataContainer->castTo<std::string>(dataQualityIt, 0);
+            rowData["quality"] = (quality.empty() ? missingValue : quality);
+          }
           dataId++;
         }
       }
