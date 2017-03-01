@@ -51,8 +51,8 @@
               <gml:timePosition indeterminatePosition="now"/>
             </gml:TimeInstant>
           </ef:linkingTime>
-          <ef:belongsTo xlink:href="#<TMPL_var CONCAT("emn-",network.__index__ + 1,"-networkid-",network.id)>"/>
-	 <ef:contains xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>?request=getFeature&amp;storedquery_id=fmi::ef::stations&amp;networkid=<TMPL_var network.id>&amp;" xlink:title="stations"/>
+          <ef:belongsTo xlink:href="#<TMPL_var network.featureId>"/>
+          <ef:contains xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>?request=getFeature&amp;storedquery_id=fmi::ef::stations&amp;networkid=<TMPL_var network.id>&amp;" xlink:title="stations"/>
         </ef:NetworkFacility>
       </ef:contains>
     </ef:EnvironmentalMonitoringNetwork>
