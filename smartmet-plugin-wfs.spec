@@ -91,6 +91,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Upcoming
+- Sounding measurement positions are not relative any more.
+- Set a replacement value if sounding measurement is missing.
 - Implement feature id to EMF and EMN handler.
 - Authority domain is now configurable on EMF and EMN stored queries.
 - Add station network class configuration capability to EMF and EMN handlers
