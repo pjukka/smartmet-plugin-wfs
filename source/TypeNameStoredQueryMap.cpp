@@ -6,7 +6,7 @@
  */
 #include "TypeNameStoredQueryMap.h"
 #include "WfsException.h"
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <sstream>
 #include <stdexcept>
 #include <boost/algorithm/string.hpp>

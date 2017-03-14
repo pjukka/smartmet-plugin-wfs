@@ -1,5 +1,5 @@
 #include "SupportsMeteoParameterOptions.h"
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <boost/algorithm/string.hpp>
 #include <spine/Exception.h>
 #include <stdint.h>

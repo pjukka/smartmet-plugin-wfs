@@ -2,7 +2,7 @@
 #include <smartmet/spine/Exception.h>
 #include <smartmet/spine/Value.h>
 #include <smartmet/spine/Convenience.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include "FeatureID.h"
 #include "StoredQueryHandlerFactoryDef.h"
 #include "WfsConst.h"

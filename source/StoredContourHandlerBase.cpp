@@ -1,6 +1,6 @@
 #include "StoredContourHandlerBase.h"
 #include <newbase/NFmiEnumConverter.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <gis/Box.h>
 
 #include <iomanip>

@@ -5,7 +5,7 @@
 #include "XmlUtils.h"
 #include "XPathSnapshot.h"
 #include <spine/Exception.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <boost/lambda/lambda.hpp>
 
 XERCES_CPP_NAMESPACE_USE;

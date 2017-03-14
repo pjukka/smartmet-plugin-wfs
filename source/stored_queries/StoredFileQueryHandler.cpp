@@ -2,7 +2,7 @@
 #include <set>
 #include <smartmet/spine/Exception.h>
 #include <smartmet/spine/Convenience.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include "FeatureID.h"
 #include "StoredQueryHandlerFactoryDef.h"

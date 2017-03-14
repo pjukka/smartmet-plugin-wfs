@@ -4,7 +4,7 @@
 #include <smartmet/engines/observation/VerifiableMessageQueryParams.h>
 #include <smartmet/engines/observation/VerifiableMessageQuery.h>
 #include <boost/date_time/posix_time/ptime.hpp>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <algorithm>
 #include <unordered_map>
 #include <utility>

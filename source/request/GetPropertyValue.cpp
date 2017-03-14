@@ -8,7 +8,7 @@
 #include <xercesc/util/Janitor.hpp>
 #include <xercesc/framework/MemBufInputSource.hpp>
 #include <xqilla/xqilla-dom3.hpp>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include "WfsConst.h"
 #include "WfsException.h"

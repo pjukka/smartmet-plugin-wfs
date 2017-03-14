@@ -5,7 +5,7 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/format.hpp>
 #include <newbase/NFmiPoint.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <macgyver/TimeFormatter.h>
 #include <newbase/NFmiQueryData.h>
 #include <smartmet/spine/Exception.h>

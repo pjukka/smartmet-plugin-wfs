@@ -1,5 +1,5 @@
 #include "SupportsQualityParameters.h"
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <spine/Exception.h>
 
 namespace bw = SmartMet::Plugin::WFS;

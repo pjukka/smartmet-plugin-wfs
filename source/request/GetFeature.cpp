@@ -12,7 +12,7 @@
 #include <xercesc/util/Janitor.hpp>
 #include <xercesc/framework/MemBufInputSource.hpp>
 #include <smartmet/spine/Convenience.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include "AdHocQuery.h"
 #include "ErrorResponseGenerator.h"

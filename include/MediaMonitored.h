@@ -1,6 +1,6 @@
 #pragma once
 
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <string>
 #include <memory>
 

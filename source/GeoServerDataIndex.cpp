@@ -1,7 +1,7 @@
 #include "GeoServerDataIndex.h"
 #include <spine/Convenience.h>
 #include <spine/Exception.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include <gis/OGR.h>
 #include <boost/date_time/posix_time/posix_time.hpp>

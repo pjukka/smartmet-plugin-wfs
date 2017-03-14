@@ -5,7 +5,7 @@
 #include <boost/foreach.hpp>
 #include <smartmet/spine/Exception.h>
 #include <smartmet/spine/Value.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include "StoredQueryHandlerBase.h"
 #include "StoredQueryHandlerFactoryDef.h"

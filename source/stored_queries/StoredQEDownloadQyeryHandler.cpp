@@ -12,7 +12,7 @@
 #include <newbase/NFmiQueryData.h>
 #include <smartmet/spine/Exception.h>
 #include <smartmet/spine/Convenience.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include <smartmet/engines/gis/GdalUtils.h>
 #include <smartmet/engines/geonames/Engine.h>

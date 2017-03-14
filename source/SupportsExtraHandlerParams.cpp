@@ -1,7 +1,7 @@
 #include "SupportsExtraHandlerParams.h"
 #include <sstream>
 #include <boost/algorithm/string.hpp>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include <spine/Exception.h>
 #include <spine/Value.h>

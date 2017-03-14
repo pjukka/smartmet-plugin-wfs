@@ -2,7 +2,7 @@
 
 #include <spine/Exception.h>
 #include <spine/TimeSeries.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <boost/date_time/posix_time/posix_time.hpp>
 
 namespace SmartMet

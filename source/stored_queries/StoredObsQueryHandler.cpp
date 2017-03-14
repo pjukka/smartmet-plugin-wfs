@@ -10,7 +10,7 @@
 #include <smartmet/spine/Convenience.h>
 #include <smartmet/spine/TimeSeries.h>
 #include <smartmet/spine/TimeSeriesOutput.h>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include "StoredQueryHandlerFactoryDef.h"
 #include "FeatureID.h"
 #include "WfsConst.h"

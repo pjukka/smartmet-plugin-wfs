@@ -2,7 +2,7 @@
 #include <sstream>
 #include <string>
 #include <typeinfo>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <spine/Exception.h>
 #include "RequestParameterMap.h"
 #include "SupportsExtraHandlerParams.h"

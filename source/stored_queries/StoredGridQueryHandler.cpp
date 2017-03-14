@@ -19,7 +19,7 @@
 #include <newbase/NFmiSvgPath.h>
 #include <newbase/NFmiPoint.h>
 
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 
 #include <smartmet/spine/Exception.h>

@@ -6,7 +6,7 @@
 #include <vector>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/variant.hpp>
-#include <macgyver/String.h>
+#include <macgyver/StringConversion.h>
 #include <smartmet/spine/Exception.h>
 #include <smartmet/spine/Value.h>
 #include "StoredQueryHandlerFactoryDef.h"
