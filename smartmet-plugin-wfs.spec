@@ -92,6 +92,8 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Tue Mar 14 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.3.14-1.fmi
 - Switched to using macgyver StringConversion tools
+- Sounding measurement positions are not relative any more.
+- Set a replacement value if sounding measurement is missing.
 - Implement feature id to EMF and EMN handler.
 - Authority domain is now configurable on EMF and EMN stored queries.
 - Add station network class configuration capability to EMF and EMN handlers
