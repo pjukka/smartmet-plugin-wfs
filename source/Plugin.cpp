@@ -492,7 +492,10 @@ void Plugin::realRequestHandler(SmartMet::Spine::Reactor& /* theReactor */,
       SmartMet::Spine::Exception exception(BCP, "Request processing exception!", NULL);
       exception.addParameter("URI", theRequest.getURI());
 
-      std::cerr << exception.getStackTrace();
+      if (!exception.stackTraceDisabled())
+        std::cerr << exception.getStackTrace();
+      else if (!exception.loggingDisabled())
+        std::cerr << "Error: " << exception.what() << std::endl;
 
       // FIXME: implement correct processing phase support (parsing, processing)
       ErrorResponseGenerator error_response_generator(*plugin_data);

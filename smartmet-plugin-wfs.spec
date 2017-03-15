@@ -2,7 +2,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.3.14
+Version: 17.3.15
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -16,30 +16,30 @@ BuildRequires: libcurl-devel
 BuildRequires: xerces-c-devel
 BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
-BuildRequires: smartmet-library-spine-devel >= 17.3.14
-BuildRequires: smartmet-library-gis-devel >= 17.1.18
-BuildRequires: smartmet-library-locus-devel >= 17.2.3
+BuildRequires: smartmet-library-spine-devel >= 17.3.15
+BuildRequires: smartmet-library-gis-devel >= 17.3.14
+BuildRequires: smartmet-library-locus-devel >= 17.3.14
 BuildRequires: smartmet-library-macgyver-devel >= 17.3.14
-BuildRequires: smartmet-engine-contour-devel >= 17.2.11
-BuildRequires: smartmet-engine-geonames-devel >= 17.3.14
-BuildRequires: smartmet-engine-gis-devel >= 17.3.14
-BuildRequires: smartmet-engine-observation-devel >= 17.3.14
-BuildRequires: smartmet-engine-querydata-devel >= 17.3.14
+BuildRequires: smartmet-engine-contour-devel >= 17.3.15
+BuildRequires: smartmet-engine-geonames-devel >= 17.3.15
+BuildRequires: smartmet-engine-gis-devel >= 17.3.15
+BuildRequires: smartmet-engine-observation-devel >= 17.3.15
+BuildRequires: smartmet-engine-querydata-devel >= 17.3.15
 BuildRequires: postgresql93-libs
 Requires: ctpp2
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
-Requires: smartmet-library-locus >= 17.2.3
+Requires: smartmet-library-locus >= 17.3.14
 Requires: smartmet-library-macgyver >= 17.3.14
-Requires: smartmet-library-spine >= 17.3.14
-Requires: smartmet-library-gis >= 17.1.18
-Requires: smartmet-engine-contour >= 17.2.11
-Requires: smartmet-engine-geonames >= 17.3.14
-Requires: smartmet-engine-gis >= 17.3.14
-Requires: smartmet-engine-observation >= 17.3.14
-Requires: smartmet-engine-querydata >= 17.3.14
-Requires: smartmet-server >= 17.3.14
+Requires: smartmet-library-spine >= 17.3.15
+Requires: smartmet-library-gis >= 17.3.14
+Requires: smartmet-engine-contour >= 17.3.15
+Requires: smartmet-engine-geonames >= 17.3.15
+Requires: smartmet-engine-gis >= 17.3.15
+Requires: smartmet-engine-observation >= 17.3.15
+Requires: smartmet-engine-querydata >= 17.3.15
+Requires: smartmet-server >= 17.3.15
 Requires: xerces-c
 Requires: xqilla
 %if 0%{rhel} >= 7
@@ -90,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Wed Mar 15 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.3.15-1.fmi
+- Recompiled since Spine::Exception changed
+
 * Tue Mar 14 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.3.14-1.fmi
 - Switched to using macgyver StringConversion tools
 - Sounding measurement positions are not relative any more.
