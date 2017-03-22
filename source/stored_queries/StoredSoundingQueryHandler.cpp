@@ -27,7 +27,8 @@ StoredSoundingQueryHandler::StoredSoundingQueryHandler(
     boost::optional<std::string> templateFileName)
     : SupportsExtraHandlerParams(config),
       StoredQueryHandlerBase(reactor, config, pluginData, templateFileName),
-      SupportsLocationParameters(config, INCLUDE_FMISIDS | INCLUDE_GEOIDS | INCLUDE_WMOS),
+      SupportsLocationParameters(
+          config, SUPPORT_KEYWORDS | INCLUDE_FMISIDS | INCLUDE_GEOIDS | INCLUDE_WMOS),
       SupportsBoundingBox(config, pluginData.get_crs_registry()),
       SupportsQualityParameters(config)
 {
