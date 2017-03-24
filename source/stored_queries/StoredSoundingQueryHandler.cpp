@@ -27,7 +27,8 @@ StoredSoundingQueryHandler::StoredSoundingQueryHandler(
     boost::optional<std::string> templateFileName)
     : SupportsExtraHandlerParams(config),
       StoredQueryHandlerBase(reactor, config, pluginData, templateFileName),
-      SupportsLocationParameters(config, INCLUDE_FMISIDS | INCLUDE_GEOIDS | INCLUDE_WMOS),
+      SupportsLocationParameters(
+          config, SUPPORT_KEYWORDS | INCLUDE_FMISIDS | INCLUDE_GEOIDS | INCLUDE_WMOS),
       SupportsBoundingBox(config, pluginData.get_crs_registry()),
       SupportsQualityParameters(config)
 {
@@ -300,7 +301,10 @@ void StoredSoundingQueryHandler::query(const StoredQuery& query,
 
                 stationLatitude = static_cast<long double>(sit->latitude_out);
                 stationLongitude = static_cast<long double>(sit->longitude_out);
-                set_2D_coord(transformation, std::to_string(stationLatitude), std::to_string(stationLongitude), station);
+                set_2D_coord(transformation,
+                             std::to_string(stationLatitude),
+                             std::to_string(stationLongitude),
+                             station);
                 station["elevation"] =
                     std::to_string(static_cast<long long int>(sit->station_elevation));
               }
@@ -384,8 +388,10 @@ void StoredSoundingQueryHandler::query(const StoredQuery& query,
             row["epochTime"] = sEpoch + dataContainer->castTo<int64_t>(dataLevelTimeIt, 0);
             row["altitude"] =
                 SmartMet::Engine::Observation::QueryResult::toString(dataAltitudeIt, 1);
-            const double levelLat = stationLatitude + dataContainer->castTo<double>(dataLatitudeIt, 6);
-            const double levelLon = stationLongitude + dataContainer->castTo<double>(dataLongitudeIt, 6);
+            const double levelLat =
+                stationLatitude + dataContainer->castTo<double>(dataLatitudeIt, 6);
+            const double levelLon =
+                stationLongitude + dataContainer->castTo<double>(dataLongitudeIt, 6);
             set_2D_coord(transformation, levelLon, levelLat, row);
             uint32_t significance = dataContainer->castTo<uint32_t>(dataSignificanceIt, 0);
             row["significance"] = significance;
