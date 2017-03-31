@@ -68,7 +68,7 @@ Global data object:
                                 ],
                 'stationList' : [
                                   {
-                                    'country' : "Finland",
+                                    'country' : "Republic of Finland",
                                     'geoid' : "658225",
                                     'iso2' : "FI",
                                     'localtz' : "Europe\/Helsinki",

@@ -1155,7 +1155,7 @@ Global data object:
                                 ],
                 'stationList' : [
                                   {
-                                    'country' : "Denmark",
+                                    'country' : "Kingdom of Denmark",
                                     'geoid' : "2614481",
                                     'iso2' : "DK",
                                     'localtz' : "Europe\/Copenhagen",
@@ -1165,7 +1165,7 @@ Global data object:
                                     'y' : "12.08035"
                                   },
                                   {
-                                    'country' : "Sweden",
+                                    'country' : "Kingdom of Sweden",
                                     'geoid' : "2666199",
                                     'iso2' : "SE",
                                     'localtz' : "Europe\/Stockholm",
@@ -1175,7 +1175,7 @@ Global data object:
                                     'y' : "17.63889"
                                   },
                                   {
-                                    'country' : "Finland",
+                                    'country' : "Republic of Finland",
                                     'geoid' : "658225",
                                     'iso2' : "FI",
                                     'localtz' : "Europe\/Helsinki",
