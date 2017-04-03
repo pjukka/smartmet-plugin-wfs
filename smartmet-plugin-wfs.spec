@@ -2,7 +2,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.3.16
+Version: 17.4.3
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -16,30 +16,30 @@ BuildRequires: libcurl-devel
 BuildRequires: xerces-c-devel
 BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
-BuildRequires: smartmet-library-spine-devel >= 17.3.15
+BuildRequires: smartmet-library-spine-devel >= 17.3.16
 BuildRequires: smartmet-library-gis-devel >= 17.3.14
-BuildRequires: smartmet-library-locus-devel >= 17.3.14
-BuildRequires: smartmet-library-macgyver-devel >= 17.3.14
-BuildRequires: smartmet-library-delfoi-devel >= 17.3.28
+BuildRequires: smartmet-library-locus-devel >= 17.3.23
+BuildRequires: smartmet-library-macgyver-devel >= 17.3.16
+BuildRequires: smartmet-library-delfoi-devel >= 17.4.3
 BuildRequires: smartmet-engine-contour-devel >= 17.3.15
 BuildRequires: smartmet-engine-geonames-devel >= 17.3.15
 BuildRequires: smartmet-engine-gis-devel >= 17.3.15
-BuildRequires: smartmet-engine-observation-devel >= 17.3.15
+BuildRequires: smartmet-engine-observation-devel >= 17.4.3
 BuildRequires: smartmet-engine-querydata-devel >= 17.3.15
 BuildRequires: postgresql93-libs
 Requires: ctpp2
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
-Requires: smartmet-library-locus >= 17.3.14
-Requires: smartmet-library-macgyver >= 17.3.14
-Requires: smartmet-library-delfoi >= 17.3.28
-Requires: smartmet-library-spine >= 17.3.15
+Requires: smartmet-library-locus >= 17.3.23
+Requires: smartmet-library-macgyver >= 17.3.16
+Requires: smartmet-library-delfoi >= 17.4.3
+Requires: smartmet-library-spine >= 17.3.16
 Requires: smartmet-library-gis >= 17.3.14
 Requires: smartmet-engine-contour >= 17.3.15
 Requires: smartmet-engine-geonames >= 17.3.15
 Requires: smartmet-engine-gis >= 17.3.15
-Requires: smartmet-engine-observation >= 17.3.15
+Requires: smartmet-engine-observation >= 17.4.3
 Requires: smartmet-engine-querydata >= 17.3.15
 Requires: smartmet-server >= 17.3.15
 Requires: xerces-c
@@ -92,12 +92,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
-* Upcoming
+* Mon Apr  3 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.4.3-1.fmi
 - Add keywords support to StoredSoundingQueryHandler
 - Modifications due to observation engine API changes:
-redundant parameter in values-function removed,
-redundant Engine's Interface base class removed
-
+  redundant parameter in values-function removed,
+  redundant Engine's Interface base class removed
 
 * Wed Mar 15 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.3.15-1.fmi
 - Recompiled since Spine::Exception changed
