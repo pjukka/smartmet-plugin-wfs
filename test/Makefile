@@ -2,7 +2,7 @@ INCDIR = smartmet/smartmet/plugins/$(SUBNAME)
 TEST_TOP = $(shell pwd)
 TOP = $(TEST_TOP)/..
 
-TEST_DIRECTORIES = base real real_open
+TEST_DIRECTORIES = base real
 
 # Compiler options
 
