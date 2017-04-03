@@ -20,7 +20,6 @@ BuildRequires: smartmet-library-spine-devel >= 17.3.16
 BuildRequires: smartmet-library-gis-devel >= 17.3.14
 BuildRequires: smartmet-library-locus-devel >= 17.3.23
 BuildRequires: smartmet-library-macgyver-devel >= 17.3.16
-BuildRequires: smartmet-library-delfoi-devel >= 17.4.3
 BuildRequires: smartmet-engine-contour-devel >= 17.3.15
 BuildRequires: smartmet-engine-geonames-devel >= 17.3.15
 BuildRequires: smartmet-engine-gis-devel >= 17.3.15
@@ -33,7 +32,6 @@ Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 17.3.23
 Requires: smartmet-library-macgyver >= 17.3.16
-Requires: smartmet-library-delfoi >= 17.4.3
 Requires: smartmet-library-spine >= 17.3.16
 Requires: smartmet-library-gis >= 17.3.14
 Requires: smartmet-engine-contour >= 17.3.15
