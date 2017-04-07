@@ -70,14 +70,6 @@ make %{_smp_mflags}
 %install
 %makeinstall
 
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/smartmet/plugins/wfs/templates
-for file in cnf/templates/*.c2t; do
-    install -m 664 $file  $RPM_BUILD_ROOT%{_sysconfdir}/smartmet/plugins/wfs/templates/
-done
-
-install -m 664 cnf/XMLGrammarPool.dump $RPM_BUILD_ROOT%{_sysconfdir}/smartmet/plugins/wfs/
-install -m 664 cnf/XMLSchemas.cache $RPM_BUILD_ROOT%{_sysconfdir}/smartmet/plugins/wfs/
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 

@@ -45,6 +45,12 @@ else
   PREFIX = $(PREFIX)
 endif
 
+ifeq ($(origin SYSCONFDIR), undefined)
+  sysconfdir = /etc
+else
+  sysconfdir = $(SYSCONFDIR)
+endif
+
 ifeq ($(processor), x86_64)
   libdir = $(PREFIX)/lib64
 else
@@ -183,6 +189,13 @@ format:
 install:
 	@mkdir -p $(plugindir)
 	$(INSTALL_PROG) $(LIBFILE) $(plugindir)/$(LIBFILE)
+	@mkdir -p $(sysconfdir)/smartmet/plugins/wfs/templates
+	@for file in cnf/templates/*.c2t; do \
+	 echo $(INSTALL_DATA) $$file $(sysconfdir)/smartmet/plugins/wfs/templates/; \
+	 $(INSTALL_DATA) $$file $(sysconfdir)/smartmet/plugins/wfs/templates/; \
+	done
+	$(INSTALL_DATA) cnf/XMLGrammarPool.dump $(sysconfdir)/smartmet/plugins/wfs/
+	$(INSTALL_DATA) cnf/XMLSchemas.cache $(sysconfdir)/smartmet/plugins/wfs/
 
 # Separate depend target is no more needed as dependencies are updated automatically
 # and are always up to time
