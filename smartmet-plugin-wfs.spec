@@ -1,9 +1,10 @@
+%bcond_without observation
 %define DIRNAME wfs
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
 Version: 17.4.8
-Release: 1%{?dist}.fmi
+Release: 2%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
 URL: https://github.com/fmidev/smartmet-plugin-wfs
@@ -23,7 +24,9 @@ BuildRequires: smartmet-library-macgyver-devel >= 17.3.16
 BuildRequires: smartmet-engine-contour-devel >= 17.3.15
 BuildRequires: smartmet-engine-geonames-devel >= 17.3.15
 BuildRequires: smartmet-engine-gis-devel >= 17.3.15
+%if %{with observation}
 BuildRequires: smartmet-engine-observation-devel >= 17.4.7
+%endif
 BuildRequires: smartmet-engine-querydata-devel >= 17.4.8
 BuildRequires: postgresql93-libs
 Requires: ctpp2
@@ -37,7 +40,9 @@ Requires: smartmet-library-gis >= 17.3.14
 Requires: smartmet-engine-contour >= 17.3.15
 Requires: smartmet-engine-geonames >= 17.3.15
 Requires: smartmet-engine-gis >= 17.3.15
+%if %{with observation}
 Requires: smartmet-engine-observation >= 17.4.7
+%endif
 Requires: smartmet-engine-querydata >= 17.4.8
 Requires: smartmet-server >= 17.4.7
 Requires: xerces-c
@@ -65,7 +70,8 @@ rm -rf $RPM_BUILD_ROOT
 %setup -q -n plugins/%{SPECNAME}
 
 %build -q -n plugins/%{SPECNAME}
-make %{_smp_mflags}
+make %{_smp_mflags} \
+     %{?!with_observation:CFLAGS=-DWITHOUT_OBSERVATION}
 
 %install
 %makeinstall

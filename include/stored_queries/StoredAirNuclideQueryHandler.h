@@ -1,17 +1,19 @@
 #pragma once
 
+#ifndef WITHOUT_OBSERVATION
+
 #include "StoredQueryHandlerBase.h"
-#include "SupportsExtraHandlerParams.h"
 #include "SupportsBoundingBox.h"
+#include "SupportsExtraHandlerParams.h"
 #include "SupportsLocationParameters.h"
 #include "SupportsQualityParameters.h"
+#include <boost/algorithm/string.hpp>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/format.hpp>
+#include <boost/lambda/lambda.hpp>
 #include <engines/geonames/Engine.h>
 #include <engines/observation/Engine.h>
 #include <engines/observation/MastQueryParams.h>
-#include <boost/format.hpp>
-#include <boost/algorithm/string.hpp>
-#include <boost/lambda/lambda.hpp>
-#include <boost/date_time/posix_time/ptime.hpp>
 
 namespace pt = boost::posix_time;
 namespace lt = boost::local_time;
@@ -72,3 +74,5 @@ class StoredAirNuclideQueryHandler : protected virtual SupportsExtraHandlerParam
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
+
+#endif

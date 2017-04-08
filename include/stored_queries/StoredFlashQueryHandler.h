@@ -1,13 +1,15 @@
 #pragma once
 
-#include <engines/observation/Engine.h>
-#include <engines/geonames/Engine.h>
-#include "StoredQueryHandlerBase.h"
+#ifndef WITHOUT_OBSERVATION
+
 #include "ArrayParameterTemplate.h"
 #include "ScalarParameterTemplate.h"
+#include "StoredQueryHandlerBase.h"
 #include "SupportsBoundingBox.h"
 #include "SupportsExtraHandlerParams.h"
 #include "SupportsTimeZone.h"
+#include <engines/geonames/Engine.h>
+#include <engines/observation/Engine.h>
 
 namespace SmartMet
 {
@@ -60,3 +62,5 @@ class StoredFlashQueryHandler : public StoredQueryHandlerBase,
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
+
+#endif  // WITHOUT_OBSERVATION

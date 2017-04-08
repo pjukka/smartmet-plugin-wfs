@@ -1,16 +1,18 @@
 #pragma once
 
-#include <engines/observation/Engine.h>
-#include <engines/geonames/Engine.h>
-#include "StoredQueryHandlerBase.h"
+#ifndef WITHOUT_OBSERVATION
+
 #include "ArrayParameterTemplate.h"
 #include "ScalarParameterTemplate.h"
+#include "StoredQueryHandlerBase.h"
+#include "SupportsBoundingBox.h"
 #include "SupportsExtraHandlerParams.h"
 #include "SupportsLocationParameters.h"
-#include "SupportsBoundingBox.h"
-#include "SupportsTimeZone.h"
-#include "SupportsQualityParameters.h"
 #include "SupportsMeteoParameterOptions.h"
+#include "SupportsQualityParameters.h"
+#include "SupportsTimeZone.h"
+#include <engines/geonames/Engine.h>
+#include <engines/observation/Engine.h>
 namespace SmartMet
 {
 namespace Plugin
@@ -59,7 +61,6 @@ class StoredObsQueryHandler : public StoredQueryHandlerBase,
 
  private:
   SmartMet::Engine::Geonames::Engine* geo_engine;
-
   SmartMet::Engine::Observation::Engine* obs_engine;
 
   /**
@@ -109,3 +110,5 @@ class StoredObsQueryHandler : public StoredQueryHandlerBase,
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
+
+#endif  // WITHOUT_OBSERVATION

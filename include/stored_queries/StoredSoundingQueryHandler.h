@@ -1,16 +1,18 @@
 #pragma once
 
+#ifndef WITHOUT_OBSERVATION
+
 #include "StoredQueryHandlerBase.h"
-#include "SupportsExtraHandlerParams.h"
 #include "SupportsBoundingBox.h"
+#include "SupportsExtraHandlerParams.h"
 #include "SupportsLocationParameters.h"
 #include "SupportsQualityParameters.h"
 #include <engines/geonames/Engine.h>
-#include <engines/observation/Engine.h>
 #include <engines/observation/DBRegistry.h>
+#include <engines/observation/Engine.h>
 #include <engines/observation/QueryResult.h>
-#include <tuple>
 #include <map>
+#include <tuple>
 
 // Stored query configuration parameter names.
 const std::string P_BEGIN_TIME = "beginTime";
@@ -79,10 +81,10 @@ class StoredSoundingQueryHandler : protected virtual SupportsExtraHandlerParams,
                      std::ostream& output) const;
 
  private:
-  virtual void update_parameters(const RequestParameterMap& request_params,
-                                 int seq_id,
-                                 std::vector<boost::shared_ptr<RequestParameterMap> >& result)
-      const;
+  virtual void update_parameters(
+      const RequestParameterMap& request_params,
+      int seq_id,
+      std::vector<boost::shared_ptr<RequestParameterMap> >& result) const;
 
   const std::shared_ptr<SmartMet::Engine::Observation::DBRegistryConfig> dbRegistryConfig(
       const std::string& configName) const;
@@ -124,3 +126,5 @@ class StoredSoundingQueryHandler : protected virtual SupportsExtraHandlerParams,
 }
 }
 }
+
+#endif  // WITHOUT_OBSERVATION

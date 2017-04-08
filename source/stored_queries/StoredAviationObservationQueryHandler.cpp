@@ -1,11 +1,13 @@
+#ifndef WITHOUT_OBSERVATION
+
 #include "stored_queries/StoredAviationObservationQueryHandler.h"
 #include "StoredQueryHandlerFactoryDef.h"
-#include <smartmet/spine/Exception.h>
-#include <smartmet/engines/observation/VerifiableMessageQueryParams.h>
-#include <smartmet/engines/observation/VerifiableMessageQuery.h>
-#include <engines/observation/DBRegistry.h>
 #include <boost/date_time/posix_time/ptime.hpp>
+#include <engines/observation/DBRegistry.h>
+#include <engines/observation/VerifiableMessageQuery.h>
+#include <engines/observation/VerifiableMessageQueryParams.h>
 #include <macgyver/StringConversion.h>
+#include <spine/Exception.h>
 #include <algorithm>
 #include <unordered_map>
 #include <utility>
@@ -153,9 +155,8 @@ void bw::StoredAviationObservationQueryHandler::query(const StoredQuery& query,
              it != locationsByStationType.end();
              ++it)
         {
-          if (queryBBox->xMin <= (*it)->longitude and queryBBox->xMax >=
-              (*it)->longitude and queryBBox->yMin <= (*it)->latitude and queryBBox->yMax >=
-              (*it)->latitude)
+          if (queryBBox->xMin <= (*it)->longitude and queryBBox->xMax >= (*it)->longitude and
+              queryBBox->yMin <= (*it)->latitude and queryBBox->yMax >= (*it)->latitude)
           {
             // Do not add duplicates.
             if (validIcaoCodes.find((*it)->name) == validIcaoCodes.end())
@@ -205,8 +206,8 @@ void bw::StoredAviationObservationQueryHandler::query(const StoredQuery& query,
         }
 
         // Add only allowed stations, ones.
-        if (locIt != locationsByStationType.end() and validIcaoCodes.find((*locIt)->name) ==
-            validIcaoCodes.end())
+        if (locIt != locationsByStationType.end() and
+            validIcaoCodes.find((*locIt)->name) == validIcaoCodes.end())
         {
           validIcaoCodes.insert(std::make_pair((*locIt)->name, *locIt));
         }
@@ -243,8 +244,8 @@ void bw::StoredAviationObservationQueryHandler::query(const StoredQuery& query,
           queryParams.setReturnOnlyLatest();
 
         // The column names in the db to fetch.
-        const std::list<std::string> selectNameList = {"STATION_ID", "MESSAGE_TIME",
-                                                       "IWXXM_CONTENT"};
+        const std::list<std::string> selectNameList = {
+            "STATION_ID", "MESSAGE_TIME", "IWXXM_CONTENT"};
         try
         {
           for (std::map<std::string, SmartMet::Spine::LocationPtr>::iterator it =
@@ -365,10 +366,12 @@ void bw::StoredAviationObservationQueryHandler::query(const StoredQuery& query,
       if (!axis_labels.empty())
         hash["projSrsAxisLabels"] = axis_labels;
 
-      hash["lowerCorner"] = std::to_string(static_cast<long double>(bbox.xMin)).append(" ").append(
-          std::to_string(static_cast<long double>(bbox.yMin)));
-      hash["upperCorner"] = std::to_string(static_cast<long double>(bbox.xMax)).append(" ").append(
-          std::to_string(static_cast<long double>(bbox.yMax)));
+      hash["lowerCorner"] = std::to_string(static_cast<long double>(bbox.xMin))
+                                .append(" ")
+                                .append(std::to_string(static_cast<long double>(bbox.yMin)));
+      hash["upperCorner"] = std::to_string(static_cast<long double>(bbox.xMax))
+                                .append(" ")
+                                .append(std::to_string(static_cast<long double>(bbox.yMax)));
 
       // Format output
       format_output(hash, output, query.get_use_debug_format());
@@ -398,10 +401,10 @@ namespace
 using namespace SmartMet::Plugin::WFS;
 
 boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase>
-    wfs_stored_aviation_observation_handler_create(SmartMet::Spine::Reactor* reactor,
-                                                   boost::shared_ptr<StoredQueryConfig> config,
-                                                   PluginData& plugin_data,
-                                                   boost::optional<std::string> template_file_name)
+wfs_stored_aviation_observation_handler_create(SmartMet::Spine::Reactor* reactor,
+                                               boost::shared_ptr<StoredQueryConfig> config,
+                                               PluginData& plugin_data,
+                                               boost::optional<std::string> template_file_name)
 {
   try
   {
@@ -527,3 +530,5 @@ and must be specified on top level of stored query configuration file when prese
 </table>
 
 */
+
+#endif  // WITHOUT_OBSERVATION

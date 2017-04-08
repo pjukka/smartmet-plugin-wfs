@@ -1,17 +1,19 @@
 #pragma once
 
+#ifndef WITHOUT_OBSERVATION
+
 #include "StoredQueryHandlerBase.h"
-#include "SupportsExtraHandlerParams.h"
 #include "SupportsBoundingBox.h"
+#include "SupportsExtraHandlerParams.h"
 #include "SupportsLocationParameters.h"
 #include "SupportsQualityParameters.h"
+#include <boost/algorithm/string.hpp>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/format.hpp>
+#include <boost/lambda/lambda.hpp>
 #include <engines/geonames/Engine.h>
 #include <engines/observation/Engine.h>
 #include <engines/observation/MastQueryParams.h>
-#include <boost/format.hpp>
-#include <boost/algorithm/string.hpp>
-#include <boost/lambda/lambda.hpp>
-#include <boost/date_time/posix_time/ptime.hpp>
 
 namespace pt = boost::posix_time;
 namespace lt = boost::local_time;
@@ -63,10 +65,10 @@ class StoredMastQueryHandler : protected virtual SupportsExtraHandlerParams,
                      std::ostream& output) const;
 
  private:
-  virtual void update_parameters(const RequestParameterMap& request_params,
-                                 int seq_id,
-                                 std::vector<boost::shared_ptr<RequestParameterMap> >& result)
-      const;
+  virtual void update_parameters(
+      const RequestParameterMap& request_params,
+      int seq_id,
+      std::vector<boost::shared_ptr<RequestParameterMap> >& result) const;
 
   const std::shared_ptr<SmartMet::Engine::Observation::DBRegistryConfig> dbRegistryConfig(
       const std::string& configName) const;
@@ -82,3 +84,5 @@ class StoredMastQueryHandler : protected virtual SupportsExtraHandlerParams,
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
+
+#endif  // WITHOUT_OBSERVATION

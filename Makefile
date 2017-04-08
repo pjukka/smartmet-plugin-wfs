@@ -222,7 +222,7 @@ rpm: clean file-list
 	then \
 	  tar -czvf $(SPEC).tar.gz \
 		--transform "s,^,plugins/$(SPEC)/," $(shell cat files.list) ; \
-	  rpmbuild -ta $(SPEC).tar.gz ; \
+	  rpmbuild $(RPMBUILD) -ta $(SPEC).tar.gz ; \
 	  rm -f $(SPEC).tar.gz ; \
 	else \
 	  echo $(SPEC).spec missing; \

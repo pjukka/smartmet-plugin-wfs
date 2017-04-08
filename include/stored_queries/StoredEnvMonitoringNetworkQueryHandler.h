@@ -1,10 +1,12 @@
 #pragma once
 
+#ifndef WITHOUT_OBSERVATION
+
+#include "StoredQueryHandlerBase.h"
+#include "SupportsExtraHandlerParams.h"
 #include <engines/geonames/Engine.h>
 #include <engines/observation/Engine.h>
 #include <engines/observation/MastQuery.h>
-#include "SupportsExtraHandlerParams.h"
-#include "StoredQueryHandlerBase.h"
 
 namespace SmartMet
 {
@@ -43,3 +45,5 @@ class StoredEnvMonitoringNetworkQueryHandler : protected virtual SupportsExtraHa
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
+
+#endif  // WITHOUT_OBSERVATION

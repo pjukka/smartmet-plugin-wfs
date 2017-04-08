@@ -1,10 +1,12 @@
+#ifndef WITHOUT_OBSERVATION
+
 #include "stored_queries/StoredEnvMonitoringNetworkQueryHandler.h"
+#include "FeatureID.h"
 #include "StoredQueryHandlerFactoryDef.h"
 #include "SupportsLocationParameters.h"
-#include "FeatureID.h"
-#include <smartmet/spine/Exception.h>
-#include <smartmet/engines/observation/DBRegistry.h>
 #include <boost/icl/type_traits/to_string.hpp>
+#include <smartmet/engines/observation/DBRegistry.h>
+#include <smartmet/spine/Exception.h>
 #include <memory>
 
 namespace bw = SmartMet::Plugin::WFS;
@@ -384,3 +386,5 @@ The following stored query handler are in use
 </table>
 
 */
+
+#endif  // WITHOUT_OBSERVATION

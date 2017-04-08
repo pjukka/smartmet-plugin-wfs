@@ -1,13 +1,15 @@
+#ifndef WITHOUT_OBSERVATION
+
 #include "stored_queries/StoredSoundingQueryHandler.h"
-#include "StoredQueryHandlerFactoryDef.h"
 #include "FeatureID.h"
-#include <spine/Convenience.h>
-#include <spine/Exception.h>
-#include <engines/gis/Engine.h>
+#include "StoredQueryHandlerFactoryDef.h"
+#include <boost/date_time/posix_time/ptime.hpp>
 #include <engines/gis/CRSRegistry.h>
+#include <engines/gis/Engine.h>
 #include <engines/observation/MastQuery.h>
 #include <macgyver/TimeParser.h>
-#include <boost/date_time/posix_time/ptime.hpp>
+#include <spine/Convenience.h>
+#include <spine/Exception.h>
 
 #include <tuple>
 
@@ -894,3 +896,5 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfsStoredSoundi
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_sounding_handler_factory(
     &wfsStoredSoundingHandlerCreate);
+
+#endif  // WITHOUT_OBSERVATION

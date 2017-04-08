@@ -1,11 +1,12 @@
 #pragma once
+#ifndef WITHOUT_OBSERVATION
 
+#include "StoredQueryHandlerBase.h"
+#include "SupportsExtraHandlerParams.h"
+#include "SupportsLocationParameters.h"
 #include <engines/geonames/Engine.h>
 #include <engines/observation/Engine.h>
 #include <engines/observation/MastQuery.h>
-#include "SupportsExtraHandlerParams.h"
-#include "SupportsLocationParameters.h"
-#include "StoredQueryHandlerBase.h"
 #include <unordered_map>
 
 namespace SmartMet
@@ -110,3 +111,5 @@ class StoredEnvMonitoringFacilityQueryHandler : public StoredQueryHandlerBase,
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
+
+#endif  // WITHOUT_OBSERVATION

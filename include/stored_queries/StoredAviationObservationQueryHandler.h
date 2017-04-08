@@ -1,12 +1,14 @@
 #pragma once
 
+#ifndef WITHOUT_OBSERVATION
+
 #include "StoredQueryHandlerBase.h"
+#include "SupportsBoundingBox.h"
 #include "SupportsExtraHandlerParams.h"
+#include "SupportsLocationParameters.h"
+#include "SupportsTimeZone.h"
 #include <engines/geonames/Engine.h>
 #include <engines/observation/Engine.h>
-#include "SupportsLocationParameters.h"
-#include "SupportsBoundingBox.h"
-#include "SupportsTimeZone.h"
 
 namespace SmartMet
 {
@@ -37,10 +39,10 @@ class StoredAviationObservationQueryHandler : protected virtual SupportsExtraHan
                      std::ostream& output) const;
 
  private:
-  virtual void update_parameters(const RequestParameterMap& request_params,
-                                 int seq_id,
-                                 std::vector<boost::shared_ptr<RequestParameterMap> >& result)
-      const;
+  virtual void update_parameters(
+      const RequestParameterMap& request_params,
+      int seq_id,
+      std::vector<boost::shared_ptr<RequestParameterMap> >& result) const;
 
   SmartMet::Engine::Geonames::Engine* m_geoEngine;
   SmartMet::Engine::Observation::Engine* m_obsEngine;
@@ -52,3 +54,5 @@ class StoredAviationObservationQueryHandler : protected virtual SupportsExtraHan
 }  // namespace WFS
 }  // namespace Plugin
 }  // namespace SmartMet
+
+#endif  // WITHOUT_OBSERVATION
