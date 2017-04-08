@@ -4,11 +4,20 @@
  */
 // ======================================================================
 
-#include <Plugin.h>
-#include <iostream>
-#include <stdexcept>
-#include <typeinfo>
-#include <cxxabi.h>
+#include "ErrorResponseGenerator.h"
+#include "StoredQueryConfig.h"
+#include "StoredQueryHandlerFactoryDef.h"
+#include "WfsConst.h"
+#include "WfsConvenience.h"
+#include "WfsException.h"
+#include "XmlParser.h"
+#include "XmlUtils.h"
+#include "request/DescribeFeatureType.h"
+#include "request/DescribeStoredQueries.h"
+#include "request/GetCapabilities.h"
+#include "request/GetFeature.h"
+#include "request/GetPropertyValue.h"
+#include "request/ListStoredQueries.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/bind.hpp>
 #include <boost/date_time/gregorian/gregorian.hpp>
@@ -18,33 +27,23 @@
 #include <boost/format.hpp>
 #include <boost/lambda/lambda.hpp>
 #include <boost/ref.hpp>
-#include <xercesc/util/PlatformUtils.hpp>
 #include <ctpp2/CDT.hpp>
+#include <macgyver/TimeFormatter.h>
+#include <macgyver/TypeName.h>
 #include <spine/Convenience.h>
+#include <spine/Exception.h>
 #include <spine/FmiApiKey.h>
 #include <spine/Location.h>
-#include <spine/TableFormatterOptions.h>
-#include <macgyver/TypeName.h>
-#include <spine/Exception.h>
-#include <spine/SmartMet.h>
 #include <spine/Reactor.h>
-#include <macgyver/TimeFormatter.h>
+#include <spine/SmartMet.h>
 #include <spine/TableFormatterFactory.h>
-#include <macgyver/TypeName.h>
-#include "ErrorResponseGenerator.h"
-#include "request/GetCapabilities.h"
-#include "request/DescribeFeatureType.h"
-#include "request/DescribeStoredQueries.h"
-#include "request/GetFeature.h"
-#include "request/GetPropertyValue.h"
-#include "request/ListStoredQueries.h"
-#include "StoredQueryConfig.h"
-#include "StoredQueryHandlerFactoryDef.h"
-#include "WfsConst.h"
-#include "WfsConvenience.h"
-#include "WfsException.h"
-#include "XmlParser.h"
-#include "XmlUtils.h"
+#include <spine/TableFormatterOptions.h>
+#include <xercesc/util/PlatformUtils.hpp>
+#include <Plugin.h>
+#include <cxxabi.h>
+#include <iostream>
+#include <stdexcept>
+#include <typeinfo>
 
 using namespace std;
 using namespace boost::posix_time;
@@ -90,11 +89,12 @@ void Plugin::init()
         throw SmartMet::Spine::Exception(BCP, msg.str());
       }
 
-      request_factory->register_request_type(
-                         "GetCapabilities",
-                         "",
-                         boost::bind(&Plugin::parse_kvp_get_capabilities_request, this, _1, _2),
-                         boost::bind(&Plugin::parse_xml_get_capabilities_request, this, _1, _2, _3))
+      request_factory
+          ->register_request_type(
+              "GetCapabilities",
+              "",
+              boost::bind(&Plugin::parse_kvp_get_capabilities_request, this, _1, _2),
+              boost::bind(&Plugin::parse_xml_get_capabilities_request, this, _1, _2, _3))
           .register_request_type(
               "DescribeFeatureType",
               "supportsDescribeFeatureType",
@@ -491,11 +491,7 @@ void Plugin::realRequestHandler(SmartMet::Spine::Reactor& /* theReactor */,
 
       SmartMet::Spine::Exception exception(BCP, "Request processing exception!", NULL);
       exception.addParameter("URI", theRequest.getURI());
-
-      if (!exception.stackTraceDisabled())
-        std::cerr << exception.getStackTrace();
-      else if (!exception.loggingDisabled())
-        std::cerr << "Error: " << exception.what() << std::endl;
+      exception.printError();
 
       // FIXME: implement correct processing phase support (parsing, processing)
       ErrorResponseGenerator error_response_generator(*plugin_data);
