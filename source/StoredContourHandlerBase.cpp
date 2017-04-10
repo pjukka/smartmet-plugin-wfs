@@ -1,10 +1,10 @@
 #include "StoredContourHandlerBase.h"
-#include <newbase/NFmiEnumConverter.h>
-#include <macgyver/StringConversion.h>
 #include <gis/Box.h>
+#include <macgyver/StringConversion.h>
+#include <newbase/NFmiEnumConverter.h>
 
-#include <iomanip>
 #include <boost/algorithm/string/replace.hpp>
+#include <iomanip>
 
 namespace bw = SmartMet::Plugin::WFS;
 
@@ -163,7 +163,13 @@ bw::ContourQueryResultSet bw::StoredContourQueryHandler::getContours(
         CoordinatesPtr coords =
             itsQEngine->getWorldCoordinates(queryParameter.q, &queryParameter.sr);
 
-        geoms = itsContourEngine->contour(qhash, wkt, *matrix, coords, options, &queryParameter.sr);
+        geoms = itsContourEngine->contour(qhash,
+                                          wkt,
+                                          *matrix,
+                                          coords,
+                                          options,
+                                          queryParameter.q->needsWraparound(),
+                                          &queryParameter.sr);
       }
       catch (std::exception& e)
       {
