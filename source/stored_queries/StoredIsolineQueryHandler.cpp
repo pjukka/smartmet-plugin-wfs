@@ -1,9 +1,9 @@
 #include "stored_queries/StoredIsolineQueryHandler.h"
-#include <newbase/NFmiEnumConverter.h>
 #include <gis/Box.h>
+#include <newbase/NFmiEnumConverter.h>
 
-#include <iomanip>
 #include <boost/algorithm/string/replace.hpp>
+#include <iomanip>
 
 namespace bw = SmartMet::Plugin::WFS;
 
@@ -31,7 +31,8 @@ void bw::StoredIsolineQueryHandler::clipGeometry(OGRGeometryPtr& pGeom, Fmi::Box
 {
   try
   {
-    pGeom.reset(Fmi::OGR::lineclip(*pGeom, bbox));
+    if (pGeom && !pGeom->IsEmpty())
+      pGeom.reset(Fmi::OGR::lineclip(*pGeom, bbox));
   }
   catch (...)
   {

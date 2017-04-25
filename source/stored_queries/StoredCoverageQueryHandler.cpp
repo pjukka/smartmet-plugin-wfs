@@ -1,9 +1,9 @@
 #include "stored_queries/StoredCoverageQueryHandler.h"
-#include <newbase/NFmiEnumConverter.h>
 #include <gis/Box.h>
+#include <newbase/NFmiEnumConverter.h>
 
-#include <iomanip>
 #include <boost/algorithm/string/replace.hpp>
+#include <iomanip>
 
 namespace bw = SmartMet::Plugin::WFS;
 
@@ -40,7 +40,8 @@ void bw::StoredCoverageQueryHandler::clipGeometry(OGRGeometryPtr& pGeom, Fmi::Bo
 {
   try
   {
-    pGeom.reset(Fmi::OGR::polyclip(*pGeom, bbox));
+    if (pGeom && !pGeom->IsEmpty())
+      pGeom.reset(Fmi::OGR::polyclip(*pGeom, bbox));
   }
   catch (...)
   {
