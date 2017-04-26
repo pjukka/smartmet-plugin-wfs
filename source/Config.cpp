@@ -40,9 +40,8 @@ Config::Config(const string& configfile)
   try
   {
     itsDefaultUrl = get_optional_config_param<std::string>("url", itsDefaultUrl);
-    sq_config_dirs = get_mandatory_config_array<std::string>("storedQueryConfigDirs", 1);
-    const std::string sq_template_dir =
-        get_mandatory_config_param<std::string>("storedQueryTemplateDir");
+    sq_config_dirs = get_mandatory_path_array("storedQueryConfigDirs", 1);
+    const std::string sq_template_dir = get_mandatory_path("storedQueryTemplateDir");
     getFeatureById = get_optional_config_param<std::string>("getFeatureById", c_get_feature_by_id);
     geoserver_conn_str = get_mandatory_config_param<std::string>("geoserverConnStr");
     cache_size = get_optional_config_param<int>("cacheSize", 100);
@@ -55,11 +54,12 @@ Config::Config(const string& configfile)
 
     std::vector<std::string> xml_grammar_pool_fns;
     // Ensure that setting exists (or report an error otherwise)
-    get_mandatory_config_param<libconfig::Setting&>("xmlGrammarPoolDump");
-    // Not get the array.
+
+    auto grammarpaths = get_mandatory_path_array("xmlGrammarPoolDump", 1);
+
+    // Not get the dump
     bool xgp_found = false;
-    get_config_array("xmlGrammarPoolDump", xml_grammar_pool_fns, 1);
-    BOOST_FOREACH (const auto& fn, xml_grammar_pool_fns)
+    BOOST_FOREACH (const auto& fn, grammarpaths)
     {
       if (fs::exists(fn))
       {
@@ -110,7 +110,7 @@ std::vector<boost::shared_ptr<WfsFeatureDef> > Config::read_features_config(
 {
   try
   {
-    fs::path features_dir(get_mandatory_config_param<std::string>("featuresDir"));
+    fs::path features_dir(get_mandatory_path("featuresDir"));
 
     if (not fs::exists(features_dir))
     {
