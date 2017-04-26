@@ -1,12 +1,12 @@
 #include "StoredQueryParamRegistry.h"
-#include <algorithm>
-#include <sstream>
-#include <boost/foreach.hpp>
-#include <macgyver/TypeName.h>
-#include <spine/Exception.h>
 #include "ArrayParameterTemplate.h"
 #include "ScalarParameterTemplate.h"
 #include "SupportsExtraHandlerParams.h"
+#include <boost/foreach.hpp>
+#include <macgyver/TypeName.h>
+#include <spine/Exception.h>
+#include <algorithm>
+#include <sstream>
 
 namespace bw = SmartMet::Plugin::WFS;
 

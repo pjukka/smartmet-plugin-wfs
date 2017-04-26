@@ -1,8 +1,8 @@
 #pragma once
 
 #include <macgyver/StringConversion.h>
-#include <string>
 #include <memory>
+#include <string>
 
 namespace SmartMet
 {
@@ -31,6 +31,7 @@ class MediaMonitored
 
   MediaValueSetType::const_iterator begin() const { return m_mediaValueSet.begin(); }
   MediaValueSetType::const_iterator end() const { return m_mediaValueSet.end(); }
+
  private:
   MediaMonitored& operator=(const MediaMonitored& other);
   MediaMonitored(const MediaMonitored& other);

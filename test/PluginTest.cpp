@@ -1,6 +1,6 @@
 #include "Plugin.h"
-#include <iostream>
 #include <spine/PluginTest.h>
+#include <iostream>
 #include <sstream>
 
 using namespace std;

@@ -1,8 +1,8 @@
 #pragma once
 
-#include <xercesc/dom/DOMDocument.hpp>
-#include "RequestBase.h"
 #include "PluginData.h"
+#include "RequestBase.h"
+#include <xercesc/dom/DOMDocument.hpp>
 
 namespace SmartMet
 {

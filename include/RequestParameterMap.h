@@ -1,14 +1,14 @@
 #pragma once
 
+#include <ctpp2/CDT.hpp>
+#include <macgyver/TypeName.h>
+#include <spine/Exception.h>
+#include <spine/Value.h>
 #include <iterator>
 #include <limits>
 #include <map>
 #include <set>
 #include <stdexcept>
-#include <ctpp2/CDT.hpp>
-#include <macgyver/TypeName.h>
-#include <spine/Exception.h>
-#include <spine/Value.h>
 
 namespace SmartMet
 {

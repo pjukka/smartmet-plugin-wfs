@@ -1,7 +1,6 @@
 #include "StoredQueryParamDef.h"
-#include <algorithm>
-#include <sstream>
-#include <stdexcept>
+#include "WfsConvenience.h"
+#include "WfsException.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/bind.hpp>
 #include <boost/lambda/lambda.hpp>
@@ -10,8 +9,9 @@
 #include <macgyver/TimeParser.h>
 #include <macgyver/TypeName.h>
 #include <spine/Exception.h>
-#include "WfsConvenience.h"
-#include "WfsException.h"
+#include <algorithm>
+#include <sstream>
+#include <stdexcept>
 
 #include <iostream>
 

@@ -1,18 +1,18 @@
 #pragma once
 
-#include <algorithm>
-#include <ostream>
-#include <stdexcept>
-#include <string>
-#include <typeinfo>
-#include <vector>
+#include "WfsException.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/bind.hpp>
 #include <boost/date_time/posix_time/ptime.hpp>
 #include <boost/spirit/include/qi.hpp>
 #include <macgyver/TypeName.h>
 #include <spine/Value.h>
-#include "WfsException.h"
+#include <algorithm>
+#include <ostream>
+#include <stdexcept>
+#include <string>
+#include <typeinfo>
+#include <vector>
 
 namespace SmartMet
 {

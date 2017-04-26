@@ -1,16 +1,16 @@
-#include "stored_queries/StoredGeoserverQueryHandler.h"
-#include <sstream>
-#include <boost/algorithm/string.hpp>
-#include <boost/date_time/posix_time/posix_time.hpp>
-#include <smartmet/spine/Exception.h>
-#include <smartmet/spine/Convenience.h>
-#include <macgyver/StringConversion.h>
-#include <macgyver/TypeName.h>
 #include "FeatureID.h"
 #include "GeoServerDataIndex.h"
+#include "StoredQueryHandlerFactoryDef.h"
 #include "WfsConvenience.h"
 #include "WfsException.h"
-#include "StoredQueryHandlerFactoryDef.h"
+#include "stored_queries/StoredGeoserverQueryHandler.h"
+#include <boost/algorithm/string.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
+#include <macgyver/StringConversion.h>
+#include <macgyver/TypeName.h>
+#include <smartmet/spine/Convenience.h>
+#include <smartmet/spine/Exception.h>
+#include <sstream>
 
 namespace ba = boost::algorithm;
 namespace bw = SmartMet::Plugin::WFS;

@@ -1,13 +1,13 @@
 #pragma once
 
-#include <map>
-#include <string>
-#include <boost/function.hpp>
-#include <boost/shared_ptr.hpp>
-#include <xercesc/dom/DOMDocument.hpp>
-#include <spine/HTTP.h>
 #include "PluginData.h"
 #include "RequestBase.h"
+#include <boost/function.hpp>
+#include <boost/shared_ptr.hpp>
+#include <spine/HTTP.h>
+#include <xercesc/dom/DOMDocument.hpp>
+#include <map>
+#include <string>
 
 namespace SmartMet
 {
@@ -24,12 +24,14 @@ class RequestFactory
  public:
   typedef boost::function2<boost::shared_ptr<RequestBase>,
                            const std::string&,
-                           const SmartMet::Spine::HTTP::Request&> parse_kvp_t;
+                           const SmartMet::Spine::HTTP::Request&>
+      parse_kvp_t;
 
   typedef boost::function3<boost::shared_ptr<RequestBase>,
                            const std::string&,
                            const xercesc::DOMDocument&,
-                           const xercesc::DOMElement&> parse_xml_t;
+                           const xercesc::DOMElement&>
+      parse_xml_t;
 
  public:
   RequestFactory(PluginData& plugin_data);

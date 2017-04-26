@@ -1,8 +1,8 @@
 #pragma once
 
+#include "StandardPresentationParameters.h"
 #include <ostream>
 #include <string>
-#include "StandardPresentationParameters.h"
 
 namespace SmartMet
 {
@@ -85,6 +85,7 @@ class QueryBase
    *  @return The stale seconds as an integer.
    */
   inline int get_stale_seconds() const { return stale_seconds; }
+
  private:
   int query_id;
   int stale_seconds;

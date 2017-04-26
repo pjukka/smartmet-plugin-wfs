@@ -1,10 +1,10 @@
 #include "SupportsTimeParameters.h"
+#include "WfsConvenience.h"
+#include "WfsException.h"
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/foreach.hpp>
 #include <spine/Exception.h>
 #include <stdint.h>
-#include "WfsConvenience.h"
-#include "WfsException.h"
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace pt = boost::posix_time;

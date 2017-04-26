@@ -14,9 +14,9 @@
 #include "XmlEnvInit.h"
 #include "XmlParser.h"
 
-#include <spine/SmartMetPlugin.h>
 #include <spine/HTTP.h>
 #include <spine/Reactor.h>
+#include <spine/SmartMetPlugin.h>
 
 #include <ctpp2/CDT.hpp>
 

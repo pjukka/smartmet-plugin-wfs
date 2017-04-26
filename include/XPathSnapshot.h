@@ -1,10 +1,10 @@
 #pragma once
 
+#include "XmlDomErrorHandler.h"
 #include <boost/scoped_ptr.hpp>
 #include <xercesc/dom/DOM.hpp>
 #include <xercesc/sax/InputSource.hpp>
 #include <xqilla/xqilla-dom3.hpp>
-#include "XmlDomErrorHandler.h"
 
 namespace SmartMet
 {

@@ -1,20 +1,20 @@
 #pragma once
 
-#include <list>
-#include <utility>
-#include <boost/date_time/posix_time/ptime.hpp>
-#include <spine/TimeSeriesGenerator.h>
-#include <engines/geonames/Engine.h>
-#include <engines/querydata/Engine.h>
-#include <engines/querydata/MetaData.h>
-#include <newbase/NFmiPoint.h>
-#include "StoredQueryHandlerBase.h"
 #include "ArrayParameterTemplate.h"
 #include "ScalarParameterTemplate.h"
+#include "StoredQueryHandlerBase.h"
 #include "SupportsExtraHandlerParams.h"
 #include "SupportsLocationParameters.h"
 #include "SupportsTimeParameters.h"
 #include "SupportsTimeZone.h"
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <engines/geonames/Engine.h>
+#include <engines/querydata/Engine.h>
+#include <engines/querydata/MetaData.h>
+#include <newbase/NFmiPoint.h>
+#include <spine/TimeSeriesGenerator.h>
+#include <list>
+#include <utility>
 
 namespace SmartMet
 {

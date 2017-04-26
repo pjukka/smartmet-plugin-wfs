@@ -1,15 +1,15 @@
 #include "StoredQueryMap.h"
-#include <queue>
-#include <sstream>
-#include <stdexcept>
+#include "StoredQueryHandlerFactoryDef.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/bind.hpp>
 #include <boost/filesystem.hpp>
-#include <spine/Convenience.h>
-#include <spine/Exception.h>
 #include <macgyver/TemplateDirectory.h>
 #include <macgyver/TypeName.h>
-#include "StoredQueryHandlerFactoryDef.h"
+#include <spine/Convenience.h>
+#include <spine/Exception.h>
+#include <queue>
+#include <sstream>
+#include <stdexcept>
 
 namespace ba = boost::algorithm;
 namespace bw = SmartMet::Plugin::WFS;

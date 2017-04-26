@@ -1,14 +1,14 @@
 #include "StoredQueryConfig.h"
-#include <iostream>
-#include <sstream>
-#include <stdexcept>
-#include <utility>
+#include "ParameterTemplateBase.h"
+#include "StoredQueryHandlerBase.h"
 #include <boost/algorithm/string.hpp>
 #include <macgyver/TypeName.h>
 #include <spine/Convenience.h>
 #include <spine/Exception.h>
-#include "ParameterTemplateBase.h"
-#include "StoredQueryHandlerBase.h"
+#include <iostream>
+#include <sstream>
+#include <stdexcept>
+#include <utility>
 
 namespace bw = SmartMet::Plugin::WFS;
 

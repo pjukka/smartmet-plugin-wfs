@@ -1,9 +1,9 @@
 #pragma once
 
-#include <xercesc/dom/DOMDocument.hpp>
-#include <macgyver/TemplateFormatterMT.h>
-#include "RequestBase.h"
 #include "PluginData.h"
+#include "RequestBase.h"
+#include <macgyver/TemplateFormatterMT.h>
+#include <xercesc/dom/DOMDocument.hpp>
 
 namespace SmartMet
 {

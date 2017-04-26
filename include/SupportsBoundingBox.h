@@ -1,9 +1,9 @@
 #pragma once
 
-#include <engines/gis/CRSRegistry.h>
 #include "StoredQueryConfig.h"
 #include "StoredQueryParamRegistry.h"
 #include "SupportsExtraHandlerParams.h"
+#include <engines/gis/CRSRegistry.h>
 
 namespace SmartMet
 {

@@ -1,19 +1,4 @@
 #include "request/GetFeature.h"
-#include <set>
-#include <boost/date_time/posix_time/posix_time.hpp>
-#include <boost/foreach.hpp>
-#include <boost/format.hpp>
-#include <boost/lexical_cast.hpp>
-#include <xercesc/dom/DOM.hpp>
-#include <xercesc/dom/DOMException.hpp>
-#include <xercesc/dom/DOMXPathNSResolver.hpp>
-#include <xercesc/dom/DOMXPathResult.hpp>
-#include <xqilla/xqilla-dom3.hpp>
-#include <xercesc/util/Janitor.hpp>
-#include <xercesc/framework/MemBufInputSource.hpp>
-#include <smartmet/spine/Convenience.h>
-#include <macgyver/StringConversion.h>
-#include <macgyver/TypeName.h>
 #include "AdHocQuery.h"
 #include "ErrorResponseGenerator.h"
 #include "StoredQuery.h"
@@ -21,8 +6,23 @@
 #include "TypeNameStoredQueryMap.h"
 #include "WfsConst.h"
 #include "WfsException.h"
-#include "XmlUtils.h"
 #include "XPathSnapshot.h"
+#include "XmlUtils.h"
+#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/foreach.hpp>
+#include <boost/format.hpp>
+#include <boost/lexical_cast.hpp>
+#include <macgyver/StringConversion.h>
+#include <macgyver/TypeName.h>
+#include <smartmet/spine/Convenience.h>
+#include <xercesc/dom/DOM.hpp>
+#include <xercesc/dom/DOMException.hpp>
+#include <xercesc/dom/DOMXPathNSResolver.hpp>
+#include <xercesc/dom/DOMXPathResult.hpp>
+#include <xercesc/framework/MemBufInputSource.hpp>
+#include <xercesc/util/Janitor.hpp>
+#include <xqilla/xqilla-dom3.hpp>
+#include <set>
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace bwx = SmartMet::Plugin::WFS::Xml;

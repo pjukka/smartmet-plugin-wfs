@@ -1,9 +1,9 @@
 #pragma once
 
-#include <string>
-#include <vector>
 #include <boost/function.hpp>
 #include <boost/variant.hpp>
+#include <string>
+#include <vector>
 
 namespace SmartMet
 {

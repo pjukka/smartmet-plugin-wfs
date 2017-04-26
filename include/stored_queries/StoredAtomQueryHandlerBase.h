@@ -1,12 +1,12 @@
 #pragma once
 
-#include <map>
-#include <vector>
-#include <boost/shared_ptr.hpp>
 #include "ParameterTemplateBase.h"
 #include "StoredQueryHandlerBase.h"
 #include "SupportsExtraHandlerParams.h"
 #include "UrlTemplateGenerator.h"
+#include <boost/shared_ptr.hpp>
+#include <map>
+#include <vector>
 
 namespace SmartMet
 {

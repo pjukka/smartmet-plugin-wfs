@@ -1,14 +1,14 @@
 #pragma once
 
+#include <boost/bind.hpp>
+#include <boost/function.hpp>
+#include <spine/Value.h>
+#include <xercesc/dom/DOMElement.hpp>
 #include <cassert>
 #include <limits>
 #include <map>
 #include <string>
 #include <vector>
-#include <boost/bind.hpp>
-#include <boost/function.hpp>
-#include <xercesc/dom/DOMElement.hpp>
-#include <spine/Value.h>
 
 namespace SmartMet
 {

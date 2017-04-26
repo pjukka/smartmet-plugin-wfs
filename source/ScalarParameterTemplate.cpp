@@ -1,6 +1,6 @@
 #include "ScalarParameterTemplate.h"
-#include <spine/Value.h>
 #include <spine/Exception.h>
+#include <spine/Value.h>
 
 namespace
 {

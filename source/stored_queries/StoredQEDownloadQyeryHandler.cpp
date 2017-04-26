@@ -1,7 +1,8 @@
+#include "AreaUtils.h"
+#include "FeatureID.h"
+#include "StoredQueryHandlerFactoryDef.h"
+#include "WfsConvenience.h"
 #include "stored_queries/StoredQEDownloadQueryHandler.h"
-#include <algorithm>
-#include <list>
-#include <string>
 #include <boost/algorithm/string.hpp>
 #include <boost/bind.hpp>
 #include <boost/date_time/posix_time/ptime.hpp>
@@ -9,19 +10,18 @@
 #include <boost/lambda/lambda.hpp>
 #include <boost/shared_array.hpp>
 #include <gdal/cpl_error.h>
-#include <newbase/NFmiQueryData.h>
-#include <smartmet/spine/Exception.h>
-#include <smartmet/spine/Convenience.h>
 #include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
-#include <smartmet/engines/gis/GdalUtils.h>
+#include <newbase/NFmiQueryData.h>
 #include <smartmet/engines/geonames/Engine.h>
+#include <smartmet/engines/gis/GdalUtils.h>
 #include <smartmet/engines/querydata/Engine.h>
 #include <smartmet/engines/querydata/MetaQueryOptions.h>
-#include "AreaUtils.h"
-#include "FeatureID.h"
-#include "StoredQueryHandlerFactoryDef.h"
-#include "WfsConvenience.h"
+#include <smartmet/spine/Convenience.h>
+#include <smartmet/spine/Exception.h>
+#include <algorithm>
+#include <list>
+#include <string>
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace ba = boost::algorithm;

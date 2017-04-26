@@ -1,15 +1,15 @@
 #pragma once
 
-#include <map>
-#include <string>
-#include <vector>
-#include <boost/shared_ptr.hpp>
-#include <spine/TimeSeriesGenerator.h>
 #include "ArrayParameterTemplate.h"
 #include "ScalarParameterTemplate.h"
 #include "StoredQueryConfig.h"
 #include "StoredQueryParamRegistry.h"
 #include "SupportsExtraHandlerParams.h"
+#include <boost/shared_ptr.hpp>
+#include <spine/TimeSeriesGenerator.h>
+#include <map>
+#include <string>
+#include <vector>
 
 namespace SmartMet
 {

@@ -1,11 +1,11 @@
 #include "ParameterTemplateBase.h"
+#include "RequestParameterMap.h"
+#include "SupportsExtraHandlerParams.h"
+#include <macgyver/StringConversion.h>
+#include <spine/Exception.h>
 #include <sstream>
 #include <string>
 #include <typeinfo>
-#include <macgyver/StringConversion.h>
-#include <spine/Exception.h>
-#include "RequestParameterMap.h"
-#include "SupportsExtraHandlerParams.h"
 
 namespace SmartMet
 {

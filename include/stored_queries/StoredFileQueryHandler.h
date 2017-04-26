@@ -1,8 +1,8 @@
 #pragma once
 
-#include <list>
 #include "DataSetIndex.h"
 #include "stored_queries/StoredAtomQueryHandlerBase.h"
+#include <list>
 
 namespace SmartMet
 {

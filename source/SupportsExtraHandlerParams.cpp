@@ -1,12 +1,12 @@
 #include "SupportsExtraHandlerParams.h"
-#include <sstream>
+#include "ArrayParameterTemplate.h"
+#include "ScalarParameterTemplate.h"
 #include <boost/algorithm/string.hpp>
 #include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include <spine/Exception.h>
 #include <spine/Value.h>
-#include "ArrayParameterTemplate.h"
-#include "ScalarParameterTemplate.h"
+#include <sstream>
 
 namespace ba = boost::algorithm;
 namespace bw = SmartMet::Plugin::WFS;

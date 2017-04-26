@@ -1,13 +1,13 @@
 #include "GeoServerDataIndex.h"
-#include <spine/Convenience.h>
-#include <spine/Exception.h>
-#include <macgyver/StringConversion.h>
-#include <macgyver/TypeName.h>
-#include <gis/OGR.h>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/foreach.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
+#include <gis/OGR.h>
+#include <macgyver/StringConversion.h>
+#include <macgyver/TypeName.h>
+#include <spine/Convenience.h>
+#include <spine/Exception.h>
 #include <iostream>
 #include <sstream>
 

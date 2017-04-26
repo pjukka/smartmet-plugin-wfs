@@ -1,9 +1,9 @@
 #pragma once
 
-#include <map>
-#include <string>
 #include <boost/shared_ptr.hpp>
 #include <spine/Value.h>
+#include <map>
+#include <string>
 
 namespace SmartMet
 {

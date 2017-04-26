@@ -1,15 +1,15 @@
 #include "XmlGmlTypes.h"
-#include <map>
-#include <boost/algorithm/string.hpp>
-#include <boost/foreach.hpp>
-#include <boost/lexical_cast.hpp>
-#include <xercesc/dom/DOMNodeList.hpp>
-#include <xercesc/util/Janitor.hpp>
-#include <macgyver/TypeName.h>
-#include <spine/Exception.h>
 #include "WfsConst.h"
 #include "WfsException.h"
 #include "XmlUtils.h"
+#include <boost/algorithm/string.hpp>
+#include <boost/foreach.hpp>
+#include <boost/lexical_cast.hpp>
+#include <macgyver/TypeName.h>
+#include <spine/Exception.h>
+#include <xercesc/dom/DOMNodeList.hpp>
+#include <xercesc/util/Janitor.hpp>
+#include <map>
 
 namespace ba = boost::algorithm;
 
@@ -136,7 +136,7 @@ GmlEnvelopeType read_gml_envelope_type(const xercesc::DOMElement& element)
     // NOTE: only lookup for correct combinations is performed as
     //       it is assumed that XML document has been validated
 
-    std::vector<xercesc::DOMElement *> v1, v2;
+    std::vector<xercesc::DOMElement*> v1, v2;
 
     v1 = get_child_elements(element, GML_NAMESPACE_URI, "lowerCorner");
     v2 = get_child_elements(element, GML_NAMESPACE_URI, "upperCorner");

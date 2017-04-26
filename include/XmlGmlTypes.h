@@ -1,11 +1,11 @@
 #pragma once
 
-#include <string>
-#include <vector>
+#include "WfsConvenience.h"
 #include <boost/optional.hpp>
 #include <boost/shared_ptr.hpp>
 #include <xercesc/dom/DOMElement.hpp>
-#include "WfsConvenience.h"
+#include <string>
+#include <vector>
 
 namespace SmartMet
 {

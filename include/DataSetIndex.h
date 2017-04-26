@@ -1,16 +1,16 @@
 #pragma once
 
-#include <set>
-#include <string>
 #include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/enable_shared_from_this.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/geometry.hpp>
-#include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry/geometries/box.hpp>
+#include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/optional.hpp>
 #include <boost/regex.hpp>
-#include <boost/enable_shared_from_this.hpp>
 #include <spine/ConfigBase.h>
+#include <set>
+#include <string>
 
 namespace SmartMet
 {
@@ -37,6 +37,7 @@ class DataSetQuery
   inline const boost::posix_time::time_period& get_time_interval() const { return period; }
   inline const std::set<std::string>& get_parameters() const { return parameters; }
   inline const std::set<int>& get_levels() const { return levels; }
+
  private:
   std::set<std::string> names;
   boost::posix_time::time_period period;

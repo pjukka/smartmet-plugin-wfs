@@ -1,10 +1,4 @@
 #include "UrlTemplateGenerator.h"
-#include <algorithm>
-#include <cassert>
-#include <cstdio>
-#include <cstring>
-#include <sstream>
-#include <stdexcept>
 #include <boost/algorithm/hex.hpp>
 #include <boost/algorithm/string.hpp>
 #include <boost/bind.hpp>
@@ -14,6 +8,12 @@
 #include <boost/spirit/include/qi.hpp>
 #include <macgyver/TypeName.h>
 #include <spine/Exception.h>
+#include <algorithm>
+#include <cassert>
+#include <cstdio>
+#include <cstring>
+#include <sstream>
+#include <stdexcept>
 
 namespace ba = boost::algorithm;
 namespace bw = SmartMet::Plugin::WFS;

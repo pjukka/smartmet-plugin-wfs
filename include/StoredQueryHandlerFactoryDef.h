@@ -1,10 +1,10 @@
 #pragma once
 
+#include "PluginData.h"
+#include "StoredQueryConfig.h"
+#include "StoredQueryHandlerBase.h"
 #include <boost/optional.hpp>
 #include <boost/shared_ptr.hpp>
-#include "PluginData.h"
-#include "StoredQueryHandlerBase.h"
-#include "StoredQueryConfig.h"
 
 namespace SmartMet
 {

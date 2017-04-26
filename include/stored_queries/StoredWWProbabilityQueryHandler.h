@@ -4,9 +4,9 @@
 #include "StoredQueryConfig.h"
 #include "StoredQueryHandlerBase.h"
 #include "StoredQueryHandlerFactoryDef.h"
+#include "SupportsBoundingBox.h"
 #include "SupportsExtraHandlerParams.h"
 #include "SupportsLocationParameters.h"
-#include "SupportsBoundingBox.h"
 #include "SupportsTimeParameters.h"
 #include "SupportsTimeZone.h"
 
@@ -140,8 +140,8 @@ class StoredWWProbabilityQueryHandler : public StoredQueryHandlerBase,
                          const std::string& tz_name,
                          CTPP::CDT& hash) const;
 
-  WinterWeatherIntensityProbabilities getProbabilities(const ProbabilityQueryParam& queryParam)
-      const;
+  WinterWeatherIntensityProbabilities getProbabilities(
+      const ProbabilityQueryParam& queryParam) const;
 
   SmartMet::Engine::Querydata::Engine* itsQEngine;
   SmartMet::Engine::Geonames::Engine* itsGeonames;

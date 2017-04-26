@@ -1,9 +1,9 @@
 #include "XmlErrorHandler.h"
-#include <sstream>
-#include <boost/format.hpp>
 #include "XmlError.h"
 #include "XmlUtils.h"
+#include <boost/format.hpp>
 #include <spine/Exception.h>
+#include <sstream>
 
 namespace bwx = SmartMet::Plugin::WFS::Xml;
 

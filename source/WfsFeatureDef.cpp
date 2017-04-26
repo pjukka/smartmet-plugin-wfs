@@ -1,8 +1,8 @@
 #include "WfsFeatureDef.h"
-#include <algorithm>
 #include <boost/bind.hpp>
 #include <boost/ref.hpp>
 #include <spine/Exception.h>
+#include <algorithm>
 
 namespace bw = SmartMet::Plugin::WFS;
 

@@ -1,8 +1,8 @@
 #pragma once
 
 #include <boost/noncopyable.hpp>
-#include <pqxx/pqxx>
 #include <macgyver/ObjectPool.h>
+#include <pqxx/pqxx>
 
 namespace SmartMet
 {

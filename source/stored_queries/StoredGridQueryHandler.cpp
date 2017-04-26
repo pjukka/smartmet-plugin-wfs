@@ -1,33 +1,33 @@
 #include <algorithm>
+#include <iomanip>
 #include <list>
 #include <string>
-#include <iomanip>
 
 #include <boost/algorithm/string.hpp>
 #include <boost/bind.hpp>
+#include <boost/foreach.hpp>
 #include <boost/format.hpp>
 #include <boost/lambda/lambda.hpp>
 #include <boost/shared_array.hpp>
-#include <boost/foreach.hpp>
 
 #include <gdal/cpl_error.h>
 
-#include <newbase/NFmiQueryData.h>
-#include <newbase/NFmiIndexMaskTools.h>
 #include <newbase/NFmiIndexMask.h>
-#include <newbase/NFmiSvgTools.h>
-#include <newbase/NFmiSvgPath.h>
+#include <newbase/NFmiIndexMaskTools.h>
 #include <newbase/NFmiPoint.h>
+#include <newbase/NFmiQueryData.h>
+#include <newbase/NFmiSvgPath.h>
+#include <newbase/NFmiSvgTools.h>
 
 #include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 
-#include <smartmet/spine/Exception.h>
-#include <smartmet/spine/TimeSeriesOutput.h>
-#include <smartmet/spine/Convenience.h>
-#include <smartmet/spine/ParameterFactory.h>
 #include <smartmet/engines/gis/GdalUtils.h>
 #include <smartmet/engines/querydata/MetaQueryOptions.h>
+#include <smartmet/spine/Convenience.h>
+#include <smartmet/spine/Exception.h>
+#include <smartmet/spine/ParameterFactory.h>
+#include <smartmet/spine/TimeSeriesOutput.h>
 
 #include "AreaUtils.h"
 #include "FeatureID.h"

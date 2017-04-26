@@ -1,14 +1,10 @@
 #pragma once
 
 #include <engines/geonames/Engine.h>
-#include <engines/gis/Engine.h>
 #include <engines/gis/CRSRegistry.h>
+#include <engines/gis/Engine.h>
 #include <engines/querydata/Engine.h>
 
-#include <boost/date_time/posix_time/ptime.hpp>
-#include <boost/shared_ptr.hpp>
-#include <macgyver/Cache.h>
-#include <macgyver/TemplateFormatterMT.h>
 #include "Config.h"
 #include "GeoServerDB.h"
 #include "StoredQueryMap.h"
@@ -16,6 +12,10 @@
 #include "WfsCapabilities.h"
 #include "XmlEnvInit.h"
 #include "XmlParser.h"
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/shared_ptr.hpp>
+#include <macgyver/Cache.h>
+#include <macgyver/TemplateFormatterMT.h>
 
 namespace SmartMet
 {
@@ -88,6 +88,7 @@ class PluginData : public boost::noncopyable
 
   inline WfsCapabilities& get_capabilities() { return *wfs_capabilities; }
   inline const WfsCapabilities& get_capabilities() const { return *wfs_capabilities; }
+
  private:
   void create_template_formatters();
   void create_xml_parser();

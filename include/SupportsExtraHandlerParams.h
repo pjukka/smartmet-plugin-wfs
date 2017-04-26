@@ -1,12 +1,12 @@
 #pragma once
 
-#include <map>
-#include <boost/shared_ptr.hpp>
-#include <ctpp2/CDT.hpp>
 #include "ParameterTemplateBase.h"
 #include "RequestParameterMap.h"
 #include "StoredQueryConfig.h"
 #include "StoredQueryParamRegistry.h"
+#include <boost/shared_ptr.hpp>
+#include <ctpp2/CDT.hpp>
+#include <map>
 
 namespace SmartMet
 {

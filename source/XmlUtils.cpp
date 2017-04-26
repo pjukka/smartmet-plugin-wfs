@@ -1,7 +1,5 @@
 
 #include "XmlUtils.h"
-#include <sstream>
-#include <stdexcept>
 #include <boost/algorithm/string.hpp>
 #include <boost/foreach.hpp>
 #include <spine/Exception.h>
@@ -11,6 +9,8 @@
 #include <xercesc/dom/DOMText.hpp>
 #include <xercesc/util/Janitor.hpp>
 #include <xercesc/util/XMLUni.hpp>
+#include <sstream>
+#include <stdexcept>
 
 namespace ba = boost::algorithm;
 

@@ -1,9 +1,9 @@
 #if 0  // ### REPLACED BY SmartMet::Spine::Exception
 
-#include <WfsException.h>
-#include <WfsConvenience.h>
 #include <boost/algorithm/string.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
+#include <WfsConvenience.h>
+#include <WfsException.h>
 
 namespace SmartMet
 {

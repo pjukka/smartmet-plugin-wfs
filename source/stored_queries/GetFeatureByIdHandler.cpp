@@ -1,11 +1,11 @@
 #include "stored_queries/GetFeatureByIdHandler.h"
-#include <sstream>
-#include <smartmet/spine/Exception.h>
-#include <smartmet/spine/Value.h>
 #include "StoredQueryHandlerBase.h"
 #include "StoredQueryHandlerFactoryDef.h"
 #include "StoredQueryMap.h"
 #include "WfsConvenience.h"
+#include <smartmet/spine/Exception.h>
+#include <smartmet/spine/Value.h>
+#include <sstream>
 
 namespace bw = SmartMet::Plugin::WFS;
 

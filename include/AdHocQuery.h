@@ -1,15 +1,15 @@
 #pragma once
 
-#include <string>
-#include <vector>
-#include <boost/shared_ptr.hpp>
-#include <xercesc/dom/DOMElement.hpp>
 #include "QueryBase.h"
 #include "StoredQuery.h"
+#include "StoredQueryHandlerBase.h"
 #include "StoredQueryMap.h"
 #include "TypeNameStoredQueryMap.h"
-#include "StoredQueryHandlerBase.h"
 #include "XPathSnapshot.h"
+#include <boost/shared_ptr.hpp>
+#include <xercesc/dom/DOMElement.hpp>
+#include <string>
+#include <vector>
 
 namespace SmartMet
 {
@@ -124,6 +124,7 @@ class AdHocQuery : public StoredQuery
     *
     */
   inline const std::string& get_filter_expression() const { return filter_expression; }
+
  private:
   std::string filter_expression;
 

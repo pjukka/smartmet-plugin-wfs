@@ -1,8 +1,8 @@
 #pragma once
 
-#include <string>
-#include <xercesc/dom/DOMElement.hpp>
 #include <spine/HTTP.h>
+#include <xercesc/dom/DOMElement.hpp>
+#include <string>
 
 namespace SmartMet
 {
@@ -40,6 +40,7 @@ class StandardPresentationParameters
   inline std::string get_output_format() const { return output_format; }
   inline SPPResultType get_result_type() const { return result_type; }
   inline bool is_hits_only_request() const { return result_type == SPP_HITS; }
+
  private:
   void set_output_format(const std::string& str);
   void set_result_type(const std::string& str);

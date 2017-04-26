@@ -1,16 +1,16 @@
 #include "stored_queries/GetDataSetByIdHandler.h"
-#include <sstream>
-#include <stdexcept>
-#include <boost/algorithm/string.hpp>
-#include <boost/foreach.hpp>
-#include <smartmet/spine/Exception.h>
-#include <smartmet/spine/Value.h>
-#include <macgyver/StringConversion.h>
-#include <macgyver/TypeName.h>
 #include "StoredQueryHandlerBase.h"
 #include "StoredQueryHandlerFactoryDef.h"
 #include "StoredQueryMap.h"
 #include "WfsConvenience.h"
+#include <boost/algorithm/string.hpp>
+#include <boost/foreach.hpp>
+#include <macgyver/StringConversion.h>
+#include <macgyver/TypeName.h>
+#include <smartmet/spine/Exception.h>
+#include <smartmet/spine/Value.h>
+#include <sstream>
+#include <stdexcept>
 
 namespace ba = boost::algorithm;
 namespace bw = SmartMet::Plugin::WFS;

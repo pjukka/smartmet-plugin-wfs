@@ -1,9 +1,9 @@
 #pragma once
 
+#include "WfsFeatureDef.h"
 #include <map>
 #include <set>
 #include <string>
-#include "WfsFeatureDef.h"
 
 namespace SmartMet
 {

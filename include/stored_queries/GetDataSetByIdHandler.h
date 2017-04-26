@@ -1,10 +1,10 @@
 #pragma once
 
-#include <map>
 #include "PluginData.h"
 #include "StoredQueryConfig.h"
 #include "StoredQueryHandlerBase.h"
 #include "StoredQueryHandlerFactoryDef.h"
+#include <map>
 
 namespace SmartMet
 {

@@ -1,16 +1,16 @@
 #pragma once
 
+#include "MultiLanguageString.h"
+#include "StoredQueryParamDef.h"
+#include <boost/optional.hpp>
+#include <ctpp2/CDT.hpp>
+#include <spine/ConfigBase.h>
+#include <libconfig.h++>
 #include <map>
 #include <ostream>
 #include <set>
 #include <string>
 #include <vector>
-#include <boost/optional.hpp>
-#include <libconfig.h++>
-#include <ctpp2/CDT.hpp>
-#include <spine/ConfigBase.h>
-#include "MultiLanguageString.h"
-#include "StoredQueryParamDef.h"
 
 namespace SmartMet
 {
@@ -95,6 +95,7 @@ class StoredQueryConfig : public SmartMet::Spine::ConfigBase
 
     inline void set_used() const { used = true; }
     inline bool get_used() const { return used; }
+
    private:
     mutable bool used;
   };

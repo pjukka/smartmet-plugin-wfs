@@ -1,9 +1,9 @@
 #pragma once
 
-#include <map>
-#include <string>
 #include <boost/shared_ptr.hpp>
 #include <spine/ConfigBase.h>
+#include <map>
+#include <string>
 
 namespace SmartMet
 {
@@ -26,6 +26,7 @@ class MultiLanguageString
   std::string get(const std::string& language) const;
 
   inline const std::map<std::string, std::string>& get_content() const { return data; }
+
  private:
   const std::string default_language;
   std::map<std::string, std::string> data;

@@ -1,11 +1,11 @@
 #include "BStream.h"
-#include <spine/Exception.h>
-#include <algorithm>
-#include <set>
 #include <boost/bind.hpp>
 #include <boost/foreach.hpp>
 #include <macgyver/Base64.h>
 #include <macgyver/TypeName.h>
+#include <spine/Exception.h>
+#include <algorithm>
+#include <set>
 
 namespace bw = SmartMet::Plugin::WFS;
 
@@ -165,8 +165,7 @@ void OBStream::put_double(double value)
   try
   {
     int first;
-    union
-    {
+    union {
       uint8_t c[8];
       double d;
     } tmp;
@@ -455,8 +454,7 @@ double IBStream::get_double()
 {
   try
   {
-    union
-    {
+    union {
       uint8_t c[8];
       double d;
     } tmp;

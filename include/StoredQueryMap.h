@@ -1,11 +1,11 @@
 #pragma once
 
-#include <boost/filesystem.hpp>
-#include <spine/Reactor.h>
 #include "PluginData.h"
 #include "StoredQuery.h"
 #include "StoredQueryHandlerBase.h"
+#include <boost/filesystem.hpp>
 #include <macgyver/TemplateDirectory.h>
+#include <spine/Reactor.h>
 
 namespace SmartMet
 {

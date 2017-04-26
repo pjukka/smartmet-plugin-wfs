@@ -1,12 +1,12 @@
 #include "XPathSnapshot.h"
+#include "XmlUtils.h"
+#include <macgyver/TypeName.h>
+#include <spine/Exception.h>
+#include <xercesc/dom/DOMLSParserFilter.hpp>
+#include <xercesc/framework/MemBufInputSource.hpp>
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
-#include <xercesc/dom/DOMLSParserFilter.hpp>
-#include <xercesc/framework/MemBufInputSource.hpp>
-#include <macgyver/TypeName.h>
-#include <spine/Exception.h>
-#include "XmlUtils.h"
 
 using namespace xercesc;
 using SmartMet::Plugin::WFS::Xml::XPathSnapshot;

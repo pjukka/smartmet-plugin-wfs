@@ -1,9 +1,9 @@
 #pragma once
 
-#include <string>
+#include <spine/HTTP.h>
 #include <xercesc/dom/DOMDocument.hpp>
 #include <xercesc/dom/DOMElement.hpp>
-#include <spine/HTTP.h>
+#include <string>
 
 namespace SmartMet
 {
@@ -117,6 +117,7 @@ class RequestBase
   void set_http_status(SmartMet::Spine::HTTP::Status status) const;
 
   inline SmartMet::Spine::HTTP::Status get_http_status() const { return status; }
+
  protected:
   /**
    *   @brief Verifies that the request name from HTTP request is correct

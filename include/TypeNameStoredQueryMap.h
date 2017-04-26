@@ -7,9 +7,9 @@
  *      Author: niemitu
  */
 
+#include <map>
 #include <string>
 #include <vector>
-#include <map>
 
 namespace SmartMet
 {

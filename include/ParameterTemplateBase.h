@@ -1,12 +1,12 @@
 #pragma once
 
+#include "StoredQueryConfig.h"
+#include "WfsConvenience.h"
 #include <boost/logic/tribool.hpp>
 #include <boost/optional.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/variant.hpp>
 #include <spine/Value.h>
-#include "StoredQueryConfig.h"
-#include "WfsConvenience.h"
 
 namespace SmartMet
 {

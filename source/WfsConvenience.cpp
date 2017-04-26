@@ -1,14 +1,14 @@
 #include "WfsConvenience.h"
-#include <cctype>
-#include <sstream>
+#include "WfsException.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/foreach.hpp>
 #include <boost/lambda/lambda.hpp>
+#include <boost/spirit/include/qi.hpp>
 #include <macgyver/TimeParser.h>
 #include <spine/Exception.h>
-#include <boost/spirit/include/qi.hpp>
-#include "WfsException.h"
+#include <cctype>
+#include <sstream>
 
 namespace SmartMet
 {

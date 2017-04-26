@@ -1,12 +1,12 @@
 #pragma once
 
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/optional.hpp>
+#include <ctpp2/CDT.hpp>
 #include <exception>
 #include <ostream>
 #include <string>
 #include <vector>
-#include <boost/date_time/posix_time/ptime.hpp>
-#include <boost/optional.hpp>
-#include <ctpp2/CDT.hpp>
 
 #define WFS_EXCEPTION_CODE "WfsExceptionCode"
 #define WFS_LANGUAGE "WfsLanguage"

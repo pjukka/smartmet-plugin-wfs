@@ -1,10 +1,10 @@
 #pragma once
 
-#include "stored_queries/StoredAtomQueryHandlerBase.h"
 #include "ArrayParameterTemplate.h"
 #include "GeoServerDataIndex.h"
 #include "ScalarParameterTemplate.h"
 #include "SupportsBoundingBox.h"
+#include "stored_queries/StoredAtomQueryHandlerBase.h"
 
 namespace SmartMet
 {

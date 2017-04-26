@@ -10,8 +10,8 @@
 
 #include <engines/gis/CRSRegistry.h>
 #include <spine/Reactor.h>
-#include <spine/ValueFormatter.h>
 #include <spine/Value.h>
+#include <spine/ValueFormatter.h>
 
 #include <macgyver/TemplateFormatterMT.h>
 

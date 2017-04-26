@@ -1,16 +1,16 @@
 #pragma once
 
-#include <string>
-#include <vector>
-#include <boost/shared_ptr.hpp>
-#include <xercesc/dom/DOMElement.hpp>
-#include <spine/Value.h>
 #include "QueryBase.h"
 #include "RequestParameterMap.h"
 #include "StandardPresentationParameters.h"
-#include "StoredQueryMap.h"
 #include "StoredQueryHandlerBase.h"
+#include "StoredQueryMap.h"
 #include "XmlParameterExtractor.h"
+#include <boost/shared_ptr.hpp>
+#include <spine/Value.h>
+#include <xercesc/dom/DOMElement.hpp>
+#include <string>
+#include <vector>
 
 namespace SmartMet
 {

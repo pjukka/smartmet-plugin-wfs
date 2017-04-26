@@ -1,11 +1,11 @@
 #pragma once
 
-#include <array>
+#include "MultiLanguageString.h"
 #include <boost/optional.hpp>
 #include <boost/shared_ptr.hpp>
-#include <spine/ConfigBase.h>
 #include <engines/gis/CRSRegistry.h>
-#include "MultiLanguageString.h"
+#include <spine/ConfigBase.h>
+#include <array>
 
 namespace SmartMet
 {
@@ -36,6 +36,7 @@ class WfsFeatureDef
   inline std::string get_default_crs() const { return default_crs_url; }
   inline const std::vector<std::string>& get_other_crs() const { return other_crs_urls; }
   inline const std::array<double, 4> get_bbox() const { return bbox; }
+
  private:
   static std::string resolve_crs_url(const std::string& name,
                                      SmartMet::Engine::Gis::CRSRegistry& crs_registry);

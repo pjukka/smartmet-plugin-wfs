@@ -1,16 +1,16 @@
 #pragma once
 
-#include <map>
-#include <boost/scoped_ptr.hpp>
-#include <boost/shared_ptr.hpp>
-#include <spine/Value.h>
-#include <engines/geonames/Engine.h>
 #include "ArrayParameterTemplate.h"
 #include "ScalarParameterTemplate.h"
 #include "StoredQueryConfig.h"
 #include "StoredQueryParamRegistry.h"
 #include "SupportsExtraHandlerParams.h"
 #include "SupportsLocationParameters.h"
+#include <boost/scoped_ptr.hpp>
+#include <boost/shared_ptr.hpp>
+#include <engines/geonames/Engine.h>
+#include <spine/Value.h>
+#include <map>
 
 namespace SmartMet
 {

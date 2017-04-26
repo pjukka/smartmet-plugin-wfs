@@ -1,12 +1,12 @@
 #include "request/DescribeStoredQueries.h"
-#include <algorithm>
+#include "WfsConst.h"
+#include "WfsConvenience.h"
+#include "XmlUtils.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/foreach.hpp>
 #include <boost/format.hpp>
 #include <boost/optional.hpp>
-#include "WfsConst.h"
-#include "WfsConvenience.h"
-#include "XmlUtils.h"
+#include <algorithm>
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace bwx = SmartMet::Plugin::WFS::Xml;

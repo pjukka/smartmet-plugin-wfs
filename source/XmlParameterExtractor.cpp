@@ -1,7 +1,8 @@
 #include "XmlParameterExtractor.h"
-#include <sstream>
-#include <stdexcept>
-#include <stdint.h>
+#include "WfsConst.h"
+#include "WfsException.h"
+#include "XmlGmlTypes.h"
+#include "XmlUtils.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/foreach.hpp>
@@ -9,10 +10,9 @@
 #include <macgyver/TimeParser.h>
 #include <macgyver/TypeName.h>
 #include <spine/Exception.h>
-#include "WfsConst.h"
-#include "WfsException.h"
-#include "XmlGmlTypes.h"
-#include "XmlUtils.h"
+#include <sstream>
+#include <stdexcept>
+#include <stdint.h>
 
 namespace SmartMet
 {

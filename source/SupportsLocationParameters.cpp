@@ -1,11 +1,11 @@
 #include "SupportsLocationParameters.h"
-#include <cassert>
-#include <sstream>
 #include <boost/algorithm/string.hpp>
 #include <boost/format.hpp>
 #include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include <spine/Exception.h>
+#include <cassert>
+#include <sstream>
 
 namespace bw = SmartMet::Plugin::WFS;
 using SmartMet::Spine::Value;

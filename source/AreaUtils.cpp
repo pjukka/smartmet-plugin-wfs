@@ -1,9 +1,9 @@
 #include "AreaUtils.h"
-#include <stdexcept>
 #include <boost/bind.hpp>
 #include <boost/lambda/lambda.hpp>
 #include <boost/shared_ptr.hpp>
 #include <spine/Exception.h>
+#include <stdexcept>
 
 namespace SmartMet
 {

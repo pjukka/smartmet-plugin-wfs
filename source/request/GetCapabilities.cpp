@@ -1,11 +1,11 @@
 #include "request/GetCapabilities.h"
+#include "WfsConst.h"
+#include "WfsException.h"
+#include "XmlUtils.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/foreach.hpp>
 #include <ctpp2/CDT.hpp>
 #include <macgyver/TypeName.h>
-#include "WfsConst.h"
-#include "WfsException.h"
-#include "XmlUtils.h"
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace bwx = SmartMet::Plugin::WFS::Xml;

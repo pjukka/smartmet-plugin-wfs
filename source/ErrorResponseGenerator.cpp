@@ -1,13 +1,13 @@
 #include "ErrorResponseGenerator.h"
-#include <boost/algorithm/string.hpp>
-#include <boost/format.hpp>
-#include <boost/date_time/posix_time/posix_time.hpp>
-#include <spine/Convenience.h>
-#include <spine/Exception.h>
-#include <macgyver/TypeName.h>
+#include "AdHocQuery.h"
 #include "PluginData.h"
 #include "StoredQuery.h"
-#include "AdHocQuery.h"
+#include <boost/algorithm/string.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/format.hpp>
+#include <macgyver/TypeName.h>
+#include <spine/Convenience.h>
+#include <spine/Exception.h>
 
 using SmartMet::Plugin::WFS::ErrorResponseGenerator;
 

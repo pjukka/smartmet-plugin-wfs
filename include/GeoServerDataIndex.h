@@ -86,6 +86,7 @@ class GeoServerDataIndex
   std::string get_db_table_name(const std::string& layer_name) const;
 
   inline void set_debug_level(int debug_level) { this->debug_level = debug_level; }
+
  private:
   std::string create_sql_request(const boost::posix_time::ptime& begin,
                                  const boost::posix_time::ptime& end,
@@ -102,7 +103,8 @@ class GeoServerDataIndex
   GeoServerDB& db;
   boost::variant<std::string,
                  std::map<std::string, std::string>,
-                 boost::function1<std::string, std::string> > db_table_name_def;
+                 boost::function1<std::string, std::string> >
+      db_table_name_def;
   std::map<boost::posix_time::ptime, Item> data;
   int debug_level;
 };

@@ -1,11 +1,11 @@
 #include "XmlDomErrorHandler.h"
+#include <macgyver/TypeName.h>
+#include <spine/Exception.h>
+#include <xqilla/xqilla-dom3.hpp>
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
 #include <string>
-#include <xqilla/xqilla-dom3.hpp>
-#include <macgyver/TypeName.h>
-#include <spine/Exception.h>
 
 using SmartMet::Plugin::WFS::Xml::XmlDomErrorHandler;
 

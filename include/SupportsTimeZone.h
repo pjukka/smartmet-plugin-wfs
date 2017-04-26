@@ -1,9 +1,9 @@
 #pragma once
 
-#include <boost/date_time/local_time/local_time.hpp>
 #include "StoredQueryConfig.h"
 #include "StoredQueryParamRegistry.h"
 #include "SupportsExtraHandlerParams.h"
+#include <boost/date_time/local_time/local_time.hpp>
 
 namespace SmartMet
 {

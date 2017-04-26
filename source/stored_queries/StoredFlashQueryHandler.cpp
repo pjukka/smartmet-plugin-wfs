@@ -1,11 +1,11 @@
 #include "stored_queries/StoredFlashQueryHandler.h"
-#include <smartmet/spine/Exception.h>
-#include <smartmet/spine/Value.h>
-#include <smartmet/spine/Convenience.h>
-#include <macgyver/StringConversion.h>
 #include "FeatureID.h"
 #include "StoredQueryHandlerFactoryDef.h"
 #include "WfsConst.h"
+#include <macgyver/StringConversion.h>
+#include <smartmet/spine/Convenience.h>
+#include <smartmet/spine/Exception.h>
+#include <smartmet/spine/Value.h>
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace pt = boost::posix_time;

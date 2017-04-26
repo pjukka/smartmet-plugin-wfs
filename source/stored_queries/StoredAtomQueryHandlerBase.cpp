@@ -1,15 +1,14 @@
 #include "stored_queries/StoredAtomQueryHandlerBase.h"
-#include <cassert>
-#include <limits>
-#include <sstream>
-#include <cassert>
-#include <vector>
+#include "StoredQueryHandlerFactoryDef.h"
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/variant.hpp>
 #include <macgyver/StringConversion.h>
 #include <smartmet/spine/Exception.h>
 #include <smartmet/spine/Value.h>
-#include "StoredQueryHandlerFactoryDef.h"
+#include <cassert>
+#include <limits>
+#include <sstream>
+#include <vector>
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace pt = boost::posix_time;

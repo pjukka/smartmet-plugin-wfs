@@ -1,17 +1,17 @@
 #pragma once
 
-#include <spine/Exception.h>
-#include <spine/HTTP.h>
-#include <spine/Parameter.h>
-#include <spine/SmartMet.h>
-#include <spine/Reactor.h>
-#include <spine/Value.h>
-#include <newbase/NFmiParameterName.h>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/optional.hpp>
-#include <libconfig.h++>
+#include <newbase/NFmiParameterName.h>
+#include <spine/Exception.h>
+#include <spine/HTTP.h>
+#include <spine/Parameter.h>
+#include <spine/Reactor.h>
+#include <spine/SmartMet.h>
+#include <spine/Value.h>
 #include <iostream>
+#include <libconfig.h++>
 #include <limits>
 #include <stdexcept>
 #include <string>

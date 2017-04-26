@@ -1,9 +1,9 @@
 #pragma once
 
+#include "PluginData.h"
+#include "RequestBase.h"
 #include <boost/shared_ptr.hpp>
 #include <macgyver/TemplateFormatterMT.h>
-#include "RequestBase.h"
-#include "PluginData.h"
 
 namespace SmartMet
 {

@@ -1,21 +1,21 @@
 #include "request/GetPropertyValue.h"
+#include "AdHocQuery.h"
+#include "WfsConst.h"
+#include "WfsException.h"
+#include "XPathSnapshot.h"
+#include "XmlDomErrorHandler.h"
+#include "XmlUtils.h"
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/format.hpp>
+#include <macgyver/StringConversion.h>
+#include <macgyver/TypeName.h>
 #include <xercesc/dom/DOM.hpp>
 #include <xercesc/dom/DOMException.hpp>
 #include <xercesc/dom/DOMXPathNSResolver.hpp>
 #include <xercesc/dom/DOMXPathResult.hpp>
-#include <xercesc/util/Janitor.hpp>
 #include <xercesc/framework/MemBufInputSource.hpp>
+#include <xercesc/util/Janitor.hpp>
 #include <xqilla/xqilla-dom3.hpp>
-#include <macgyver/StringConversion.h>
-#include <macgyver/TypeName.h>
-#include "WfsConst.h"
-#include "WfsException.h"
-#include "XmlUtils.h"
-#include "XmlDomErrorHandler.h"
-#include "XPathSnapshot.h"
-#include "AdHocQuery.h"
 
 #define SCHEMA_LOCATION "schemaLocation"
 #define TIMESTAMP "timeStamp"

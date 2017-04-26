@@ -1,19 +1,19 @@
 #include "stored_queries/StoredObsQueryHandler.h"
-#include <algorithm>
-#include <functional>
-#include <boost/format.hpp>
-#include <boost/algorithm/string.hpp>
-#include <boost/lambda/lambda.hpp>
-#include <smartmet/spine/Exception.h>
-#include <smartmet/spine/Value.h>
-#include <smartmet/spine/Convenience.h>
-#include <smartmet/spine/TimeSeries.h>
-#include <smartmet/spine/TimeSeriesOutput.h>
-#include <macgyver/StringConversion.h>
-#include "StoredQueryHandlerFactoryDef.h"
 #include "FeatureID.h"
+#include "StoredQueryHandlerFactoryDef.h"
 #include "WfsConst.h"
 #include "WfsConvenience.h"
+#include <boost/algorithm/string.hpp>
+#include <boost/format.hpp>
+#include <boost/lambda/lambda.hpp>
+#include <macgyver/StringConversion.h>
+#include <smartmet/spine/Convenience.h>
+#include <smartmet/spine/Exception.h>
+#include <smartmet/spine/TimeSeries.h>
+#include <smartmet/spine/TimeSeriesOutput.h>
+#include <smartmet/spine/Value.h>
+#include <algorithm>
+#include <functional>
 
 #define P_BEGIN_TIME "beginTime"
 #define P_END_TIME "endTime"
@@ -188,9 +188,9 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
       // Only one name for each one is allowed (case insensitively).
       // Avoiding oracle errors from Observation
       std::vector<std::string> lowerCaseParamNames;
-      BOOST_FOREACH(const std::string & name, param_names)
-      lowerCaseParamNames.push_back(Fmi::ascii_tolower_copy(name));
-      BOOST_FOREACH(const std::string & name, param_names)
+      BOOST_FOREACH (const std::string& name, param_names)
+        lowerCaseParamNames.push_back(Fmi::ascii_tolower_copy(name));
+      BOOST_FOREACH (const std::string& name, param_names)
       {
         if (std::count(lowerCaseParamNames.begin(),
                        lowerCaseParamNames.end(),
@@ -221,15 +221,15 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
         // Quality info parameter construction
         if (support_quality_info)
         {
-          BOOST_FOREACH(const std::string & name, param_names)
-          qc_info_param_names.push_back("qc_" + name);
+          BOOST_FOREACH (const std::string& name, param_names)
+            qc_info_param_names.push_back("qc_" + name);
         }
       }
 
       int first_param = 0, last_param = 0;
       query_params.parameters = initial_bs_param;
 
-      BOOST_FOREACH(std::string name, param_names)
+      BOOST_FOREACH (std::string name, param_names)
       {
         // Is the parameter configured in Observation
         if (not obs_engine->isParameter(name, query_params.stationtype))
@@ -253,7 +253,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
       // QC parameter inclusion.
       int first_qc_param = 0;
       // int last_qc_param = 0;
-      BOOST_FOREACH(std::string name, qc_info_param_names)
+      BOOST_FOREACH (std::string name, qc_info_param_names)
       {
         if (not obs_engine->isParameter(name, query_params.stationtype))
         {
@@ -361,8 +361,8 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
       // Avoid an attempt to dump too much data.
       unsigned maxEpochs = params.get_single<uint64_t>(P_MAX_EPOCHS);
       unsigned ts1 = (timestep ? timestep : 60);
-      if (sq_restrictions and query_params.starttime + pt::minutes(maxEpochs * ts1) <
-          query_params.endtime)
+      if (sq_restrictions and
+          query_params.starttime + pt::minutes(maxEpochs * ts1) < query_params.endtime)
       {
         SmartMet::Spine::Exception exception(BCP, "Too many time epochs in the time interval!");
         exception.addDetail("Use shorter time interval or larger time step.");
@@ -429,15 +429,15 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
       {
         // Assign group IDs to stations for separate groups requested
         int group_cnt = 0;
-        BOOST_FOREACH(auto & item, site_map)
+        BOOST_FOREACH (auto& item, site_map)
         {
           const std::string& fmisid = item.first;
           const int group_id = group_cnt++;
           item.second.group_id = group_id;
           item.second.ind_in_group = 0;
 
-          const char* place_params[] = {P_WMOS,    P_LPNNS,  P_FMISIDS, P_PLACES,
-                                        P_LATLONS, P_GEOIDS, P_KEYWORD, P_BOUNDING_BOX};
+          const char* place_params[] = {
+              P_WMOS, P_LPNNS, P_FMISIDS, P_PLACES, P_LATLONS, P_GEOIDS, P_KEYWORD, P_BOUNDING_BOX};
           for (unsigned i = 0; i < sizeof(place_params) / sizeof(*place_params); i++)
           {
             feature_id.erase_param(place_params[i]);
@@ -445,7 +445,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
           feature_id.add_param(P_FMISIDS, fmisid);
           group_map[group_id].feature_id = feature_id.get_id();
 
-          BOOST_FOREACH(const std::string & param_name, param_names)
+          BOOST_FOREACH (const std::string& param_name, param_names)
           {
             feature_id.erase_param(P_METEO_PARAMETERS);
             feature_id.add_param(P_METEO_PARAMETERS, param_name);
@@ -457,7 +457,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
       {
         const int group_id = 0;
         int ind_in_group = 0;
-        BOOST_FOREACH(auto & item, site_map)
+        BOOST_FOREACH (auto& item, site_map)
         {
           item.second.group_id = group_id;
           item.second.ind_in_group = ind_in_group++;
@@ -465,7 +465,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
 
         group_map[group_id].feature_id = feature_id.get_id();
 
-        BOOST_FOREACH(const std::string & param_name, param_names)
+        BOOST_FOREACH (const std::string& param_name, param_names)
         {
           feature_id.erase_param(P_METEO_PARAMETERS);
           feature_id.add_param(P_METEO_PARAMETERS, param_name);
@@ -505,7 +505,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
         const SmartMet::Spine::TimeSeries::TimeSeries& ts_geoid = obsengine_result->at(geoid_ind);
         const SmartMet::Spine::TimeSeries::TimeSeries& ts_wmo = obsengine_result->at(wmo_ind);
 
-        BOOST_FOREACH(const auto & it1, site_map)
+        BOOST_FOREACH (const auto& it1, site_map)
         {
           const std::string& fmisid = it1.first;
           const int group_id = it1.second.group_id;
@@ -556,7 +556,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
           group["obsStationList"][ind]["distance"] =
               (distance.empty() ? query_params.missingtext : distance);
           group["obsStationList"][ind]["bearing"] =
-              ((distance.empty() or bearing.empty() or(distance == query_params.missingtext))
+              ((distance.empty() or bearing.empty() or (distance == query_params.missingtext))
                    ? query_params.missingtext
                    : bearing);
           group["obsStationList"][ind]["name"] = name;
@@ -567,9 +567,9 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
           if (not wmo.empty())
             group["obsStationList"][ind]["wmo"] = wmo;
 
-          (geoid.empty() or geoid == "-1") ? group["obsStationList"][ind]["geoid"] =
-                                                 query_params.missingtext
-                                           : group["obsStationList"][ind]["geoid"] = geoid;
+          (geoid.empty() or geoid == "-1")
+              ? group["obsStationList"][ind]["geoid"] = query_params.missingtext
+              : group["obsStationList"][ind]["geoid"] = geoid;
         }
 
         for (int group_id = 0; group_id < num_groups; group_id++)
@@ -600,7 +600,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
 
             // Mark QC parameters
             if (m_support_qc_parameters and
-                    SupportsQualityParameters::isQCParameter(param_names.at(k0)))
+                SupportsQualityParameters::isQCParameter(param_names.at(k0)))
               group["obsParamList"][k0]["isQCParameter"] = "true";
           }
 
@@ -612,7 +612,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
           group["groupId"] = group_id_str;
           group["groupNum"] = group_id + 1;
 
-          BOOST_FOREACH(const auto & it1, site_map)
+          BOOST_FOREACH (const auto& it1, site_map)
           {
             if (it1.second.group_id == group_id)
             {
@@ -621,7 +621,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
 
               const SmartMet::Spine::TimeSeries::TimeSeries& ts_epoch =
                   obsengine_result->at(first_param);
-              BOOST_FOREACH(int row_num, it1.second.row_index_vect)
+              BOOST_FOREACH (int row_num, it1.second.row_index_vect)
               {
                 static const long ref_jd = boost::gregorian::date(1970, 1, 1).julian_day();
 

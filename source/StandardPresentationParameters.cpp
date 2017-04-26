@@ -1,15 +1,14 @@
 #include "StandardPresentationParameters.h"
-#include <limits>
-#include <sstream>
-#include <boost/algorithm/string.hpp>
-#include <spine/Convenience.h>
-#include <spine/Exception.h>
-#include <macgyver/TypeName.h>
-#include <boost/algorithm/string.hpp>
 #include "WfsConst.h"
 #include "WfsConvenience.h"
 #include "WfsException.h"
 #include "XmlUtils.h"
+#include <boost/algorithm/string.hpp>
+#include <macgyver/TypeName.h>
+#include <spine/Convenience.h>
+#include <spine/Exception.h>
+#include <limits>
+#include <sstream>
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace bwx = SmartMet::Plugin::WFS::Xml;

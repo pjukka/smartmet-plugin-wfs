@@ -1,11 +1,11 @@
 #pragma once
 
+#include "StoredQueryConfig.h"
+#include <boost/shared_ptr.hpp>
 #include <map>
+#include <memory>
 #include <string>
 #include <vector>
-#include <memory>
-#include <boost/shared_ptr.hpp>
-#include "StoredQueryConfig.h"
 
 namespace SmartMet
 {

@@ -1,13 +1,13 @@
 #include "DataSetIndex.h"
-#include <stdexcept>
-#include <vector>
 #include <boost/algorithm/string.hpp>
 #include <boost/foreach.hpp>
 #include <boost/regex.hpp>
 #include <macgyver/TimeParser.h>
+#include <macgyver/TypeName.h>
 #include <spine/Convenience.h>
 #include <spine/Exception.h>
-#include <macgyver/TypeName.h>
+#include <stdexcept>
+#include <vector>
 
 namespace ba = boost::algorithm;
 namespace bw = SmartMet::Plugin::WFS;

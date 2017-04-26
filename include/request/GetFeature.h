@@ -1,11 +1,11 @@
 #pragma once
 
-#include <xercesc/dom/DOMDocument.hpp>
-#include <macgyver/Cache.h>
+#include "PluginData.h"
 #include "QueryBase.h"
 #include "RequestBase.h"
 #include "StandardPresentationParameters.h"
-#include "PluginData.h"
+#include <macgyver/Cache.h>
+#include <xercesc/dom/DOMDocument.hpp>
 
 namespace SmartMet
 {

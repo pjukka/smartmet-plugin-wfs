@@ -1,8 +1,8 @@
 #include "RequestParameterMap.h"
-#include <algorithm>
 #include <boost/bind.hpp>
 #include <boost/foreach.hpp>
 #include <spine/Exception.h>
+#include <algorithm>
 
 using SmartMet::Spine::Value;
 

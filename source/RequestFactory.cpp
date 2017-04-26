@@ -1,11 +1,11 @@
 #include "RequestFactory.h"
-#include <sstream>
-#include <stdexcept>
+#include "WfsException.h"
 #include <boost/algorithm/string.hpp>
 #include <macgyver/StringConversion.h>
 #include <macgyver/TypeName.h>
 #include <spine/Exception.h>
-#include "WfsException.h"
+#include <sstream>
+#include <stdexcept>
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace ba = boost::algorithm;

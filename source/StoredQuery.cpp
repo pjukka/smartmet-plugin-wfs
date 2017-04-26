@@ -1,14 +1,14 @@
 #include "StoredQuery.h"
-#include <set>
-#include <sstream>
-#include <boost/algorithm/string.hpp>
-#include <macgyver/StringConversion.h>
-#include <macgyver/TypeName.h>
-#include <spine/Exception.h>
 #include "FeatureID.h"
 #include "WfsConst.h"
 #include "WfsException.h"
 #include "XmlUtils.h"
+#include <boost/algorithm/string.hpp>
+#include <macgyver/StringConversion.h>
+#include <macgyver/TypeName.h>
+#include <spine/Exception.h>
+#include <set>
+#include <sstream>
 
 namespace ba = boost::algorithm;
 namespace bw = SmartMet::Plugin::WFS;

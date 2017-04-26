@@ -1,14 +1,14 @@
 #pragma once
 
-#include <map>
-#include <set>
-#include <typeinfo>
-#include <boost/shared_ptr.hpp>
-#include <boost/variant.hpp>
 #include "ArrayParameterTemplate.h"
 #include "RequestParameterMap.h"
 #include "ScalarParameterTemplate.h"
 #include "StoredQueryConfig.h"
+#include <boost/shared_ptr.hpp>
+#include <boost/variant.hpp>
+#include <map>
+#include <set>
+#include <typeinfo>
 
 namespace SmartMet
 {

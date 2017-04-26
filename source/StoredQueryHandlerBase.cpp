@@ -1,15 +1,15 @@
 #include "StoredQueryHandlerBase.h"
-#include <sstream>
-#include <stdexcept>
-#include <newbase/NFmiPoint.h>
+#include "WfsException.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/foreach.hpp>
-#include <spine/Convenience.h>
-#include <spine/Value.h>
-#include <spine/Exception.h>
-#include <macgyver/TypeName.h>
 #include <macgyver/TemplateFormatter.h>
-#include "WfsException.h"
+#include <macgyver/TypeName.h>
+#include <newbase/NFmiPoint.h>
+#include <spine/Convenience.h>
+#include <spine/Exception.h>
+#include <spine/Value.h>
+#include <sstream>
+#include <stdexcept>
 
 namespace ba = boost::algorithm;
 

@@ -1,10 +1,10 @@
 #include "stored_queries/StoredWWCoverageQueryHandler.h"
-#include <smartmet/spine/Exception.h>
-#include <newbase/NFmiEnumConverter.h>
 #include <gis/Box.h>
+#include <newbase/NFmiEnumConverter.h>
+#include <smartmet/spine/Exception.h>
 
-#include <iomanip>
 #include <boost/algorithm/string/replace.hpp>
+#include <iomanip>
 
 namespace bw = SmartMet::Plugin::WFS;
 

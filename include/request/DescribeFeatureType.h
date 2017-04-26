@@ -1,12 +1,12 @@
 #pragma once
 
-#include <string>
-#include <vector>
+#include "PluginData.h"
+#include "RequestBase.h"
 #include <boost/shared_ptr.hpp>
 #include <smartmet/spine/HTTP.h>
 #include <xercesc/dom/DOMDocument.hpp>
-#include "PluginData.h"
-#include "RequestBase.h"
+#include <string>
+#include <vector>
 
 namespace SmartMet
 {

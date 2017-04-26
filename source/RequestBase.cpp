@@ -1,13 +1,13 @@
 #include "RequestBase.h"
-#include <sstream>
-#include <boost/algorithm/string.hpp>
-#include <macgyver/StringConversion.h>
-#include <macgyver/TypeName.h>
-#include <spine/Exception.h>
 #include "QueryBase.h"
 #include "WfsConst.h"
 #include "WfsException.h"
 #include "XmlUtils.h"
+#include <boost/algorithm/string.hpp>
+#include <macgyver/StringConversion.h>
+#include <macgyver/TypeName.h>
+#include <spine/Exception.h>
+#include <sstream>
 
 namespace bw = SmartMet::Plugin::WFS;
 namespace bwx = SmartMet::Plugin::WFS::Xml;

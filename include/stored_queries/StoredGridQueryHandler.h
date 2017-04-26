@@ -1,17 +1,17 @@
 #pragma once
 
+#include <boost/date_time/posix_time/ptime.hpp>
 #include <boost/geometry/geometry.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/date_time/posix_time/ptime.hpp>
 #include <gdal/ogr_geometry.h>
 
 #include <engines/geonames/Engine.h>
 #include <engines/querydata/Engine.h>
 #include <spine/TimeSeries.h>
 
+#include "RequestParameterMap.h"
 #include "SupportsBoundingBox.h"
 #include "SupportsTimeParameters.h"
-#include "RequestParameterMap.h"
 #include "stored_queries/StoredAtomQueryHandlerBase.h"
 
 namespace SmartMet

@@ -1,10 +1,10 @@
 #pragma once
 
-#include <map>
-#include <vector>
-#include <spine/Value.h>
 #include "ParameterTemplateBase.h"
 #include "ParameterTemplateItem.h"
+#include <spine/Value.h>
+#include <map>
+#include <vector>
 
 namespace SmartMet
 {

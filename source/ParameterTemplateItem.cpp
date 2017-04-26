@@ -1,14 +1,14 @@
 #include "ParameterTemplateItem.h"
-#include <sstream>
+#include "RequestParameterMap.h"
+#include "SupportsExtraHandlerParams.h"
+#include "WfsException.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/lambda/lambda.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/spirit/include/qi.hpp>
 #include <spine/Exception.h>
 #include <spine/Value.h>
-#include "RequestParameterMap.h"
-#include "SupportsExtraHandlerParams.h"
-#include "WfsException.h"
+#include <sstream>
 
 namespace bw = SmartMet::Plugin::WFS;
 using SmartMet::Spine::Value;

@@ -6,16 +6,16 @@
  */
 // ======================================================================
 
-#include <engines/gis/CRSRegistry.h>
-#include <spine/ConfigBase.h>
-#include <libconfig.h++>
+#include "WfsFeatureDef.h"
 #include <boost/shared_ptr.hpp>
 #include <boost/utility.hpp>
-#include <string>
-#include <vector>
+#include <engines/gis/CRSRegistry.h>
 #include <macgyver/TemplateDirectory.h>
 #include <macgyver/TemplateFormatter.h>
-#include "WfsFeatureDef.h"
+#include <spine/ConfigBase.h>
+#include <libconfig.h++>
+#include <string>
+#include <vector>
 
 namespace SmartMet
 {

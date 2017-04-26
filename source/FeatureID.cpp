@@ -1,12 +1,12 @@
 #include "FeatureID.h"
-#include <cstring>
-#include <sstream>
+#include "BStream.h"
 #include <boost/foreach.hpp>
 #include <boost/shared_array.hpp>
-#include <openssl/sha.h>
 #include <macgyver/Base64.h>
+#include <openssl/sha.h>
 #include <spine/Exception.h>
-#include "BStream.h"
+#include <cstring>
+#include <sstream>
 
 using SmartMet::Spine::Value;
 using SmartMet::Plugin::WFS::FeatureID;

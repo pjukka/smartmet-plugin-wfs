@@ -2,11 +2,11 @@
 #include "FeatureID.h"
 #include "WfsConst.h"
 #include "WfsException.h"
-#include "XmlUtils.h"
 #include "XPathSnapshot.h"
-#include <spine/Exception.h>
-#include <macgyver/StringConversion.h>
+#include "XmlUtils.h"
 #include <boost/lambda/lambda.hpp>
+#include <macgyver/StringConversion.h>
+#include <spine/Exception.h>
 
 XERCES_CPP_NAMESPACE_USE;
 

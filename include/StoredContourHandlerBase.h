@@ -1,18 +1,18 @@
 #pragma once
 
 #include "PluginData.h"
+#include "StoredContourQueryStructs.h"
 #include "StoredQueryConfig.h"
 #include "StoredQueryHandlerBase.h"
 #include "StoredQueryHandlerFactoryDef.h"
-#include "StoredContourQueryStructs.h"
+#include "SupportsBoundingBox.h"
 #include "SupportsExtraHandlerParams.h"
 #include "SupportsLocationParameters.h"
-#include "SupportsBoundingBox.h"
 #include "SupportsTimeParameters.h"
 #include "SupportsTimeZone.h"
 
-#include <engines/querydata/Engine.h>
 #include <engines/contour/Engine.h>
+#include <engines/querydata/Engine.h>
 
 #include <gis/OGR.h>
 

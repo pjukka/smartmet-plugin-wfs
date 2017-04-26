@@ -1,8 +1,8 @@
 #pragma once
 
-#include <string>
 #include <boost/shared_array.hpp>
 #include <spine/Value.h>
+#include <string>
 
 namespace SmartMet
 {

@@ -1,7 +1,7 @@
 #include "request/ListStoredQueries.h"
-#include <ctpp2/CDT.hpp>
 #include "WfsConvenience.h"
 #include "XmlUtils.h"
+#include <ctpp2/CDT.hpp>
 
 namespace bw = SmartMet::Plugin::WFS;
 
