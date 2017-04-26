@@ -14,6 +14,7 @@ namespace Plugin
 namespace WFS
 {
 class PluginData;
+class StoredQueryConfig;
 class StoredQueryHandlerBase;
 
 /**
