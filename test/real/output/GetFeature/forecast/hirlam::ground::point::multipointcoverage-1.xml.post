@@ -62,7 +62,7 @@
 			<gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Helsinki</gml:name>
 			<gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">658225</gml:name>
 			<target:representativePoint xlink:href="#point-658225"/>
-			<target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+			<target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
 			<target:timezone>Europe/Helsinki</target:timezone>
 			<target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Finland</target:region>	   			
 		    </target:Location></target:member>

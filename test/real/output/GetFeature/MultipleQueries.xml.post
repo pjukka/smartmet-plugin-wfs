@@ -38,7 +38,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -152,7 +152,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-GeopHeight"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -209,7 +209,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-Temperature"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -266,7 +266,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-Pressure"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -323,7 +323,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-Humidity"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -380,7 +380,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-WindDirection"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -437,7 +437,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-WindSpeedMS"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -494,7 +494,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-WindUMS"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -551,7 +551,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-WindVMS"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -608,7 +608,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-MaximumWind"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -665,7 +665,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-WindGust"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -722,7 +722,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-DewPoint"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -779,7 +779,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-TotalCloudCover"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -836,7 +836,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-WeatherSymbol3"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -893,7 +893,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-LowCloudCover"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -950,7 +950,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-MediumCloudCover"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -1007,7 +1007,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-HighCloudCover"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -1064,7 +1064,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-Precipitation1h"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -1121,7 +1121,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-PrecipitationAmount"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -1178,7 +1178,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-RadiationGlobalAccumulation"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -1235,7 +1235,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-RadiationLWAccumulation"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -1292,7 +1292,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-RadiationNetSurfaceLWAccumulation"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -1349,7 +1349,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-RadiationNetSurfaceSWAccumulation"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
@@ -1406,7 +1406,7 @@
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/name">Pesiö</gml:name>
                       <gml:name codeSpace="http://xml.fmi.fi/namespace/locationcode/geoid">642056</gml:name>
                       <target:representativePoint xlink:href="#point-642056-RadiationDiffuseAccumulation"/>
-                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Republic of Finland</target:country>
+                      <target:country codeSpace="http://xml.fmi.fi/namespace/location/country">Finland</target:country>
                       <target:timezone>Europe/Helsinki</target:timezone>
                       <target:region codeSpace="http://xml.fmi.fi/namespace/location/region">Suomussalmi</target:region>
                     </target:Location>
