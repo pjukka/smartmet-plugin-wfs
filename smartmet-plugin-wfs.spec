@@ -89,6 +89,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Upcoming
+- http/https scheme selection based on X-Forwarded-Proto header; STU-5084
+
+* Upcoming
 - Format the code with new clang-format rules and fixed the compilation.
 
 * Tue Apr 25 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.4.25-1.fmi
