@@ -82,6 +82,7 @@ class PluginData : public boost::noncopyable
   inline const std::vector<std::string>& get_languages() const { return itsConfig.get_languages(); }
   inline int get_debug_level() const { return debug_level; }
   inline std::string get_fallback_hostname() const { return fallback_hostname; }
+  inline std::string get_fallback_protocol() const { return fallback_protocol; }
   boost::posix_time::ptime get_time_stamp() const;
 
   boost::posix_time::ptime get_local_time_stamp() const;
@@ -116,6 +117,7 @@ class PluginData : public boost::noncopyable
   std::unique_ptr<WfsCapabilities> wfs_capabilities;
   int debug_level;
   std::string fallback_hostname;
+  std::string fallback_protocol;
 
   /**
    *   @brief Locked timestamp for testing only

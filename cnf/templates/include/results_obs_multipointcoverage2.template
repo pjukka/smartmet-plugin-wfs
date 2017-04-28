@@ -22,7 +22,7 @@
           </gml:coverageFunction>
           <gmlcov:rangeType>
             <swe:DataRecord>
-              <TMPL_foreach group.obsParamList as obsParam><swe:field name="<TMPL_var obsParam.name>" <TMPL_if DEFINED(obsParam.qcParam)>xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?qualitycode=&amp;language=<TMPL_var language>&amp;"<TMPL_else><TMPL_include "link_observable_property.template"></TMPL_if>/>
+              <TMPL_foreach group.obsParamList as obsParam><swe:field name="<TMPL_var obsParam.name>" <TMPL_if DEFINED(obsParam.qcParam)>xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?qualitycode=&amp;language=<TMPL_var language>&amp;"<TMPL_else><TMPL_include "link_observable_property.template"></TMPL_if>/>
               </TMPL_foreach></swe:DataRecord>
           </gmlcov:rangeType>
         </gmlcov:MultiPointCoverage>

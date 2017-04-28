@@ -1,6 +1,6 @@
 	<om:featureOfInterest>
         <sams:SF_SpatialSamplingFeature gml:id="sampling-feature-<TMPL_var group.groupId>-fmisid">
-<TMPL_comment>          <gml:metaDataProperty xlink:href="http://<TMPL_var hostname>/wfs/<TMPL_var language>?request=GetFeature&amp;storedquery_id=fmi::ef::observationstations&amp;fmisid=<TMPL_foreach group.obsStationList as obsStation><TMPL_unless obsStation.__first__>,</TMPL_unless><TMPL_var obsStation.fmisid></TMPL_foreach>"/></TMPL_comment>
+<TMPL_comment>          <gml:metaDataProperty xlink:href="<TMPL_var protocol><TMPL_var hostname>/wfs/<TMPL_var language>?request=GetFeature&amp;storedquery_id=fmi::ef::observationstations&amp;fmisid=<TMPL_foreach group.obsStationList as obsStation><TMPL_unless obsStation.__first__>,</TMPL_unless><TMPL_var obsStation.fmisid></TMPL_foreach>"/></TMPL_comment>
           <sam:sampledFeature>
 		<target:LocationCollection gml:id="sampled-target-<TMPL_var group.groupId>"><TMPL_foreach group.obsStationList as obsStation>
 		    <target:member>

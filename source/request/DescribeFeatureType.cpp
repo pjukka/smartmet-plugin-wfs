@@ -91,6 +91,8 @@ void bw::Request::DescribeFeatureType::execute(std::ostream& output) const
     hash["fmi_apikey"] = fmi_apikey ? *fmi_apikey : "";
     auto hostname = get_hostname();
     hash["hostname"] = hostname ? *hostname : plugin_data.get_fallback_hostname();
+    auto protocol = get_protocol();
+    hash["protocol"] = (protocol ? *protocol : plugin_data.get_fallback_protocol()) + "://";
 
     int ind = 0;
     for (auto it = namespaces.begin(); it != namespaces.end(); ++it)

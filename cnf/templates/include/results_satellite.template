@@ -35,7 +35,7 @@
                     </gml:coverageFunction>
                     <gmlcov:rangeType>
                         <swe:DataRecord>
-                            <swe:field name="<TMPL_var dataset.params.layerParam[0]>" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=<TMPL_var dataset.params.layerParam[0]>&amp;"/>
+                            <swe:field name="<TMPL_var dataset.params.layerParam[0]>" xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=<TMPL_var dataset.params.layerParam[0]>&amp;"/>
                         </swe:DataRecord>
                     </gmlcov:rangeType>              
                 </gmlcov:RectifiedGridCoverage>

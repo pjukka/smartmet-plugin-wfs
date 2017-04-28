@@ -492,6 +492,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
       hash["fmi_apikey"] = QueryBase::FMI_APIKEY_SUBST;
       hash["fmi_apikey_prefix"] = QueryBase::FMI_APIKEY_PREFIX_SUBST;
       hash["hostname"] = QueryBase::HOSTNAME_SUBST;
+      hash["protocol"] = QueryBase::PROTOCOL_SUBST;
 
       if (not emptyResult)
       {
