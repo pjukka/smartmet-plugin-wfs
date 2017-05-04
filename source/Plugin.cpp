@@ -229,7 +229,7 @@ void Plugin::query(const std::string& req_language,
       hostname = plugin_data->get_fallback_hostname();
 
     std::string protocol;
-    if (const auto header_x_forwarded_protocol = req.getHeader("X-Forwarded-Proto"))
+    if (const auto header_x_forwarded_protocol = req.getProtocol())
       protocol = *header_x_forwarded_protocol;
     else
       protocol = plugin_data->get_fallback_protocol();
