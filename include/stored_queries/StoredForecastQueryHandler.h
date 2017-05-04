@@ -32,6 +32,7 @@ class StoredForecastQueryHandler : public StoredQueryHandlerBase,
   {
     std::list<std::string> models;
     std::set<int> levels;
+    std::set<float> level_heights;
     std::string level_type;
     std::list<std::pair<std::string, SmartMet::Spine::LocationPtr> > locations;
     std::vector<SmartMet::Spine::Parameter> data_params;
@@ -95,6 +96,7 @@ class StoredForecastQueryHandler : public StoredQueryHandlerBase,
                                                         const Query& query) const;
 
   void parse_models(const RequestParameterMap& params, Query& dest) const;
+  void parse_level_heights(const RequestParameterMap& param, Query& dest) const;
   void parse_levels(const RequestParameterMap& param, Query& dest) const;
   void parse_times(const RequestParameterMap& param, Query& dest) const;
   void parse_params(const RequestParameterMap& param, Query& dest) const;
@@ -116,6 +118,7 @@ class StoredForecastQueryHandler : public StoredQueryHandlerBase,
   std::size_t ind_lat;
   std::size_t ind_lon;
   std::size_t ind_elev;
+  std::size_t ind_level;
   std::size_t ind_region;
   std::size_t ind_country;
   std::size_t ind_country_iso;
@@ -124,6 +127,7 @@ class StoredForecastQueryHandler : public StoredQueryHandlerBase,
  protected:
   static const char* P_MODEL;
   static const char* P_ORIGIN_TIME;
+  static const char* P_LEVEL_HEIGHTS;
   static const char* P_LEVEL;
   static const char* P_LEVEL_TYPE;
   static const char* P_PARAM;

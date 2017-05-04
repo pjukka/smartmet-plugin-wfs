@@ -32,6 +32,7 @@ using boost::str;
 
 const char* bw::StoredForecastQueryHandler::P_MODEL = "model";
 const char* bw::StoredForecastQueryHandler::P_ORIGIN_TIME = "originTime";
+const char* bw::StoredForecastQueryHandler::P_LEVEL_HEIGHTS = "levelHeights";
 const char* bw::StoredForecastQueryHandler::P_LEVEL = "level";
 const char* bw::StoredForecastQueryHandler::P_LEVEL_TYPE = "levelType";
 const char* bw::StoredForecastQueryHandler::P_PARAM = "param";
@@ -59,6 +60,7 @@ bw::StoredForecastQueryHandler::StoredForecastQueryHandler(
       ind_lat(SmartMet::add_param(common_params, "latitude", Parameter::Type::DataIndependent)),
       ind_lon(SmartMet::add_param(common_params, "longitude", Parameter::Type::DataIndependent)),
       ind_elev(SmartMet::add_param(common_params, "elevation", Parameter::Type::DataIndependent)),
+      ind_level(SmartMet::add_param(common_params, "level", Parameter::Type::DataIndependent)),
       ind_region(SmartMet::add_param(common_params, "region", Parameter::Type::DataIndependent)),
       ind_country(SmartMet::add_param(common_params, "country", Parameter::Type::DataIndependent)),
       ind_country_iso(SmartMet::add_param(common_params, "iso2", Parameter::Type::DataIndependent)),
@@ -68,7 +70,8 @@ bw::StoredForecastQueryHandler::StoredForecastQueryHandler(
   {
     register_array_param<std::string>(P_MODEL, *config);
     register_scalar_param<pt::ptime>(P_ORIGIN_TIME, *config, false);
-    register_array_param<int64_t>(P_LEVEL, *config);
+    register_array_param<double>(P_LEVEL_HEIGHTS, *config, 0, 99);
+    register_array_param<int64_t>(P_LEVEL, *config, 0, 99);
     register_scalar_param<std::string>(P_LEVEL_TYPE, *config);
     register_array_param<std::string>(P_PARAM, *config, 1, 99);
     register_scalar_param<int64_t>(P_FIND_NEAREST_VALID, *config);
@@ -148,11 +151,12 @@ void bw::StoredForecastQueryHandler::query(const StoredQuery& stored_query,
         query.max_np_distance = max_np_distance > 0.0 ? max_np_distance : query.max_distance;
         query.keyword = params.get_optional<std::string>(P_KEYWORD, "");
         query.find_nearest_valid_point = params.get_single<int64_t>(P_FIND_NEAREST_VALID) != 0;
-
         query.tz_name = get_tz_name(params);
 
         parse_models(params, query);
         get_location_options(geo_engine, params, query.language, &query.locations);
+
+        parse_level_heights(params, query);
         parse_levels(params, query);
         parse_params(params, query);
         query.value_formatter.reset(new SmartMet::Spine::ValueFormatter(vf_param));
@@ -321,7 +325,7 @@ void bw::StoredForecastQueryHandler::query(const StoredQuery& stored_query,
 
               if (show_height)
               {
-                row_data["elev"] = query.result->get(ind_elev, i);
+                row_data["elev"] = query.result->get(ind_level, i);
               }
 
               pt::ptime epoch = pt::from_iso_string(query.result->get(ind_epoch, i));
@@ -350,14 +354,14 @@ void bw::StoredForecastQueryHandler::query(const StoredQuery& stored_query,
       }
       catch (...)
       {
-        SmartMet::Spine::Exception exception(BCP, "Operation parsing failed!");
+        SmartMet::Spine::Exception exception(BCP, "Operation parsing failed!", NULL);
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
         throw exception;
       }
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(BCP, "Operation parsing failed!");
+      SmartMet::Spine::Exception exception(BCP, "Operation parsing failed!", NULL);
       if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
       exception.addParameter(WFS_LANGUAGE, query.language);
@@ -533,7 +537,77 @@ boost::shared_ptr<SmartMet::Spine::Table> bw::StoredForecastQueryHandler::extrac
         }
       }
 
-      for (q->resetLevel(); q->nextLevel();)
+      if (not query.level_heights.empty() and q->levelName() != "model")
+      {
+        Spine::Exception exception(
+            BCP, "Only hybrid data supports data fetching from an arbitrary height.");
+        exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
+        throw exception;
+      }
+
+      if (not query.levels.empty() and not query.level_heights.empty())
+      {
+        Spine::Exception exception(BCP,
+                                   "Fetching data from a level and an arbitrary height is not "
+                                   "supported in a same request.");
+        exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
+        throw exception;
+      }
+
+      /*
+      if (query.levels.empty() and query.level_heights.empty())
+      {
+        Spine::Exception exception(BCP, "No level selected.");
+        exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
+        throw exception;
+      }
+      */
+
+      // Fetch data from an arbitrary height.
+      for (const auto& level_height : query.level_heights)
+      {
+        for (const lt::local_date_time& dt : tlist)
+        {
+          using SmartMet::Spine::Parameter;
+
+          int column = 0;
+          for (const Parameter& param : query.data_params)
+          {
+            int prec = param_precision_map.at(param.name());
+
+            const std::string timestring = "";
+
+            SmartMet::Engine::Querydata::ParameterOptions qengine_param(
+                param,
+                producer,
+                *loc,
+                country,
+                place,
+                *query.time_formatter,
+                timestring,
+                query.language,
+                *query.output_locale,
+                zone,
+                query.find_nearest_valid_point,
+                nearestpoint,
+                query.lastpoint);
+            SmartMet::Spine::TimeSeries::Value val =
+                q->valueAtHeight(qengine_param, dt, level_height);
+
+            std::stringstream ss;
+            SmartMet::Spine::TimeSeries::OStreamVisitor osv(ss, *query.value_formatter, prec);
+            boost::apply_visitor(osv, val);
+
+            ennusteet->set(column, row, ss.str());
+
+            ++column;
+          }
+
+          ++row;
+        }
+      }
+
+      for (q->resetLevel(); q->nextLevel() and query.level_heights.empty();)
       {
         if (query.levels.empty() || query.levels.count(static_cast<int>(q->levelValue())) > 0)
         {
@@ -643,6 +717,31 @@ void bw::StoredForecastQueryHandler::parse_models(const RequestParameterMap& par
   }
 }
 
+void bw::StoredForecastQueryHandler::parse_level_heights(const RequestParameterMap& params,
+                                                         Query& dest) const
+{
+  try
+  {
+    dest.level_heights.clear();
+    std::vector<double> heights;
+    params.get<double>(P_LEVEL_HEIGHTS, std::back_inserter(heights));
+    for (const auto& item : heights)
+    {
+      float tmp = static_cast<float>(item);
+      if (!dest.level_heights.insert(tmp).second)
+      {
+        SmartMet::Spine::Exception exception(
+            BCP, "Duplicate geometric height '" + std::to_string(tmp) + "'!");
+        exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
+        throw exception;
+      }
+    }
+  }
+  catch (...)
+  {
+    throw SmartMet::Spine::Exception(BCP, "Geometric height parsing failed!", NULL);
+  }
+}
 void bw::StoredForecastQueryHandler::parse_levels(const RequestParameterMap& params,
                                                   Query& dest) const
 {
@@ -886,8 +985,14 @@ Additionally to parameters from these groups the following parameters are also i
   <td>level</td>
   <td>@ref WFS_CFG_ARRAY_PARAM_TMPL</td>
   <td>integer</td>
-  <td>Model levels to query. Specifying empty array allow all levels to be used
-      without restrictions</td>
+  <td>Model levels to query.</td>
+</tr>
+
+<tr>
+  <td>levelHeights</td>
+  <td>@ref WFS_CFG_ARRAY_PARAM_TMPL</td>
+  <td>doulbeList</td>
+  <td>Arbitrary level heighs to query.</td>
 </tr>
 
 <tr>
