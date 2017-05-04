@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.4.25
+Version: 17.4.26
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -17,33 +17,33 @@ BuildRequires: libcurl-devel
 BuildRequires: xerces-c-devel
 BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
-BuildRequires: smartmet-library-spine-devel >= 17.4.8
+BuildRequires: smartmet-library-spine-devel >= 1
 BuildRequires: smartmet-library-gis-devel >= 17.3.14
-BuildRequires: smartmet-library-locus-devel >= 17.3.23
-BuildRequires: smartmet-library-macgyver-devel >= 17.3.16
-BuildRequires: smartmet-engine-contour-devel >= 17.4.10
-BuildRequires: smartmet-engine-geonames-devel >= 17.3.15
-BuildRequires: smartmet-engine-gis-devel >= 17.4.8
+BuildRequires: smartmet-library-locus-devel >= 17.4.26
+BuildRequires: smartmet-library-macgyver-devel >= 17.4.19
+BuildRequires: smartmet-engine-contour-devel >= 17.4.25
+BuildRequires: smartmet-engine-geonames-devel >= 17.4.25
+BuildRequires: smartmet-engine-gis-devel >= 17.4.11
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 17.4.8
+BuildRequires: smartmet-engine-observation-devel >= 17.4.20
 %endif
-BuildRequires: smartmet-engine-querydata-devel >= 17.4.10
+BuildRequires: smartmet-engine-querydata-devel >= 17.4.19
 BuildRequires: postgresql93-libs
 Requires: ctpp2
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
-Requires: smartmet-library-locus >= 17.3.23
-Requires: smartmet-library-macgyver >= 17.3.16
-Requires: smartmet-library-spine >= 17.4.8
+Requires: smartmet-library-locus >= 17.4.26
+Requires: smartmet-library-macgyver >= 17.4.19
+Requires: smartmet-library-spine >= 1
 Requires: smartmet-library-gis >= 17.3.14
-Requires: smartmet-engine-contour >= 17.4.10
-Requires: smartmet-engine-geonames >= 17.3.15
-Requires: smartmet-engine-gis >= 17.4.8
+Requires: smartmet-engine-contour >= 17.4.25
+Requires: smartmet-engine-geonames >= 17.4.25
+Requires: smartmet-engine-gis >= 17.4.11
 %if %{with observation}
-Requires: smartmet-engine-observation >= 17.4.8
+Requires: smartmet-engine-observation >= 17.4.20
 %endif
-Requires: smartmet-engine-querydata >= 17.4.10
+Requires: smartmet-engine-querydata >= 17.4.19
 Requires: smartmet-server >= 17.4.8
 Requires: xerces-c
 Requires: xqilla
@@ -91,8 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 * Upcoming
 - http/https scheme selection based on X-Forwarded-Proto header; STU-5084
 
-* Upcoming
+* Wed Apr 26 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.4.26-1.fmi
 - Format the code with new clang-format rules and fixed the compilation.
+- Changed most configuration path settings to be relative to the configuration file.
 
 * Tue Apr 25 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.4.25-1.fmi
 - Fixed bug on dereferencing empty contour results

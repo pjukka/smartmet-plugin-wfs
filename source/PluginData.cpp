@@ -160,8 +160,7 @@ void bw::PluginData::create_xml_parser()
               << std::endl;
     xml_parser.reset(new Xml::ParserMT(xml_grammar_pool_fn, false));
 
-    std::string serialized_xml_schemas =
-        itsConfig.get_optional_config_param<std::string>("serializedXmlSchemas", "");
+    std::string serialized_xml_schemas = itsConfig.get_optional_path("serializedXmlSchemas", "");
     if (serialized_xml_schemas != "")
     {
       xml_parser->load_schema_cache(serialized_xml_schemas);
