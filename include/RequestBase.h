@@ -106,13 +106,18 @@ class RequestBase
 
   virtual void set_hostname(const std::string& hostname);
 
+  virtual void set_protocol(const std::string& protocol);
+
   boost::optional<std::string> get_fmi_apikey() const { return fmi_apikey; }
   boost::optional<std::string> get_hostname() const { return hostname; }
+  boost::optional<std::string> get_protocol() const { return protocol; }
   void substitute_all(const std::string& src, std::ostream& output) const;
 
   void substitute_fmi_apikey(const std::string& src, std::ostream& output) const;
 
   void substitute_hostname(const std::string& src, std::ostream& output) const;
+
+  void substitute_protocol(const std::string& src, std::ostream& output) const;
 
   void set_http_status(SmartMet::Spine::HTTP::Status status) const;
 
@@ -160,6 +165,7 @@ class RequestBase
   boost::optional<std::string> fmi_apikey;
   boost::optional<std::string> fmi_apikey_prefix;
   boost::optional<std::string> hostname;
+  boost::optional<std::string> protocol;
 
   mutable SmartMet::Spine::HTTP::Status status;
 };

@@ -40,7 +40,7 @@
   </om:resultTime>
   <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
   <om:observedProperty
-      xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=<TMPL_var language>"/>
+      xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=winterWeather&amp;language=<TMPL_var language>"/>
   <om:featureOfInterest>
     <sams:SF_SpatialSamplingFeature gml:id="<TMPL_var CONCAT("forecast-",wfs_member.__index__ + 1,"-spatial-sampling-feature")>">
     <sam:sampledFeature/>

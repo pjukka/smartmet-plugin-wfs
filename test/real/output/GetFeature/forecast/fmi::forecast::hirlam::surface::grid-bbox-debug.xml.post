@@ -249,6 +249,7 @@ Global data object:
                                }
                   }
                 ];
+   protocol = &quot;http://&quot;;
    queryNum = 1;
    query_parameters = {
                         &#39;boundingBox&#39; : [

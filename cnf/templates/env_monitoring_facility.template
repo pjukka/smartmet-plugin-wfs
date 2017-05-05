@@ -55,7 +55,7 @@
           <ef:processType <TMPL_if DEFINED(capability.processType)>xlink:href="http://inspire.ec.europa.eu/codeList/ProcessTypeValue/<TMPL_var capability.processType>"<TMPL_else>xsi:nil="true" nilReason="missing"</TMPL_if> />
           <ef:resultNature <TMPL_if DEFINED(capability.resultNature)> xlink:href="http://inspire.ec.europa.eu/codeList/ResultNatureValue/<TMPL_var capability.resultNature>"<TMPL_else>xsi:nil="true" nilReason="missing"</TMPL_if> />
           <ef:procedure xlink:href="<TMPL_if DEFINED(capability.processType)><TMPL_var authorityDomain>/inspire/process/sensor-assembly?processType=<TMPL_var capability.processType>&amp;stationId=<TMPL_var station.fmisid>&amp;since=<TMPL_var capability.beginPosition>&amp;"<TMPL_else>" nilReason="missing"</TMPL_if> />
-          <ef:observedProperty xlink:title="<TMPL_var capability.measurandName>" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=observation&amp;param=<TMPL_var capability.measurandCode><TMPL_if DEFINED(capability.measurandAggregatePeriod)>_<TMPL_var capability.measurandAggregatePeriod><TMPL_if DEFINED(capability.measurandAggregateFunction)>_<TMPL_var capability.measurandAggregateFunction></TMPL_if></TMPL_if>&amp;language=<TMPL_var language>&amp;"/>
+          <ef:observedProperty xlink:title="<TMPL_var capability.measurandName>" xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=observation&amp;param=<TMPL_var capability.measurandCode><TMPL_if DEFINED(capability.measurandAggregatePeriod)>_<TMPL_var capability.measurandAggregatePeriod><TMPL_if DEFINED(capability.measurandAggregateFunction)>_<TMPL_var capability.measurandAggregateFunction></TMPL_if></TMPL_if>&amp;language=<TMPL_var language>&amp;"/>
         </ef:ObservingCapability>
       </ef:observingCapability></TMPL_foreach></TMPL_if><TMPL_if station.involvedInList><TMPL_foreach station.involvedInList AS involvedIn>
       <ef:involvedIn>
@@ -80,7 +80,7 @@
               <ins_base:namespace>fmi.station.activity.id</ins_base:namespace>
             </ins_base:Identifier>
           </ef:inspireId>
-          <ef:uses xlink:title="monitoring network" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs<TMPL_if language>/<TMPL_var language></TMPL_if>?SERVICE=WFS&amp;VERSION=2.0&amp;REQUEST=getFeature&amp;STOREDQUERY_ID=getObservationNetworks&amp;NETWORK_ID=fi:fmi:obsnetwork:aws" />
+          <ef:uses xlink:title="monitoring network" xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs<TMPL_if language>/<TMPL_var language></TMPL_if>?SERVICE=WFS&amp;VERSION=2.0&amp;REQUEST=getFeature&amp;STOREDQUERY_ID=getObservationNetworks&amp;NETWORK_ID=fi:fmi:obsnetwork:aws" />
         </ef:EnvironmentalMonitoringActivity>
       </ef:involvedIn></TMPL_foreach></TMPL_if><TMPL_if station.position>
       <ef:representativePoint>
@@ -100,7 +100,7 @@
           </ef:activityTime>
         </ef:OperationalActivityPeriod>
       </ef:operationalActivityPeriod></TMPL_foreach><TMPL_else><ef:operationalActivityPeriod/></TMPL_if><TMPL_if DEFINED(station.networks)><TMPL_foreach station.networks AS network>
-      <ef:belongsTo xlink:title="<TMPL_var network.name>" xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs<TMPL_if language>/<TMPL_var language></TMPL_if>?request=getFeature&amp;storedquery_id=fmi::ef::networks&amp;networkid=<TMPL_var network.id>&amp;"/></TMPL_foreach></TMPL_if>
+      <ef:belongsTo xlink:title="<TMPL_var network.name>" xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs<TMPL_if language>/<TMPL_var language></TMPL_if>?request=getFeature&amp;storedquery_id=fmi::ef::networks&amp;networkid=<TMPL_var network.id>&amp;"/></TMPL_foreach></TMPL_if>
     </ef:EnvironmentalMonitoringFacility>
   </wfs:member></TMPL_foreach></TMPL_if></TMPL_if>
 </wfs:FeatureCollection>

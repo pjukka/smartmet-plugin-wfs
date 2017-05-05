@@ -1,1 +1,1 @@
-xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>?request=GetFeature&amp;storedquery_id=fmi::ef::network::radar"
+xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>?request=GetFeature&amp;storedquery_id=fmi::ef::network::radar"

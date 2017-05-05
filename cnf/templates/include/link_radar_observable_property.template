@@ -1,1 +1,1 @@
-xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=<TMPL_foreach named_parameters.named_parameters as param><TMPL_unless param.__first__>,</TMPL_unless><TMPL_var param></TMPL_foreach>"
+xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=<TMPL_foreach named_parameters.named_parameters as param><TMPL_unless param.__first__>,</TMPL_unless><TMPL_var param></TMPL_foreach>"

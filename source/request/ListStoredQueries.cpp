@@ -35,6 +35,8 @@ void bw::Request::ListStoredQueries::execute(std::ostream& output) const
     hash["fmi_apikey_prefix"] = QueryBase::FMI_APIKEY_PREFIX_SUBST;
     auto hostname = get_hostname();
     hash["hostname"] = hostname ? *hostname : plugin_data.get_fallback_hostname();
+    auto protocol = get_protocol();
+    hash["protocol"] = (protocol ? *protocol : plugin_data.get_fallback_protocol()) + "://";
 
     std::vector<std::string> names = stored_query_map.get_handler_names();
 

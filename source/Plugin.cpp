@@ -228,6 +228,12 @@ void Plugin::query(const std::string& req_language,
     else
       hostname = plugin_data->get_fallback_hostname();
 
+    std::string protocol;
+    if (const auto header_x_forwarded_protocol = req.getProtocol())
+      protocol = *header_x_forwarded_protocol;
+    else
+      protocol = plugin_data->get_fallback_protocol();
+
     const std::string fmi_apikey_prefix = "/fmi-apikey/";
 
     const std::string language =
@@ -237,6 +243,7 @@ void Plugin::query(const std::string& req_language,
     {
       boost::shared_ptr<RequestBase> request = request_factory->parse_kvp(language, req);
       request->set_hostname(hostname);
+      request->set_protocol(protocol);
       auto fmi_apikey = get_fmi_apikey(req);
       if (fmi_apikey)
       {
@@ -260,6 +267,7 @@ void Plugin::query(const std::string& req_language,
       {
         boost::shared_ptr<RequestBase> request = request_factory->parse_kvp(language, req);
         request->set_hostname(hostname);
+        request->set_protocol(protocol);
         if (fmi_apikey)
         {
           request->set_fmi_apikey_prefix(fmi_apikey_prefix);
@@ -356,6 +364,7 @@ void Plugin::query(const std::string& req_language,
 
         boost::shared_ptr<RequestBase> request = request_factory->parse_xml(language, *xml_doc);
         request->set_hostname(hostname);
+        request->set_protocol(protocol);
         if (fmi_apikey)
         {
           request->set_fmi_apikey_prefix(fmi_apikey_prefix);

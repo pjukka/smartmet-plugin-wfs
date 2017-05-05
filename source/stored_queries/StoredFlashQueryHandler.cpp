@@ -280,6 +280,7 @@ void bw::StoredFlashQueryHandler::query(const StoredQuery& query,
       hash["fmi_apikey"] = bw::QueryBase::FMI_APIKEY_SUBST;
       hash["fmi_apikey_prefix"] = bw::QueryBase::FMI_APIKEY_PREFIX_SUBST;
       hash["hostname"] = QueryBase::HOSTNAME_SUBST;
+      hash["protocol"] = QueryBase::PROTOCOL_SUBST;
       hash["srsName"] = proj_uri;
       hash["projSrsDim"] = (show_height ? 3 : 2);
       hash["srsEpochName"] = proj_epoch_uri;

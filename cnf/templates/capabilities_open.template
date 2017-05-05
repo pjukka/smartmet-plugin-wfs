@@ -280,8 +280,8 @@ Applications containing aviation weather reports (METAR) should contain the foll
     <ows:Operation name="GetCapabilities">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
-          <ows:Post xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Get xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Post xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="AcceptVersions">
@@ -293,8 +293,8 @@ Applications containing aviation weather reports (METAR) should contain the foll
     <TMPL_if (defined(operation.supportsDescribeFeatureType))><ows:Operation name="DescribeFeatureType">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
-          <ows:Post xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Get xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Post xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="outputFormat">
@@ -309,32 +309,32 @@ Applications containing aviation weather reports (METAR) should contain the foll
     </TMPL_if><TMPL_if (defined(operation.supportsListStoredQueries))><ows:Operation name="ListStoredQueries">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
-          <ows:Post xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Get xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Post xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
         </ows:HTTP>
       </ows:DCP>
     </ows:Operation>
     </TMPL_if><TMPL_if (defined(operation.supportsDescribeStoredQueries))><ows:Operation name="DescribeStoredQueries">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
-          <ows:Post xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Get xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Post xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
         </ows:HTTP>
       </ows:DCP>
     </ows:Operation>
     </TMPL_if><TMPL_if (defined(operation.supportsGetPropertyValue))><ows:Operation name="GetPropertyValue">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
-          <ows:Post xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Get xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Post xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
         </ows:HTTP>
       </ows:DCP>
     </ows:Operation>
     </TMPL_if><TMPL_if (defined(operation.supportsGetFeature))><ows:Operation name="GetFeature">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
-          <ows:Post xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Get xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
+          <ows:Post xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/wfs/<TMPL_var language>"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="outputFormat">

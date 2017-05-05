@@ -17,7 +17,7 @@ BuildRequires: libcurl-devel
 BuildRequires: xerces-c-devel
 BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
-BuildRequires: smartmet-library-spine-devel >= 17.4.26
+BuildRequires: smartmet-library-spine-devel >= 1
 BuildRequires: smartmet-library-gis-devel >= 17.3.14
 BuildRequires: smartmet-library-locus-devel >= 17.4.26
 BuildRequires: smartmet-library-macgyver-devel >= 17.4.19
@@ -35,7 +35,7 @@ Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 17.4.26
 Requires: smartmet-library-macgyver >= 17.4.19
-Requires: smartmet-library-spine >= 17.4.26
+Requires: smartmet-library-spine >= 1
 Requires: smartmet-library-gis >= 17.3.14
 Requires: smartmet-engine-contour >= 17.4.25
 Requires: smartmet-engine-geonames >= 17.4.25
@@ -88,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Upcoming
+- http/https scheme selection based on X-Forwarded-Proto header; STU-5084
+
 * Wed Apr 26 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.4.26-1.fmi
 - Format the code with new clang-format rules and fixed the compilation.
 - Changed most configuration path settings to be relative to the configuration file.

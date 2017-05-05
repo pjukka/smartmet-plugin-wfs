@@ -115,6 +115,11 @@ void bw::RequestBase::set_hostname(const std::string& hostname)
   this->hostname = hostname;
 }
 
+void bw::RequestBase::set_protocol(const std::string& protocol)
+{
+  this->protocol = protocol;
+}
+
 void bw::RequestBase::substitute_all(const std::string& src, std::ostream& output) const
 {
   try
@@ -122,7 +127,8 @@ void bw::RequestBase::substitute_all(const std::string& src, std::ostream& outpu
     std::ostringstream tmp1;
     substitute_fmi_apikey(src, tmp1);
     std::ostringstream tmp2;
-    substitute_hostname(tmp1.str(), output);
+    substitute_hostname(tmp1.str(), tmp2);
+    substitute_protocol(tmp2.str(), output);
   }
   catch (...)
   {
@@ -159,6 +165,21 @@ void bw::RequestBase::substitute_hostname(const std::string& src, std::ostream& 
                          src,
                          std::string(bw::QueryBase::HOSTNAME_SUBST),
                          hostname ? *hostname : std::string("localhost"));
+  }
+  catch (...)
+  {
+    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+  }
+}
+
+void bw::RequestBase::substitute_protocol(const std::string& src, std::ostream& output) const
+{
+  try
+  {
+    ba::replace_all_copy(std::ostreambuf_iterator<char>(output),
+                         src,
+                         std::string(bw::QueryBase::PROTOCOL_SUBST),
+                         (protocol ? *protocol : "http") + "://");
   }
   catch (...)
   {

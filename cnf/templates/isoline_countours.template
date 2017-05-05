@@ -44,7 +44,7 @@
       </om:NamedValue>
     </om:parameter>
     <om:observedProperty
-        xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=<TMPL_var wfs_member.result.name>&amp;language=<TMPL_var language>"/>
+        xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?observableProperty=forecast&amp;param=<TMPL_var wfs_member.result.name>&amp;language=<TMPL_var language>"/>
     <om:featureOfInterest>
       <sams:SF_SpatialSamplingFeature gml:id="<TMPL_var CONCAT("spatial-sampling-feature-wfs-member-",wfs_member.__index__ + 1)>">
       <sam:sampledFeature/>

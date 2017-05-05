@@ -105,7 +105,7 @@
                     <swe:description>Quality code of <TMPL_if DEFINED(data.nuclideName)><TMPL_var data.nuclideName><TMPL_else><TMPL_var data.nuclideCode></TMPL_if> radionuclide activity concentration result</swe:description></TMPL_if>
                     <swe:uom code="Index" />
                   </swe:Quantity>
-                  <swe:Category><swe:codeSpace xlink:href="http://<TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?qualitycode=&amp;language=<TMPL_var language>&amp;"/></swe:Category>
+                  <swe:Category><swe:codeSpace xlink:href="<TMPL_var protocol><TMPL_var hostname><TMPL_var fmi_apikey_prefix><TMPL_var fmi_apikey>/meta?qualitycode=&amp;language=<TMPL_var language>&amp;"/></swe:Category>
                 </swe:field>
                 </TMPL_if></TMPL_foreach></TMPL_if>
               </swe:DataRecord>

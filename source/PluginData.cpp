@@ -36,6 +36,8 @@ bw::PluginData::PluginData(SmartMet::Spine::Reactor *theReactor, const char *the
     debug_level = itsConfig.get_optional_config_param<int>("debugLevel", 1);
     fallback_hostname =
         itsConfig.get_optional_config_param<std::string>("fallback_hostname", "localhost");
+    fallback_protocol =
+        itsConfig.get_optional_config_param<std::string>("fallback_protocol", "http");
 
     create_template_formatters();
     create_xml_parser();

@@ -80,6 +80,8 @@ void bw::Request::DescribeStoredQueries::execute(std::ostream& output) const
     hash["fmi_apikey_prefix"] = QueryBase::FMI_APIKEY_PREFIX_SUBST;
     auto hostname = get_hostname();
     hash["hostname"] = hostname ? *hostname : plugin_data.get_fallback_hostname();
+    auto protocol = get_protocol();
+    hash["protocol"] = (protocol ? *protocol : plugin_data.get_fallback_protocol()) + "://";
 
     BOOST_FOREACH (const auto& id, ids)
     {

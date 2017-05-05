@@ -19,6 +19,7 @@ class QueryBase
   static const char* FMI_APIKEY_SUBST;
   static const char* FMI_APIKEY_PREFIX_SUBST;
   static const char* HOSTNAME_SUBST;
+  static const char* PROTOCOL_SUBST;
 
  public:
   enum QueryType
