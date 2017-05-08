@@ -537,7 +537,7 @@ boost::shared_ptr<SmartMet::Spine::Table> bw::StoredForecastQueryHandler::extrac
         }
       }
 
-      if (not query.level_heights.empty() and q->levelName() != "model")
+      if (not query.level_heights.empty() and q->levelType() != FmiLevelType::kFmiHybridLevel)
       {
         Spine::Exception exception(
             BCP, "Only hybrid data supports data fetching from an arbitrary height.");
