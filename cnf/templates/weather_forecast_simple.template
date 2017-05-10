@@ -4,5 +4,5 @@
   numberReturned="<TMPL_var (size(groups) * size(groups[0].paramList) * size(groups[0].returnArray))>"
   numberMatched="<TMPL_var (size(groups) * size(groups[0].paramList) * size(groups[0].returnArray))>"
   <TMPL_include "include/refs_for_simple.template">>
-  <TMPL_include "include/results_for_simple.template">
+  <TMPL_include "include/results_for_forecast_simple.template">
 </wfs:FeatureCollection>

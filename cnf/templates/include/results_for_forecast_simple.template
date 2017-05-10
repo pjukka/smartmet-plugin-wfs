@@ -1,0 +1,14 @@
+	<TMPL_foreach groups as group><TMPL_foreach group.returnArray as row><TMPL_foreach row.data as param>
+	<wfs:member>
+            <BsWfs:BsWfsElement gml:id="<TMPL_var CONCAT("BsWfsElement.",group.__index__ + 1,".",row.__index__ + 1,".",param.__index__ + 1)>">
+                <BsWfs:Location>
+                    <gml:Point gml:id="<TMPL_var CONCAT("BsWfsElementP.",group.__index__ + 1,".",row.__index__ + 1,".",param.__index__ + 1)>" srsDimension="<TMPL_var srsDim>" srsName="<TMPL_var srsName>">
+                        <gml:pos><TMPL_var row.x> <TMPL_var row.y> <TMPL_var row.elev></gml:pos>
+                    </gml:Point>
+                </BsWfs:Location>
+                <BsWfs:Time><TMPL_var row.epochTimeStr></BsWfs:Time>
+                <BsWfs:ParameterName><TMPL_var group.paramList[param.__index__].name></BsWfs:ParameterName>
+                <BsWfs:ParameterValue><TMPL_var param></BsWfs:ParameterValue>
+            </BsWfs:BsWfsElement>
+	</wfs:member>
+	</TMPL_foreach></TMPL_foreach></TMPL_foreach>
