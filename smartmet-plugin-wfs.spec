@@ -89,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Upcoming
+- Add support for data fetching from an arbitrary heigh from model topography.
 - http/https scheme selection based on X-Forwarded-Proto header; STU-5084
 
 * Wed Apr 26 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.4.26-1.fmi
