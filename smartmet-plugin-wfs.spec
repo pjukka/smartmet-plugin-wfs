@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.4.26
+Version: 17.5.23
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -88,9 +88,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
-* Upcoming
-- Add tests to test data fetching from the arbitrary heighs of hybrid forecast model.
-- Add support for data fetching from an arbitrary heigh from model topography.
+* Tue May 23 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.5.23-1.fmi
+- Add tests to test data fetching from arbitrary heights of hybrid forecast model.
+- Add support for data fetching from an arbitrary height from model topography.
+
+* Fri May 05 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.5.5-1.fmi
 - http/https scheme selection based on X-Forwarded-Proto header; STU-5084
 
 * Wed Apr 26 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.4.26-1.fmi
