@@ -128,6 +128,7 @@ Global data object:
                                }
                   }
                 ];
+   protocol = "http://";
    queryNum = 1;
    query_parameters = {
                         'begin' : [
