@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.5.29
+Version: 17.6.22
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -88,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Upcoming Thu Jun 22 2017 Ville Karppinen <ville.karppinen@fmi.fi> - 17.6.22-1.fmi
+- IceThickness parameter added into ibplott_ice_array.template.
+
 * Mon May 29 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.5.29-1.fmi
 - Replace few suggest methods with nameSearch to avoid server crash.
 
