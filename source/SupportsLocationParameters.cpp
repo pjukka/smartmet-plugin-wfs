@@ -104,7 +104,9 @@ void bw::SupportsLocationParameters::get_location_options(
       const double &lat = values[i];
       const double &lon = values[i + 1];
       const std::string name = str(boost::format("%.4f,%.4f") % lon % lat);
-      SmartMet::Spine::LocationPtr loc = geo_engine->lonlatSearch(lon, lat, language, max_distance);
+      // Note: geoengine and locus use kilometers instead of meters
+      SmartMet::Spine::LocationPtr loc =
+          geo_engine->lonlatSearch(lon, lat, language, max_distance / 1000.0);
       locations->push_back(std::make_pair(name, loc));
     }
 

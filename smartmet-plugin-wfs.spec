@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.7.10
+Version: 17.7.27
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -88,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Thu Jul 27 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.7.27-1.fmi
+- Fixed maxdistance units to be kilometers when calling geoengine
+
 * Mon Jul 10 2017 Ville Karppinen <ville.karppinen@fmi.fi> - 17.7.10-1.fmi
 - IceThickness parameter added into ibplott_ice_array.template.
 
