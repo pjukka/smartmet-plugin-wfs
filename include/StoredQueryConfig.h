@@ -113,7 +113,7 @@ class StoredQueryConfig : public SmartMet::Spine::ConfigBase
   /**
    *   @brief Query whether CTPP2 template file name is specified
    */
-  inline bool have_template_fn() const { return template_fn; }
+  inline bool have_template_fn() const { return !!template_fn; }
   /**
    *   @brief Query CTPP2 template file name
    *
