@@ -5,6 +5,7 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/foreach.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/optional/optional_io.hpp>
 #include <macgyver/TypeName.h>
 #include <spine/Exception.h>
 #include <xercesc/dom/DOMNodeList.hpp>

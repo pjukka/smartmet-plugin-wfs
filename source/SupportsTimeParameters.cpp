@@ -3,6 +3,7 @@
 #include "WfsException.h"
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/foreach.hpp>
+#include <boost/optional/optional_io.hpp>
 #include <spine/Exception.h>
 #include <stdint.h>
 
