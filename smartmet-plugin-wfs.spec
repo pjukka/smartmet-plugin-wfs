@@ -19,6 +19,8 @@ BuildRequires: libcurl-devel
 BuildRequires: xerces-c-devel
 BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
+BuildRequires: openssl-devel
+BuildRequires: bzip2-devel
 BuildRequires: smartmet-library-spine-devel >= 17.9.13
 BuildRequires: smartmet-library-gis-devel >= 17.9.12
 BuildRequires: smartmet-library-locus-devel >= 17.8.28
