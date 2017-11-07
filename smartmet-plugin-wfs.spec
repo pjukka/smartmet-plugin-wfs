@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.11.1
+Version: 17.11.7
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -21,7 +21,7 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 17.11.1
+BuildRequires: smartmet-library-spine-devel >= 17.11.2
 BuildRequires: smartmet-library-gis-devel >= 17.10.31
 BuildRequires: smartmet-library-locus-devel >= 17.8.28
 BuildRequires: smartmet-library-macgyver-devel >= 17.8.28
@@ -39,7 +39,7 @@ Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 17.8.28
 Requires: smartmet-library-macgyver >= 17.8.28
-Requires: smartmet-library-spine >= 17.11.1
+Requires: smartmet-library-spine >= 17.11.2
 Requires: smartmet-library-gis >= 17.10.31
 Requires: smartmet-engine-contour >= 17.11.1
 Requires: smartmet-engine-geonames >= 17.11.1
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Tue Nov  7 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.11.7-1.fmi
+- Added automatic reload of modified stored queries
+
 * Wed Nov  1 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.11.1-1.fmi
 - Rebuilt due to GIS-library API change
 
