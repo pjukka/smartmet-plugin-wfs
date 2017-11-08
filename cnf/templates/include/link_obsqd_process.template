@@ -1,0 +1,1 @@
+<TMPL_if DEFINED(dataset.params.producer[0])>xlink:href="http://xml.fmi.fi/inspire/process/<TMPL_var dataset.params.producer[0]>"<TMPL_elsif DEFINED(group.producerName)>xlink:href="http://xml.fmi.fi/inspire/process/<TMPL_var group.producerName>"<TMPL_else>xlink:href="http://xml.fmi.fi/inspire/process/hirlam"</TMPL_if>
