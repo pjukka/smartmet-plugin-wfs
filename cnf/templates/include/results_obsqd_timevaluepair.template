@@ -1,0 +1,10 @@
+                <om:result>
+                    <wml2:MeasurementTimeseries gml:id="mts-<TMPL_var group.groupId>-<TMPL_var param.name>"> <TMPL_foreach group.returnArray as row> <TMPL_foreach row.data as value><TMPL_if (value.__index__ == param.__index__)>
+                        <wml2:point>
+                            <wml2:MeasurementTVP> 
+                                      <wml2:time><TMPL_var row.epochTimeStr></wml2:time>
+				      <wml2:value><TMPL_var value></wml2:value> 
+                            </wml2:MeasurementTVP>
+                        </wml2:point>                        </TMPL_if></TMPL_foreach> </TMPL_foreach>
+                    </wml2:MeasurementTimeseries>
+                </om:result>
