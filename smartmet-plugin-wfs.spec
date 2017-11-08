@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.11.7
+Version: 17.11.8
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Wed Nov  8 2017  <santeri.oksman@fmi.fi> - 17.11.8-1.fmi
+- Added templates for querydata observations in multipointcoverage and timevaluepair formats
+
 * Tue Nov  7 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.11.7-1.fmi
 - Added automatic reload of modified stored queries
 
