@@ -404,6 +404,12 @@ boost::shared_ptr<SmartMet::Spine::Table> bw::StoredForecastQueryHandler::extrac
     std::string language = Fmi::ascii_tolower_copy(query.language);
     SupportsLocationParameters::engOrFinToEnOrFi(language);
 
+    decltype(query.origin_time) origin_time;
+    if (query.origin_time)
+    {
+      origin_time.reset(new pt::ptime(*query.origin_time));
+    }
+
     int row = 0;
     BOOST_FOREACH (const auto& tloc, query.locations)
     {
@@ -432,8 +438,7 @@ boost::shared_ptr<SmartMet::Spine::Table> bw::StoredForecastQueryHandler::extrac
         }
       }
 
-      auto q = (query.origin_time ? q_engine->get(producer, *query.origin_time)
-                                  : q_engine->get(producer));
+      auto q = (origin_time ? q_engine->get(producer, *origin_time) : q_engine->get(producer));
 
 // FIXME: try to use the same model instead of searching model again
 #ifdef ENABLE_MODEL_PATH
@@ -449,7 +454,16 @@ boost::shared_ptr<SmartMet::Spine::Table> bw::StoredForecastQueryHandler::extrac
 #endif
 
       if (not query.origin_time)
+      {
+        // With multifile data q_engine->get() origintime must not be set/locked
+ 
         query.origin_time.reset(new pt::ptime(q->originTime()));
+
+        if (not q_engine->getProducerConfig(producer).ismultifile)
+        {
+          origin_time.reset(new pt::ptime(*query.origin_time));
+        }
+      }
 
       query.have_model_area = false;
 
