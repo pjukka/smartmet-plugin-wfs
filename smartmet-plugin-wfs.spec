@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.11.8
+Version: 17.11.9
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
-* Upcoming
+* Thu Nov  9 2017 Santeri Oksman <santeri.oksman@fmi.fi> - 17.11.9-1.fmi
 - With multifile data q_engine->get() origintime must not be set/locked; SOL-5897
 
 * Wed Nov  8 2017  <santeri.oksman@fmi.fi> - 17.11.8-1.fmi
