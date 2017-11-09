@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Upcoming
+- With multifile data q_engine->get() origintime must not be set/locked; SOL-5897
+
 * Wed Nov  8 2017  <santeri.oksman@fmi.fi> - 17.11.8-1.fmi
 - Added templates for querydata observations in multipointcoverage and timevaluepair formats
 
