@@ -1,0 +1,33 @@
+<wfs:FeatureCollection
+    timeStamp="<TMPL_var responseTimestamp>"
+    numberMatched="<TMPL_var (size(groups) * size(groups[0].obsParamList))>"
+    numberReturned="<TMPL_var (size(groups) * size(groups[0].obsParamList))>"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:wfs="http://www.opengis.net/wfs/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:omsf="http://www.opengis.net/omsf/1.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/omsf/1.0 http://xml.fmi.fi/schema/omsf/1.0/omsf-profile.xsd">
+    <TMPL_foreach groups AS group><TMPL_if DEFINED(group.obsReturnArray)><TMPL_foreach group.obsParamList as obsParam>
+    <wfs:member>
+        <omsf:TimeseriesObservation gml:id="<TMPL_var obsParam.featureId>">
+            <omsf:phenomenonTimeStart><TMPL_var group.obsPhenomenonStartTime></omsf:phenomenonTimeStart>
+            <omsf:phenomenonTimeEnd><TMPL_var group.obsPhenomenonEndTime></omsf:phenomenonTimeEnd>
+            <omsf:resultTime><TMPL_var group.obsResultTime></omsf:resultTime>
+            <omsf:procedure <TMPL_include "include/link_obs_process.template"> />
+            <omsf:observedProperty <TMPL_include "include/link_observable_property.template"> xlink:title="<TMPL_var obsParam.name>" />
+            <TMPL_foreach group.obsStationList as obsStation><omsf:foiName><TMPL_var obsStation.name></omsf:foiName>
+            <omsf:foiGeometry>
+                <gml:Point gml:id="<TMPL_var CONCAT("p-",group.groupId,"-",obsParam.__index__ + 1)>" srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+                    <gml:pos><TMPL_var obsStation.x> <TMPL_var obsStation.y><TMPL_if DEFINED(obsStation.height)> <TMPL_var obsStation.height></TMPL_if></gml:pos>
+                </gml:Point>
+            </omsf:foiGeometry><TMPL_if (DEFINED(named_parameters.foireference) && DEFINED(obsStation.fmisid))>
+            <omsf:foiReference xlink:href="<TMPL_var named_parameters.foireference[0]><TMPL_var obsStation.fmisid>&amp;"/></TMPL_if></TMPL_foreach>
+            <omsf:resultUnitOfMeasure <TMPL_if DEFINED(obsParam.uom)><TMPL_if DEFINED(obsParam.codeSpace)>codeSpace="obsParam.codeSpace"</TMPL_if>><TMPL_var obsParam.uom></omsf:resultUnitOfMeasure><TMPL_else>/></TMPL_if>
+            <TMPL_foreach group.obsReturnArray as row><TMPL_foreach row.data as dataIt><TMPL_if (dataIt.__index__ == obsParam.__index__)><omsf:resultValue>
+                <omsf:time><TMPL_var row.epochTimeStr></omsf:time>
+                <omsf:value><TMPL_var dataIt.value></omsf:value>
+            </omsf:resultValue></TMPL_if></TMPL_foreach></TMPL_foreach>
+        </omsf:TimeseriesObservation>
+    </wfs:member></TMPL_foreach></TMPL_if></TMPL_foreach>
+</wfs:FeatureCollection>
