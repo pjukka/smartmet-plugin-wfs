@@ -654,10 +654,21 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
                 long seconds = epoch.time_of_day().total_seconds();
                 INT_64 s_epoch = 86400LL * (jd - ref_jd) + seconds;
                 obs_rec["epochTime"] = s_epoch;
-                obs_rec["epochTimeStr"] = format_local_time(epoch, tzp);
+                auto epochTimeStr = format_local_time(epoch, tzp);
+                obs_rec["epochTimeStr"] = epochTimeStr;
 
                 for (int k = first_param; k <= last_param; k++)
                 {
+                  // Generate a unique id for every spatio-temporal data item of a measurand.
+                  // The id values are used with urn:ogc:def:query:OGC-WFS::GetFeatureById stored query.
+                  const auto& param_id = group["obsParamList"][k-first_param]["featureId"];
+                  boost::shared_ptr<FeatureID> feature_id = FeatureID::create_from_id(param_id.GetString());
+                  feature_id->erase_param(P_BEGIN_TIME);
+                  feature_id->erase_param(P_END_TIME);
+                  feature_id->add_param(P_BEGIN_TIME,epochTimeStr);
+                  feature_id->add_param(P_END_TIME,epochTimeStr);
+                  obs_rec["data"][k - first_param]["featureId"] = feature_id->get_id();
+
                   const SmartMet::Spine::TimeSeries::TimeSeries& ts_k = obsengine_result->at(k);
                   const uint precision =
                       get_meteo_parameter_options(param_names.at(k - first_param))->precision;
