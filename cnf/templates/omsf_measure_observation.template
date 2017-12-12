@@ -1,0 +1,30 @@
+<wfs:FeatureCollection
+    timeStamp="<TMPL_var responseTimestamp>"
+    numberMatched="<TMPL_var numReturnedMeasurements>"
+    numberReturned="<TMPL_var numReturnedMeasurements>"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:wfs="http://www.opengis.net/wfs/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:omsf="http://www.opengis.net/omsf/1.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/omsf/1.0 http://xml.fmi.fi/schema/omsf/1.0/omsf-profile.xsd"><TMPL_foreach groups AS group><TMPL_if DEFINED(group.obsReturnArray)><TMPL_foreach group.obsParamList as obsParam><TMPL_foreach group.obsStationList as obsStation><TMPL_foreach group.obsReturnArray as row><TMPL_foreach row.data as dataIt><TMPL_if (dataIt.__index__ == obsParam.__index__)>
+    <wfs:member>
+      <omsf:MeasureObservation gml:id="<TMPL_var dataIt.featureId>">
+        <gml:identifier codeSpace="http://xml.fmi.fi/namespace/weatherobs/stpid"><TMPL_var obsStation.fmisid>-<TMPL_var row.epochTime>-<TMPL_var obsParam.name></gml:identifier>
+        <omsf:phenomenonTime><TMPL_var row.epochTimeStr></omsf:phenomenonTime>
+        <omsf:resultTime><TMPL_var row.epochTimeStr></omsf:resultTime>
+        <omsf:procedure <TMPL_include "include/link_obs_process.template"> /><TMPL_comment>
+        <omsf:parameters><TMPL_var obsParam.name></omsf:parameters></TMPL_comment>
+        <omsf:observedProperty <TMPL_include "include/link_observable_property.template"> xlink:title="<TMPL_var obsParam.name>" />
+        <omsf:foiName><TMPL_var obsStation.name></omsf:foiName>
+        <omsf:foiGeometry<TMPL_if (obsParam.__first__ && row.__first__ && dataIt.__first__)>>
+          <gml:Point gml:id="<TMPL_var CONCAT("p-",group.groupId)>" srsName="<TMPL_var projSrsName>" srsDimension="<TMPL_var projSrsDim>">
+            <gml:pos><TMPL_var obsStation.x> <TMPL_var obsStation.y><TMPL_if DEFINED(obsStation.height)> <TMPL_var obsStation.height></TMPL_if></gml:pos>
+          </gml:Point>
+        </omsf:foiGeometry><TMPL_else> xlink:href="<TMPL_var CONCAT("#p-",group.groupId)>"/></TMPL_if>
+        <omsf:foiReference xlink:href="<TMPL_var named_parameters.foireference[0]><TMPL_var obsStation.fmisid>&amp;"/><TMPL_if DEFINED(dataIt.qcValue)>
+        <omsf::resultQuality ><TMPL_var dataIt.qcValue></omsf::resultQuality></TMPL_if>
+        <omsf:result uom="<TMPL_if DEFINED(obsParam.uom)><TMPL_var obsParam.uom><TMPL_else>missing</TMPL_if>"><TMPL_var dataIt.value></omsf:result>
+      </omsf:MeasureObservation>
+    </wfs:member></TMPL_if></TMPL_foreach></TMPL_foreach></TMPL_foreach></TMPL_foreach></TMPL_if></TMPL_foreach>
+</wfs:FeatureCollection>
