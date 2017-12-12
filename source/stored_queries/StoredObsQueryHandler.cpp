@@ -494,6 +494,8 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
       hash["hostname"] = QueryBase::HOSTNAME_SUBST;
       hash["protocol"] = QueryBase::PROTOCOL_SUBST;
 
+      uint64_t numReturnedMeasurements = 0;
+
       if (not emptyResult)
       {
         const SmartMet::Spine::TimeSeries::TimeSeries& ts_lat = obsengine_result->at(lat_ind);
@@ -613,6 +615,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
           group["groupId"] = group_id_str;
           group["groupNum"] = group_id + 1;
 
+
           BOOST_FOREACH (const auto& it1, site_map)
           {
             if (it1.second.group_id == group_id)
@@ -659,6 +662,8 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
 
                 for (int k = first_param; k <= last_param; k++)
                 {
+                  numReturnedMeasurements++;
+
                   // Generate a unique id for every spatio-temporal data item of a measurand.
                   // The id values are used with urn:ogc:def:query:OGC-WFS::GetFeatureById stored query.
                   const auto& param_id = group["obsParamList"][k-first_param]["featureId"];
@@ -696,6 +701,8 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
           }
         }
       }
+
+      hash["numReturnedMeasurements"] = numReturnedMeasurements;
 
       format_output(hash, output, query.get_use_debug_format());
     }
