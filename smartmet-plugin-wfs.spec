@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 17.12.15
+Version: 18.1.15
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -21,31 +21,31 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 17.11.30
-BuildRequires: smartmet-library-gis-devel >= 17.11.22
-BuildRequires: smartmet-library-locus-devel >= 17.8.28
+BuildRequires: smartmet-library-spine-devel >= 18.1.15
+BuildRequires: smartmet-library-gis-devel >= 18.1.15
+BuildRequires: smartmet-library-locus-devel >= 18.1.15
 BuildRequires: smartmet-library-macgyver-devel >= 17.11.27
 BuildRequires: smartmet-engine-contour-devel >= 17.11.1
-BuildRequires: smartmet-engine-geonames-devel >= 17.11.1
+BuildRequires: smartmet-engine-geonames-devel >= 18.1.15
 BuildRequires: smartmet-engine-gis-devel >= 17.11.30
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 17.10.23
+BuildRequires: smartmet-engine-observation-devel >= 18.1.15
 %endif
 BuildRequires: smartmet-engine-querydata-devel >= 17.12.11
-BuildRequires: postgresql93-libs
+BuildRequires: postgresql95-libs
 Requires: ctpp2
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
-Requires: smartmet-library-locus >= 17.8.28
+Requires: smartmet-library-locus >= 18.1.15
 Requires: smartmet-library-macgyver >= 17.11.27
-Requires: smartmet-library-spine >= 17.11.30
-Requires: smartmet-library-gis >= 17.11.22
+Requires: smartmet-library-spine >= 18.1.15
+Requires: smartmet-library-gis >= 18.1.15
 Requires: smartmet-engine-contour >= 17.11.1
-Requires: smartmet-engine-geonames >= 17.11.1
+Requires: smartmet-engine-geonames >= 18.1.15
 Requires: smartmet-engine-gis >= 17.11.30
 %if %{with observation}
-Requires: smartmet-engine-observation >= 17.10.23
+Requires: smartmet-engine-observation >= 18.1.15
 %endif
 Requires: smartmet-engine-querydata >= 17.12.11
 Requires: smartmet-server >= 17.11.10
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Mon Jan 15 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.1.15-1.fmi
+- Updated pqxx and postgresql (9.5) dependencies
+
 * Fri Dec 15 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.12.15-1.fmi
 - Bug fix to coordinate handling
 

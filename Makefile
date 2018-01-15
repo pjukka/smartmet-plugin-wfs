@@ -86,7 +86,7 @@ LIBS = -L$(libdir) \
         -lxqilla \
 	-lxerces-c \
 	-lgdal \
-	-lpqxx /usr/pgsql-9.3/lib/libpq.a \
+	-lpqxx /usr/pgsql-9.5/lib/libpq.a \
 	-lconfig++ \
 	-lconfig \
 	-lctpp2 \
