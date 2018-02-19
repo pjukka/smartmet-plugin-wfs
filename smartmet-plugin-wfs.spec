@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.2.9
+Version: 18.2.19
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -21,33 +21,33 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 18.1.15
-BuildRequires: smartmet-library-gis-devel >= 18.1.15
+BuildRequires: smartmet-library-spine-devel >= 18.2.14
+BuildRequires: smartmet-library-gis-devel >= 18.2.8
 BuildRequires: smartmet-library-locus-devel >= 18.1.15
-BuildRequires: smartmet-library-macgyver-devel >= 17.11.27
-BuildRequires: smartmet-engine-contour-devel >= 17.11.1
-BuildRequires: smartmet-engine-geonames-devel >= 18.1.15
-BuildRequires: smartmet-engine-gis-devel >= 17.11.30
+BuildRequires: smartmet-library-macgyver-devel >= 18.2.12
+BuildRequires: smartmet-engine-contour-devel >= 18.2.9
+BuildRequires: smartmet-engine-geonames-devel >= 18.2.9
+BuildRequires: smartmet-engine-gis-devel >= 18.2.9
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 18.1.15
+BuildRequires: smartmet-engine-observation-devel >= 18.2.19
 %endif
-BuildRequires: smartmet-engine-querydata-devel >= 17.12.11
+BuildRequires: smartmet-engine-querydata-devel >= 18.2.15
 BuildRequires: postgresql95-libs
 Requires: ctpp2
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 18.1.15
-Requires: smartmet-library-macgyver >= 17.11.27
-Requires: smartmet-library-spine >= 18.1.15
-Requires: smartmet-library-gis >= 18.1.15
-Requires: smartmet-engine-contour >= 17.11.1
-Requires: smartmet-engine-geonames >= 18.1.15
-Requires: smartmet-engine-gis >= 17.11.30
+Requires: smartmet-library-macgyver >= 18.2.12
+Requires: smartmet-library-spine >= 18.2.14
+Requires: smartmet-library-gis >= 18.2.8
+Requires: smartmet-engine-contour >= 18.2.9
+Requires: smartmet-engine-geonames >= 18.2.9
+Requires: smartmet-engine-gis >= 18.2.9
 %if %{with observation}
-Requires: smartmet-engine-observation >= 18.1.15
+Requires: smartmet-engine-observation >= 18.2.19
 %endif
-Requires: smartmet-engine-querydata >= 17.12.11
+Requires: smartmet-engine-querydata >= 18.2.15
 Requires: smartmet-server >= 17.11.10
 Requires: xerces-c
 Requires: xqilla
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Mon Feb 19 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.2.19-1.fmi
+- Fixed shutdown not to segfault
+
 * Fri Feb  9 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.2.9-1.fmi
 - Repackaged due to TimeZones API change
 
