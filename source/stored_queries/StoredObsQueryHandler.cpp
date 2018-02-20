@@ -393,7 +393,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
 
       SmartMet::Spine::TimeSeries::TimeSeriesVectorPtr obsengine_result(
           obs_engine->values(query_params));
-      const bool emptyResult = (obsengine_result->size() ? false : true);
+      const bool emptyResult = (!obsengine_result || obsengine_result->size()==0);
 
       CTPP::CDT hash;
 
