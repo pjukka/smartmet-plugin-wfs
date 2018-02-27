@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.2.20
+Version: 18.2.27
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -21,17 +21,17 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 18.2.14
+BuildRequires: smartmet-library-spine-devel >= 18.2.27
 BuildRequires: smartmet-library-gis-devel >= 18.2.8
 BuildRequires: smartmet-library-locus-devel >= 18.1.15
 BuildRequires: smartmet-library-macgyver-devel >= 18.2.12
 BuildRequires: smartmet-engine-contour-devel >= 18.2.9
 BuildRequires: smartmet-engine-geonames-devel >= 18.2.9
-BuildRequires: smartmet-engine-gis-devel >= 18.2.9
+BuildRequires: smartmet-engine-gis-devel >= 18.2.20
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 18.2.19
+BuildRequires: smartmet-engine-observation-devel >= 18.2.27
 %endif
-BuildRequires: smartmet-engine-querydata-devel >= 18.2.15
+BuildRequires: smartmet-engine-querydata-devel >= 18.2.27
 BuildRequires: postgresql95-libs
 Requires: ctpp2
 Requires: libconfig
@@ -39,15 +39,15 @@ Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 18.1.15
 Requires: smartmet-library-macgyver >= 18.2.12
-Requires: smartmet-library-spine >= 18.2.14
+Requires: smartmet-library-spine >= 18.2.27
 Requires: smartmet-library-gis >= 18.2.8
 Requires: smartmet-engine-contour >= 18.2.9
 Requires: smartmet-engine-geonames >= 18.2.9
-Requires: smartmet-engine-gis >= 18.2.9
+Requires: smartmet-engine-gis >= 18.2.20
 %if %{with observation}
-Requires: smartmet-engine-observation >= 18.2.19
+Requires: smartmet-engine-observation >= 18.2.27
 %endif
-Requires: smartmet-engine-querydata >= 18.2.15
+Requires: smartmet-engine-querydata >= 18.2.27
 Requires: smartmet-server >= 17.11.10
 Requires: xerces-c
 Requires: xqilla
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Tue Feb 27 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.2.27-1.fmi
+- Improved shutdown code to use thread joining
+
 * Tue Feb 20 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.2.20-1.fmi
 - Added check against empty obsengine results
 
