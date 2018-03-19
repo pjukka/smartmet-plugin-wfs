@@ -65,9 +65,7 @@ bw::StoredFlashQueryHandler::StoredFlashQueryHandler(
   }
 }
 
-bw::StoredFlashQueryHandler::~StoredFlashQueryHandler()
-{
-}
+bw::StoredFlashQueryHandler::~StoredFlashQueryHandler() {}
 
 void bw::StoredFlashQueryHandler::init_handler()
 {
@@ -86,8 +84,6 @@ void bw::StoredFlashQueryHandler::init_handler()
       throw SmartMet::Spine::Exception(BCP, "No Geonames engine available");
 
     geo_engine = reinterpret_cast<SmartMet::Engine::Geonames::Engine*>(engine);
-
-    obs_engine->setGeonames(geo_engine);
   }
   catch (...)
   {
@@ -111,7 +107,7 @@ pt::ptime round_time(const pt::ptime& t0, unsigned step, int offset = 0)
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 void bw::StoredFlashQueryHandler::query(const StoredQuery& query,
                                         const std::string& language,
@@ -441,7 +437,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_flash_handl
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_flash_handler_factory(
     &wfs_flash_handler_create);

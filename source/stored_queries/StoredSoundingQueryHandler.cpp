@@ -53,9 +53,7 @@ StoredSoundingQueryHandler::StoredSoundingQueryHandler(
   mMaxSoundings = config->get_optional_config_param<uint64_t>("maxSoundings", 15);
 }
 
-StoredSoundingQueryHandler::~StoredSoundingQueryHandler()
-{
-}
+StoredSoundingQueryHandler::~StoredSoundingQueryHandler() {}
 
 void StoredSoundingQueryHandler::init_handler()
 {
@@ -77,7 +75,6 @@ void StoredSoundingQueryHandler::init_handler()
   }
 
   mObservation = reinterpret_cast<SmartMet::Engine::Observation::Engine*>(engine);
-  mObservation->setGeonames(mGeonames);
 }
 
 void StoredSoundingQueryHandler::query(const StoredQuery& query,
@@ -866,9 +863,9 @@ void StoredSoundingQueryHandler::checkMaxSoundings(const pt::ptime startTime,
     throw exception;
   }
 }
-}
-}
-}
+}  // namespace WFS
+}  // namespace Plugin
+}  // namespace SmartMet
 
 namespace
 {
@@ -893,7 +890,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfsStoredSoundi
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_sounding_handler_factory(
     &wfsStoredSoundingHandlerCreate);

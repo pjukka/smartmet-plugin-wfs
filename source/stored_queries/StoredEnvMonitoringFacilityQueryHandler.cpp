@@ -35,7 +35,7 @@ const char *P_STORAGE_ID = "storageId";
 const char *P_INSPIRE_NAMESPACE = "inspireNamespace";
 const char *P_AUTHORITY_DOMAIN = "authorityDomain";
 const char *P_SHOW_OBSERVING_CAPABILITY = "showObservingCapability";
-}
+}  // namespace
 
 bw::StoredEnvMonitoringFacilityQueryHandler::StoredEnvMonitoringFacilityQueryHandler(
     SmartMet::Spine::Reactor *reactor,
@@ -72,9 +72,7 @@ bw::StoredEnvMonitoringFacilityQueryHandler::StoredEnvMonitoringFacilityQueryHan
   }
 }
 
-bw::StoredEnvMonitoringFacilityQueryHandler::~StoredEnvMonitoringFacilityQueryHandler()
-{
-}
+bw::StoredEnvMonitoringFacilityQueryHandler::~StoredEnvMonitoringFacilityQueryHandler() {}
 
 void bw::StoredEnvMonitoringFacilityQueryHandler::init_handler()
 {
@@ -92,7 +90,6 @@ void bw::StoredEnvMonitoringFacilityQueryHandler::init_handler()
       throw SmartMet::Spine::Exception(BCP, "No Observation engine available");
 
     m_obsEngine = reinterpret_cast<SmartMet::Engine::Observation::Engine *>(engine);
-    m_obsEngine->setGeonames(m_geoEngine);
   }
   catch (...)
   {
@@ -949,7 +946,7 @@ wfs_stored_env_monitoring_facility_handler_create(SmartMet::Spine::Reactor *reac
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef
     wfs_stored_env_monitoring_facility_handler_factory(

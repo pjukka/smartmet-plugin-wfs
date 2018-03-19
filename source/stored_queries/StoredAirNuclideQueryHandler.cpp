@@ -45,9 +45,7 @@ bw::StoredAirNuclideQueryHandler::StoredAirNuclideQueryHandler(
   }
 }
 
-bw::StoredAirNuclideQueryHandler::~StoredAirNuclideQueryHandler()
-{
-}
+bw::StoredAirNuclideQueryHandler::~StoredAirNuclideQueryHandler() {}
 
 void bw::StoredAirNuclideQueryHandler::init_handler()
 {
@@ -67,7 +65,6 @@ void bw::StoredAirNuclideQueryHandler::init_handler()
       throw SmartMet::Spine::Exception(BCP, "No Observation engine available");
 
     m_obsEngine = reinterpret_cast<SmartMet::Engine::Observation::Engine*>(engine);
-    m_obsEngine->setGeonames(m_geoEngine);
   }
   catch (...)
   {
@@ -634,13 +631,13 @@ std::string bw::StoredAirNuclideQueryHandler::prepare_nuclide(const std::string&
     out.at(0) = nuclide_upper.at(0);
     out.at(size - 1) = nuclide_upper.at(size - 1);
 
-    using boost::spirit::qi::char_;
-    using boost::spirit::qi::ushort_;
-    using boost::spirit::qi::upper;
-    using boost::spirit::qi::lower;
-    using boost::spirit::qi::eps;
-    using boost::spirit::qi::phrase_parse;
     using boost::spirit::ascii::space;
+    using boost::spirit::qi::char_;
+    using boost::spirit::qi::eps;
+    using boost::spirit::qi::lower;
+    using boost::spirit::qi::phrase_parse;
+    using boost::spirit::qi::upper;
+    using boost::spirit::qi::ushort_;
 
     std::string::const_iterator first = out.begin();
     std::string::const_iterator last = out.end();
@@ -720,7 +717,7 @@ wfs_stored_air_nuclide_handler_create(SmartMet::Spine::Reactor* reactor,
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_air_nuclide_handler_factory(
     &wfs_stored_air_nuclide_handler_create);

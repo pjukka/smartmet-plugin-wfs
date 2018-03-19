@@ -46,9 +46,7 @@ bw::StoredMastQueryHandler::StoredMastQueryHandler(SmartMet::Spine::Reactor* rea
   }
 }
 
-bw::StoredMastQueryHandler::~StoredMastQueryHandler()
-{
-}
+bw::StoredMastQueryHandler::~StoredMastQueryHandler() {}
 
 void bw::StoredMastQueryHandler::init_handler()
 {
@@ -68,7 +66,6 @@ void bw::StoredMastQueryHandler::init_handler()
       throw SmartMet::Spine::Exception(BCP, "No Observation engine available");
 
     m_obsEngine = reinterpret_cast<SmartMet::Engine::Observation::Engine*>(engine);
-    m_obsEngine->setGeonames(m_geoEngine);
   }
   catch (...)
   {
@@ -738,7 +735,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_stored_mast
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_mast_handler_factory(
     &wfs_stored_mast_handler_create);

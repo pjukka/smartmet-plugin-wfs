@@ -103,9 +103,7 @@ StoredObsQueryHandler::StoredObsQueryHandler(SmartMet::Spine::Reactor* reactor,
   }
 }
 
-StoredObsQueryHandler::~StoredObsQueryHandler()
-{
-}
+StoredObsQueryHandler::~StoredObsQueryHandler() {}
 
 void StoredObsQueryHandler::init_handler()
 {
@@ -130,8 +128,6 @@ void StoredObsQueryHandler::init_handler()
     }
 
     obs_engine = reinterpret_cast<SmartMet::Engine::Observation::Engine*>(engine);
-
-    obs_engine->setGeonames(geo_engine);
   }
   catch (...)
   {
@@ -393,7 +389,7 @@ void StoredObsQueryHandler::query(const StoredQuery& query,
 
       SmartMet::Spine::TimeSeries::TimeSeriesVectorPtr obsengine_result(
           obs_engine->values(query_params));
-      const bool emptyResult = (!obsengine_result || obsengine_result->size()==0);
+      const bool emptyResult = (!obsengine_result || obsengine_result->size() == 0);
 
       CTPP::CDT hash;
 
@@ -730,7 +726,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_obs_handler
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_obs_handler_factory(
     &wfs_obs_handler_create);

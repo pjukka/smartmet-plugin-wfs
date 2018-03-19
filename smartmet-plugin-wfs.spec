@@ -4,7 +4,7 @@
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
 Version: 18.3.19
-Release: 2%{?dist}.fmi
+Release: 3%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
 URL: https://github.com/fmidev/smartmet-plugin-wfs
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Mon Mar 19 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.3.19-3.fmi
+- Removed obsolete call to Observation::Engine::setGeonames
+
 * Mon Mar 19 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.3.19-2.fmi
 - Added more ice model parameters to ibplott_ice_array.template 
 

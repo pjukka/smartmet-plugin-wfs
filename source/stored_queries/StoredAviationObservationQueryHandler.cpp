@@ -24,7 +24,7 @@ const char* P_BEGIN_TIME = "beginTime";
 const char* P_END_TIME = "endTime";
 const char* P_STATION_TYPE = "stationType";
 const char* P_RETURN_ONLY_LATEST = "returnOnlyLatest";
-}
+}  // namespace
 
 bw::StoredAviationObservationQueryHandler::StoredAviationObservationQueryHandler(
     SmartMet::Spine::Reactor* reactor,
@@ -52,9 +52,7 @@ bw::StoredAviationObservationQueryHandler::StoredAviationObservationQueryHandler
   }
 }
 
-bw::StoredAviationObservationQueryHandler::~StoredAviationObservationQueryHandler()
-{
-}
+bw::StoredAviationObservationQueryHandler::~StoredAviationObservationQueryHandler() {}
 
 void bw::StoredAviationObservationQueryHandler::init_handler()
 {
@@ -77,9 +75,6 @@ void bw::StoredAviationObservationQueryHandler::init_handler()
       throw SmartMet::Spine::Exception(BCP, "No Observation engine available");
 
     m_obsEngine = reinterpret_cast<SmartMet::Engine::Observation::Engine*>(engine);
-
-    // Set Geonames into Observation
-    m_obsEngine->setGeonames(m_geoEngine);
   }
   catch (...)
   {
@@ -419,7 +414,7 @@ wfs_stored_aviation_observation_handler_create(SmartMet::Spine::Reactor* reactor
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_aviation_observation_handler_factory(
     &wfs_stored_aviation_observation_handler_create);
