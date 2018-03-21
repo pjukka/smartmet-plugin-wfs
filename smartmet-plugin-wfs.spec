@@ -3,8 +3,8 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.3.19
-Release: 3%{?dist}.fmi
+Version: 18.3.20
+Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
 URL: https://github.com/fmidev/smartmet-plugin-wfs
@@ -25,13 +25,13 @@ BuildRequires: smartmet-library-spine-devel >= 18.3.7
 BuildRequires: smartmet-library-gis-devel >= 18.3.7
 BuildRequires: smartmet-library-locus-devel >= 18.1.15
 BuildRequires: smartmet-library-macgyver-devel >= 18.2.12
-BuildRequires: smartmet-engine-contour-devel >= 18.2.9
-BuildRequires: smartmet-engine-geonames-devel >= 18.2.9
-BuildRequires: smartmet-engine-gis-devel >= 18.3.7
+BuildRequires: smartmet-engine-contour-devel >= 18.3.20
+BuildRequires: smartmet-engine-geonames-devel >= 18.3.20
+BuildRequires: smartmet-engine-gis-devel >= 18.3.20
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 18.3.19
+BuildRequires: smartmet-engine-observation-devel >= 18.3.20
 %endif
-BuildRequires: smartmet-engine-querydata-devel >= 18.3.17
+BuildRequires: smartmet-engine-querydata-devel >= 18.3.20
 BuildRequires: postgresql95-libs
 Requires: ctpp2
 Requires: libconfig
@@ -41,13 +41,13 @@ Requires: smartmet-library-locus >= 18.1.15
 Requires: smartmet-library-macgyver >= 18.2.12
 Requires: smartmet-library-spine >= 18.3.7
 Requires: smartmet-library-gis >= 18.3.7
-Requires: smartmet-engine-contour >= 18.2.9
-Requires: smartmet-engine-geonames >= 18.2.9
-Requires: smartmet-engine-gis >= 18.3.7
+Requires: smartmet-engine-contour >= 18.3.20
+Requires: smartmet-engine-geonames >= 18.3.20
+Requires: smartmet-engine-gis >= 18.3.20
 %if %{with observation}
-Requires: smartmet-engine-observation >= 18.3.19
+Requires: smartmet-engine-observation >= 18.3.20
 %endif
-Requires: smartmet-engine-querydata >= 18.3.17
+Requires: smartmet-engine-querydata >= 18.3.20
 Requires: smartmet-server >= 17.11.10
 Requires: xerces-c
 Requires: xqilla
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Tue Mar 20 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.3.20-1.fmi
+- Full recompile of all server plugins
+
 * Mon Mar 19 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.3.19-3.fmi
 - Removed obsolete call to Observation::Engine::setGeonames
 
