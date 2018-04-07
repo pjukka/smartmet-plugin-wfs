@@ -34,7 +34,7 @@ enum DataTypeInd
   V_POINT = 7,
   V_BBOX = 8
 };
-}
+}  // namespace
 
 OBStream::OBStream() : reserved(BLOCK_SIZE), data(new uint8_t[BLOCK_SIZE]), ind(0U), num_bits(0)
 {
@@ -48,9 +48,7 @@ OBStream::OBStream() : reserved(BLOCK_SIZE), data(new uint8_t[BLOCK_SIZE]), ind(
   }
 }
 
-OBStream::~OBStream()
-{
-}
+OBStream::~OBStream() {}
 
 std::string OBStream::raw_data() const
 {
@@ -361,9 +359,7 @@ IBStream::IBStream(const uint8_t* data, std::size_t length)
   }
 }
 
-IBStream::~IBStream()
-{
-}
+IBStream::~IBStream() {}
 
 unsigned IBStream::get_bit()
 {

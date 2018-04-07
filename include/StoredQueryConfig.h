@@ -21,56 +21,56 @@ namespace WFS
 class StoredQueryHandlerBase;
 
 /**
-*   @brief The stored query configuration
-*
+ *   @brief The stored query configuration
+ *
  *   An example of configuration is given below.
  *
  *   Note that part of data are for DescribeStoredQuery request only
  *   and are not used in any other way (parameters descriptions)
  *
-*   @verbatim
-*
-*   // disable = true;
-*
-*   id = "fmi::wfs::test";
+ *   @verbatim
+ *
+ *   // disable = true;
+ *
+ *   id = "fmi::wfs::test";
  *
  *   constructor_name = "fmi_wfs_handler_create";
-*
-*   // Configuration is searched from template directory provided in
-*   // WFS plugin configuration
-*   template = "wfs_test.t2c";
-*
-*   title = { en = "WFS test request"; fi = "WFS testikysely"; lv = "WFS testa pieprasījums"; }
-*
-*   abstract = { en = "More detailed description of WFS test request";
-*                fi = "Yksinkohtaisempi selitys WFS testkyselystä";
-*                lv = "Pilnīgāks WFS testa pieprasījuma apraksts"; }
-*
-*   parametrs = (
-*      {
-*         name = "foo";
-*         title = { en = "Parameter foo"; }
-*         abstract = { en = "More detailed description of parameter foo"; }
-*         xmlType = "anyURI";
+ *
+ *   // Configuration is searched from template directory provided in
+ *   // WFS plugin configuration
+ *   template = "wfs_test.t2c";
+ *
+ *   title = { en = "WFS test request"; fi = "WFS testikysely"; lv = "WFS testa pieprasījums"; }
+ *
+ *   abstract = { en = "More detailed description of WFS test request";
+ *                fi = "Yksinkohtaisempi selitys WFS testkyselystä";
+ *                lv = "Pilnīgāks WFS testa pieprasījuma apraksts"; }
+ *
+ *   parametrs = (
+ *      {
+ *         name = "foo";
+ *         title = { en = "Parameter foo"; }
+ *         abstract = { en = "More detailed description of parameter foo"; }
+ *         xmlType = "anyURI";
  *         type = "string";
-*      },
-*
-*      {
-*         name = "bar";
-*         title = { en = "Parameter bar"; }
-*         abstract = { en = "More detailed description of parameter  bar"; }
-*         xmlType = "string";
+ *      },
+ *
+ *      {
+ *         name = "bar";
+ *         title = { en = "Parameter bar"; }
+ *         abstract = { en = "More detailed description of parameter  bar"; }
+ *         xmlType = "string";
  *         type = "double[4..12]"
-*      }
-*   )
-*
-*   returnTypeNames = [ "fooResult" ];
-*   returnLanguge = "urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression";
-*   isPrivate = true;
+ *      }
+ *   )
+ *
+ *   returnTypeNames = [ "fooResult" ];
+ *   returnLanguge = "urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression";
+ *   isPrivate = true;
  *   defaultLanguage = "en";
-*
-*   @endverbatim
-*/
+ *
+ *   @endverbatim
+ */
 class StoredQueryConfig : public SmartMet::Spine::ConfigBase
 {
  public:
@@ -182,8 +182,8 @@ class StoredQueryConfig : public SmartMet::Spine::ConfigBase
   int expires_seconds;  ///< For the expires entity-header field. After that the response is
                         /// considered stale.
                         /**
-*  @brief The name of factory method procedure for creating request handler object
-*/
+                         *  @brief The name of factory method procedure for creating request handler object
+                         */
   std::string constructor_name;
 
   boost::optional<std::string> template_fn;

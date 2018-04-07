@@ -127,7 +127,7 @@ wfs_winterweather_coverage_query_handler_create(SmartMet::Spine::Reactor* reacto
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef
     wfs_winterweather_coverage_query_handler_factory(

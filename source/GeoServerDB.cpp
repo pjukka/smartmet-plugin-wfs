@@ -17,9 +17,7 @@ bw::GeoServerDB::GeoServerDB(const std::string& conn_str, std::size_t keep_conn)
   }
 }
 
-bw::GeoServerDB::~GeoServerDB()
-{
-}
+bw::GeoServerDB::~GeoServerDB() {}
 
 boost::shared_ptr<pqxx::connection> bw::GeoServerDB::get_conn()
 {

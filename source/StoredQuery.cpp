@@ -26,13 +26,9 @@ static void check_param_min_occurs(int actual_count,
 
 bwx::ParameterExtractor bw::StoredQuery::param_extractor;
 
-bw::StoredQuery::StoredQuery() : handler(), debug_format(false)
-{
-}
+bw::StoredQuery::StoredQuery() : handler(), debug_format(false) {}
 
-bw::StoredQuery::~StoredQuery()
-{
-}
+bw::StoredQuery::~StoredQuery() {}
 
 bw::QueryBase::QueryType bw::StoredQuery::get_type() const
 {

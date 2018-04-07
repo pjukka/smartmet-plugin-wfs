@@ -126,9 +126,7 @@ bw::StoredGeoserverQueryHandler::StoredGeoserverQueryHandler(
   }
 }
 
-bw::StoredGeoserverQueryHandler::~StoredGeoserverQueryHandler()
-{
-}
+bw::StoredGeoserverQueryHandler::~StoredGeoserverQueryHandler() {}
 
 void bw::StoredGeoserverQueryHandler::update_parameters(
     const RequestParameterMap& params,
@@ -395,7 +393,7 @@ wfs_stored_geoserver_handler_create(SmartMet::Spine::Reactor* reactor,
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_geoserver_handler_factory(
     &wfs_stored_geoserver_handler_create);

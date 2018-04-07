@@ -37,9 +37,7 @@ bw::SupportsTimeParameters::SupportsTimeParameters(boost::shared_ptr<bw::StoredQ
   }
 }
 
-bw::SupportsTimeParameters::~SupportsTimeParameters()
-{
-}
+bw::SupportsTimeParameters::~SupportsTimeParameters() {}
 
 boost::shared_ptr<SmartMet::Spine::TimeSeriesGeneratorOptions>
 bw::SupportsTimeParameters::get_time_generator_options(const RequestParameterMap &param) const

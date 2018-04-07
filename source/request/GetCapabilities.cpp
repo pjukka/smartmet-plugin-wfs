@@ -26,9 +26,7 @@ GetCapabilities::GetCapabilities(const std::string& language, const PluginData& 
   }
 }
 
-GetCapabilities::~GetCapabilities()
-{
-}
+GetCapabilities::~GetCapabilities() {}
 
 bw::RequestBase::RequestType GetCapabilities::get_type() const
 {

@@ -30,12 +30,8 @@ static void check_param_max_occurs(int actual_count,
                                    const std::string& location,
                                    const std::string& param_name);
 
-bw::AdHocQuery::AdHocQuery()
-{
-}
-bw::AdHocQuery::~AdHocQuery()
-{
-}
+bw::AdHocQuery::AdHocQuery() {}
+bw::AdHocQuery::~AdHocQuery() {}
 bw::QueryBase::QueryType bw::AdHocQuery::get_type() const
 {
   return QUERY;
@@ -1078,8 +1074,7 @@ void bw::AdHocQuery::read_comparison_operation(const xercesc::DOMElement& elemen
              // Avoid XPath query "lower-case(...) for elements with numerical values because it
              // causes exception.
              // But it can be used when comparing two ValueReference elements.
-             &&
-             ((is_value_string == true) || (nb_of_value_references == 2)))
+             && ((is_value_string == true) || (nb_of_value_references == 2)))
     {
       // Avoid XPath query "lower-case(descendant::*/@attribute)=..." because it causes exception.
       if (is_reference_attribute == false)

@@ -11,9 +11,7 @@ bw::Request::ListStoredQueries::ListStoredQueries(const std::string& language,
 {
 }
 
-bw::Request::ListStoredQueries::~ListStoredQueries()
-{
-}
+bw::Request::ListStoredQueries::~ListStoredQueries() {}
 
 bw::RequestBase::RequestType bw::Request::ListStoredQueries::get_type() const
 {

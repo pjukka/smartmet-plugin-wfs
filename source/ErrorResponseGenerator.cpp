@@ -19,9 +19,7 @@ ErrorResponseGenerator::ErrorResponseGenerator(SmartMet::Plugin::WFS::PluginData
 {
 }
 
-ErrorResponseGenerator::~ErrorResponseGenerator()
-{
-}
+ErrorResponseGenerator::~ErrorResponseGenerator() {}
 
 ErrorResponseGenerator::ErrorResponse ErrorResponseGenerator::create_error_response(
     processing_phase_t phase,

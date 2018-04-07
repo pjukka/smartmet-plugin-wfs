@@ -88,9 +88,7 @@ bw::SupportsExtraHandlerParams::SupportsExtraHandlerParams(
   }
 }
 
-bw::SupportsExtraHandlerParams::~SupportsExtraHandlerParams()
-{
-}
+bw::SupportsExtraHandlerParams::~SupportsExtraHandlerParams() {}
 
 const bw::ParameterTemplateBase& bw::SupportsExtraHandlerParams::get_param(
     const std::string& name) const

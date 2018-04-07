@@ -29,9 +29,7 @@ bw::SupportsTimeZone::SupportsTimeZone(boost::shared_ptr<StoredQueryConfig> conf
   }
 }
 
-bw::SupportsTimeZone::~SupportsTimeZone()
-{
-}
+bw::SupportsTimeZone::~SupportsTimeZone() {}
 
 std::string bw::SupportsTimeZone::get_tz_name(const RequestParameterMap& param_values) const
 {

@@ -42,9 +42,7 @@ SmartMet::Plugin::WFS::StoredQueryConfig::StoredQueryConfig(
   }
 }
 
-SmartMet::Plugin::WFS::StoredQueryConfig::~StoredQueryConfig()
-{
-}
+SmartMet::Plugin::WFS::StoredQueryConfig::~StoredQueryConfig() {}
 
 void SmartMet::Plugin::WFS::StoredQueryConfig::warn_about_unused_params(
     const StoredQueryHandlerBase* handler)

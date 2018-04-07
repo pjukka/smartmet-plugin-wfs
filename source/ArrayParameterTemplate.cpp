@@ -58,9 +58,7 @@ ArrayParameterTemplate::ArrayParameterTemplate(StoredQueryConfig& config,
   }
 }
 
-ArrayParameterTemplate::~ArrayParameterTemplate()
-{
-}
+ArrayParameterTemplate::~ArrayParameterTemplate() {}
 
 std::vector<SmartMet::Spine::Value> ArrayParameterTemplate::get_value(
     const RequestParameterMap& req_param_map, const SupportsExtraHandlerParams* extra_params) const

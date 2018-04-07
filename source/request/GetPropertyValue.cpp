@@ -23,11 +23,11 @@
 namespace bw = SmartMet::Plugin::WFS;
 namespace bwx = SmartMet::Plugin::WFS::Xml;
 
-using boost::str;
 using boost::format;
+using boost::str;
 
-using SmartMet::Plugin::WFS::Request::GetPropertyValue;
 using Fmi::current_exception_type;
+using SmartMet::Plugin::WFS::Request::GetPropertyValue;
 
 static void decrease(boost::optional<int>& value)
 {
@@ -44,9 +44,7 @@ GetPropertyValue::GetPropertyValue(const std::string& language,
 {
 }
 
-GetPropertyValue::~GetPropertyValue()
-{
-}
+GetPropertyValue::~GetPropertyValue() {}
 bw::RequestBase::RequestType GetPropertyValue::get_type() const
 {
   return bw::RequestBase::GET_PROPERTY_VALUE;

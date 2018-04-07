@@ -67,9 +67,7 @@ bw::SupportsLocationParameters::SupportsLocationParameters(
   }
 }
 
-bw::SupportsLocationParameters::~SupportsLocationParameters()
-{
-}
+bw::SupportsLocationParameters::~SupportsLocationParameters() {}
 
 void bw::SupportsLocationParameters::get_location_options(
     SmartMet::Engine::Geonames::Engine *geo_engine,

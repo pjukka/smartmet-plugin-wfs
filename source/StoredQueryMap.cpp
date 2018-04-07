@@ -21,7 +21,7 @@ bool is_equal(const std::string& first, const std::string& second)
 {
   return first == second;
 }
-}
+}  // namespace
 
 class SmartMet::Plugin::WFS::StoredQueryMap::Init
 {
@@ -97,13 +97,9 @@ class SmartMet::Plugin::WFS::StoredQueryMap::Init
 
 std::size_t bw::StoredQueryMap::Init::MAX_COUNT = 30;
 
-bw::StoredQueryMap::StoredQueryMap() : background_init(false), init(new Init)
-{
-}
+bw::StoredQueryMap::StoredQueryMap() : background_init(false), init(new Init) {}
 
-bw::StoredQueryMap::~StoredQueryMap()
-{
-}
+bw::StoredQueryMap::~StoredQueryMap() {}
 
 void bw::StoredQueryMap::set_background_init(bool value)
 {

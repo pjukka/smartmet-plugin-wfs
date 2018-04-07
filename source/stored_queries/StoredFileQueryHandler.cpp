@@ -22,7 +22,7 @@ const char* P_PARAM = "params";
 const char* P_BBOX = "bbox";
 const char* P_BEGIN = "beginTime";
 const char* P_END = "endTime";
-}
+}  // namespace
 
 bw::StoredFileQueryHandler::StoredFileQueryHandler(SmartMet::Spine::Reactor* reactor,
                                                    boost::shared_ptr<StoredQueryConfig> config,
@@ -67,9 +67,7 @@ bw::StoredFileQueryHandler::StoredFileQueryHandler(SmartMet::Spine::Reactor* rea
   }
 }
 
-bw::StoredFileQueryHandler::~StoredFileQueryHandler()
-{
-}
+bw::StoredFileQueryHandler::~StoredFileQueryHandler() {}
 
 namespace
 {
@@ -91,7 +89,7 @@ std::set<ValueType> common_items(const std::set<ValueType>& A, const std::set<Va
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 void bw::StoredFileQueryHandler::update_parameters(
     const RequestParameterMap& params,
@@ -222,7 +220,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_stored_file
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_file_handler_factory(
     &wfs_stored_file_handler_create);

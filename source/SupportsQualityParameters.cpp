@@ -20,9 +20,7 @@ bw::SupportsQualityParameters::SupportsQualityParameters(
   }
 }
 
-bw::SupportsQualityParameters::~SupportsQualityParameters()
-{
-}
+bw::SupportsQualityParameters::~SupportsQualityParameters() {}
 
 bool bw::SupportsQualityParameters::isQCParameter(const std::string& name) const
 {

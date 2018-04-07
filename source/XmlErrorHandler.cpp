@@ -19,9 +19,7 @@ bwx::XmlErrorHandler::XmlErrorHandler(bool throw_on_error) : throw_on_error(thro
   }
 }
 
-bwx::XmlErrorHandler::~XmlErrorHandler()
-{
-}
+bwx::XmlErrorHandler::~XmlErrorHandler() {}
 
 void bwx::XmlErrorHandler::warning(const xercesc::SAXParseException& exc)
 {

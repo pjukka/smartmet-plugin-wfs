@@ -9,8 +9,8 @@
 #include <stdexcept>
 
 using namespace xercesc;
-using SmartMet::Plugin::WFS::Xml::XPathSnapshot;
 using SmartMet::Plugin::WFS::Xml::XmlDomErrorHandler;
+using SmartMet::Plugin::WFS::Xml::XPathSnapshot;
 
 namespace
 {
@@ -57,7 +57,7 @@ struct ParserFilter : public DOMLSParserFilter
 };
 
 ParserFilter filter;
-}
+}  // namespace
 
 XPathSnapshot::XPathSnapshot()
     : xqillaImplementation(DOMImplementationRegistry::getDOMImplementation(X("XPath2 3.0"))),

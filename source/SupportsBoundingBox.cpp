@@ -25,9 +25,7 @@ bw::SupportsBoundingBox::SupportsBoundingBox(boost::shared_ptr<StoredQueryConfig
   }
 }
 
-bw::SupportsBoundingBox::~SupportsBoundingBox()
-{
-}
+bw::SupportsBoundingBox::~SupportsBoundingBox() {}
 
 bool bw::SupportsBoundingBox::get_bounding_box(const RequestParameterMap& param_values,
                                                const std::string& default_crs,

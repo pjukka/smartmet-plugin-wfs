@@ -60,9 +60,7 @@ bw::WfsFeatureDef::WfsFeatureDef(SmartMet::Engine::Gis::CRSRegistry& crs_registr
   }
 }
 
-bw::WfsFeatureDef::~WfsFeatureDef()
-{
-}
+bw::WfsFeatureDef::~WfsFeatureDef() {}
 
 std::string bw::WfsFeatureDef::resolve_crs_url(const std::string& name,
                                                SmartMet::Engine::Gis::CRSRegistry& crs_registry)

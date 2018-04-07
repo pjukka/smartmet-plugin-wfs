@@ -29,12 +29,12 @@ namespace WFS
  *   An example is given below:
  *   @verbatim
  *
-*   url = "/wfs";
+ *   url = "/wfs";
  *   storedQueryConfigDirs = ["/etc/smartmet/plugins/wfs/stored_queries",
-* "/etc/smartmet/plugins/wfs/other_stored_queries"];
+ * "/etc/smartmet/plugins/wfs/other_stored_queries"];
  *   storedQueryTemplateDir = "/etc/smartmet/plugins/wfs/templates";
  *   listStoredQueriesTemplate = "list_stored_queries.c2t";
-*
+ *
  *   @endverbatim
  */
 class Config : private boost::noncopyable, public SmartMet::Spine::ConfigBase

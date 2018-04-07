@@ -22,9 +22,7 @@ bw::Request::DescribeFeatureType::DescribeFeatureType(
 {
 }
 
-bw::Request::DescribeFeatureType::~DescribeFeatureType()
-{
-}
+bw::Request::DescribeFeatureType::~DescribeFeatureType() {}
 
 bw::RequestBase::RequestType bw::Request::DescribeFeatureType::get_type() const
 {

@@ -50,7 +50,7 @@ void encode(std::ostream& stream, const std::string& text)
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 bw::UrlTemplateGenerator::UrlTemplateGenerator(const std::string& url,
                                                const std::vector<std::string>& param_templates)
@@ -68,9 +68,7 @@ bw::UrlTemplateGenerator::UrlTemplateGenerator(const std::string& url,
   }
 }
 
-bw::UrlTemplateGenerator::~UrlTemplateGenerator()
-{
-}
+bw::UrlTemplateGenerator::~UrlTemplateGenerator() {}
 
 std::string bw::UrlTemplateGenerator::generate(
     boost::function1<std::vector<std::string>, std::string> param_getter_cb) const

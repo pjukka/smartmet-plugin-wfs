@@ -37,13 +37,9 @@ bw::StoredAtomQueryHandlerBase::StoredAtomQueryHandlerBase(
   }
 }
 
-bw::StoredAtomQueryHandlerBase::~StoredAtomQueryHandlerBase()
-{
-}
+bw::StoredAtomQueryHandlerBase::~StoredAtomQueryHandlerBase() {}
 
-void bw::StoredAtomQueryHandlerBase::init_handler()
-{
-}
+void bw::StoredAtomQueryHandlerBase::init_handler() {}
 
 void bw::StoredAtomQueryHandlerBase::query(const bw::StoredQuery& query,
                                            const std::string& language,
@@ -195,7 +191,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_stored_atom
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_atom_handler_base_factory(
     &wfs_stored_atom_handler_create);

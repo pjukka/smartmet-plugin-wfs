@@ -34,9 +34,7 @@ bw::StandardPresentationParameters::StandardPresentationParameters()
 {
 }
 
-bw::StandardPresentationParameters::~StandardPresentationParameters()
-{
-}
+bw::StandardPresentationParameters::~StandardPresentationParameters() {}
 
 void bw::StandardPresentationParameters::read_from_kvp(
     const SmartMet::Spine::HTTP::Request& request)

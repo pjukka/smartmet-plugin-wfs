@@ -212,9 +212,7 @@ StoredWWProbabilityQueryHandler::StoredWWProbabilityQueryHandler(
   }
 }
 
-StoredWWProbabilityQueryHandler::~StoredWWProbabilityQueryHandler()
-{
-}
+StoredWWProbabilityQueryHandler::~StoredWWProbabilityQueryHandler() {}
 
 void StoredWWProbabilityQueryHandler::init_handler()
 {
@@ -621,7 +619,7 @@ wfs_winterweather_probabilities_query_handler_create(SmartMet::Spine::Reactor* r
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef
     wfs_winterweather_probabilities_query_handler_factory(

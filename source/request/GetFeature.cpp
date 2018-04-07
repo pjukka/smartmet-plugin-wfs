@@ -27,8 +27,8 @@
 namespace bw = SmartMet::Plugin::WFS;
 namespace bwx = SmartMet::Plugin::WFS::Xml;
 
-using boost::str;
 using boost::format;
+using boost::str;
 
 bw::Request::GetFeature::GetFeature(const std::string& language,
                                     PluginData& plugin_data,
@@ -37,9 +37,7 @@ bw::Request::GetFeature::GetFeature(const std::string& language,
 {
 }
 
-bw::Request::GetFeature::~GetFeature()
-{
-}
+bw::Request::GetFeature::~GetFeature() {}
 bw::RequestBase::RequestType bw::Request::GetFeature::get_type() const
 {
   return GET_FEATURE;

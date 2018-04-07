@@ -56,13 +56,9 @@ bw::GetDataSetByIdHandler::GetDataSetByIdHandler(SmartMet::Spine::Reactor* react
   }
 }
 
-bw::GetDataSetByIdHandler::~GetDataSetByIdHandler()
-{
-}
+bw::GetDataSetByIdHandler::~GetDataSetByIdHandler() {}
 
-void bw::GetDataSetByIdHandler::init_handler()
-{
-}
+void bw::GetDataSetByIdHandler::init_handler() {}
 
 void bw::GetDataSetByIdHandler::query(const StoredQuery& query,
                                       const std::string& language,
@@ -154,7 +150,7 @@ boost::shared_ptr<bw::StoredQueryHandlerBase> wfs_get_data_set_by_id_handler_cre
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 bw::StoredQueryHandlerFactoryDef wfs_get_data_set_by_id_handler_factory(
     &wfs_get_data_set_by_id_handler_create);

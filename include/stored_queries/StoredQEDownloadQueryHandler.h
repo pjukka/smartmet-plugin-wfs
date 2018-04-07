@@ -19,8 +19,8 @@ namespace Querydata
 {
 class Engine;
 struct MetaData;
-}
-}
+}  // namespace Querydata
+}  // namespace Engine
 #endif
 
 namespace Plugin

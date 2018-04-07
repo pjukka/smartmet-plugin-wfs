@@ -57,9 +57,7 @@ bw::SupportsMeteoParameterOptions::SupportsMeteoParameterOptions(
   }
 }
 
-bw::SupportsMeteoParameterOptions::~SupportsMeteoParameterOptions()
-{
-}
+bw::SupportsMeteoParameterOptions::~SupportsMeteoParameterOptions() {}
 
 std::shared_ptr<bw::MeteoParameterOptionItem>
 bw::SupportsMeteoParameterOptions::get_meteo_parameter_options(const std::string& name) const

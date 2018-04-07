@@ -68,9 +68,7 @@ bw::StoredContourQueryHandler::StoredContourQueryHandler(
   }
 }
 
-bw::StoredContourQueryHandler::~StoredContourQueryHandler()
-{
-}
+bw::StoredContourQueryHandler::~StoredContourQueryHandler() {}
 void bw::StoredContourQueryHandler::init_handler()
 {
   try

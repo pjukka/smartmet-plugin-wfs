@@ -16,9 +16,7 @@ XmlError::XmlError(const std::string& text, error_level_t error_level = XmlError
 {
 }
 
-XmlError::~XmlError() throw()
-{
-}
+XmlError::~XmlError() throw() {}
 
 void XmlError::add_messages(const std::list<std::string>& messages)
 {
@@ -36,8 +34,8 @@ const char* XmlError::error_level_name(enum error_level_t error_level)
 {
   try
   {
-    using boost::str;
     using boost::format;
+    using boost::str;
     switch (error_level)
     {
       case ERROR:
@@ -54,7 +52,7 @@ const char* XmlError::error_level_name(enum error_level_t error_level)
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
-}
-}
-}
+}  // namespace Xml
+}  // namespace WFS
+}  // namespace Plugin
+}  // namespace SmartMet

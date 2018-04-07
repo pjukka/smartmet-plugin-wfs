@@ -19,9 +19,7 @@ bw::RequestBase::RequestBase(const std::string& language)
 {
 }
 
-bw::RequestBase::~RequestBase()
-{
-}
+bw::RequestBase::~RequestBase() {}
 
 void bw::RequestBase::set_is_soap_request(bool value)
 {

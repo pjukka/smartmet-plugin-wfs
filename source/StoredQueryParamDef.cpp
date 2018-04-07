@@ -89,9 +89,7 @@ void StoredQueryParamDef::parse_def(const std::string& desc)
   }
 }
 
-StoredQueryParamDef::~StoredQueryParamDef()
-{
-}
+StoredQueryParamDef::~StoredQueryParamDef() {}
 
 SmartMet::Spine::Value StoredQueryParamDef::readValue(const std::string& value) const
 {

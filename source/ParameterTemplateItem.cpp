@@ -24,7 +24,7 @@ void optional_deprecate_notice(const std::string& item_def)
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 namespace SmartMet
 {
@@ -339,9 +339,9 @@ bool ParameterTemplateItem::handle_redirection(
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
-}
-}
+}  // namespace WFS
+}  // namespace Plugin
+}  // namespace SmartMet
 
 /**
 

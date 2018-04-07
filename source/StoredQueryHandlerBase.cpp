@@ -53,13 +53,9 @@ StoredQueryHandlerBase::StoredQueryHandlerBase(SmartMet::Spine::Reactor* reactor
   }
 }
 
-StoredQueryHandlerBase::~StoredQueryHandlerBase()
-{
-}
+StoredQueryHandlerBase::~StoredQueryHandlerBase() {}
 
-void StoredQueryHandlerBase::init_handler()
-{
-}
+void StoredQueryHandlerBase::init_handler() {}
 
 std::string StoredQueryHandlerBase::get_query_name() const
 {

@@ -84,7 +84,7 @@ bool find_srs(const std::string& gml, int& srs)
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 bw::GeoServerDataIndex::LayerRec::LayerRec()
     : name(""),
@@ -223,9 +223,7 @@ bw::GeoServerDataIndex::GeoServerDataIndex(
   }
 }
 
-bw::GeoServerDataIndex::~GeoServerDataIndex()
-{
-}
+bw::GeoServerDataIndex::~GeoServerDataIndex() {}
 
 void bw::GeoServerDataIndex::query(const boost::posix_time::ptime& begin,
                                    const boost::posix_time::ptime& end,

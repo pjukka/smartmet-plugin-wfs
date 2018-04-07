@@ -9,8 +9,8 @@ namespace Plugin
 namespace WFS
 {
 /**
-*   @brief Handler for StoredIsolineQuery stored query
-*/
+ *   @brief Handler for StoredIsolineQuery stored query
+ */
 class StoredIsolineQueryHandler : public StoredContourQueryHandler
 {
  public:

@@ -47,9 +47,7 @@ StoredQueryParamRegistry::StoredQueryParamRegistry()
   }
 }
 
-StoredQueryParamRegistry::~StoredQueryParamRegistry()
-{
-}
+StoredQueryParamRegistry::~StoredQueryParamRegistry() {}
 
 boost::shared_ptr<bw::RequestParameterMap> StoredQueryParamRegistry::process_parameters(
     const bw::RequestParameterMap& src, const SupportsExtraHandlerParams* extra_params) const

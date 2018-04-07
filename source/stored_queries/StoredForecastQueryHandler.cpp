@@ -88,9 +88,7 @@ bw::StoredForecastQueryHandler::StoredForecastQueryHandler(
   }
 }
 
-bw::StoredForecastQueryHandler::~StoredForecastQueryHandler()
-{
-}
+bw::StoredForecastQueryHandler::~StoredForecastQueryHandler() {}
 
 void bw::StoredForecastQueryHandler::init_handler()
 {
@@ -384,7 +382,7 @@ struct StationRec
   std::string lon;
   std::string elev;
 };
-}
+}  // namespace
 
 boost::shared_ptr<SmartMet::Spine::Table> bw::StoredForecastQueryHandler::extract_forecast(
     Query& query) const
@@ -834,8 +832,8 @@ bw::StoredForecastQueryHandler::get_model_parameters(const std::string& producer
 {
   try
   {
-    using SmartMet::Engine::Querydata::MetaQueryOptions;
     using SmartMet::Engine::Querydata::MetaData;
+    using SmartMet::Engine::Querydata::MetaQueryOptions;
 
     MetaQueryOptions qopt;
     qopt.setProducer(producer);
@@ -887,9 +885,7 @@ bw::StoredForecastQueryHandler::Query::Query()
   }
 }
 
-bw::StoredForecastQueryHandler::Query::~Query()
-{
-}
+bw::StoredForecastQueryHandler::Query::~Query() {}
 
 void bw::StoredForecastQueryHandler::Query::set_locale(const std::string& locale_name)
 {
@@ -937,7 +933,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_forecast_ha
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_forecast_handler_factory(
     &wfs_forecast_handler_create);

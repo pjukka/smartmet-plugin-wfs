@@ -8,8 +8,8 @@
 #include <cstring>
 #include <sstream>
 
-using SmartMet::Spine::Value;
 using SmartMet::Plugin::WFS::FeatureID;
+using SmartMet::Spine::Value;
 
 namespace bw = SmartMet::Plugin::WFS;
 
@@ -17,7 +17,7 @@ namespace
 {
 const char* magic = "SDGHWGFWLBFVLDSBVDSvdlvdNnc";
 const unsigned FEATURE_ID_REVISION = 1;
-}
+}  // namespace
 
 std::string FeatureID::prefix = "WFS-";
 
@@ -28,9 +28,7 @@ FeatureID::FeatureID(std::string stored_query_id,
 {
 }
 
-FeatureID::~FeatureID()
-{
-}
+FeatureID::~FeatureID() {}
 
 boost::shared_ptr<FeatureID> FeatureID::create_from_id(const std::string& id)
 {

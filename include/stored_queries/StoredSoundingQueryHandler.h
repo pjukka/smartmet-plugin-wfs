@@ -123,8 +123,8 @@ class StoredSoundingQueryHandler : protected virtual SupportsExtraHandlerParams,
   SmartMet::Engine::Observation::Engine* mObservation;
   SmartMet::Engine::Geonames::Engine* mGeonames;
 };
-}
-}
-}
+}  // namespace WFS
+}  // namespace Plugin
+}  // namespace SmartMet
 
 #endif  // WITHOUT_OBSERVATION

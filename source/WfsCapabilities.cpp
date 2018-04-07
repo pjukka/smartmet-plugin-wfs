@@ -12,13 +12,9 @@ using namespace SmartMet::Spine;
 
 using SmartMet::Spine::log_time_str;
 
-bw::WfsCapabilities::WfsCapabilities()
-{
-}
+bw::WfsCapabilities::WfsCapabilities() {}
 
-bw::WfsCapabilities::~WfsCapabilities()
-{
-}
+bw::WfsCapabilities::~WfsCapabilities() {}
 
 bool bw::WfsCapabilities::register_operation(const std::string& operation)
 {

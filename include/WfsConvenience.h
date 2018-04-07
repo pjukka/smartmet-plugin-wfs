@@ -107,8 +107,8 @@ DestIntType cast_int_type(const SourceIntType value)
   }
 }
 
-using SmartMet::Spine::string2ptime;
 using SmartMet::Spine::string2bool;
+using SmartMet::Spine::string2ptime;
 
 std::string get_mandatory_header(const SmartMet::Spine::HTTP::Request& request,
                                  const std::string& name);

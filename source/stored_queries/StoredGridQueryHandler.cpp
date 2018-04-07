@@ -43,11 +43,11 @@ namespace pt = boost::posix_time;
 namespace bg = boost::geometry;
 using namespace SmartMet::Spine;
 
-using bw::StoredGridQueryHandler;
-using SmartMet::Spine::str_iequal;
-using SmartMet::Spine::CaseInsensitiveLess;
 using boost::format;
 using boost::str;
+using bw::StoredGridQueryHandler;
+using SmartMet::Spine::CaseInsensitiveLess;
+using SmartMet::Spine::str_iequal;
 
 namespace qe = SmartMet::Engine::Querydata;
 
@@ -66,7 +66,7 @@ const char* P_DATASTEP = "datastep";
 const char* P_DATA_CRS = "dataCRS";
 
 const char* QENGINE_CRS = "EPSG::4326";
-}
+}  // namespace
 
 StoredGridQueryHandler::StoredGridQueryHandler(SmartMet::Spine::Reactor* reactor,
                                                boost::shared_ptr<StoredQueryConfig> config,
@@ -99,9 +99,7 @@ StoredGridQueryHandler::StoredGridQueryHandler(SmartMet::Spine::Reactor* reactor
   }
 }
 
-StoredGridQueryHandler::~StoredGridQueryHandler()
-{
-}
+StoredGridQueryHandler::~StoredGridQueryHandler() {}
 
 void StoredGridQueryHandler::init_handler()
 {
@@ -152,9 +150,7 @@ StoredGridQueryHandler::Query::Query()
   }
 }
 
-StoredGridQueryHandler::Query::~Query()
-{
-}
+StoredGridQueryHandler::Query::~Query() {}
 
 namespace
 {
@@ -417,7 +413,7 @@ void dump_meta_query_options(const qe::MetaQueryOptions& opt)
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 std::pair<unsigned int, unsigned int> StoredGridQueryHandler::getDataIndexExtents(
     const SmartMet::Spine::TimeSeries::TimeSeriesGroupPtr& longitudes,
@@ -659,8 +655,8 @@ SmartMet::Plugin::WFS::StoredGridQueryHandler::get_model_parameters(
 {
   try
   {
-    using SmartMet::Engine::Querydata::MetaQueryOptions;
     using SmartMet::Engine::Querydata::MetaData;
+    using SmartMet::Engine::Querydata::MetaQueryOptions;
 
     MetaQueryOptions qopt;
     qopt.setProducer(producer);
@@ -1304,7 +1300,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_stored_grid
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_grid_handler_factory(
     &wfs_stored_grid_handler_create);

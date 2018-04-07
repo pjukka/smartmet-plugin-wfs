@@ -6,9 +6,7 @@
 
 namespace bw = SmartMet::Plugin::WFS;
 
-bw::RequestParameterMap::RequestParameterMap() : params()
-{
-}
+bw::RequestParameterMap::RequestParameterMap() : params() {}
 
 bw::RequestParameterMap::RequestParameterMap(
     const std::multimap<std::string, SmartMet::Spine::Value>& params)
@@ -16,9 +14,7 @@ bw::RequestParameterMap::RequestParameterMap(
 {
 }
 
-bw::RequestParameterMap::~RequestParameterMap()
-{
-}
+bw::RequestParameterMap::~RequestParameterMap() {}
 
 void bw::RequestParameterMap::clear()
 {

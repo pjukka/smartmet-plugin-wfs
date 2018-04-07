@@ -12,8 +12,8 @@ namespace bw = SmartMet::Plugin::WFS;
 namespace bwx = SmartMet::Plugin::WFS::Xml;
 namespace ba = boost::algorithm;
 
-using boost::str;
 using boost::format;
+using boost::str;
 
 namespace
 {
@@ -23,7 +23,7 @@ struct XmlNamespeceDef
   std::string prefix;
   boost::optional<std::string> loc;
 };
-};
+};  // namespace
 
 bw::Request::DescribeStoredQueries::DescribeStoredQueries(const std::string& language,
                                                           const std::vector<std::string>& ids,
@@ -52,9 +52,7 @@ bw::Request::DescribeStoredQueries::DescribeStoredQueries(const std::string& lan
   }
 }
 
-bw::Request::DescribeStoredQueries::~DescribeStoredQueries()
-{
-}
+bw::Request::DescribeStoredQueries::~DescribeStoredQueries() {}
 
 bw::RequestBase::RequestType bw::Request::DescribeStoredQueries::get_type() const
 {

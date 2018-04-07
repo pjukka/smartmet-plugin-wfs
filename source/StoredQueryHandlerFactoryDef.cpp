@@ -26,9 +26,7 @@ StoredQueryHandlerFactoryDef::StoredQueryHandlerFactoryDef(
   }
 }
 
-StoredQueryHandlerFactoryDef::~StoredQueryHandlerFactoryDef()
-{
-}
+StoredQueryHandlerFactoryDef::~StoredQueryHandlerFactoryDef() {}
 
 boost::shared_ptr<StoredQueryHandlerBase> StoredQueryHandlerFactoryDef::construct(
     const std::string &symbol_name,

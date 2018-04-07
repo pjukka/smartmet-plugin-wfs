@@ -69,9 +69,7 @@ bw::PluginData::PluginData(SmartMet::Spine::Reactor *theReactor, const char *the
   }
 }
 
-bw::PluginData::~PluginData()
-{
-}
+bw::PluginData::~PluginData() {}
 
 void bw::PluginData::updateStoredQueryMap(Spine::Reactor *theReactor)
 {

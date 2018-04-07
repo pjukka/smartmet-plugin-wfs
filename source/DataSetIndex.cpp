@@ -38,16 +38,14 @@ std::set<T> vect2set(const std::vector<T>& src)
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 bw::DataSetQuery::DataSetQuery()
     : period(pt::ptime(boost::date_time::neg_infin), pt::ptime(boost::date_time::pos_infin))
 {
 }
 
-bw::DataSetQuery::~DataSetQuery()
-{
-}
+bw::DataSetQuery::~DataSetQuery() {}
 
 void bw::DataSetQuery::add_name(const std::string& name)
 {
@@ -198,9 +196,7 @@ boost::shared_ptr<bw::DataSetDefinition> bw::DataSetDefinition::create(
   }
 }
 
-bw::DataSetDefinition::~DataSetDefinition()
-{
-}
+bw::DataSetDefinition::~DataSetDefinition() {}
 
 bool bw::DataSetDefinition::intersects(const bw::DataSetDefinition::box_t& bbox) const
 {

@@ -45,9 +45,9 @@ class QueryBase
 
   /**
    *   @brief Executes the query and writes the result to provided output stream.
-*
-*  Method is expected to throw an exception in a case of an error
-*  (SmartMet::Plugin::WFS::Exception preferred but not mandatory)
+   *
+   *  Method is expected to throw an exception in a case of an error
+   *  (SmartMet::Plugin::WFS::Exception preferred but not mandatory)
    */
   virtual void execute(std::ostream& output, const std::string& language) const = 0;
 

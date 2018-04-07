@@ -56,9 +56,7 @@ ScalarParameterTemplate::ScalarParameterTemplate(StoredQueryConfig& config,
   }
 }
 
-ScalarParameterTemplate::~ScalarParameterTemplate()
-{
-}
+ScalarParameterTemplate::~ScalarParameterTemplate() {}
 
 SmartMet::Spine::Value ScalarParameterTemplate::get_value(
     const RequestParameterMap& req_param_map, const SupportsExtraHandlerParams* extra_params) const

@@ -29,11 +29,11 @@ namespace bl = boost::lambda;
 namespace pt = boost::posix_time;
 namespace bg = boost::geometry;
 
-using bw::StoredQEDownloadQueryHandler;
-using SmartMet::Spine::str_iequal;
-using SmartMet::Spine::CaseInsensitiveLess;
 using boost::format;
 using boost::str;
+using bw::StoredQEDownloadQueryHandler;
+using SmartMet::Spine::CaseInsensitiveLess;
+using SmartMet::Spine::str_iequal;
 
 namespace qe = SmartMet::Engine::Querydata;
 
@@ -51,7 +51,7 @@ const char* P_FORMAT = "format";
 const char* P_PROJECTION = "projection";
 
 const char* DATA_CRS_NAME = "urn:ogc:def:crs:EPSG::4326";
-}
+}  // namespace
 
 StoredQEDownloadQueryHandler::StoredQEDownloadQueryHandler(
     SmartMet::Spine::Reactor* reactor,
@@ -130,9 +130,7 @@ StoredQEDownloadQueryHandler::StoredQEDownloadQueryHandler(
   }
 }
 
-StoredQEDownloadQueryHandler::~StoredQEDownloadQueryHandler()
-{
-}
+StoredQEDownloadQueryHandler::~StoredQEDownloadQueryHandler() {}
 
 void StoredQEDownloadQueryHandler::init_handler()
 {
@@ -269,7 +267,7 @@ void dump_meta_query_options(const qe::MetaQueryOptions& opt)
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 void StoredQEDownloadQueryHandler::update_parameters(
     const bw::RequestParameterMap& params,
@@ -793,7 +791,7 @@ wfs_stored_qe_download_handler_create(SmartMet::Spine::Reactor* reactor,
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
 }
-}
+}  // namespace
 
 SmartMet::Plugin::WFS::StoredQueryHandlerFactoryDef wfs_stored_qe_download_handler_factory(
     &wfs_stored_qe_download_handler_create);

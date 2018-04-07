@@ -22,9 +22,7 @@ ParameterTemplateBase::ParameterTemplateBase(StoredQueryConfig& config,
 {
 }
 
-ParameterTemplateBase::~ParameterTemplateBase()
-{
-}
+ParameterTemplateBase::~ParameterTemplateBase() {}
 
 libconfig::Setting* ParameterTemplateBase::get_setting_root()
 {
