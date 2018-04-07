@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.3.20
+Version: 18.4.7
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -21,34 +21,34 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 18.3.7
-BuildRequires: smartmet-library-gis-devel >= 18.3.7
-BuildRequires: smartmet-library-locus-devel >= 18.1.15
-BuildRequires: smartmet-library-macgyver-devel >= 18.2.12
-BuildRequires: smartmet-engine-contour-devel >= 18.3.20
-BuildRequires: smartmet-engine-geonames-devel >= 18.3.20
-BuildRequires: smartmet-engine-gis-devel >= 18.3.20
+BuildRequires: smartmet-library-spine-devel >= 18.4.7
+BuildRequires: smartmet-library-gis-devel >= 18.4.7
+BuildRequires: smartmet-library-locus-devel >= 18.4.7
+BuildRequires: smartmet-library-macgyver-devel >= 18.4.7
+BuildRequires: smartmet-engine-contour-devel >= 18.4.7
+BuildRequires: smartmet-engine-geonames-devel >= 18.4.7
+BuildRequires: smartmet-engine-gis-devel >= 18.4.7
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 18.3.20
+BuildRequires: smartmet-engine-observation-devel >= 18.4.7
 %endif
-BuildRequires: smartmet-engine-querydata-devel >= 18.3.20
+BuildRequires: smartmet-engine-querydata-devel >= 18.4.7
 BuildRequires: postgresql95-libs
 Requires: ctpp2
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
-Requires: smartmet-library-locus >= 18.1.15
-Requires: smartmet-library-macgyver >= 18.2.12
-Requires: smartmet-library-spine >= 18.3.7
-Requires: smartmet-library-gis >= 18.3.7
-Requires: smartmet-engine-contour >= 18.3.20
-Requires: smartmet-engine-geonames >= 18.3.20
-Requires: smartmet-engine-gis >= 18.3.20
+Requires: smartmet-library-locus >= 18.4.7
+Requires: smartmet-library-macgyver >= 18.4.7
+Requires: smartmet-library-spine >= 18.4.7
+Requires: smartmet-library-gis >= 18.4.7
+Requires: smartmet-engine-contour >= 18.4.7
+Requires: smartmet-engine-geonames >= 18.4.7
+Requires: smartmet-engine-gis >= 18.4.7
 %if %{with observation}
-Requires: smartmet-engine-observation >= 18.3.20
+Requires: smartmet-engine-observation >= 18.4.7
 %endif
-Requires: smartmet-engine-querydata >= 18.3.20
-Requires: smartmet-server >= 17.11.10
+Requires: smartmet-engine-querydata >= 18.4.7
+Requires: smartmet-server >= 18.4.7
 Requires: xerces-c
 Requires: xqilla
 %if 0%{rhel} >= 7
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Sat Apr  7 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.4.7-1.fmi
+- Upgrade to boost 1.66
+
 * Tue Mar 20 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.3.20-1.fmi
 - Full recompile of all server plugins
 
