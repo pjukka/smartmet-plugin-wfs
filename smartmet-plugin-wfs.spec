@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.4.12
+Version: 18.4.25
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Wed Apr 25 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.4.25-1.fmi
+- Add linear transformation parameters to the radar result
+
 * Thu Apr 12 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.4.12-1.fmi
 - Fixed GetCapabilities for capabilities.template to be for commercial services.
 
