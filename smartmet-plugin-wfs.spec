@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.4.25
+Version: 18.5.2
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -22,7 +22,7 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 18.4.11
+BuildRequires: smartmet-library-spine-devel >= 18.5.2
 BuildRequires: smartmet-library-gis-devel >= 18.4.7
 BuildRequires: smartmet-library-locus-devel >= 18.4.7
 BuildRequires: smartmet-library-macgyver-devel >= 18.4.7
@@ -30,9 +30,9 @@ BuildRequires: smartmet-engine-contour-devel >= 18.4.7
 BuildRequires: smartmet-engine-geonames-devel >= 18.4.7
 BuildRequires: smartmet-engine-gis-devel >= 18.4.7
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 18.4.7
+BuildRequires: smartmet-engine-observation-devel >= 18.4.19
 %endif
-BuildRequires: smartmet-engine-querydata-devel >= 18.4.10
+BuildRequires: smartmet-engine-querydata-devel >= 18.4.18
 BuildRequires: postgresql95-libs
 Requires: ctpp2
 Requires: libconfig
@@ -40,15 +40,15 @@ Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 18.4.7
 Requires: smartmet-library-macgyver >= 18.4.7
-Requires: smartmet-library-spine >= 18.4.11
+Requires: smartmet-library-spine >= 18.5.2
 Requires: smartmet-library-gis >= 18.4.7
 Requires: smartmet-engine-contour >= 18.4.7
 Requires: smartmet-engine-geonames >= 18.4.7
 Requires: smartmet-engine-gis >= 18.4.7
 %if %{with observation}
-Requires: smartmet-engine-observation >= 18.4.7
+Requires: smartmet-engine-observation >= 18.4.19
 %endif
-Requires: smartmet-engine-querydata >= 18.4.10
+Requires: smartmet-engine-querydata >= 18.4.18
 Requires: smartmet-server >= 18.4.7
 Requires: xerces-c
 Requires: xqilla
@@ -93,6 +93,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Wed May  2 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.5.2-1.fmi
+- Repackaged since newbase NFmiEnumConverter ABI changed
+- Use wml2:qualifier element to view quality codes instead of wml2:quality
+
 * Wed Apr 25 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.4.25-1.fmi
 - Add linear transformation parameters to the radar result
 
