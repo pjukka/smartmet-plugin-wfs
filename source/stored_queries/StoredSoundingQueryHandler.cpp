@@ -469,7 +469,7 @@ void StoredSoundingQueryHandler::query(const StoredQuery& query,
                 << " seconds\n";
     }
   }
-  catch (SmartMet::Spine::Exception& e)
+  catch (const SmartMet::Spine::Exception& e)
   {
     SmartMet::Spine::Exception exception(e);
     exception.addParameter(WFS_LANGUAGE, language);

@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
     {
       return SmartMet::Spine::PluginTest::test(options, prelude);
     }
-    catch (libconfig::ParseException& err)
+    catch (const libconfig::ParseException& err)
     {
       std::ostringstream msg;
       msg << "Exception '" << Fmi::current_exception_type()

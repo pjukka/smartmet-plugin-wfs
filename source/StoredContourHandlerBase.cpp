@@ -169,7 +169,7 @@ bw::ContourQueryResultSet bw::StoredContourQueryHandler::getContours(
                                           queryParameter.q->needsWraparound(),
                                           &queryParameter.sr);
       }
-      catch (std::exception& e)
+      catch (const std::exception& e)
       {
         continue;
       }
