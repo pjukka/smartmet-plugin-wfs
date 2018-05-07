@@ -4,7 +4,7 @@
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
 Version: 18.5.7
-Release: 1%{?dist}.fmi
+Release: 2%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
 URL: https://github.com/fmidev/smartmet-plugin-wfs
@@ -32,7 +32,7 @@ BuildRequires: smartmet-engine-gis-devel >= 18.4.7
 %if %{with observation}
 BuildRequires: smartmet-engine-observation-devel >= 18.4.19
 %endif
-BuildRequires: smartmet-engine-querydata-devel >= 18.5.4
+BuildRequires: smartmet-engine-querydata-devel >= 18.5.7
 BuildRequires: postgresql95-libs
 Requires: ctpp2
 Requires: libconfig
@@ -48,7 +48,7 @@ Requires: smartmet-engine-gis >= 18.4.7
 %if %{with observation}
 Requires: smartmet-engine-observation >= 18.4.19
 %endif
-Requires: smartmet-engine-querydata >= 18.5.4
+Requires: smartmet-engine-querydata >= 18.5.7
 Requires: smartmet-server >= 18.4.7
 Requires: xerces-c
 Requires: xqilla
@@ -93,6 +93,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Mon May  7 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.5.7-2.fmi
+- Require newer querydata-engine so that data independent latlon parameters can be used
+
 * Mon May  7 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.5.7-1.fmi
 - Changed latitude and longitude to be data derived parameters
 
