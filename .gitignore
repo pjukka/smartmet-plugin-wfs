@@ -9,3 +9,4 @@ lib*.a
 /cnf/LocalXMLGrammarPool.dump
 .gdbinit
 compile_commands.json
+.gdb_history
