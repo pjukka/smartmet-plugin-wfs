@@ -3,8 +3,8 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.5.7
-Release: 2%{?dist}.fmi
+Version: 18.5.21
+Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
 URL: https://github.com/fmidev/smartmet-plugin-wfs
@@ -22,34 +22,34 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 18.5.4
+BuildRequires: smartmet-library-spine-devel >= 18.5.15
 BuildRequires: smartmet-library-gis-devel >= 18.4.7
 BuildRequires: smartmet-library-locus-devel >= 18.4.7
-BuildRequires: smartmet-library-macgyver-devel >= 18.4.7
-BuildRequires: smartmet-engine-contour-devel >= 18.4.7
+BuildRequires: smartmet-library-macgyver-devel >= 18.4.11
+BuildRequires: smartmet-engine-contour-devel >= 18.4.9
 BuildRequires: smartmet-engine-geonames-devel >= 18.4.7
 BuildRequires: smartmet-engine-gis-devel >= 18.4.7
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 18.4.19
+BuildRequires: smartmet-engine-observation-devel >= 18.5.20
 %endif
-BuildRequires: smartmet-engine-querydata-devel >= 18.5.7
+BuildRequires: smartmet-engine-querydata-devel >= 18.5.21
 BuildRequires: postgresql95-libs
 Requires: ctpp2
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 18.4.7
-Requires: smartmet-library-macgyver >= 18.4.7
-Requires: smartmet-library-spine >= 18.5.4
+Requires: smartmet-library-macgyver >= 18.4.11
+Requires: smartmet-library-spine >= 18.5.15
 Requires: smartmet-library-gis >= 18.4.7
-Requires: smartmet-engine-contour >= 18.4.7
+Requires: smartmet-engine-contour >= 18.4.9
 Requires: smartmet-engine-geonames >= 18.4.7
 Requires: smartmet-engine-gis >= 18.4.7
 %if %{with observation}
-Requires: smartmet-engine-observation >= 18.4.19
+Requires: smartmet-engine-observation >= 18.5.20
 %endif
-Requires: smartmet-engine-querydata >= 18.5.7
-Requires: smartmet-server >= 18.4.7
+Requires: smartmet-engine-querydata >= 18.5.21
+Requires: smartmet-server >= 18.5.15
 Requires: xerces-c
 Requires: xqilla
 %if 0%{rhel} >= 7
@@ -93,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
-* Upcoming
+* Mon May 21 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.5.21-1.fmi
 - Arrange soundings using message_time to get the latest request parameter work correctly
 
 * Mon May  7 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.5.7-2.fmi
