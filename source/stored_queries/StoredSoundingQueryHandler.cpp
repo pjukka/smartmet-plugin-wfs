@@ -60,16 +60,16 @@ void StoredSoundingQueryHandler::init_handler()
   auto* reactor = get_reactor();
 
   void* engine;
-  engine = reactor->getSingleton("Geonames", NULL);
-  if (engine == NULL)
+  engine = reactor->getSingleton("Geonames", nullptr);
+  if (engine == nullptr)
   {
     throw std::runtime_error("No Geonames available");
   }
 
   mGeonames = reinterpret_cast<SmartMet::Engine::Geonames::Engine*>(engine);
 
-  engine = reactor->getSingleton("Observation", NULL);
-  if (engine == NULL)
+  engine = reactor->getSingleton("Observation", nullptr);
+  if (engine == nullptr)
   {
     throw std::runtime_error("No Observation available");
   }
@@ -891,7 +891,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfsStoredSoundi
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace

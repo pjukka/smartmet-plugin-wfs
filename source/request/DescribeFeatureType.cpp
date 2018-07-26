@@ -132,7 +132,7 @@ void bw::Request::DescribeFeatureType::execute(std::ostream& output) const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -190,7 +190,7 @@ bw::Request::DescribeFeatureType::create_from_kvp(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -213,12 +213,12 @@ bw::Request::DescribeFeatureType::create_from_xml(const std::string& language,
     {
       const std::string item = ba::trim_copy(bwx::extract_text(*elem));
       const std::size_t pos = item.find_last_of(":");
-      const XMLCh* x_uri = NULL;
+      const XMLCh* x_uri = nullptr;
       std::string name;
       if (pos == std::string::npos)
       {
         name = item;
-        x_uri = document.lookupNamespaceURI(NULL);
+        x_uri = document.lookupNamespaceURI(nullptr);
       }
       else
       {
@@ -228,7 +228,7 @@ bw::Request::DescribeFeatureType::create_from_xml(const std::string& language,
         x_uri = document.lookupNamespaceURI(x_prefix.get());
       }
 
-      if (x_uri == NULL)
+      if (x_uri == nullptr)
       {
         std::ostringstream msg;
         msg << "bw::Request::DescribeFeatureType::create_from_xml(): failed to get XML namespace"
@@ -247,7 +247,7 @@ bw::Request::DescribeFeatureType::create_from_xml(const std::string& language,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -259,6 +259,6 @@ int bw::Request::DescribeFeatureType::get_response_expires_seconds() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

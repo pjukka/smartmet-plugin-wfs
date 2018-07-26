@@ -51,8 +51,8 @@ bw::StoredForecastQueryHandler::StoredForecastQueryHandler(
       bw::SupportsLocationParameters(config, SUPPORT_KEYWORDS | INCLUDE_GEOIDS),
       bw::SupportsTimeParameters(config),
       bw::SupportsTimeZone(config),
-      geo_engine(NULL),
-      q_engine(NULL),
+      geo_engine(nullptr),
+      q_engine(nullptr),
       common_params(),
       ind_geoid(SmartMet::add_param(common_params, "geoid", Parameter::Type::DataIndependent)),
       ind_epoch(SmartMet::add_param(common_params, "time", Parameter::Type::DataIndependent)),
@@ -84,7 +84,7 @@ bw::StoredForecastQueryHandler::StoredForecastQueryHandler(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -96,21 +96,21 @@ void bw::StoredForecastQueryHandler::init_handler()
   {
     auto* reactor = get_reactor();
     void* engine;
-    engine = reactor->getSingleton("Geonames", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Geonames", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Geonames engine available");
 
     geo_engine = reinterpret_cast<SmartMet::Engine::Geonames::Engine*>(engine);
 
-    engine = reactor->getSingleton("Querydata", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Querydata", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Querydata engine available");
 
     q_engine = reinterpret_cast<SmartMet::Engine::Querydata::Engine*>(engine);
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -352,15 +352,14 @@ void bw::StoredForecastQueryHandler::query(const StoredQuery& stored_query,
       }
       catch (...)
       {
-        SmartMet::Spine::Exception exception(BCP, "Operation parsing failed!", NULL);
-        exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
-        throw exception;
+        throw SmartMet::Spine::Exception::Trace(BCP, "Operation parsing failed!")
+            .addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
       }
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(BCP, "Operation parsing failed!", NULL);
-      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+      SmartMet::Spine::Exception exception(BCP, "Operation parsing failed!", nullptr);
+      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == nullptr)
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
       exception.addParameter(WFS_LANGUAGE, query.language);
       throw exception;
@@ -368,7 +367,7 @@ void bw::StoredForecastQueryHandler::query(const StoredQuery& stored_query,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -669,7 +668,7 @@ boost::shared_ptr<SmartMet::Spine::Table> bw::StoredForecastQueryHandler::extrac
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -711,7 +710,7 @@ SmartMet::Engine::Querydata::Producer bw::StoredForecastQueryHandler::select_pro
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -725,7 +724,7 @@ void bw::StoredForecastQueryHandler::parse_models(const RequestParameterMap& par
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -751,7 +750,7 @@ void bw::StoredForecastQueryHandler::parse_level_heights(const RequestParameterM
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Geometric height parsing failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Geometric height parsing failed!");
   }
 }
 void bw::StoredForecastQueryHandler::parse_levels(const RequestParameterMap& params,
@@ -778,7 +777,7 @@ void bw::StoredForecastQueryHandler::parse_levels(const RequestParameterMap& par
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -795,7 +794,7 @@ void bw::StoredForecastQueryHandler::parse_times(const RequestParameterMap& para
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -822,7 +821,7 @@ void bw::StoredForecastQueryHandler::parse_params(const RequestParameterMap& par
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -855,7 +854,7 @@ bw::StoredForecastQueryHandler::get_model_parameters(const std::string& producer
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -881,7 +880,7 @@ bw::StoredForecastQueryHandler::Query::Query()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -898,15 +897,15 @@ void bw::StoredForecastQueryHandler::Query::set_locale(const std::string& locale
     catch (...)
     {
       SmartMet::Spine::Exception exception(
-          BCP, "Failed to set locale '" + locale_name + "'!", NULL);
-      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+          BCP, "Failed to set locale '" + locale_name + "'!", nullptr);
+      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == nullptr)
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
       throw exception;
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -930,7 +929,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_forecast_ha
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace

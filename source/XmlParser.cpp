@@ -34,7 +34,7 @@ namespace WFS
 namespace Xml
 {
 Parser::Parser(bool stop_on_error, xercesc::XMLGrammarPool *grammar_pool)
-    : xercesc::XercesDOMParser(NULL, xercesc::XMLPlatformUtils::fgMemoryManager, grammar_pool),
+    : xercesc::XercesDOMParser(nullptr, xercesc::XMLPlatformUtils::fgMemoryManager, grammar_pool),
       error_handler(new XmlErrorHandler(stop_on_error))
 {
   try
@@ -65,7 +65,7 @@ Parser::Parser(bool stop_on_error, xercesc::XMLGrammarPool *grammar_pool)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -82,7 +82,7 @@ boost::shared_ptr<xercesc::DOMDocument> Parser::parse_file(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -99,7 +99,7 @@ boost::shared_ptr<xercesc::DOMDocument> Parser::parse_string(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -123,7 +123,7 @@ boost::shared_ptr<xercesc::DOMDocument> Parser::parse_input(
       {
         error.add_messages(error_handler->get_messages());
       }
-      throw SmartMet::Spine::Exception(BCP, "XML error!", NULL);
+      throw SmartMet::Spine::Exception::Trace(BCP, "XML error!");
     }
 
     // Verify that there are no errors. Throw an exception otherwise
@@ -134,7 +134,7 @@ boost::shared_ptr<xercesc::DOMDocument> Parser::parse_input(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -146,7 +146,7 @@ std::list<std::string> Parser::get_messages() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -198,7 +198,7 @@ void Parser::startElement(const xercesc::XMLElementDecl &elemDecl,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -229,7 +229,7 @@ class ParserMT::EntityResolver : public xercesc::XMLEntityResolver
       }
       else if (system_id == "")
       {
-        return NULL;
+        return nullptr;
       }
       else if ((*system_id.begin() == '/') or (*base_uri.begin() == '/'))
       {
@@ -239,7 +239,7 @@ class ParserMT::EntityResolver : public xercesc::XMLEntityResolver
       {
         std::size_t pos = base_uri.find_last_of("/");
         if (pos == std::string::npos)
-          return NULL;
+          return nullptr;
         remote_uri = base_uri.substr(0, pos + 1) + system_id;
       }
 
@@ -256,12 +256,12 @@ class ParserMT::EntityResolver : public xercesc::XMLEntityResolver
       }
       else
       {
-        return NULL;
+        return nullptr;
       }
     }
     catch (...)
     {
-      throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+      throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
     }
   }
 
@@ -297,12 +297,12 @@ ParserMT::ParserMT(const std::string &grammar_pool_file_name, bool stop_on_error
                 << Fmi::get_type_name(&err) << "', message '"
                 << to_opt_string(err.getMessage()).first << "'" << std::endl;
 
-      throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+      throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -313,7 +313,7 @@ Parser *ParserMT::get()
   try
   {
     Parser *parser = t_parser.get();
-    if (parser == NULL)
+    if (parser == nullptr)
     {
       t_parser.reset(new Parser(stop_on_error, grammar_pool.get()));
       parser = t_parser.get();
@@ -326,7 +326,7 @@ Parser *ParserMT::get()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -344,7 +344,7 @@ void ParserMT::load_schema_cache(const std::string &file_name)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -374,7 +374,7 @@ boost::shared_ptr<xercesc::DOMDocument> str2xmldom(const std::string &src,
       {
         error.add_messages(error_handler.get_messages());
       }
-      throw SmartMet::Spine::Exception(BCP, "XML error!", NULL);
+      throw SmartMet::Spine::Exception::Trace(BCP, "XML error!");
     }
 
     // Verify that parse suceeded and throw XmlError otherwise
@@ -385,7 +385,7 @@ boost::shared_ptr<xercesc::DOMDocument> str2xmldom(const std::string &src,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

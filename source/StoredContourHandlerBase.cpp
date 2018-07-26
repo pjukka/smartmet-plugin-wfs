@@ -29,9 +29,9 @@ bw::StoredContourQueryHandler::StoredContourQueryHandler(
       bw::SupportsBoundingBox(config, plugin_data.get_crs_registry(), false),
       bw::SupportsTimeParameters(config),
       bw::SupportsTimeZone(config),
-      itsQEngine(NULL),
-      itsGeonames(NULL),
-      itsContourEngine(NULL)
+      itsQEngine(nullptr),
+      itsGeonames(nullptr),
+      itsContourEngine(nullptr)
 {
   try
   {
@@ -64,7 +64,7 @@ bw::StoredContourQueryHandler::StoredContourQueryHandler(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -76,23 +76,23 @@ void bw::StoredContourQueryHandler::init_handler()
     auto* reactor = get_reactor();
     void* engine;
 
-    engine = reactor->getSingleton("Contour", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Contour", nullptr);
+    if (engine == nullptr)
     {
       throw SmartMet::Spine::Exception(BCP, "No Contour engine available");
     }
 
     itsContourEngine = reinterpret_cast<SmartMet::Engine::Contour::Engine*>(engine);
 
-    engine = reactor->getSingleton("Querydata", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Querydata", nullptr);
+    if (engine == nullptr)
     {
       throw SmartMet::Spine::Exception(BCP, "No Querydata engine available");
     }
     itsQEngine = reinterpret_cast<SmartMet::Engine::Querydata::Engine*>(engine);
 
-    engine = reactor->getSingleton("Geonames", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Geonames", nullptr);
+    if (engine == nullptr)
     {
       throw SmartMet::Spine::Exception(BCP, "No Geonames engine available");
     }
@@ -100,7 +100,7 @@ void bw::StoredContourQueryHandler::init_handler()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -228,7 +228,7 @@ bw::ContourQueryResultSet bw::StoredContourQueryHandler::getContours(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -259,7 +259,7 @@ void bw::StoredContourQueryHandler::parsePolygon(OGRPolygon* polygon,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -341,7 +341,7 @@ void bw::StoredContourQueryHandler::query(const StoredQuery& stored_query,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -494,7 +494,7 @@ void bw::StoredContourQueryHandler::parseGeometry(OGRGeometry* geom,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -527,7 +527,7 @@ void bw::StoredContourQueryHandler::handleGeometryCollection(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -654,6 +654,6 @@ void bw::StoredContourQueryHandler::parseQueryResults(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

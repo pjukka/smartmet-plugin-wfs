@@ -59,7 +59,7 @@ boost::optional<GmlSRSInformationGroup> read_gml_srs_info_group(const xercesc::D
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -88,7 +88,7 @@ GmlSRSReferenceGroup read_gml_srs_reference_group(const xercesc::DOMElement& ele
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -124,7 +124,7 @@ GmlDirectPositionType read_gml_direct_position_type(const xercesc::DOMElement& e
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -198,7 +198,7 @@ GmlEnvelopeType read_gml_envelope_type(const xercesc::DOMElement& element)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

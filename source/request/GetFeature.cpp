@@ -61,7 +61,7 @@ void bw::Request::GetFeature::execute(std::ostream& output) const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -88,7 +88,7 @@ bool bw::Request::GetFeature::get_cached_responses()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -115,7 +115,7 @@ int bw::Request::GetFeature::get_response_expires_seconds() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -220,7 +220,7 @@ void bw::Request::GetFeature::execute_single_query(std::ostream& ost) const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -349,7 +349,7 @@ void bw::Request::GetFeature::execute_multiple_queries(std::ostream& ost) const
       {
         std::cerr << METHOD_NAME << ": DOM exception: code=" << (int)err.code
                   << " message=" << err.getMessage() << std::endl;
-        throw SmartMet::Spine::Exception(BCP, "DOM exception received!", NULL);
+        throw SmartMet::Spine::Exception::Trace(BCP, "DOM exception received!");
       }
       catch (const bwx::XmlError& err)
       {
@@ -359,7 +359,7 @@ void bw::Request::GetFeature::execute_multiple_queries(std::ostream& ost) const
           std::cerr << "XML_PARSE_MSG: " << msg << std::endl;
         }
         std::cerr << "XML source is:\n" << query_response << std::endl;
-        throw SmartMet::Spine::Exception(BCP, "XML parsing failed!", NULL);
+        throw SmartMet::Spine::Exception::Trace(BCP, "XML parsing failed!");
       }
     }
 
@@ -387,7 +387,7 @@ void bw::Request::GetFeature::execute_multiple_queries(std::ostream& ost) const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -456,7 +456,7 @@ boost::shared_ptr<xercesc::DOMDocument> bw::Request::GetFeature::create_hits_onl
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -512,12 +512,12 @@ bool bw::Request::GetFeature::collect_query_responses(std::vector<std::string>& 
             }
             else
             {
-              throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+              throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
             }
           }
           else
           {
-            throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+            throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
           }
         }
       }
@@ -527,7 +527,7 @@ bool bw::Request::GetFeature::collect_query_responses(std::vector<std::string>& 
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -551,7 +551,7 @@ void bw::Request::GetFeature::assert_use_default_format() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -610,7 +610,7 @@ boost::shared_ptr<bw::Request::GetFeature> bw::Request::GetFeature::create_from_
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -673,6 +673,6 @@ boost::shared_ptr<bw::Request::GetFeature> bw::Request::GetFeature::create_from_
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

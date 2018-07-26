@@ -39,7 +39,7 @@ std::vector<double> get_coords(const OGRLineString* geom)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -47,7 +47,7 @@ static void check_geometry(OGRGeometry* geom, const std::string& location, const
 {
   try
   {
-    if (geom == NULL)
+    if (geom == nullptr)
     {
       std::ostringstream msg;
       msg << location << ": failed to parse GML format geometry '" << gml << "'";
@@ -56,7 +56,7 @@ static void check_geometry(OGRGeometry* geom, const std::string& location, const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -81,7 +81,7 @@ bool find_srs(const std::string& gml, int& srs)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace
@@ -89,8 +89,8 @@ bool find_srs(const std::string& gml, int& srs)
 bw::GeoServerDataIndex::LayerRec::LayerRec()
     : name(""),
       layer(""),
-      orig_geom(NULL),
-      dest_geom(NULL),
+      orig_geom(nullptr),
+      dest_geom(nullptr),
       orig_srs(-1),
       dest_srs(-1),
       orig_srs_swapped(false),
@@ -102,8 +102,8 @@ bw::GeoServerDataIndex::LayerRec::LayerRec(
     const SmartMet::Plugin::WFS::GeoServerDataIndex::LayerRec& rec)
     : name(rec.name),
       layer(rec.layer),
-      orig_geom(rec.orig_geom ? &dynamic_cast<OGRLineString&>(*(rec.orig_geom->clone())) : NULL),
-      dest_geom(rec.dest_geom ? &dynamic_cast<OGRLineString&>(*(rec.dest_geom->clone())) : NULL),
+      orig_geom(rec.orig_geom ? &dynamic_cast<OGRLineString&>(*(rec.orig_geom->clone())) : nullptr),
+      dest_geom(rec.dest_geom ? &dynamic_cast<OGRLineString&>(*(rec.dest_geom->clone())) : nullptr),
       orig_srs(rec.orig_srs),
       dest_srs(rec.dest_srs),
       orig_srs_swapped(rec.orig_srs_swapped),
@@ -120,7 +120,7 @@ bw::GeoServerDataIndex::LayerRec::~LayerRec()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -131,8 +131,8 @@ bw::GeoServerDataIndex::LayerRec& bw::GeoServerDataIndex::LayerRec::operator=(
   {
     name = rec.name;
     layer = rec.layer;
-    orig_geom = rec.orig_geom ? &dynamic_cast<OGRLineString&>(*(rec.orig_geom->clone())) : NULL;
-    dest_geom = rec.dest_geom ? &dynamic_cast<OGRLineString&>(*(rec.dest_geom->clone())) : NULL;
+    orig_geom = rec.orig_geom ? &dynamic_cast<OGRLineString&>(*(rec.orig_geom->clone())) : nullptr;
+    dest_geom = rec.dest_geom ? &dynamic_cast<OGRLineString&>(*(rec.dest_geom->clone())) : nullptr;
     orig_srs = rec.orig_srs;
     dest_srs = rec.dest_srs;
     orig_srs_swapped = rec.orig_srs_swapped;
@@ -142,7 +142,7 @@ bw::GeoServerDataIndex::LayerRec& bw::GeoServerDataIndex::LayerRec::operator=(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -153,12 +153,12 @@ void bw::GeoServerDataIndex::LayerRec::clear()
     if (orig_geom)
     {
       OGRGeometryFactory::destroyGeometry(orig_geom);
-      orig_geom = NULL;
+      orig_geom = nullptr;
     }
     if (dest_geom)
     {
       OGRGeometryFactory::destroyGeometry(dest_geom);
-      dest_geom = NULL;
+      dest_geom = nullptr;
     }
     orig_srs = -1;
     dest_srs = -1;
@@ -167,7 +167,7 @@ void bw::GeoServerDataIndex::LayerRec::clear()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -179,7 +179,7 @@ std::vector<double> bw::GeoServerDataIndex::LayerRec::get_orig_coords() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -191,7 +191,7 @@ std::vector<double> bw::GeoServerDataIndex::LayerRec::get_dest_coords() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -219,7 +219,7 @@ bw::GeoServerDataIndex::GeoServerDataIndex(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -247,7 +247,7 @@ void bw::GeoServerDataIndex::query(const boost::posix_time::ptime& begin,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -276,7 +276,7 @@ void bw::GeoServerDataIndex::query_single_layer(const boost::posix_time::ptime& 
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -321,7 +321,7 @@ std::string bw::GeoServerDataIndex::get_db_table_name(const std::string& layer_n
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -366,7 +366,7 @@ std::string bw::GeoServerDataIndex::create_sql_request(const boost::posix_time::
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -384,7 +384,7 @@ std::string bw::GeoServerDataIndex::create_geometry_str(const double* boundingBo
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -408,7 +408,7 @@ void bw::GeoServerDataIndex::process_sql_result(pqxx::result& result, const std:
       Item& item = data[epoch];
       item.epoch = epoch;
 
-      OGRGeometry* geom = NULL;
+      OGRGeometry* geom = nullptr;
       try
       {
         LayerRec rec;
@@ -475,12 +475,12 @@ void bw::GeoServerDataIndex::process_sql_result(pqxx::result& result, const std:
       catch (...)
       {
         OGRGeometryFactory::destroyGeometry(geom);
-        throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+        throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
       }
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

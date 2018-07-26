@@ -76,8 +76,8 @@ StoredGridQueryHandler::StoredGridQueryHandler(SmartMet::Spine::Reactor* reactor
       StoredQueryHandlerBase(reactor, config, plugin_data, template_file_name),
       SupportsBoundingBox(config, plugin_data.get_crs_registry(), false),
       SupportsTimeParameters(config),
-      geo_engine(NULL),
-      q_engine(NULL),
+      geo_engine(nullptr),
+      q_engine(nullptr),
       debug_level(get_config()->get_debug_level())
 {
   try
@@ -95,7 +95,7 @@ StoredGridQueryHandler::StoredGridQueryHandler(SmartMet::Spine::Reactor* reactor
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -109,21 +109,21 @@ void StoredGridQueryHandler::init_handler()
 
     void* engine;
 
-    engine = reactor->getSingleton("Geonames", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Geonames", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Geonames engine available");
 
     geo_engine = reinterpret_cast<SmartMet::Engine::Geonames::Engine*>(engine);
 
-    engine = reactor->getSingleton("Querydata", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Querydata", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Querydata engine available");
 
     q_engine = reinterpret_cast<SmartMet::Engine::Querydata::Engine*>(engine);
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -146,7 +146,7 @@ StoredGridQueryHandler::Query::Query()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -165,7 +165,7 @@ double comparisonDistance(const NFmiPoint& first, const NFmiPoint& second)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -181,7 +181,7 @@ std::string formatToScaledInteger(double input, unsigned long digits, unsigned l
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -212,7 +212,7 @@ ts::TimeSeriesGroupPtr makeSparseGrid(const ts::TimeSeriesGroupPtr& inputGrid,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -285,7 +285,7 @@ void make_rectangle_path(NFmiSvgPath& thePath,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -302,7 +302,7 @@ void make_rectangle_path(NFmiSvgPath& thePath,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -322,7 +322,7 @@ void handle_opt_param(const bw::RequestParameterMap& params,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -343,7 +343,7 @@ void handle_array_param(const bw::RequestParameterMap& params,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -410,7 +410,7 @@ void dump_meta_query_options(const qe::MetaQueryOptions& opt)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace
@@ -504,7 +504,7 @@ std::pair<unsigned int, unsigned int> StoredGridQueryHandler::getDataIndexExtent
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -645,7 +645,7 @@ StoredGridQueryHandler::Result::Grid StoredGridQueryHandler::rearrangeGrid(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -678,7 +678,7 @@ SmartMet::Plugin::WFS::StoredGridQueryHandler::get_model_parameters(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -707,7 +707,7 @@ void StoredGridQueryHandler::parse_levels(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -723,7 +723,7 @@ void StoredGridQueryHandler::parse_times(const RequestParameterMap& param, Query
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -747,7 +747,7 @@ void StoredGridQueryHandler::parse_params(const RequestParameterMap& param, Quer
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1056,7 +1056,7 @@ StoredGridQueryHandler::Result StoredGridQueryHandler::extract_forecast(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1080,7 +1080,7 @@ SmartMet::Engine::Querydata::Producer StoredGridQueryHandler::select_producer(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1264,8 +1264,8 @@ void StoredGridQueryHandler::query(const StoredQuery& stored_query,
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(BCP, "Operation processing failed!", NULL);
-      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+      SmartMet::Spine::Exception exception(BCP, "Operation processing failed!", nullptr);
+      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == nullptr)
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
       exception.addParameter(WFS_LANGUAGE, language);
       throw exception;
@@ -1273,7 +1273,7 @@ void StoredGridQueryHandler::query(const StoredQuery& stored_query,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1297,7 +1297,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_stored_grid
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace

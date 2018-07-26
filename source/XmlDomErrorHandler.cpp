@@ -29,16 +29,16 @@ bool XmlDomErrorHandler::handleError(const xercesc::DOMError &dom_error)
         break;
 
       case xercesc::DOMError::DOM_SEVERITY_ERROR:
-        throw SmartMet::Spine::Exception(BCP, "DOM ERROR: " + msg.str(), NULL);
+        throw SmartMet::Spine::Exception::Trace(BCP, "DOM ERROR: " + msg.str());
 
       case xercesc::DOMError::DOM_SEVERITY_FATAL_ERROR:
-        throw SmartMet::Spine::Exception(BCP, "FATAL DOM ERROR: " + msg.str(), NULL);
+        throw SmartMet::Spine::Exception::Trace(BCP, "FATAL DOM ERROR: " + msg.str());
     }
 
     return true;
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

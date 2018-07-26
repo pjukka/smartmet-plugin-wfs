@@ -69,7 +69,7 @@ struct ParameterTemplateItem
    */
   boost::variant<SmartMet::Spine::Value, std::vector<SmartMet::Spine::Value> > get_value(
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL,
+      const SupportsExtraHandlerParams* extra_params = nullptr,
       bool allow_array = false) const;
 
   /**
@@ -93,7 +93,7 @@ struct ParameterTemplateItem
   bool get_value(
       boost::variant<SmartMet::Spine::Value, std::vector<SmartMet::Spine::Value> >& result,
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL,
+      const SupportsExtraHandlerParams* extra_params = nullptr,
       bool allow_array = false) const;
 
  private:

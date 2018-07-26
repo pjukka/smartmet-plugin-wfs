@@ -21,7 +21,7 @@ bw::SupportsBoundingBox::SupportsBoundingBox(boost::shared_ptr<StoredQueryConfig
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -33,7 +33,7 @@ bool bw::SupportsBoundingBox::get_bounding_box(const RequestParameterMap& param_
 {
   try
   {
-    assert(bbox != NULL);
+    assert(bbox != nullptr);
 
     if (param_values.count(P_BOUNDING_BOX))
     {
@@ -73,7 +73,7 @@ bool bw::SupportsBoundingBox::get_bounding_box(const RequestParameterMap& param_
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -83,7 +83,7 @@ void bw::SupportsBoundingBox::bbox2polygon(const SmartMet::Spine::BoundingBox& s
 {
   try
   {
-    assert(polygon != NULL);
+    assert(polygon != nullptr);
 
     OGRLinearRing boundary;
 
@@ -106,7 +106,7 @@ void bw::SupportsBoundingBox::bbox2polygon(const SmartMet::Spine::BoundingBox& s
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -136,7 +136,7 @@ SmartMet::Spine::BoundingBox bw::SupportsBoundingBox::transform_bounding_box(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -156,7 +156,7 @@ bool bw::SupportsBoundingBox::isInverseAxisOrderPossible(const std::string& crs)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -177,7 +177,7 @@ SmartMet::Spine::BoundingBox bw::SupportsBoundingBox::swapXYByBoundingBoxCrs(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

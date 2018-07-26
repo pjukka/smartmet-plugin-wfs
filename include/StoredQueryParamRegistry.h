@@ -54,7 +54,7 @@ class StoredQueryParamRegistry
   virtual ~StoredQueryParamRegistry();
 
   boost::shared_ptr<RequestParameterMap> process_parameters(
-      const RequestParameterMap& src, const SupportsExtraHandlerParams* extra_params = NULL) const;
+      const RequestParameterMap& src, const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   std::set<std::string> get_param_names() const;
 

@@ -85,7 +85,7 @@ void StoredQueryParamDef::parse_def(const std::string& desc)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -153,22 +153,22 @@ SmartMet::Spine::Value StoredQueryParamDef::readValue(const std::string& value) 
     catch (const boost::bad_lexical_cast& err)
     {
       SmartMet::Spine::Exception exception(
-          BCP, "Invalid stored query parameter value in '" + value + "'!", NULL);
-      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+          BCP, "Invalid stored query parameter value in '" + value + "'!", nullptr);
+      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == nullptr)
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
       throw exception;
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(BCP, "Operation failed!", NULL);
-      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+      SmartMet::Spine::Exception exception(BCP, "Operation failed!", nullptr);
+      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == nullptr)
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
       throw exception;
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -217,7 +217,7 @@ SmartMet::Spine::Value StoredQueryParamDef::convValue(const SmartMet::Spine::Val
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -251,7 +251,7 @@ std::vector<SmartMet::Spine::Value> StoredQueryParamDef::readValues(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -295,7 +295,7 @@ void StoredQueryParamDef::dump(std::ostream& stream) const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

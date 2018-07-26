@@ -156,7 +156,7 @@ class StoredQueryConfig : public SmartMet::Spine::ConfigBase
   inline int get_expires_seconds() const { return expires_seconds; }
   void dump_params(std::ostream& stream) const;
 
-  void warn_about_unused_params(const StoredQueryHandlerBase* handler = NULL);
+  void warn_about_unused_params(const StoredQueryHandlerBase* handler = nullptr);
 
   /**
    *  @brief Get last write time of the stored query configuration file.

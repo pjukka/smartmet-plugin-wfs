@@ -22,7 +22,7 @@ StoredQueryHandlerFactoryDef::StoredQueryHandlerFactoryDef(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -38,7 +38,7 @@ boost::shared_ptr<StoredQueryHandlerBase> StoredQueryHandlerFactoryDef::construc
   try
   {
     void *sym_ptr = dlsym(RTLD_DEFAULT, symbol_name.c_str());
-    if (sym_ptr == NULL)
+    if (sym_ptr == nullptr)
     {
       std::ostringstream msg;
       msg << "Symbol '" << symbol_name << "' is not found";
@@ -62,7 +62,7 @@ boost::shared_ptr<StoredQueryHandlerBase> StoredQueryHandlerFactoryDef::construc
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -84,7 +84,7 @@ void StoredQueryHandlerFactoryDef::create_signature(unsigned char *md)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

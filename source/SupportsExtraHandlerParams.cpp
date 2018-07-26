@@ -84,7 +84,7 @@ bw::SupportsExtraHandlerParams::SupportsExtraHandlerParams(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -124,7 +124,7 @@ const bw::ParameterTemplateBase& bw::SupportsExtraHandlerParams::get_param(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -158,7 +158,7 @@ void bw::SupportsExtraHandlerParams::dump_named_params(const bw::RequestParamete
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

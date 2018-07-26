@@ -35,7 +35,7 @@ std::set<T> vect2set(const std::vector<T>& src)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace
@@ -58,7 +58,7 @@ void bw::DataSetQuery::add_name(const std::string& name)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -73,7 +73,7 @@ void bw::DataSetQuery::add_level(int level)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -88,7 +88,7 @@ void bw::DataSetQuery::add_parameter(const std::string& parameter)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -109,7 +109,7 @@ void bw::DataSetQuery::set_interval(const boost::posix_time::ptime& begin,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -168,7 +168,7 @@ bw::DataSetDefinition::DataSetDefinition(SmartMet::Spine::ConfigBase& config,
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(BCP, "Error while processing libconfig::Setting!", NULL);
+      SmartMet::Spine::Exception exception(BCP, "Error while processing libconfig::Setting!", nullptr);
 
       std::ostringstream msg;
       msg << exception.getStackTrace();
@@ -179,7 +179,7 @@ bw::DataSetDefinition::DataSetDefinition(SmartMet::Spine::ConfigBase& config,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -192,7 +192,7 @@ boost::shared_ptr<bw::DataSetDefinition> bw::DataSetDefinition::create(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -206,7 +206,7 @@ bool bw::DataSetDefinition::intersects(const bw::DataSetDefinition::box_t& bbox)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -234,7 +234,7 @@ std::vector<boost::filesystem::path> bw::DataSetDefinition::query_files(
         catch (...)
         {
           SmartMet::Spine::Exception exception(
-              BCP, "Failed to extract origin time from the file name!", NULL);
+              BCP, "Failed to extract origin time from the file name!", nullptr);
           exception.addDetail("File ignored.");
           exception.addParameter("File name", entry.string());
           std::cout << exception.getStackTrace();
@@ -245,7 +245,7 @@ std::vector<boost::filesystem::path> bw::DataSetDefinition::query_files(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -272,7 +272,7 @@ pt::ptime bw::DataSetDefinition::extract_origintime(const boost::filesystem::pat
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

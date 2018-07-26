@@ -48,7 +48,7 @@ bw::Request::DescribeStoredQueries::DescribeStoredQueries(const std::string& lan
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -149,7 +149,7 @@ void bw::Request::DescribeStoredQueries::execute(std::ostream& output) const
           const std::string& name = return_types[k];
           CTPP::CDT& return_type = sq["returnTypes"][k];
           const auto* feature = plugin_data.get_capabilities().find_feature(name);
-          // No need to check for NULL as it is done in earlier loop
+          // No need to check for nullptr as it is done in earlier loop
           const std::string& xml_type = feature->get_xml_type();
           const std::string& ns = feature->get_xml_namespace();
           const std::string& prefix = ns_map.at(ns);
@@ -169,14 +169,14 @@ void bw::Request::DescribeStoredQueries::execute(std::ostream& output) const
     {
       SmartMet::Spine::Exception exception(BCP, "Template formater exception!");
       exception.addDetail(log_messages.str());
-      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == nullptr)
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
       throw exception;
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -214,7 +214,7 @@ bw::Request::DescribeStoredQueries::create_from_kvp(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -246,7 +246,7 @@ bw::Request::DescribeStoredQueries::create_from_xml(const std::string& language,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -258,6 +258,6 @@ int bw::Request::DescribeStoredQueries::get_response_expires_seconds() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

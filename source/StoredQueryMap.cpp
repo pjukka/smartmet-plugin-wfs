@@ -44,7 +44,7 @@ class SmartMet::Plugin::WFS::StoredQueryMap::Init
     }
     catch (...)
     {
-      throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+      throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
     }
   }
 
@@ -90,7 +90,7 @@ class SmartMet::Plugin::WFS::StoredQueryMap::Init
     }
     catch (...)
     {
-      throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+      throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
     }
   }
 };
@@ -137,7 +137,7 @@ void bw::StoredQueryMap::add_handler(boost::shared_ptr<StoredQueryHandlerBase> h
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -213,15 +213,14 @@ void bw::StoredQueryMap::add_handler(SmartMet::Spine::Reactor* theReactor,
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(
-          BCP, "Error while processing stored query configuration file!", NULL);
-      exception.addParameter("Query config file", stored_query_config_file.string());
-      throw exception;
+      throw SmartMet::Spine::Exception::Trace(
+          BCP, "Error while processing stored query configuration file!")
+          .addParameter("Query config file", stored_query_config_file.string());
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -268,7 +267,7 @@ void bw::StoredQueryMap::read_config_dir(SmartMet::Spine::Reactor* theReactor,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -293,7 +292,7 @@ boost::shared_ptr<bw::StoredQueryHandlerBase> bw::StoredQueryMap::get_handler_by
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -319,7 +318,7 @@ std::vector<std::string> bw::StoredQueryMap::get_return_type_names() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -364,12 +363,12 @@ void bw::StoredQueryMap::add_handler(SmartMet::Spine::Reactor* theReactor,
           << sqh_config->get_file_name() << "\n";
       std::cout << msg.str() << std::flush;
 
-      throw SmartMet::Spine::Exception(BCP, "Failed to add stored query handler!", NULL);
+      throw SmartMet::Spine::Exception::Trace(BCP, "Failed to add stored query handler!");
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -396,7 +395,7 @@ void bw::StoredQueryMap::add_handler_thread_proc(SmartMet::Spine::Reactor* theRe
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -451,6 +450,6 @@ void bw::StoredQueryMap::update_handlers(Spine::Reactor* theReactor, bw::PluginD
   }
   catch (...)
   {
-    throw Spine::Exception(BCP, "A stored query handler update failed!", NULL);
+    throw Spine::Exception::Trace(BCP, "A stored query handler update failed!");
   }
 }

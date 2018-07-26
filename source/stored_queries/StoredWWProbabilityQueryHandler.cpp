@@ -33,7 +33,7 @@ std::string double2string(double d, unsigned int precision)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -62,7 +62,7 @@ std::string bbox2string(const SmartMet::Spine::BoundingBox& bbox, OGRSpatialRefe
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -76,7 +76,7 @@ FmiParameterName get_parameter(boost::shared_ptr<SmartMet::Plugin::WFS::StoredQu
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -110,7 +110,7 @@ SmartMet::Engine::Querydata::ParameterOptions get_qengine_parameter(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -145,7 +145,7 @@ void populate_result_vector(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -168,8 +168,8 @@ StoredWWProbabilityQueryHandler::StoredWWProbabilityQueryHandler(
       SupportsBoundingBox(config, pluginData.get_crs_registry(), false),
       SupportsTimeParameters(config),
       SupportsTimeZone(config),
-      itsQEngine(NULL),
-      itsGeonames(NULL)
+      itsQEngine(nullptr),
+      itsGeonames(nullptr)
 {
   try
   {
@@ -208,7 +208,7 @@ StoredWWProbabilityQueryHandler::StoredWWProbabilityQueryHandler(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -219,21 +219,21 @@ void StoredWWProbabilityQueryHandler::init_handler()
   try
   {
     auto* reactor = get_reactor();
-    void* engine = reactor->getSingleton("Querydata", NULL);
-    if (engine == NULL)
+    void* engine = reactor->getSingleton("Querydata", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Querydata engine available");
 
     itsQEngine = reinterpret_cast<SmartMet::Engine::Querydata::Engine*>(engine);
 
-    engine = reactor->getSingleton("Geonames", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Geonames", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Geonames engine available");
 
     itsGeonames = reinterpret_cast<SmartMet::Engine::Geonames::Engine*>(engine);
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -377,7 +377,7 @@ void StoredWWProbabilityQueryHandler::parseQueryResults(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -424,7 +424,7 @@ WinterWeatherIntensityProbabilities StoredWWProbabilityQueryHandler::getProbabil
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -588,7 +588,7 @@ void StoredWWProbabilityQueryHandler::query(const StoredQuery& query,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -616,7 +616,7 @@ wfs_winterweather_probabilities_query_handler_create(SmartMet::Spine::Reactor* r
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace

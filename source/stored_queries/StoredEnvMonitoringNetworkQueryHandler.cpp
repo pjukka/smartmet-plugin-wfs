@@ -32,8 +32,8 @@ bw::StoredEnvMonitoringNetworkQueryHandler::StoredEnvMonitoringNetworkQueryHandl
     boost::optional<std::string> template_file_name)
     : bw::SupportsExtraHandlerParams(config),
       bw::StoredQueryHandlerBase(reactor, config, plugin_data, template_file_name),
-      m_geoEngine(NULL),
-      m_obsEngine(NULL)
+      m_geoEngine(nullptr),
+      m_obsEngine(nullptr)
 {
   try
   {
@@ -50,7 +50,7 @@ bw::StoredEnvMonitoringNetworkQueryHandler::StoredEnvMonitoringNetworkQueryHandl
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -65,22 +65,22 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::init_handler()
     void* engine;
 
     // Get Geonames
-    engine = reactor->getSingleton("Geonames", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Geonames", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Geonames engine available");
 
     m_geoEngine = reinterpret_cast<SmartMet::Engine::Geonames::Engine*>(engine);
 
     // Get Observation
-    engine = reactor->getSingleton("Observation", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Observation", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Observation engine available");
 
     m_obsEngine = reinterpret_cast<SmartMet::Engine::Observation::Engine*>(engine);
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -273,8 +273,8 @@ void bw::StoredEnvMonitoringNetworkQueryHandler::query(const StoredQuery& query,
   }  // In case of some other failures
   catch (...)
   {
-    SmartMet::Spine::Exception exception(BCP, "Operation processing failed!", NULL);
-    if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+    SmartMet::Spine::Exception exception(BCP, "Operation processing failed!", nullptr);
+    if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == nullptr)
       exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
     exception.addParameter(WFS_LANGUAGE, language);
     throw exception;
@@ -312,7 +312,7 @@ bw::StoredEnvMonitoringNetworkQueryHandler::dbRegistryConfig(const std::string& 
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -336,7 +336,7 @@ wfs_stored_env_monitoring_network_handler_create(SmartMet::Spine::Reactor* react
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace

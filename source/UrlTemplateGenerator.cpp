@@ -47,7 +47,7 @@ void encode(std::ostream& stream, const std::string& text)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace
@@ -64,7 +64,7 @@ bw::UrlTemplateGenerator::UrlTemplateGenerator(const std::string& url,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -83,7 +83,7 @@ std::string bw::UrlTemplateGenerator::generate(
     {
       if ((url != "") and (*url.rbegin() != '?'))
       {
-        if (strchr(url.c_str(), '?') != NULL)
+        if (strchr(url.c_str(), '?') != nullptr)
         {
           sep = *url.rbegin() != '&' ? "&" : "";
         }
@@ -118,7 +118,7 @@ std::string bw::UrlTemplateGenerator::generate(
             result << '=';
             BOOST_FOREACH (const auto& item, value_vect)
             {
-              if (std::strchr(item.c_str(), ',') != NULL)
+              if (std::strchr(item.c_str(), ',') != nullptr)
               {
                 SmartMet::Spine::Exception exception(
                     BCP, "List items are not permitted to contain ',' characters!");
@@ -148,7 +148,7 @@ std::string bw::UrlTemplateGenerator::generate(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -215,7 +215,7 @@ void bw::UrlTemplateGenerator::parse_param_def(const std::string& str)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -306,7 +306,7 @@ std::string bw::UrlTemplateGenerator::eval_string_param(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

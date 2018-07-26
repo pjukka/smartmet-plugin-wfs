@@ -53,7 +53,7 @@ class ParameterTemplateBase
   virtual boost::tribool get_value(
       boost::variant<SmartMet::Spine::Value, std::vector<SmartMet::Spine::Value> >& result,
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra = NULL,
+      const SupportsExtraHandlerParams* extra = nullptr,
       bool strict = true) const = 0;
 
  protected:

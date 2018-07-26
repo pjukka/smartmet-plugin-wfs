@@ -48,7 +48,7 @@ bw::RequestFactory& bw::RequestFactory::register_request_type(const std::string&
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -69,7 +69,7 @@ bw::RequestFactory& bw::RequestFactory::register_unimplemented_request_type(cons
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -111,7 +111,7 @@ boost::shared_ptr<bw::RequestBase> bw::RequestFactory::parse_kvp(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -152,7 +152,7 @@ boost::shared_ptr<bw::RequestBase> bw::RequestFactory::parse_xml(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -173,6 +173,6 @@ const bw::RequestFactory::TypeRec& bw::RequestFactory::get_type_rec(const std::s
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

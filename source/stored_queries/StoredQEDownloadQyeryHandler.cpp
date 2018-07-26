@@ -61,8 +61,8 @@ StoredQEDownloadQueryHandler::StoredQEDownloadQueryHandler(
     : SupportsExtraHandlerParams(config, false),
       StoredAtomQueryHandlerBase(reactor, config, plugin_data, template_file_name),
       SupportsBoundingBox(config, plugin_data.get_crs_registry(), false),
-      geo_engine(NULL),
-      q_engine(NULL),
+      geo_engine(nullptr),
+      q_engine(nullptr),
       producers(),
       default_format("grib2"),
       debug_level(get_config()->get_debug_level())
@@ -126,7 +126,7 @@ StoredQEDownloadQueryHandler::StoredQEDownloadQueryHandler(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -140,21 +140,21 @@ void StoredQEDownloadQueryHandler::init_handler()
 
     void* engine;
 
-    engine = reactor->getSingleton("Geonames", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Geonames", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Geonames engine available");
 
     geo_engine = reinterpret_cast<SmartMet::Engine::Geonames::Engine*>(engine);
 
-    engine = reactor->getSingleton("Querydata", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Querydata", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Querydata engine available");
 
     q_engine = reinterpret_cast<SmartMet::Engine::Querydata::Engine*>(engine);
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -176,7 +176,7 @@ void handle_opt_param(const bw::RequestParameterMap& params,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -197,7 +197,7 @@ void handle_array_param(const bw::RequestParameterMap& params,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -264,7 +264,7 @@ void dump_meta_query_options(const qe::MetaQueryOptions& opt)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace
@@ -622,7 +622,7 @@ void StoredQEDownloadQueryHandler::update_parameters(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -650,7 +650,7 @@ boost::shared_ptr<OGRPolygon> StoredQEDownloadQueryHandler::get_model_boundary(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -714,7 +714,7 @@ boost::shared_ptr<OGRGeometry> StoredQEDownloadQueryHandler::bbox_intersection(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -734,7 +734,7 @@ void StoredQEDownloadQueryHandler::add_bbox_info(RequestParameterMap* param_map,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -764,7 +764,7 @@ void StoredQEDownloadQueryHandler::add_boundary(RequestParameterMap* param_map,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -788,7 +788,7 @@ wfs_stored_qe_download_handler_create(SmartMet::Spine::Reactor* reactor,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace

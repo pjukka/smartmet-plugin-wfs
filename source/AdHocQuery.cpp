@@ -192,7 +192,7 @@ void bw::AdHocQuery::create_from_kvp(const std::string& language,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -215,7 +215,7 @@ void bw::AdHocQuery::create_filter_query_from_kvp(
       xps.parse_dom_document(filter, "fes:Filter:TMP");
 
       const auto* root = xps.get_document()->getDocumentElement();
-      if (root == NULL)
+      if (root == nullptr)
       {
         SmartMet::Spine::Exception exception(BCP, "Failed to access filter 'TMP' element!");
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
@@ -261,7 +261,7 @@ void bw::AdHocQuery::create_filter_query_from_kvp(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -338,9 +338,9 @@ void bw::AdHocQuery::create_bbox_query_from_kvp(
           msg << "While parsing value '" << bbox_string << "' of request parameter '" << param_name
               << "'";
 
-          SmartMet::Spine::Exception exception(BCP, "Operation parsing failed!", NULL);
+          SmartMet::Spine::Exception exception(BCP, "Operation parsing failed!", nullptr);
           exception.addDetail(msg.str());
-          if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+          if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == nullptr)
             exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
           exception.addParameter(WFS_LANGUAGE, language);
           throw exception;
@@ -350,7 +350,7 @@ void bw::AdHocQuery::create_bbox_query_from_kvp(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -427,7 +427,7 @@ void bw::AdHocQuery::create_from_xml(const std::string& language,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -448,7 +448,7 @@ void bw::AdHocQuery::get_xml_typenames(const xercesc::DOMElement& query_root,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -468,11 +468,11 @@ void bw::AdHocQuery::extract_xml_parameters(
 
     // Parse filter xml elements in the query.
     bw::AdHocQuery::extract_filter_elements(
-        root_element, element_tree, queries, NULL, or_query_indexes);
+        root_element, element_tree, queries, nullptr, or_query_indexes);
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -492,7 +492,7 @@ void bw::AdHocQuery::create_query(boost::shared_ptr<const bw::StoredQueryHandler
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -518,7 +518,7 @@ void bw::AdHocQuery::add_projection_clause_from_xml(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -560,7 +560,7 @@ void bw::AdHocQuery::add_projection_clause(const std::vector<std::string>& prope
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -591,7 +591,7 @@ void bw::AdHocQuery::replace_aliases_from_xml(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -639,7 +639,7 @@ void bw::AdHocQuery::replace_aliases(const std::vector<std::string>& aliases,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -672,7 +672,7 @@ void bw::AdHocQuery::process_parms(const std::string& language,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -762,7 +762,7 @@ void bw::AdHocQuery::extract_filter_elements(const xercesc::DOMElement& root_ele
       // so it in turn needs to be parsed for its child filter elements.
       if (!is_query_parameter(element_name) && !is_comparison_operation(element_name))
       {
-        AdHocQuery* and_query = NULL;
+        AdHocQuery* and_query = nullptr;
         unsigned int and_query_index = 0;
 
         if (element_name == "fes:and")
@@ -809,7 +809,7 @@ void bw::AdHocQuery::extract_filter_elements(const xercesc::DOMElement& root_ele
       else  // Read parameter values / comparison operations from XML.
       {
         // Check if we need to write this parameter to the common AND-element query.
-        if ((upper_level_and_query != NULL) && (element_tree.back() != "fes:or"))
+        if ((upper_level_and_query != nullptr) && (element_tree.back() != "fes:or"))
         {
           query = upper_level_and_query;
         }
@@ -828,7 +828,7 @@ void bw::AdHocQuery::extract_filter_elements(const xercesc::DOMElement& root_ele
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -945,7 +945,7 @@ void bw::AdHocQuery::handle_end_of_and_element(std::vector<boost::shared_ptr<Que
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1038,7 +1038,7 @@ void bw::AdHocQuery::read_comparison_operation(const xercesc::DOMElement& elemen
         // Check if limit_value is a string.
         char* pEnd;
         (void)std::strtod(limit_value.c_str(), &pEnd);
-        if (pEnd != NULL)
+        if (pEnd != nullptr)
         {
           if ((strlen(pEnd) > 0) || (limit_value == "NaN"))
           {
@@ -1126,7 +1126,7 @@ void bw::AdHocQuery::read_comparison_operation(const xercesc::DOMElement& elemen
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1236,7 +1236,7 @@ void bw::AdHocQuery::read_query_parameter(const xercesc::DOMElement& element,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1283,7 +1283,7 @@ void bw::AdHocQuery::copy_params(const AdHocQuery* src_query, AdHocQuery* target
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1303,7 +1303,7 @@ void bw::AdHocQuery::filter(boost::shared_ptr<QueryBase> query, bwx::XPathSnapsh
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1316,7 +1316,7 @@ bool bw::AdHocQuery::is_query_used(const AdHocQuery* query)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1337,7 +1337,7 @@ void bw::AdHocQuery::get_stored_query_ids_from_typenames(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1349,7 +1349,7 @@ bool is_query_parameter(const std::string& element_name)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1384,7 +1384,7 @@ void get_comparison_operation(const std::string& element_name, std::string& oper
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1401,7 +1401,7 @@ bool is_comparison_operation(const std::string& element_name)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1428,7 +1428,7 @@ bool read_value_reference(const SmartMet::Spine::Value& value, std::string& valu
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -1460,6 +1460,6 @@ void check_param_max_occurs(int actual_count,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

@@ -36,7 +36,7 @@ void bw::TypeNameStoredQueryMap::init(const std::map<std::string, std::string>& 
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -62,6 +62,6 @@ const std::vector<std::string>& bw::TypeNameStoredQueryMap::get_stored_queries_b
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

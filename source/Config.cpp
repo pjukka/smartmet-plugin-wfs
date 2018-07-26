@@ -104,7 +104,7 @@ Config::Config(const string& configfile)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -149,7 +149,7 @@ std::vector<boost::shared_ptr<WfsFeatureDef> > Config::read_features_config(
                     << " file '" << entry.string() << "'" << std::endl;
 
           SmartMet::Spine::Exception exception(
-              BCP, "Error while reading feature desctiption!", NULL);
+              BCP, "Error while reading feature desctiption!", nullptr);
           exception.addParameter("File", entry.string());
           throw exception;
         }
@@ -160,7 +160,7 @@ std::vector<boost::shared_ptr<WfsFeatureDef> > Config::read_features_config(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -201,7 +201,7 @@ void Config::read_typename_config(std::map<std::string, std::string>& typename_s
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

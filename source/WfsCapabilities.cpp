@@ -25,7 +25,7 @@ bool bw::WfsCapabilities::register_operation(const std::string& operation)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -38,7 +38,7 @@ std::set<std::string> bw::WfsCapabilities::get_operations() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -48,11 +48,11 @@ const bw::WfsFeatureDef* bw::WfsCapabilities::find_feature(const std::string& na
   {
     SmartMet::Spine::ReadLock lock(mutex);
     auto it = features.find(name);
-    return it == features.end() ? NULL : it->second.get();
+    return it == features.end() ? nullptr : it->second.get();
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -75,7 +75,7 @@ void bw::WfsCapabilities::register_feature(boost::shared_ptr<WfsFeatureDef>& fea
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -89,7 +89,7 @@ std::map<std::string, boost::shared_ptr<bw::WfsFeatureDef> > bw::WfsCapabilities
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -123,7 +123,7 @@ void bw::WfsCapabilities::register_feature_use(const std::string& name)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -136,7 +136,7 @@ std::set<std::string> bw::WfsCapabilities::get_used_features() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -154,7 +154,7 @@ void bw::WfsCapabilities::register_data_set(const std::string& code, const std::
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -167,6 +167,6 @@ std::map<std::string, std::string> bw::WfsCapabilities::get_data_set_map() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

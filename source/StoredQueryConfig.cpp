@@ -23,7 +23,7 @@ SmartMet::Plugin::WFS::StoredQueryConfig::StoredQueryConfig(const std::string& c
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -38,7 +38,7 @@ SmartMet::Plugin::WFS::StoredQueryConfig::StoredQueryConfig(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -91,7 +91,7 @@ void SmartMet::Plugin::WFS::StoredQueryConfig::warn_about_unused_params(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -278,7 +278,7 @@ void SmartMet::Plugin::WFS::StoredQueryConfig::parse_config()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -300,7 +300,7 @@ std::string SmartMet::Plugin::WFS::StoredQueryConfig::get_template_fn() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -312,7 +312,7 @@ std::string SmartMet::Plugin::WFS::StoredQueryConfig::get_title(const std::strin
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -325,7 +325,7 @@ std::string SmartMet::Plugin::WFS::StoredQueryConfig::get_abstract(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -338,7 +338,7 @@ std::string SmartMet::Plugin::WFS::StoredQueryConfig::get_param_title(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -351,7 +351,7 @@ std::string SmartMet::Plugin::WFS::StoredQueryConfig::get_param_abstract(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -400,7 +400,7 @@ void SmartMet::Plugin::WFS::StoredQueryConfig::ParamDesc::dump(std::ostream& str
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -417,7 +417,7 @@ void SmartMet::Plugin::WFS::StoredQueryConfig::dump_params(std::ostream& stream)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -446,7 +446,7 @@ std::time_t SmartMet::Plugin::WFS::StoredQueryConfig::config_write_time() const
   {
     std::ostringstream msg;
     msg << "Failed to get last write time of '" << get_file_name() << "' file.";
-    throw SmartMet::Spine::Exception(BCP, msg.str(), NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, msg.str());
   }
 }
 
@@ -467,7 +467,7 @@ bool SmartMet::Plugin::WFS::StoredQueryConfig::last_write_time_changed() const
   {
     std::ostringstream msg;
     msg << "Failed to test write time of '" << get_file_name() << "' file.";
-    throw SmartMet::Spine::Exception(BCP, msg.str(), NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, msg.str());
   }
 }
 

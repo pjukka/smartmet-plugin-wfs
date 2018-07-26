@@ -21,7 +21,7 @@ void optional_deprecate_notice(const std::string& item_def)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace
@@ -51,7 +51,7 @@ void ParameterTemplateItem::parse(const SmartMet::Spine::Value& item_def, bool a
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -126,7 +126,7 @@ void ParameterTemplateItem::parse(const std::string& item_def, bool allow_absent
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -143,7 +143,7 @@ void ParameterTemplateItem::reset()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -179,7 +179,7 @@ ParameterTemplateItem::get_value(const RequestParameterMap& req_param_map,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -310,7 +310,7 @@ bool ParameterTemplateItem::get_value(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -332,11 +332,11 @@ bool ParameterTemplateItem::handle_redirection(
 
     /* FIXME: should we allow recursive redirection? Currently not allowed. */
 
-    return param_desc.get_value(result, req_param_map, NULL /* extra_params */);
+    return param_desc.get_value(result, req_param_map, nullptr /* extra_params */);
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace WFS

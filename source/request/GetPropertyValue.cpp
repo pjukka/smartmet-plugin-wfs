@@ -98,7 +98,7 @@ void GetPropertyValue::execute(std::ostream& output) const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -122,7 +122,7 @@ void GetPropertyValue::initialize(boost::optional<int>& max_members,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -158,7 +158,7 @@ void GetPropertyValue::finalize(boost::shared_ptr<xercesc::DOMDocument> result,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -199,7 +199,7 @@ void GetPropertyValue::add_responses(boost::shared_ptr<xercesc::DOMDocument> res
       {
         std::cerr << METHOD_NAME << ": DOM exception: code=" << (int)err.code
                   << " message=" << err.getMessage() << std::endl;
-        throw SmartMet::Spine::Exception(BCP, "DOM exception received!", NULL);
+        throw SmartMet::Spine::Exception::Trace(BCP, "DOM exception received!");
       }
       catch (const bwx::XmlError& err)
       {
@@ -211,13 +211,13 @@ void GetPropertyValue::add_responses(boost::shared_ptr<xercesc::DOMDocument> res
         }
 
         std::cerr << "XML source is:\n" << query_response << std::endl;
-        throw SmartMet::Spine::Exception(BCP, "XML parsing failed!", NULL);
+        throw SmartMet::Spine::Exception::Trace(BCP, "XML parsing failed!");
       }
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -276,7 +276,7 @@ void GetPropertyValue::filter(boost::shared_ptr<xercesc::DOMDocument> result,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -317,7 +317,7 @@ void GetPropertyValue::extract_property(boost::shared_ptr<xercesc::DOMDocument> 
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -379,7 +379,7 @@ void GetPropertyValue::append_members(boost::shared_ptr<xercesc::DOMDocument> re
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -402,7 +402,7 @@ void GetPropertyValue::calculate_loop_limits(const boost::optional<int>& max_mem
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -423,7 +423,7 @@ bool GetPropertyValue::copy_schema_location(const xercesc::DOMElement* source,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -443,7 +443,7 @@ bool GetPropertyValue::copy_timestamp(const xercesc::DOMElement* source,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -512,7 +512,7 @@ boost::shared_ptr<GetPropertyValue> GetPropertyValue::create_from_kvp(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -579,7 +579,7 @@ boost::shared_ptr<GetPropertyValue> GetPropertyValue::create_from_xml(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -616,7 +616,7 @@ bool GetPropertyValue::collect_query_responses(std::vector<std::string>& query_r
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -631,7 +631,7 @@ void GetPropertyValue::add_query_responses(std::vector<std::string>& query_respo
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -658,7 +658,7 @@ bool GetPropertyValue::get_cached_responses()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -685,6 +685,6 @@ int GetPropertyValue::get_response_expires_seconds() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

@@ -89,7 +89,7 @@ std::vector<NFmiPoint> bbox_exclude_point(const NFmiPoint& p1,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -158,7 +158,7 @@ void get_latlon_boundary(const NFmiArea* area, OGRPolygon* result, int NP, doubl
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace WFS

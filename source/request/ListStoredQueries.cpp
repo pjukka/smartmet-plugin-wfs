@@ -88,16 +88,16 @@ void bw::Request::ListStoredQueries::execute(std::ostream& output) const
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(BCP, "Template formatter exception!", NULL);
+      SmartMet::Spine::Exception exception(BCP, "Template formatter exception!", nullptr);
       exception.addDetail(log_messages.str());
-      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == NULL)
+      if (exception.getExceptionByParameterName(WFS_EXCEPTION_CODE) == nullptr)
         exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PROCESSING_FAILED);
       throw exception;
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -119,7 +119,7 @@ boost::shared_ptr<bw::Request::ListStoredQueries> bw::Request::ListStoredQueries
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -139,7 +139,7 @@ boost::shared_ptr<bw::Request::ListStoredQueries> bw::Request::ListStoredQueries
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -151,6 +151,6 @@ int bw::Request::ListStoredQueries::get_response_expires_seconds() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

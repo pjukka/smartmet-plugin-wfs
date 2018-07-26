@@ -34,69 +34,69 @@ class ScalarParameterTemplate : public ParameterTemplateBase
    *   SmartMet::Plugin::WFS::StoredQueryHandlerBase::parse_kvp_parameters.
    */
   SmartMet::Spine::Value get_value(const RequestParameterMap& req_param_map,
-                                   const SupportsExtraHandlerParams* extra_params = NULL) const;
+                                   const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   bool get_value(SmartMet::Spine::Value& result,
                  const RequestParameterMap& req_param_map,
-                 const SupportsExtraHandlerParams* extra_params = NULL) const;
+                 const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   virtual boost::tribool get_value(
       boost::variant<SmartMet::Spine::Value, std::vector<SmartMet::Spine::Value> >& result,
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL,
+      const SupportsExtraHandlerParams* extra_params = nullptr,
       bool strict = true) const;
 
   int64_t get_int_value(const RequestParameterMap& req_param_map,
-                        const SupportsExtraHandlerParams* extra_params = NULL) const;
+                        const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   uint64_t get_uint_value(const RequestParameterMap& req_param_map,
-                          const SupportsExtraHandlerParams* extra_params = NULL) const;
+                          const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   double get_double_value(const RequestParameterMap& req_param_map,
-                          const SupportsExtraHandlerParams* extra_params = NULL) const;
+                          const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   std::string get_string_value(const RequestParameterMap& req_param_map,
-                               const SupportsExtraHandlerParams* extra_params = NULL) const;
+                               const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   boost::posix_time::ptime get_ptime_value(
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL) const;
+      const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   SmartMet::Spine::Point get_point_value(
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL) const;
+      const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   SmartMet::Spine::BoundingBox get_bbox_value(
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL) const;
+      const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   bool get(const RequestParameterMap& req_param_map,
            int64_t* dest,
-           const SupportsExtraHandlerParams* extra_params = NULL) const;
+           const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   bool get(const RequestParameterMap& req_param_map,
            uint64_t* dest,
-           const SupportsExtraHandlerParams* extra_params = NULL) const;
+           const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   bool get(const RequestParameterMap& req_param_map,
            double* dest,
-           const SupportsExtraHandlerParams* extra_params = NULL) const;
+           const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   bool get(const RequestParameterMap& req_param_map,
            std::string* dest,
-           const SupportsExtraHandlerParams* extra_params = NULL) const;
+           const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   bool get(const RequestParameterMap& req_param_map,
            boost::posix_time::ptime* dest,
-           const SupportsExtraHandlerParams* extra_params = NULL) const;
+           const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   bool get(const RequestParameterMap& req_param_map,
            SmartMet::Spine::Point* dest,
-           const SupportsExtraHandlerParams* extra_params = NULL) const;
+           const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   bool get(const RequestParameterMap& req_param_map,
            SmartMet::Spine::BoundingBox* dest,
-           const SupportsExtraHandlerParams* extra_params = NULL) const;
+           const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
  private:
   void init();

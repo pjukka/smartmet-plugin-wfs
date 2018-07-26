@@ -33,7 +33,7 @@ bw::SupportsTimeParameters::SupportsTimeParameters(boost::shared_ptr<bw::StoredQ
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -207,7 +207,7 @@ bw::SupportsTimeParameters::get_time_generator_options(const RequestParameterMap
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

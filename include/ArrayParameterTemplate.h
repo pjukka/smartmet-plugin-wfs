@@ -36,38 +36,38 @@ class ArrayParameterTemplate : public ParameterTemplateBase
   inline const ParameterTemplateItem& get_item(std::size_t ind) const { return items.at(ind); }
   std::vector<SmartMet::Spine::Value> get_value(
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL) const;
+      const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   virtual boost::tribool get_value(
       boost::variant<SmartMet::Spine::Value, std::vector<SmartMet::Spine::Value> >& result,
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra = NULL,
+      const SupportsExtraHandlerParams* extra = nullptr,
       bool strict = true) const;
 
   std::vector<int64_t> get_int_array(const RequestParameterMap& req_param_map,
-                                     const SupportsExtraHandlerParams* extra_params = NULL) const;
+                                     const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   std::vector<uint64_t> get_uint_array(const RequestParameterMap& req_param_map,
-                                       const SupportsExtraHandlerParams* extra_params = NULL) const;
+                                       const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   std::vector<double> get_double_array(const RequestParameterMap& req_param_map,
-                                       const SupportsExtraHandlerParams* extra_params = NULL) const;
+                                       const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   std::vector<std::string> get_string_array(
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL) const;
+      const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   std::vector<boost::posix_time::ptime> get_ptime_array(
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL) const;
+      const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   std::vector<SmartMet::Spine::Point> get_point_array(
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL) const;
+      const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
   std::vector<SmartMet::Spine::BoundingBox> get_bbox_array(
       const RequestParameterMap& req_param_map,
-      const SupportsExtraHandlerParams* extra_params = NULL) const;
+      const SupportsExtraHandlerParams* extra_params = nullptr) const;
 
  private:
   void init();

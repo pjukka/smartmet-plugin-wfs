@@ -26,17 +26,17 @@ EnvInit::EnvInit()
     catch (const xercesc::XMLException& err)
     {
       std::string str = UTF8(err.getMessage());
-      SmartMet::Spine::Exception exception(BCP, "Error during Xerces-C initialization!", NULL);
+      SmartMet::Spine::Exception exception(BCP, "Error during Xerces-C initialization!", nullptr);
       exception.addDetail(str);
       throw exception;
     }
 
     // Disable Xerces-C net accessor for now
-    xercesc::XMLPlatformUtils::fgNetAccessor = NULL;
+    xercesc::XMLPlatformUtils::fgNetAccessor = nullptr;
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -48,7 +48,7 @@ EnvInit::~EnvInit()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

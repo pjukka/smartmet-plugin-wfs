@@ -123,14 +123,14 @@ boost::shared_ptr<FeatureID> FeatureID::create_from_id(const std::string& id)
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(BCP, "Failed to parse feature ID!", NULL);
+      SmartMet::Spine::Exception exception(BCP, "Failed to parse feature ID!", nullptr);
       exception.addParameter("Feature ID", id);
       throw exception;
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -182,7 +182,7 @@ std::string FeatureID::get_id() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -194,6 +194,6 @@ void FeatureID::erase_param(const std::string& name)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

@@ -65,7 +65,7 @@ ParameterExtractor::ParameterExtractor()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -84,7 +84,7 @@ void ParameterExtractor::add_type(const std::string& name,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -120,14 +120,14 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_param(
       const std::string& element_str = xml2string(&element);
       msg << "Error while reading " << xml_type << " from '" << element_str << "'";
 
-      SmartMet::Spine::Exception exception(BCP, "Operation failed!", NULL);
+      SmartMet::Spine::Exception exception(BCP, "Operation failed!", nullptr);
       exception.addDetail(msg.str());
       throw exception;
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -144,7 +144,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_string(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -175,7 +175,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_integer(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -206,7 +206,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_unsigned_integer
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -224,7 +224,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_double(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -244,7 +244,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_date_time(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -267,7 +267,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_name_list(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -290,7 +290,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_double_list(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -314,7 +314,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_integer_list(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -354,7 +354,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_gml_pos(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -407,7 +407,7 @@ std::vector<SmartMet::Spine::Value> ParameterExtractor::extract_gml_envelope(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 

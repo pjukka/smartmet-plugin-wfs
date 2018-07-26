@@ -25,8 +25,8 @@ bw::StoredFlashQueryHandler::StoredFlashQueryHandler(
       StoredQueryHandlerBase(reactor, config, plugin_data, template_file_name),
       SupportsBoundingBox(config, plugin_data.get_crs_registry()),
       SupportsTimeZone(config),
-      geo_engine(NULL),
-      obs_engine(NULL),
+      geo_engine(nullptr),
+      obs_engine(nullptr),
       bs_param(),
       stroke_time_ind(
           add_param(bs_param, "utctime", SmartMet::Spine::Parameter::Type::DataIndependent)),
@@ -61,7 +61,7 @@ bw::StoredFlashQueryHandler::StoredFlashQueryHandler(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -73,21 +73,21 @@ void bw::StoredFlashQueryHandler::init_handler()
   {
     auto* reactor = get_reactor();
 
-    auto* engine = reactor->getSingleton("Observation", NULL);
-    if (engine == NULL)
+    auto* engine = reactor->getSingleton("Observation", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Observation engine available");
 
     obs_engine = reinterpret_cast<SmartMet::Engine::Observation::Engine*>(engine);
 
-    engine = reactor->getSingleton("Geonames", NULL);
-    if (engine == NULL)
+    engine = reactor->getSingleton("Geonames", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Geonames engine available");
 
     geo_engine = reinterpret_cast<SmartMet::Engine::Geonames::Engine*>(engine);
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -104,7 +104,7 @@ pt::ptime round_time(const pt::ptime& t0, unsigned step, int offset = 0)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace
@@ -402,7 +402,7 @@ void bw::StoredFlashQueryHandler::query(const StoredQuery& query,
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(BCP, "Operation failed!", NULL);
+      SmartMet::Spine::Exception exception(BCP, "Operation failed!", nullptr);
       // Set language for exception and re-throw it
       exception.addParameter(WFS_LANGUAGE, language);
       throw exception;
@@ -410,7 +410,7 @@ void bw::StoredFlashQueryHandler::query(const StoredQuery& query,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -434,7 +434,7 @@ boost::shared_ptr<SmartMet::Plugin::WFS::StoredQueryHandlerBase> wfs_flash_handl
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 }  // namespace

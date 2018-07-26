@@ -68,7 +68,7 @@ std::string bw::RequestBase::extract_request_name(const xercesc::DOMDocument& do
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -89,7 +89,7 @@ std::string bw::RequestBase::extract_request_name(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -130,7 +130,7 @@ void bw::RequestBase::substitute_all(const std::string& src, std::ostream& outpu
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -151,7 +151,7 @@ void bw::RequestBase::substitute_fmi_apikey(const std::string& src, std::ostream
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -166,7 +166,7 @@ void bw::RequestBase::substitute_hostname(const std::string& src, std::ostream& 
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -181,7 +181,7 @@ void bw::RequestBase::substitute_protocol(const std::string& src, std::ostream& 
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -207,7 +207,7 @@ void bw::RequestBase::check_request_name(const SmartMet::Spine::HTTP::Request& h
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -228,7 +228,7 @@ void bw::RequestBase::check_request_name(const xercesc::DOMDocument& document,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -252,7 +252,7 @@ void bw::RequestBase::check_mandatory_attributes(const xercesc::DOMDocument& doc
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -278,7 +278,7 @@ void bw::RequestBase::check_output_format_attribute(const std::string& value)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -287,7 +287,7 @@ const xercesc::DOMElement* bw::RequestBase::get_xml_root(const xercesc::DOMDocum
   try
   {
     xercesc::DOMElement* root = document.getDocumentElement();
-    if (root == NULL)
+    if (root == nullptr)
     {
       SmartMet::Spine::Exception exception(BCP, "The XML root element is missing!");
       exception.addParameter(WFS_EXCEPTION_CODE, WFS_OPERATION_PARSING_FAILED);
@@ -297,7 +297,7 @@ const xercesc::DOMElement* bw::RequestBase::get_xml_root(const xercesc::DOMDocum
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -317,6 +317,6 @@ void bw::RequestBase::check_wfs_version(const SmartMet::Spine::HTTP::Request& re
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

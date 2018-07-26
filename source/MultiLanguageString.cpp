@@ -78,7 +78,7 @@ bw::MultiLanguageString::MultiLanguageString(const std::string& default_language
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -93,7 +93,7 @@ boost::shared_ptr<bw::MultiLanguageString> bw::MultiLanguageString::create(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -115,6 +115,6 @@ std::string bw::MultiLanguageString::get(const std::string& language) const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

@@ -11,25 +11,25 @@ bw::PluginData::PluginData(SmartMet::Spine::Reactor *theReactor, const char *the
 {
   try
   {
-    if (theConfig == NULL)
+    if (theConfig == nullptr)
     {
       std::ostringstream msg;
       msg << "ERROR: No configuration provided for WFS plugin";
       throw SmartMet::Spine::Exception(BCP, msg.str());
     }
 
-    void *engine = theReactor->getSingleton("Geonames", NULL);
-    if (engine == NULL)
+    void *engine = theReactor->getSingleton("Geonames", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Geonames engine available");
     itsGeonames = reinterpret_cast<SmartMet::Engine::Geonames::Engine *>(engine);
 
-    engine = theReactor->getSingleton("Querydata", NULL);
-    if (engine == NULL)
+    engine = theReactor->getSingleton("Querydata", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Querydata engine available");
     itsQEngine = reinterpret_cast<SmartMet::Engine::Querydata::Engine *>(engine);
 
-    engine = theReactor->getSingleton("Gis", NULL);
-    if (engine == NULL)
+    engine = theReactor->getSingleton("Gis", nullptr);
+    if (engine == nullptr)
       throw SmartMet::Spine::Exception(BCP, "No Gis engine available");
     itsGisEngine = reinterpret_cast<SmartMet::Engine::Gis::Engine *>(engine);
 
@@ -65,7 +65,7 @@ bw::PluginData::PluginData(SmartMet::Spine::Reactor *theReactor, const char *the
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -79,7 +79,7 @@ void bw::PluginData::updateStoredQueryMap(Spine::Reactor *theReactor)
   }
   catch (...)
   {
-    throw Spine::Exception(BCP, "Stored query handlers update failed!", NULL);
+    throw Spine::Exception::Trace(BCP, "Stored query handlers update failed!");
   }
 }
 
@@ -98,7 +98,7 @@ boost::posix_time::ptime bw::PluginData::get_time_stamp() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -117,7 +117,7 @@ boost::posix_time::ptime bw::PluginData::get_local_time_stamp() const
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -157,7 +157,7 @@ void bw::PluginData::create_template_formatters()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -178,7 +178,7 @@ void bw::PluginData::create_xml_parser()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -192,14 +192,14 @@ void bw::PluginData::init_geo_server_access()
     }
     catch (...)
     {
-      SmartMet::Spine::Exception exception(BCP, "Failed to connect to GeoServer!", NULL);
+      SmartMet::Spine::Exception exception(BCP, "Failed to connect to GeoServer!", nullptr);
       exception.addParameter("Connection string", itsConfig.get_geoserver_conn_string());
       throw exception;
     }
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -216,7 +216,7 @@ void bw::PluginData::create_typename_stored_query_map()
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -256,6 +256,6 @@ void bw::PluginData::create_stored_query_map(SmartMet::Spine::Reactor *theReacto
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }

@@ -33,7 +33,7 @@ void bw::SupportsLocationParameters::engOrFinToEnOrFi(std::string &language)
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -63,7 +63,7 @@ bw::SupportsLocationParameters::SupportsLocationParameters(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -77,8 +77,8 @@ void bw::SupportsLocationParameters::get_location_options(
 {
   try
   {
-    assert(geo_engine != NULL);
-    assert(locations != NULL);
+    assert(geo_engine != nullptr);
+    assert(locations != nullptr);
 
     locations->clear();
 
@@ -171,7 +171,7 @@ void bw::SupportsLocationParameters::get_location_options(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -206,7 +206,7 @@ void bw::SupportsLocationParameters::get_geoids(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -255,7 +255,7 @@ void bw::SupportsLocationParameters::get_fmisids(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -304,7 +304,7 @@ void bw::SupportsLocationParameters::get_wmos(
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 /**

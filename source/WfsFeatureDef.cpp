@@ -56,7 +56,7 @@ bw::WfsFeatureDef::WfsFeatureDef(SmartMet::Engine::Gis::CRSRegistry& crs_registr
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
@@ -80,7 +80,7 @@ std::string bw::WfsFeatureDef::resolve_crs_url(const std::string& name,
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception::Trace(BCP, "Operation failed!");
   }
 }
 
