@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.8.13
+Version: 18.8.16
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -22,15 +22,15 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 18.8.13
-BuildRequires: smartmet-library-gis-devel >= 18.8.2
+BuildRequires: smartmet-library-spine-devel >= 18.8.15
+BuildRequires: smartmet-library-gis-devel >= 18.8.15
 BuildRequires: smartmet-library-locus-devel >= 18.8.6
 BuildRequires: smartmet-library-macgyver-devel >= 18.8.4
 BuildRequires: smartmet-engine-contour-devel >= 18.7.25
 BuildRequires: smartmet-engine-geonames-devel >= 18.8.13
 BuildRequires: smartmet-engine-gis-devel >= 18.7.25
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 18.8.13
+BuildRequires: smartmet-engine-observation-devel >= 18.8.16
 %endif
 BuildRequires: smartmet-engine-querydata-devel >= 18.8.13
 BuildRequires: postgresql95-libs
@@ -40,13 +40,13 @@ Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 18.8.6
 Requires: smartmet-library-macgyver >= 18.8.4
-Requires: smartmet-library-spine >= 18.8.13
-Requires: smartmet-library-gis >= 18.8.2
+Requires: smartmet-library-spine >= 18.8.15
+Requires: smartmet-library-gis >= 18.8.15
 Requires: smartmet-engine-contour >= 18.7.25
 Requires: smartmet-engine-geonames >= 18.8.13
 Requires: smartmet-engine-gis >= 18.7.25
 %if %{with observation}
-Requires: smartmet-engine-observation >= 18.8.13
+Requires: smartmet-engine-observation >= 18.8.16
 %endif
 Requires: smartmet-engine-querydata >= 18.8.13
 Requires: smartmet-server >= 18.8.8
@@ -93,6 +93,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Thu Aug 16 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.8.16-1.fmi
+- Switched to use new castTo API in obsengine, and prefer toString instead
+
 * Mon Aug 13 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.8.13-1.fmi
 - Repackaged since Spine::Location size changed
 

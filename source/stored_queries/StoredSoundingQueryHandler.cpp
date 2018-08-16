@@ -225,7 +225,7 @@ void StoredSoundingQueryHandler::query(const StoredQuery& query,
         {
           std::string measurandIdStr =
               SmartMet::Engine::Observation::QueryResult::toString(dataMeasurandIdIt, 0);
-          int64_t soundingId = dataContainer->castTo<int64_t>(dataSoundingIdIt, 0);
+          int64_t soundingId = dataContainer->castTo<int64_t>(dataSoundingIdIt);
 
           if ((dataSoundingIdIt == dataSoundingIdItBegin) or (currentSoundingId != soundingId))
           {
@@ -384,15 +384,14 @@ void StoredSoundingQueryHandler::query(const StoredQuery& query,
 
           if (paramcount == 1)
           {
-            row["epochTime"] = sEpoch + dataContainer->castTo<int64_t>(dataLevelTimeIt, 0);
+            row["epochTime"] = sEpoch + dataContainer->castTo<int64_t>(dataLevelTimeIt);
             row["altitude"] =
                 SmartMet::Engine::Observation::QueryResult::toString(dataAltitudeIt, 1);
-            const double levelLat =
-                stationLatitude + dataContainer->castTo<double>(dataLatitudeIt, 6);
+            const double levelLat = stationLatitude + dataContainer->castTo<double>(dataLatitudeIt);
             const double levelLon =
-                stationLongitude + dataContainer->castTo<double>(dataLongitudeIt, 6);
+                stationLongitude + dataContainer->castTo<double>(dataLongitudeIt);
             set_2D_coord(transformation, levelLat, levelLon, row);
-            uint32_t significance = dataContainer->castTo<uint32_t>(dataSignificanceIt, 0);
+            uint32_t significance = dataContainer->castTo<uint32_t>(dataSignificanceIt);
             row["significance"] = significance;
             std::bitset<18> sBitset(significance);
             if (sBitset.any())
@@ -427,12 +426,12 @@ void StoredSoundingQueryHandler::query(const StoredQuery& query,
           CTPP::CDT& rowData = row["data"][paramcount - 1];
           if (showValue)
           {
-            auto value = dataContainer->castTo<std::string>(dataValueIt, 1);
+            auto value = dataContainer->toString(dataValueIt, 1);
             rowData["value"] = (value.empty() ? missingValue : value);
           }
           if (showDataQuality)
           {
-            auto quality = dataContainer->castTo<std::string>(dataQualityIt, 0);
+            auto quality = dataContainer->toString(dataQualityIt, 0);
             rowData["quality"] = (quality.empty() ? missingValue : quality);
           }
           dataId++;
