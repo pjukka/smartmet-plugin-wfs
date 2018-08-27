@@ -15,6 +15,7 @@ BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: boost-devel
 BuildRequires: ctpp2-devel
+BuildRequires: fmt-devel
 BuildRequires: libconfig-devel
 BuildRequires: libcurl-devel
 BuildRequires: xerces-c-devel
@@ -35,6 +36,7 @@ BuildRequires: smartmet-engine-observation-devel >= 18.8.16
 BuildRequires: smartmet-engine-querydata-devel >= 18.8.13
 BuildRequires: postgresql95-libs
 Requires: ctpp2
+Requires: fmt
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
