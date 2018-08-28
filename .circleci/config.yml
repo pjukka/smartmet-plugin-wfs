@@ -16,7 +16,7 @@ jobs:
           command: sudo yum-builddep --disableexcludes=smartmet-open -y *.spec 
       - run:
           name: make rpm
-          command: make rpm
+          command: rpmbuild -ba --define "_smp_mflags -j$RPM_BUILD_NCPUS" *.spec
       - run:
           name: Move artifacts
           command: sudo cp -av /home/rpmbuild/rpmbuild/RPMS /
