@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.8.16
+Version: 0
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -93,6 +93,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Upcoming
+- Using querydata modification time as data result time
+
 * Thu Aug 16 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.8.16-1.fmi
 - Switched to use new castTo API in obsengine, and prefer toString instead
 
