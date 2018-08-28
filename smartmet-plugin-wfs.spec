@@ -23,35 +23,35 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 18.8.15
+BuildRequires: smartmet-library-spine-devel >= 18.8.20
 BuildRequires: smartmet-library-gis-devel >= 18.8.15
-BuildRequires: smartmet-library-locus-devel >= 18.8.6
-BuildRequires: smartmet-library-macgyver-devel >= 18.8.4
+BuildRequires: smartmet-library-locus-devel >= 18.8.21
+BuildRequires: smartmet-library-macgyver-devel >= 18.8.20
 BuildRequires: smartmet-engine-contour-devel >= 18.7.25
-BuildRequires: smartmet-engine-geonames-devel >= 18.8.13
+BuildRequires: smartmet-engine-geonames-devel >= 18.8.26
 BuildRequires: smartmet-engine-gis-devel >= 18.7.25
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 18.8.16
+BuildRequires: smartmet-engine-observation-devel >= 18.8.23
 %endif
-BuildRequires: smartmet-engine-querydata-devel >= 18.8.13
+BuildRequires: smartmet-engine-querydata-devel >= 18.8.20
 BuildRequires: postgresql95-libs
 Requires: ctpp2
 Requires: fmt
 Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
-Requires: smartmet-library-locus >= 18.8.6
-Requires: smartmet-library-macgyver >= 18.8.4
-Requires: smartmet-library-spine >= 18.8.15
+Requires: smartmet-library-locus >= 18.8.21
+Requires: smartmet-library-macgyver >= 18.8.20
+Requires: smartmet-library-spine >= 18.8.20
 Requires: smartmet-library-gis >= 18.8.15
 Requires: smartmet-engine-contour >= 18.7.25
-Requires: smartmet-engine-geonames >= 18.8.13
+Requires: smartmet-engine-geonames >= 18.8.26
 Requires: smartmet-engine-gis >= 18.7.25
 %if %{with observation}
-Requires: smartmet-engine-observation >= 18.8.16
+Requires: smartmet-engine-observation >= 18.8.23
 %endif
-Requires: smartmet-engine-querydata >= 18.8.13
-Requires: smartmet-server >= 18.8.8
+Requires: smartmet-engine-querydata >= 18.8.20
+Requires: smartmet-server >= 18.8.22
 Requires: xerces-c
 Requires: xqilla
 %if 0%{rhel} >= 7
@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
-* Upcoming
+* Tue Aug 28 2018 Pertti Kinnia <pertti.kinnia@fmi.fi> - 18.8.28-1.fmi
 - Using querydata modification time as data result time
 
 * Thu Aug 16 2018 Mika Heiskanen <mika.heiskanen@fmi.fi> - 18.8.16-1.fmi
