@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 18.8.26
+Version: 18.9.3
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -95,6 +95,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
+* Mon Sep  3 2018 Pertti Kinnia <pertti.kinnia@fmi.fi> - 18.9.3-1.fmi
+- Test result changes; querydata modification times changed to origin time
+
 * Tue Aug 28 2018 Pertti Kinnia <pertti.kinnia@fmi.fi> - 18.8.28-1.fmi
 - Using querydata modification time as data result time
 
