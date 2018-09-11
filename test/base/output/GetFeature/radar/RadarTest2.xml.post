@@ -26,7 +26,7 @@ Global data object:
    numReturned = 5;
    param_sets = [
                   {
-                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:40:00Z",
+                    'URL' : "http://map.fmi.fi/geoserver/Radar/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:40:00Z",
                     'params' : {
                                  'corner' : [
                                               "269538.107",
@@ -128,7 +128,7 @@ Global data object:
                                }
                   },
                   {
-                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:45:00Z",
+                    'URL' : "http://map.fmi.fi/geoserver/Radar/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:45:00Z",
                     'params' : {
                                  'corner' : [
                                               "269538.107",
@@ -230,7 +230,7 @@ Global data object:
                                }
                   },
                   {
-                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:50:00Z",
+                    'URL' : "http://map.fmi.fi/geoserver/Radar/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:50:00Z",
                     'params' : {
                                  'corner' : [
                                               "269538.107",
@@ -332,7 +332,7 @@ Global data object:
                                }
                   },
                   {
-                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:55:00Z",
+                    'URL' : "http://map.fmi.fi/geoserver/Radar/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:55:00Z",
                     'params' : {
                                  'corner' : [
                                               "269538.107",
@@ -434,7 +434,7 @@ Global data object:
                                }
                   },
                   {
-                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T11:00:00Z",
+                    'URL' : "http://map.fmi.fi/geoserver/Radar/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T11:00:00Z",
                     'params' : {
                                  'corner' : [
                                               "269538.107",
