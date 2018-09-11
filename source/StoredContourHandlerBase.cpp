@@ -297,6 +297,7 @@ void bw::StoredContourQueryHandler::query(const StoredQuery& stored_query,
       q = itsQEngine->get(producer);
 
     boost::posix_time::ptime origintime = q->originTime();
+    boost::posix_time::ptime modificationtime = q->modificationTime();
 
     SmartMet::Spine::Parameter parameter(name, SmartMet::Spine::Parameter::Type::Data, id);
 
@@ -333,6 +334,7 @@ void bw::StoredContourQueryHandler::query(const StoredQuery& stored_query,
                       crsRegistry,
                       requestedCRS,
                       origintime,
+                      modificationtime,
                       query_param->tz_name,
                       hash);
 
@@ -538,6 +540,7 @@ void bw::StoredContourQueryHandler::parseQueryResults(
     SmartMet::Engine::Gis::CRSRegistry& crsRegistry,
     const std::string& requestedCRS,
     const boost::posix_time::ptime& origintime,
+    const boost::posix_time::ptime& modificationtime,
     const std::string& tz_name,
     CTPP::CDT& hash) const
 {
@@ -578,6 +581,7 @@ void bw::StoredContourQueryHandler::parseQueryResults(
     boost::local_time::time_zone_ptr tzp = get_time_zone(tz_name);
     std::string runtime_timestamp = format_local_time(plugin_data.get_time_stamp(), tzp);
     std::string origintime_timestamp = format_local_time(origintime, tzp);
+    std::string modificationtime_timestamp = format_local_time(modificationtime, tzp);
 
     hash["proj_uri"] = proj_uri;
     hash["fmi_apikey"] = bw::QueryBase::FMI_APIKEY_SUBST;
@@ -613,6 +617,7 @@ void bw::StoredContourQueryHandler::parseQueryResults(
           CTPP::CDT& wfs_member = hash["wfs_members"][wfs_member_index];
           wfs_member["phenomenon_time"] = geom_timestamp;
           wfs_member["analysis_time"] = origintime_timestamp;
+          wfs_member["modification_time"] = modificationtime_timestamp;
           wfs_member["feature_of_interest_shape"] = bbox2string(query_bbox, targetSRS);
 
           CTPP::CDT& result = wfs_member["result"];
@@ -637,6 +642,7 @@ void bw::StoredContourQueryHandler::parseQueryResults(
             CTPP::CDT& wfs_member = hash["wfs_members"][wfs_member_index];
             wfs_member["phenomenon_time"] = geom_timestamp;
             wfs_member["analysis_time"] = origintime_timestamp;
+            wfs_member["modification_time"] = modificationtime_timestamp;
             wfs_member["feature_of_interest_shape"] = bbox2string(query_bbox, targetSRS);
 
             CTPP::CDT& result = wfs_member["result"];
