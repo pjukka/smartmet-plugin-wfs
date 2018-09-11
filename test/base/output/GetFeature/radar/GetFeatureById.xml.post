@@ -26,7 +26,7 @@ Global data object:
    numReturned = 1;
    param_sets = [
                   {
-                    'URL' : "http:\/\/map.fmi.fi\/geoserver\/Radar\/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:40:00Z",
+                    'URL' : "http://map.fmi.fi/geoserver/Radar/wms?service=WMS&version=1.1.0&request=GetMap&layers=Radar:wfs_regression_test_kuopio&styles=&bbox=269538.107,6720463.18,769288.107,7220213.18&width=999&height=999&srs=EPSG:3067&format=image%2Fgeotiff&time=2013-02-21T10:40:00Z",
                     'params' : {
                                  'corner' : [
                                               "269538.107",
