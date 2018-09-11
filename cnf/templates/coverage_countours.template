@@ -29,7 +29,7 @@
       <!-- Model analysis time -->
       <om:resultTime>
 	<gml:TimeInstant gml:id="<TMPL_var CONCAT("result-time-wfs-member-",wfs_member.__index__ + 1)>">
-	<gml:timePosition><TMPL_var response_timestamp></gml:timePosition>
+	<gml:timePosition><TMPL_var wfs_member.modification_time></gml:timePosition>
       </gml:TimeInstant>
     </om:resultTime>
     <om:procedure xlink:href="http://xml.fmi.fi/inspire/process/hirlam_painepinta"/>

@@ -35,7 +35,7 @@
     <!-- Model analysis time -->
     <om:resultTime>
       <gml:TimeInstant gml:id="<TMPL_var CONCAT("forecast-",wfs_member.__index__ + 1,"-result-time")>">
-      <gml:timePosition><TMPL_var wfs_member.analysis_time></gml:timePosition>
+      <gml:timePosition><TMPL_var wfs_member.modification_time></gml:timePosition>
     </gml:TimeInstant>
   </om:resultTime>
   <om:procedure xlink:href="http://xml.fmi.fi/toplink/process/winterweather"/>
