@@ -3,7 +3,7 @@
 %define SPECNAME smartmet-plugin-%{DIRNAME}
 Summary: SmartMet WFS plugin
 Name: %{SPECNAME}
-Version: 0
+Version: 18.9.11
 Release: 1%{?dist}.fmi
 License: MIT
 Group: SmartMet/Plugins
@@ -23,15 +23,15 @@ BuildRequires: xqilla-devel
 BuildRequires: libpqxx-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
-BuildRequires: smartmet-library-spine-devel >= 18.8.30
+BuildRequires: smartmet-library-spine-devel >= 18.9.5
 BuildRequires: smartmet-library-gis-devel >= 18.8.15
 BuildRequires: smartmet-library-locus-devel >= 18.8.21
-BuildRequires: smartmet-library-macgyver-devel >= 18.8.20
+BuildRequires: smartmet-library-macgyver-devel >= 18.9.5
 BuildRequires: smartmet-engine-contour-devel >= 18.7.25
 BuildRequires: smartmet-engine-geonames-devel >= 18.8.30
-BuildRequires: smartmet-engine-gis-devel >= 18.7.25
+BuildRequires: smartmet-engine-gis-devel >= 18.9.7
 %if %{with observation}
-BuildRequires: smartmet-engine-observation-devel >= 18.8.29
+BuildRequires: smartmet-engine-observation-devel >= 18.9.3
 %endif
 BuildRequires: smartmet-engine-querydata-devel >= 18.8.20
 BuildRequires: postgresql95-libs
@@ -41,14 +41,14 @@ Requires: libconfig
 Requires: libcurl
 Requires: libpqxx
 Requires: smartmet-library-locus >= 18.8.21
-Requires: smartmet-library-macgyver >= 18.8.20
-Requires: smartmet-library-spine >= 18.8.30
+Requires: smartmet-library-macgyver >= 18.9.5
+Requires: smartmet-library-spine >= 18.9.5
 Requires: smartmet-library-gis >= 18.8.15
 Requires: smartmet-engine-contour >= 18.7.25
 Requires: smartmet-engine-geonames >= 18.8.30
-Requires: smartmet-engine-gis >= 18.7.25
+Requires: smartmet-engine-gis >= 18.9.7
 %if %{with observation}
-Requires: smartmet-engine-observation >= 18.8.29
+Requires: smartmet-engine-observation >= 18.9.3
 %endif
 Requires: smartmet-engine-querydata >= 18.8.20
 Requires: smartmet-server >= 18.8.22
@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/smartmet/plugins/wfs/XMLSchemas.cache
 
 %changelog
-* Tue Sep 11 2018 Pertti Kinnia <pertti.kinnia@fmi.fi> upcoming
+* Tue Sep 11 2018 Pertti Kinnia <pertti.kinnia@fmi.fi> - 18.9.11-1.fmi
 - Using querydata modification time as data result time for contours too
 
 * Mon Sep  3 2018 Pertti Kinnia <pertti.kinnia@fmi.fi> - 18.9.3-1.fmi
